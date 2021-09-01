@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<psalm
+    cacheDirectory="var/cache/psalm"
+    findUnusedVariablesAndParams="true"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns="https://getpsalm.org/schema/config"
+    xsi:schemaLocation="https://getpsalm.org/schema/config vendor/vimeo/psalm/config.xsd"
+>
+    <projectFiles>
+        <directory name="src"/>
+        <directory name="tests"/>
+        <ignoreFiles>
+            <directory name="vendor"/> <!-- would otherwise inspect vendor -->
+            <file name="tests/TestBootstrapper.php" />
+        </ignoreFiles>
+    </projectFiles>
+
+    <forbiddenFunctions>
+        <function name="dump"/>
+        <function name="dd"/>
+        <function name="var_dump"/>
+        <function name="error_log"/>
+    </forbiddenFunctions>
+
+    <issueHandlers>
+        <PropertyNotSetInConstructor errorLevel="info" />
+        <MissingFile>
+            <errorLevel type="info">
+                <file name="tests/TestBootstrap.php"/>
+            </errorLevel>
+        </MissingFile>
+    </issueHandlers>
+</psalm>

@@ -1,0 +1,8 @@
+.idea/
+coverage/
+.phpunit.result.cache
+vendor/
+var/
+phpstan.neon
+phpstan-report.json
+composer.lock
