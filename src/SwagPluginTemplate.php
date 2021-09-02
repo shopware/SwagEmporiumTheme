@@ -11,5 +11,5 @@ use Shopware\Core\Framework\Plugin;
 
 class SwagPluginTemplate extends Plugin
 {
-    public const PLUGIN_NAME = 'SwagFlowBuilder';
+    public const PLUGIN_NAME = 'SwagPluginTemplate';
 }

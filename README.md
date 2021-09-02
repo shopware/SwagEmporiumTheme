@@ -1,6 +1,6 @@
-# SwagFlowBuilderProfessional
+# SwagPluginTemplate
 
-## An integration for [Shopware 6](https://github.com/shopware/platform)
+## A template for [Shopware 6](https://github.com/shopware/platform) plugins
 
 ## License
 
