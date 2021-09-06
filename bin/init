@@ -53,6 +53,9 @@ echo "$NEW_PLUGIN_CLASS" > src/SwagPluginTemplate.php
 
 mv src/SwagPluginTemplate.php "src/${PLUGIN_NAME}.php"
 
+NEW_ECS="$(fillTemplate ecs.php)"
+echo "$NEW_ECS" > ecs.php
+
 echo -n "Delete this script? (y/n)? "
 read -r answer
 if [ "$answer" != "${answer#[YyjJ]}" ] ;then

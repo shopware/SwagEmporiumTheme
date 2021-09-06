@@ -30,7 +30,7 @@ file that was distributed with this source code.', 'separate' => 'bottom', 'loca
 
     $parameters->set('cache_directory', __DIR__ . '/var/cache/cs_fixer');
 
-    $parameters->set('cache_namespace', 'SwagPayPal');
+    $parameters->set('cache_namespace', 'SwagPluginTemplate');
 
     $parameters->set('paths', [__DIR__ . '/src', __DIR__ . '/tests']);
 };
