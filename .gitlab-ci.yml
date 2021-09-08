@@ -1,12 +1,12 @@
 # The following variables can be overwritten
 # variables:
-    # DEV_IMAGE: shopware/development:7.4-composer-2
+    # PLUGIN_NAME: $CI_PROJECT_TITLE # default is the project name in gitlab
     # PLUGIN_SOURCE_DIR: 'src/' # use '' if it starts in the root dir
+    # DEV_IMAGE: shopware/development:7.4-composer-2
     # MYSQL_IMAGE: 'mysql:5.7'
     # MYSQL_CMD: 'mysqld' # use $MYSQL8_CMD for mysql >= 8
 
 include:
     project: 'shopware/6/product/platform'
-    # change to trunk after merge
-    ref: 'next-16981/add-ci-template-for-plugins'
+    ref: 'trunk'
     file: '.gitlab/templates/plugin.yml'
