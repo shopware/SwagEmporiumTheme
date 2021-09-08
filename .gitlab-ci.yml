@@ -1,11 +1,12 @@
-variables:
-    GIT_STRATEGY: clone
+# The following variables can be overwritten
+# variables:
+    # DEV_IMAGE: shopware/development:7.4-composer-2
+    # PLUGIN_SOURCE_DIR: 'src/' # use '' if it starts in the root dir
+    # MYSQL_IMAGE: 'mysql:5.7'
+    # MYSQL_CMD: 'mysqld' # use $MYSQL8_CMD for mysql >= 8
 
 include:
     project: 'shopware/6/product/platform'
     # change to trunk after merge
     ref: 'next-16981/add-ci-template-for-plugins'
     file: '.gitlab/templates/plugin.yml'
-
-validate zip:
-    allow_failure: true
