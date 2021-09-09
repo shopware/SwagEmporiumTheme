@@ -8,5 +8,5 @@
 
 include:
     project: 'shopware/6/product/platform'
-    ref: 'trunk'
+    ref: 'next-16981/add-pipeline-workflow-to-plugin-ci-template'
     file: '.gitlab/templates/plugin.yml'
