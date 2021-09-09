@@ -5,6 +5,7 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns="https://getpsalm.org/schema/config"
     xsi:schemaLocation="https://getpsalm.org/schema/config vendor/vimeo/psalm/config.xsd"
+    autoloader="vendor/shopware/core/DevOps/StaticAnalyze/PHPStan/phpstan-bootstrap.php"
 >
     <projectFiles>
         <directory name="src"/>
@@ -14,6 +15,11 @@
             <file name="tests/TestBootstrapper.php" />
         </ignoreFiles>
     </projectFiles>
+
+    <plugins>
+        <pluginClass class="Psalm\SymfonyPsalmPlugin\Plugin"/>
+        <pluginClass class="Psalm\PhpUnitPlugin\Plugin"/>
+    </plugins>
 
     <forbiddenFunctions>
         <function name="dump"/>
