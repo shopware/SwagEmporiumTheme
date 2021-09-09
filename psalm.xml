@@ -12,6 +12,7 @@
         <directory name="tests"/>
         <ignoreFiles>
             <directory name="vendor"/> <!-- would otherwise inspect vendor -->
+            <directory name="../../../src/"/> <!-- platform/src -->
             <file name="tests/TestBootstrapper.php" />
         </ignoreFiles>
     </projectFiles>
