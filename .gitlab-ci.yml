@@ -8,5 +8,6 @@
 
 include:
     project: 'shopware/6/product/platform'
-    ref: 'trunk'
+    #ref: 'trunk'
+    ref: 'next-17212/add-cypress-jobs-to-plugin-ci'
     file: '.gitlab/templates/plugin.yml'

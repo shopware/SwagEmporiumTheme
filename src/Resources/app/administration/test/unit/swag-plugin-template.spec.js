@@ -1,4 +1,4 @@
-import '../src/module/swag-plugin-template';
+import '../../src/module/swag-plugin-template';
 const { Module } = Shopware;
 
 describe('module/swag-plugin-template', () => {
