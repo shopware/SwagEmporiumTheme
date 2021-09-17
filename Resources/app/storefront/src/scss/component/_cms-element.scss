@@ -1,0 +1,31 @@
+.cms-element-product-listing {
+    .cms-element-product-listing-actions {
+        @extend .no-gutters;
+
+        border-bottom: 1px solid $border-color;
+        padding-bottom: 30px;
+
+        @include media-breakpoint-up(sm) {
+            .pagination {
+                margin-left: -14px;
+            }
+        }
+
+        @include media-breakpoint-down(sm) {
+            border-bottom: unset;
+        }
+    }
+
+    .cms-listing-col {
+        &:last-child {
+            padding-bottom: 40px;
+        }
+    }
+}
+
+.cms-listing-col {
+    .product-overlay {
+        bottom: unset;
+        min-height: 100%;
+    }
+}

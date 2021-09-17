@@ -1,0 +1,46 @@
+{% sw_extends '@Storefront/storefront/component/product/card/box-standard.html.twig' %}
+
+{% block component_product_box %}
+    {% if product %}
+        <div class="product-overlay shadow rounded">
+            <div class="product-overlay__content">
+                <div class="product-overview">
+                    {% block component_product_box_rating %}
+                        {{ parent() }}
+                    {% endblock %}
+
+                    {% block component_product_box_name %}
+                        {{ parent() }}
+                    {% endblock %}
+
+                    <div class="product-variant-characteristics">
+                        {% for variation in product.variation %}
+                            <span class="product-variant-characteristics-group">{{ variation.group }}:</span>
+                            <span class="product-variant-characteristics-option">
+                            {{ variation.option }}
+                        </span>
+                            {% if product.variation|last != variation %}
+                                |
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+                </div>
+
+                {% block component_product_box_price %}
+                    {{ parent() }}
+                {% endblock %}
+            </div>
+
+            <div class="product-overlay__action">
+                <hr>
+                {% block component_product_box_price_unit %}
+                    {% sw_include '@Storefront/storefront/component/product/card/box-price-unit.html.twig' %}
+                {% endblock %}
+
+                {% block component_product_box_action %}
+                    {{ parent() }}
+                {% endblock %}
+            </div>
+        </div>
+    {% endif %}
+{% endblock %}

@@ -1,0 +1,115 @@
+{% sw_extends '@Storefront/storefront/page/product-detail/buy-widget-form.html.twig' %}
+
+{% block page_product_detail_buy_container %}
+    {% if buyable %}
+        {{ parent() }}
+    {% else %}
+        <div class="product-detail-price-container">
+            {% sw_include '@Storefront/storefront/page/product-detail/buy-widget-price.html.twig' %}
+        </div>
+    {% endif %}
+{% endblock %}
+
+{% block page_product_detail_buy_quantity_container %}
+    <div class="col-4 col-md-12 col-lg-4">
+        <div class="product-detail-configurator-group-title">
+            {{ "showroom.detail.quantity"|trans|sw_sanitize }}
+        </div>
+    </div>
+
+    <div class="col-8 col-md-12 col-lg-8">
+        {% block page_product_detail_buy_quantity %}
+            {{ parent() }}
+        {% endblock %}
+    </div>
+{% endblock %}
+
+{% block page_product_detail_buy_button_container %}
+    <div class="col-12">
+        <div class="row product-detail-button-container justify-content-end">
+            {% set isPricingTable = page.product.calculatedPrices|length > 1 %}
+            {% block page_product_detail_price_container %}
+                <div
+                    class="col-12 {% if isPricingTable %}col-md-12{% else %}col-md-4{% endif %} buy-widget__price">
+                    <div class="product-detail-price-container">
+                        {% sw_include '@Storefront/storefront/page/product-detail/buy-widget-price.html.twig' %}
+                    </div>
+                </div>
+            {% endblock %}
+
+            <div class="col-12 col-md-8 buy-widget__button">
+                {% block page_product_detail_buy_button %}
+                    {% if customizedProductsTemplate and customizedProductsTemplate.active and customizedProductsTemplate.options|length %}
+                        <div class="btn-buy-wrapper">
+                            {{ parent() }}
+                        </div>
+                    {% else %}
+                        {{ parent() }}
+                    {% endif %}
+                {% endblock %}
+
+                {% if config('core.cart.wishlistEnabled') %}
+                    {% block page_product_detail_wishlist %}
+                        {% sw_include '@Storefront/storefront/component/product/card/wishlist.html.twig' with {
+                            showText: true,
+                            size: 'md',
+                            productId: page.product.id
+                        } %}
+                    {% endblock %}
+                {% endif %}
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block swag_customized_products_step_by_step_finish_page %}
+    {% if isStepByStep %}
+        <div class="swag-customized-products__item">
+            <div class="swag-customized-products__finish">
+
+                {% if block("swag_customized_products_step_by_step_finish_title") is defined %}
+                    {{ block('swag_customized_products_step_by_step_finish_title') }}
+                {% endif %}
+
+                {% block swag_customized_products_step_by_step_finish_description %}
+                    <div class="mb-3">
+                        {{ "showroom.detail.finishConfigCustomizedProduct"|trans|sw_sanitize }}
+                    </div>
+                {% endblock %}
+
+                {% if block("swag_customized_products_step_by_step_finish_configure_product") is defined %}
+                    {{ block('swag_customized_products_step_by_step_finish_configure_product') }}
+                {% endif %}
+            </div>
+        </div>
+    {% endif %}
+{% endblock %}
+
+{% block swag_customized_products_introdcution %}
+    <div class="swag-customized-products__item">
+        <div class="swag-customized-products__introduction">
+            <input type="hidden"
+                   name="{{ constant('Swag\\CustomizedProducts\\Storefront\\Controller\\CustomizedProductsCartController::CUSTOMIZED_PRODUCTS_TEMPLATE_REQUEST_PARAMETER') }}[id]"
+                   value="{{ customizedProductsTemplate.id }}">
+
+            {% block swag_customized_products_description %}
+
+                {% if block("swag_customized_products_description_image") is defined %}
+                    {{ block('swag_customized_products_description_image') }}
+                {% endif %}
+
+                {% if block("swag_customized_products_title") is defined %}
+                    {{ block('swag_customized_products_title') }}
+                {% endif %}
+
+                {% if block("swag_customized_products_description_text") is defined %}
+                    {{ block('swag_customized_products_description_text') }}
+                {% endif %}
+            {% endblock %}
+
+            {% if block("swag_customized_products_step_by_step_start_wizard") is defined %}
+                {{ block('swag_customized_products_step_by_step_start_wizard') }}
+            {% endif %}
+        </div>
+    </div>
+{% endblock %}

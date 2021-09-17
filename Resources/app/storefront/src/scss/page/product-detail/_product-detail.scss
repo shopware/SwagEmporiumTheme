@@ -1,0 +1,247 @@
+.product-detail {
+    &-headline {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        margin-bottom: 0;
+    }
+
+    &-name-container,
+    &-manufacturer {
+        padding-left: 0;
+    }
+
+    &-manufacturer,
+    &-manufacturer-logo {
+        max-width: 100px;
+    }
+
+    &-name {
+        color: $sw-color-brand-primary;
+        font-weight: $font-weight-bold;
+        font-size: $product-detail-name-sm;
+        margin-bottom: 0;
+    }
+
+    &-price-container {
+        text-align: right;
+        width: 100%;
+    }
+
+    &-price {
+        font-size: $product-detail-price;
+        font-weight: $font-weight-semibold;
+    }
+
+    &-tax-link {
+        text-decoration: underline;
+        font-size: 10px;
+        line-height: 1rem;
+    }
+
+    &-price-unit,
+    &-tax {
+        font-size: $font-size-xs;
+    }
+
+    &-tax {
+        text-align: right;
+    }
+
+    &-description-title {
+        font-weight: $font-weight-semibold;
+    }
+
+    &-ordernumber-container {
+        margin-top: 28px;
+        font-size: $font-size-sm;
+    }
+
+    &-reviews,
+    &-ordernumber-container {
+        margin-bottom: 0;
+    }
+
+    &-reviews {
+        font-size: $font-size-xs;
+    }
+
+    &-ordernumber-label {
+        font-weight: $font-weight-normal;
+    }
+
+    &-configurator-group.product-detail-quantity {
+        margin-bottom: 0;
+    }
+
+    &-quantity-select {
+        @include border-radius($configurator-border-radius);
+
+        border: 1px solid $border-color;
+        padding: 5px 20px;
+        background: $custom-select-indicator-gray no-repeat right 20px center/1rem;
+    }
+
+    &-properties-table {
+        th,
+        td {
+            padding: 16px 8px 16px 16px;
+            font-weight: $font-weight-base;
+        }
+    }
+
+    &-ordernumber-container {
+        margin-top: 0;
+    }
+
+    .buy-widget-container {
+        &-block {
+            flex-wrap: wrap;
+        }
+
+        @include media-breakpoint-up(lg) {
+            justify-content: flex-end;
+
+            > .btn-buy {
+                flex-basis: 303px;
+                margin-left: 14px;
+                flex-shrink: 0;
+            }
+        }
+    }
+
+    @include media-breakpoint-up(lg) {
+        &-name {
+            font-size: $product-detail-name;
+        }
+
+        &-price {
+            font-size: $product-detail-price-lg;
+        }
+    }
+
+    @include media-breakpoint-only(md) {
+        .product-detail-form-container {
+            margin-top: 0;
+        }
+
+        .product-detail-configurator-container {
+            margin-bottom: $configurator-padding-sm;
+        }
+    }
+}
+
+.product-detail-form-container {
+    overflow: hidden;
+
+    div[data-swag-paypal-installment-banner='true'],
+    div[data-swag-paypal-express-button='true'] {
+        @extend .col-12;
+
+        @include media-breakpoint-up(md) {
+            @include make-col(8);
+        }
+    }
+
+    div[data-amazon-pay-button-product-detail='true'] {
+        @include media-breakpoint-down(sm) {
+            > .col-8 {
+                @include make-col(12)
+            }
+        }
+    }
+
+    .paypal-buttons-context-iframe > iframe.component-frame {
+        // fix product variants dropdown display below Paypal button on product detail page
+        z-index: 0 !important;
+    }
+}
+
+.product-block-prices-grid {
+    margin-bottom: 0;
+
+    .product-block-prices-cell {
+        padding: 10px 16px 10px 16px;
+    }
+}
+
+.swag-cms-extensions-quickview-product-buy-form {
+    div[data-swag-paypal-installment-banner='true'],
+    div[data-swag-paypal-express-button='true'] {
+        @include media-breakpoint-up(md) {
+            @include make-col(12);
+        }
+    }
+
+    .buy-widget__price,
+    .buy-widget__button {
+        @include make-col(12);
+    }
+
+    .swag-cms-extensions-quickview-content--buy-button {
+        @include make-col(12);
+    }
+
+    .product-detail-price {
+        text-align: right;
+    }
+
+    .product-block-prices,
+    .product-detail-price {
+        margin-top: $spacer-lg;
+    }
+}
+
+// Tablet stripped for graduated price
+.product-block-prices-table {
+    thead th {
+        border-right: 1px solid $white;
+        border-top: 0;
+        border-bottom: 0;
+    }
+
+    th {
+        font-weight: $font-weight-base;
+    }
+}
+
+.product-block-prices {
+    &-table {
+        margin-bottom: 0;
+
+        th,
+        td {
+            border: 0;
+        }
+    }
+
+    &-head {
+        background-color: transparent;
+    }
+}
+
+.product-wishlist {
+    text-align: center;
+
+    &-action {
+        border-bottom: 1px solid $gray-900;
+        display: inline-flex;
+    }
+
+    &-btn-content {
+        font-weight: $font-weight-bold;
+        font-size: $btn-font-size;
+        text-decoration: none;
+        text-transform: uppercase;
+    }
+
+    .icon-wishlist {
+        width: 12px;
+        height: 12px;
+    }
+}
+
+.product-slider-container {
+    @extend .pb-4;
+}

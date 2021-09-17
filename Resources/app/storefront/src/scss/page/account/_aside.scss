@@ -1,0 +1,10 @@
+.account-aside-item {
+    &.is-active,
+    &.list-group-item {
+        background: inherit;
+    }
+
+    &.is-active {
+        font-weight: $font-weight-bolder;
+    }
+}

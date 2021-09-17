@@ -1,0 +1,92 @@
+.cms-block {
+    .cms-block-container {
+        h3 {
+            font-size: $font-size-sm;
+            text-transform: uppercase;
+            font-weight: $font-weight-bold;
+            color: $sw-color-brand-primary;
+
+            letter-spacing: $letter-spacing-base;
+            border-bottom: 1px solid $border-color;
+            padding-bottom: 3px;
+            margin-bottom: 20px;
+        }
+    }
+
+    &.cms-block-gallery-buybox {
+        overflow: visible;
+    }
+
+    &.cms-block-sidebar-filter {
+        &::after {
+            content: "";
+            display: block;
+            margin: auto 20px;
+            max-width: 100%;
+            border-bottom: 1px solid $border-color;
+        }
+    }
+
+    .cms-element-form {
+        .card-title {
+            font-size: $h1-font-size-lg;
+        }
+    }
+
+    .sw-cms-form-cover-image {
+        object-fit: cover;
+    }
+
+    &-product-heading .cms-block-container:first-child {
+        @extend .p-0;
+    }
+
+    &-gallery-buybox .cms-block-container:first-child {
+        @extend .p-0;
+    }
+
+    @include media-breakpoint-up(md) {
+        &.cms-block-text-two-column {
+            .cms-element-form {
+                padding: 50px;
+            }
+        }
+
+        .sw-cms-form-content {
+            padding-top: $cms-form-top-and-bottom-padding;
+            padding-bottom: $cms-form-top-and-bottom-padding;
+        }
+
+        .sw-cms-form-cover-image {
+            min-height: $cms-form-cover-image-height;
+        }
+    }
+
+    @include media-breakpoint-down(md) {
+        &.cms-block-text-two-column {
+            .cms-element-form {
+                padding-top: 50px;
+            }
+        }
+
+        .sw-cms-form-content {
+            padding-top: 0px;
+            padding-bottom: 50px;
+        }
+
+        .sw-cms-form-cover-image {
+            max-height: $cms-form-cover-image-height;
+        }
+    }
+
+    @include media-breakpoint-down(sm) {
+        &.cms-block-image-text .cms-row > :first-child,
+        &.cms-block-image-text-cover .cms-row > :first-child {
+            margin-bottom: 0;
+        }
+
+        .sw-cms-form-cover-image {
+            max-height: $cms-form-cover-image-height-sm;
+        }
+    }
+}

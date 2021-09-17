@@ -1,0 +1,72 @@
+.custom-switch {
+    .custom-control-label {
+        line-height: $font-size-base * $line-height-base;
+
+        &::before {
+            border-radius: 1px;
+            background-color: $gray-300;
+        }
+
+        &::after {
+            border-radius: 1px;
+            background-color: $white;
+        }
+    }
+
+    .custom-control-input:checked ~ .custom-control-label::after {
+        background-color: $white;
+    }
+}
+
+.custom-checkbox {
+    .custom-control-label {
+        cursor: pointer;
+        line-height: $font-size-base * $line-height-base;
+
+        &::before {
+            border-radius: 0;
+            background: $white;
+        }
+
+        &::after {
+            top: 8px;
+            left: -22px;
+            width: 12px;
+            height: 12px;
+        }
+    }
+}
+
+// Select
+.custom-select {
+    border: none;
+    outline: none;
+    border-bottom: $custom-select-border-width solid $custom-select-border-color;
+
+    &:invalid {
+        color: $gray-600;
+    }
+
+    &:valid {
+        border-color: $custom-control-active-border-color;
+    }
+
+    &:disabled {
+        opacity: 0.4;
+    }
+}
+
+.was-validated {
+    .custom-select {
+        &:invalid {
+            opacity: 1;
+            color: $form-feedback-invalid-color;
+        }
+    }
+}
+
+@include media-breakpoint-up(lg) {
+    .custom-select {
+        font-size: $custom-select-font-size-lg;
+    }
+}

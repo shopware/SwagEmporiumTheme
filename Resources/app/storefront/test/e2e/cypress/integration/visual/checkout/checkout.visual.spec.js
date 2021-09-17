@@ -1,0 +1,112 @@
+import CheckoutPageObject from '../../../support/pages/checkout.page-object';
+import AccountPageObject from '../../../support/pages/account.page-object';
+
+let product = {};
+
+describe('Checkout: Visual tests', () => {
+    beforeEach(() => {
+        return cy.setToInitialState()
+            .then(() => {
+                return cy.createProductFixture()
+            })
+            .then(() => {
+                return cy.fixture('product');
+            })
+            .then((result) => {
+                product = result;
+                return cy.createCustomerFixtureStorefront();
+            })
+            .then(() => {
+                cy.visit('/');
+            }).then(() => {
+                cy.get('.js-cookie-configuration-button > .btn').should('be.visible').click();
+                cy.get('.offcanvas-cookie > .btn').scrollIntoView().should('be.visible').click();
+            });
+    });
+
+    it('@visual: check appearance of basic checkout workflow', () => {
+        const page = new CheckoutPageObject();
+        const accountPage = new AccountPageObject();
+
+        // Product detail
+        cy.get('.header-search-input')
+            .type(product.name);
+        cy.get('.search-suggest-product-name').contains(product.name);
+
+        cy.takeSnapshot('[Checkout] Search product result',
+            '.header-search',
+            {widths: [375, 768, 1920]});
+
+        cy.get('.search-suggest-product-name').click();
+
+        cy.takeSnapshot('[Checkout] See product',
+            '.product-detail',
+            {widths: [375, 768, 1920]});
+
+        cy.get('.product-detail-buy .btn-buy').click();
+
+        // Off canvas
+        cy.get('.offcanvas').should('be.visible');
+        cy.get('.cart-item-price').contains('64');
+        cy.get('.offcanvas').should('be.visible');
+        cy.contains('Continue shopping').should('be.visible');
+        cy.contains('Continue shopping').click();
+
+        cy.scrollTo('top');
+        cy.wait(1000);
+        cy.get('.header-cart-total').should('be.visible');
+        cy.get('.header-cart-total').contains('64');
+        cy.get('.header-cart-total').click();
+        cy.get('.offcanvas').should('be.visible');
+
+        // Take snapshot for visual testing on desktop
+        cy.takeSnapshot('[Checkout] Offcanvas',
+            `${page.elements.offCanvasCart}.is-open`,
+            {widths: [375, 768, 1920]});
+
+        cy.get(`${page.elements.cartItem}-label`).contains(product.name);
+
+        // Checkout
+        cy.get('.offcanvas-cart-actions .btn-primary').click();
+
+        // Login
+        cy.get('.checkout-main').should('be.visible');
+        cy.get('.login-collapse-toggle').should('be.visible');
+        cy.get('.login-collapse-toggle').click();
+
+        // Take snapshot for visual testing on desktop
+        cy.takeSnapshot('[Checkout] Login', accountPage.elements.loginCard, {widths: [375, 768, 1920]});
+
+        cy.get('#loginMail').type('test@example.com');
+        cy.get('#loginPassword').type('shopware');
+        cy.get(`${accountPage.elements.loginSubmit} [type="submit"]`).click();
+
+        // Confirm
+        cy.get('.confirm-tos .card-title').contains('Terms and conditions and cancellation policy');
+
+        // Take snapshot for visual testing on desktop
+        cy.takeSnapshot('[Checkout] Confirm', '.confirm-tos', {widths: [375, 768, 1920]});
+
+        cy.get('.confirm-tos .custom-checkbox label').scrollIntoView();
+        cy.get('.confirm-tos .custom-checkbox label').click(1, 1);
+        cy.get('.confirm-address').contains('Pep Eroni');
+        cy.get(`${page.elements.cartItem}-details-container ${page.elements.cartItem}-label`).contains(product.name);
+        cy.get(`${page.elements.cartItem}-total-price`).contains(product.price[0].gross);
+        cy.get(`${page.elements.cartItem}-total-price`).contains(product.price[0].gross);
+
+        // Finish checkout
+        cy.get('#confirmFormSubmit').scrollIntoView();
+        cy.get('#confirmFormSubmit').click();
+
+        // Take snapshot for visual testing on desktop
+        cy.takeSnapshot('[Checkout] Finish', '.finish-header', {widths: [375, 768, 1920]});
+    });
+
+    it('@visual: checkout empty cart', () => {
+        cy.visit('/checkout/cart');
+
+        cy.takeSnapshot('[Checkout] Empty cart',
+            '.is-act-cartpage',
+            {widths: [375, 768, 1920]});
+    })
+});

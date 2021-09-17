@@ -1,0 +1,169 @@
+{
+    "name": "Shopware theme template",
+    "author": "Shopware AG",
+    "views": [
+        "@Storefront",
+        "@SwagPayPal",
+        "@SwagCmsExtensions",
+        "@SwagCustomizedProducts",
+        "@Plugins",
+        "@SwagThemeTemplate"
+    ],
+    "previewMedia": "app/storefront/src/assets/images/showroomPreview.png",
+    "style": [
+        "app/storefront/src/scss/overrides.scss",
+        "@Storefront",
+        "app/storefront/src/scss/base.scss"
+    ],
+    "script": [
+        "@Storefront",
+        "app/storefront/dist/storefront/js/swag-theme-template.js"
+    ],
+    "asset": [
+        "app/storefront/src/assets"
+    ],
+    "config": {
+        "blocks": {
+            "footer": {
+                "label": {
+                    "en-GB": "Footer",
+                    "de-DE": "Footer"
+                }
+            }
+        },
+        "fields": {
+            "sw-color-brand-primary": {
+                "value": "#26262f"
+            },
+            "sw-color-brand-secondary": {
+                "value": "#cab898"
+            },
+            "sw-border-color": {
+                "value": "#e4e6ea"
+            },
+            "sw-background-color": {
+                "value": "#ffffff"
+            },
+            "sw-color-success": {
+                "value": "#4bc87b"
+            },
+            "sw-color-info": {
+                "value": "#4babbc"
+            },
+            "sw-color-warning": {
+                "value": "#ee994a"
+            },
+            "sw-color-danger": {
+                "value": "#a1090b"
+            },
+            "sw-font-family-base": {
+                "value": "'Work Sans', sans-serif"
+            },
+            "sw-text-color": {
+                "value": "#141719"
+            },
+            "sw-font-family-headline": {
+                "value": "'Work Sans', sans-serif"
+            },
+            "sw-headline-color": {
+                "value": "#525a62"
+            },
+            "sw-color-price": {
+                "value": "#141719"
+            },
+            "sw-color-buy-button": {
+                "value": "#26262f"
+            },
+            "sw-color-buy-button-text": {
+                "value": "#fdfdfd"
+            },
+            "sw-logo-desktop": {
+                "type": "media",
+                "value": "app/storefront/src/assets/logo/showroom-logo-desktop.svg"
+            },
+            "sw-logo-tablet": {
+                "type": "media",
+                "value": "app/storefront/src/assets/logo/showroom-logo-desktop.svg"
+            },
+            "sw-logo-mobile": {
+                "type": "media",
+                "value": "app/storefront/src/assets/logo/showroom-logo-mobile.svg"
+            },
+            "sw-footer-bg-color": {
+                "label": {
+                    "en-GB": "Background colour",
+                    "de-DE": "Hintergrundfarbe"
+                },
+                "type": "color",
+                "value": "#26262f",
+                "editable": true,
+                "block": "footer",
+                "order": 100
+            },
+            "sw-footer-text-color": {
+                "label": {
+                    "en-GB": "Text colour",
+                    "de-DE": "Textfarbe"
+                },
+                "type": "color",
+                "value": "#fdfdfd",
+                "editable": true,
+                "block": "footer",
+                "order": 200
+            },
+            "sw-footer-logo": {
+                "label": {
+                    "en-GB": "Footer logo",
+                    "de-DE": "Footer Logo"
+                },
+                "type": "media",
+                "value": "app/storefront/src/assets/logo/showroom-logo-footer-desktop.svg",
+                "editable": true,
+                "block": "media",
+                "order": 300
+            },
+            "sw-footer-logo-mobile": {
+                "label": {
+                    "en-GB": "Footer mobile logo",
+                    "de-DE": "Footer mobile Logo"
+                },
+                "type": "media",
+                "value": "app/storefront/src/assets/logo/showroom-logo-footer-mobile.svg",
+                "editable": true,
+                "block": "media",
+                "order": 400
+            },
+            "sw-account-login-background": {
+                "label": {
+                    "en-GB": "Background of account login",
+                    "de-DE": "Hintergrund der Kontoanmeldung"
+                },
+                "type": "media",
+                "value": "app/storefront/src/assets/images/dillon-mangum-9489sFfgk4c-unsplash.jpg",
+                "editable": true,
+                "block": "media",
+                "order": 500
+            },
+            "sw-contact-form": {
+                "label": {
+                    "en-GB": "Contact form image",
+                    "de-DE": "Kontaktformular Bild"
+                },
+                "type": "media",
+                "value": "app/storefront/src/assets/images/contact-form.png",
+                "editable": true,
+                "block": "media"
+            },
+            "sw-newsletter-form": {
+                "label": {
+                    "en-GB": "Newsletter form image",
+                    "de-DE": "Newsletter Formular Bild"
+                },
+                "type": "media",
+                "value": "app/storefront/src/assets/images/newsletter-form.png",
+                "editable": true,
+                "block": "media"
+            }
+        }
+    }
+}

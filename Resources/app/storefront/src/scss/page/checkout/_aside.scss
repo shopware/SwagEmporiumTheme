@@ -1,0 +1,109 @@
+$checkout-total-font-size: $font-size-base;
+$checkout-total-font-size-md: 20px;
+
+$checkout-header-font-size-sm: 18px;
+$checkout-header-font-size: 28px;
+$checkout-aside-spacing: 20px;
+
+.checkout-aside-summary {
+    padding-bottom: $checkout-aside-spacing;
+    border-bottom: 1px solid $border-color;
+
+    &-list {
+        @extend .no-gutters;
+
+        dd {
+            margin-bottom: 0;
+        }
+    }
+
+    &-header {
+        font-size: $checkout-header-font-size-sm;
+    }
+
+    &-total {
+        font-size: $checkout-total-font-size;
+        padding-top: $checkout-aside-spacing;
+        padding-bottom: $checkout-aside-spacing;
+        border-bottom: 1px solid $border-color;
+    }
+
+    &-label {
+        color: $gray-700;
+    }
+
+    &-net {
+        padding-top: $checkout-aside-spacing;
+    }
+
+    @include media-breakpoint-up(lg) {
+        &-total {
+            font-size: $h4-font-size;
+        }
+
+        &-header {
+            font-size: $checkout-header-font-size;
+            margin-bottom: $spacer-lg;
+        }
+    }
+}
+
+.cart-add-promotion {
+    input.form-control {
+        padding-top: 30px;
+        padding-bottom: 30px;
+    }
+}
+
+.checkout-aside-action-code {
+    padding: 30px 0;
+
+    @include media-breakpoint-up(lg) {
+        padding: 50px 0;
+    }
+}
+
+.checkout-aside-action-code,
+.checkout-aside-add-code {
+    margin-top: 0;
+}
+
+#addPromotion,
+#addPromotionOffcanvasCart {
+    > .icon {
+        width: 1.5rem;
+        color: $sw-color-brand-primary;
+        opacity: 0.4;
+    }
+}
+
+#addPromotionInput,
+#addPromotionOffcanvasCartInput {
+    @include text-truncate();
+
+    padding-right: $spacer-md;
+
+    &:focus + div .icon {
+        opacity: 1;
+    }
+}
+
+.checkout-aside {
+    &-products {
+        @extend .px-0;
+    }
+
+    &-product-header {
+        margin-top: $spacer-xl;
+    }
+
+    &-item {
+        padding: 30px 0px;
+        border-bottom: 1px solid $border-color;
+        margin-bottom: 0;
+    }
+
+    &-item-link-price {
+        font-weight: $font-weight-bold;
+    }
+}

@@ -1,0 +1,57 @@
+$header-height: 69px;
+$footer-height: 69px;
+
+@mixin contain-height() {
+    height: calc(100vh - #{$header-height} -  #{$footer-height});
+}
+
+.is-ctl-maintenance {
+    .header-logo-main {
+        img {
+            max-height: $logo-max-height;
+        }
+    }
+}
+
+.header-row {
+    padding: 20px 0;
+}
+
+.container-maintenance {
+    margin-bottom: $footer-height;
+    height: 100%;
+
+    img {
+        width: 100%;
+        object-fit: cover;
+        height: 100%;
+    }
+}
+
+@include media-breakpoint-up(lg) {
+    .maintenance-image-wrap {
+        @include contain-height();
+    }
+}
+
+@include media-breakpoint-between(sm, md) {
+    .container-maintenance {
+        @include contain-height()
+    }
+}
+
+@include media-breakpoint-down(sm) {
+    .container-maintenance {
+        @include contain-height()
+    }
+}
+
+.footer-simple {
+    padding: 20px 0;
+    position: fixed;
+    bottom: 0;
+
+    img {
+        max-height: $logo-max-height;
+    }
+}

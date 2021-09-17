@@ -1,0 +1,11 @@
+{% sw_extends '@Storefront/storefront/layout/footer/footer-minimal.html.twig' %}
+
+{% block layout_footer_inner_container %}
+    <footer class="footer-minimal">
+        {% block layout_footer_bottom %}
+            <div class="footer-main">
+                {{ parent() }}
+            </div>
+        {% endblock %}
+    </footer>
+{% endblock %}

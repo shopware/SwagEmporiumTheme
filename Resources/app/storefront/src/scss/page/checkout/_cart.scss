@@ -1,0 +1,124 @@
+$checkout-aside-spacing: 50px;
+
+.is-act-cartpage {
+    .checkout {
+        .checkout-main {
+            @extend .col-sm-12;
+            @extend .col-md-6;
+            @extend .col-lg-8;
+
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .checkout-aside {
+            @extend .col-sm-12;
+            @extend .col-md-6;
+            @extend .col-lg-4;
+            @extend .col-xl-4;
+
+            margin-left: 0;
+
+            @include media-breakpoint-up(lg) {
+                padding-left: 24px;
+                padding-right: 24px;
+            }
+        }
+
+        .checkout-aside-container {
+            top: 20px;
+        }
+   }
+}
+
+.checkout-container {
+    .flashbags {
+        .alert {
+            margin-top: 0;
+        }
+    }
+
+    .checkout-aside-summary {
+        padding: 0;
+        background-color: transparent;
+    }
+
+    @include media-breakpoint-up(md) {
+        .checkout-aside {
+            background-color: $white;
+        }
+    }
+}
+
+.cart-main-header {
+    margin-bottom: $spacer-sm;
+
+    &-wrapper {
+        margin-bottom: 30px;
+    }
+
+    @include media-breakpoint-up(md) {
+        &-wrapper {
+            margin-bottom: 40px;
+        }
+    }
+}
+
+.cart-table-header {
+    padding-bottom: 5px;
+    margin-bottom: 0;
+    border-bottom: 1px solid $border-color;
+}
+
+.cart-table-header,
+.cart-item-total-price {
+    font-weight: $font-weight-semibold;
+}
+
+.cart-add-product {
+    max-width: none;
+}
+
+.cart-shipping-costs-btn {
+    @extend .px-0;
+
+    text-transform: uppercase;
+    margin-bottom: 40px;
+}
+
+.cart-shipping-costs-container {
+    font-size: $font-size-sm;
+
+    label {
+        text-transform: uppercase;
+        letter-spacing: $letter-spacing-base;
+    }
+}
+
+.cart-header-row {
+    > div:last-child {
+        padding-right: $card-spacer-y;
+    }
+
+    .cart-header-total-price {
+        padding-right: 1.5rem;
+    }
+}
+
+.cart-header-unit-price {
+    text-align: left;
+}
+
+@include media-breakpoint-up(lg) {
+    .cart-header-row .cart-header-unit-price {
+        padding-left: 25px;
+    }
+
+    .cart-item-row .cart-item-unit-price {
+        padding-left: 30px;
+    }
+
+    .cart-item-row .cart-item-unit-price {
+        justify-content: flex-start;
+    }
+}

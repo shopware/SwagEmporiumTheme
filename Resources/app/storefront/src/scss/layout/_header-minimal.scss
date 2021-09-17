@@ -1,0 +1,44 @@
+.header-minimal {
+    border-bottom: 1px solid $border-color;
+    font-size: $font-size-xs;
+
+    &-logo {
+        justify-content: center;
+    }
+
+    .header-logo-main-img {
+        max-height: $logo-max-height;
+    }
+
+    &-contact {
+        color: $gray-700;
+    }
+
+    &-row {
+        padding: 29px 0;
+    }
+
+    @include media-breakpoint-up(lg) {
+        font-size: $font-size-base;
+
+        &-contact {
+            > strong:first-child {
+                font-size: 18px;
+            }
+        }
+    }
+}
+
+.header-minimal-back-to-shop-button {
+    display: inline-flex;
+    font-weight: $font-weight-normal;
+    text-transform: none;
+
+    .icon {
+        margin-right: 0.5rem;
+
+        svg {
+            top: 0;
+        }
+    }
+}

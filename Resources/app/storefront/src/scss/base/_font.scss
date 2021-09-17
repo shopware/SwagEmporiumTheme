@@ -1,0 +1,13 @@
+@font-face {
+    font-family: 'Work Sans';
+    src: url('#{$asset-path}/font/worksans/WorkSans-VariableFont_wght.ttf');
+    font-style: normal;
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: 'Work Sans';
+    src: url('#{$asset-path}/font/worksans/WorkSans-Medium.ttf');
+    font-style: normal;
+    font-weight: 500 600;
+}

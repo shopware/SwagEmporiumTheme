@@ -1,0 +1,46 @@
+.form-label {
+    font-size: 12px;
+    font-weight: 500;
+    color: $sw-color-brand-primary;
+
+    text-transform: uppercase;
+    margin-bottom: 0;
+    letter-spacing: $letter-spacing-base;
+
+    height: 8px;
+    line-height: 16px;
+}
+
+.form-control {
+    border: none;
+    border-bottom: $input-border-width solid $input-border-color;
+
+    &:disabled,
+    &[readonly] {
+        border-color: $gray-200;
+        color: $gray-600;
+    }
+
+    .was-validated &:invalid {
+        &::placeholder {
+            color: $form-feedback-invalid-color;
+        }
+    }
+
+    &::placeholder {
+        color: $input-placeholder-color;
+    }
+}
+
+textarea.form-control {
+    border: $input-border-width solid $input-border-color;
+    padding: 15px;
+    margin-top: 10px;
+}
+
+@include media-breakpoint-up(lg) {
+    .form-control {
+        font-size: $input-font-size-lg;
+        padding: $input-padding-y-lg $input-padding-x;
+    }
+}

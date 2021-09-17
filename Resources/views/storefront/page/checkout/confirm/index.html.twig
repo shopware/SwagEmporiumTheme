@@ -1,0 +1,82 @@
+{% sw_extends '@Storefront/storefront/page/checkout/confirm/index.html.twig' %}
+
+{% block page_checkout_confirm %}
+    {% block page_checkout_confirm_header %}
+        {{ parent() }}
+    {% endblock %}
+
+    {% block page_checkout_confirm_alerts %}
+        {{ parent() }}
+    {% endblock %}
+
+    {% block page_checkout_confirm_address %}
+        <h2 class="confirm-main-sub">{{ "showroom.checkout.confirmAddress"|trans|sw_sanitize }}</h2>
+        {{ parent() }}
+    {% endblock %}
+
+    {% block page_checkout_confirm_payment_shipping %}
+        <h2 class="confirm-main-sub">{{ "showroom.checkout.confirmPaymentShipping"|trans|sw_sanitize }}</h2>
+        {% block page_checkout_confirm_payment %}
+            <div class="row no-gutters">
+                {% sw_include '@Storefront/storefront/page/checkout/confirm/confirm-payment.html.twig' %}
+            </div>
+        {% endblock %}
+
+        {% block page_checkout_confirm_shipping %}
+            <div class="row no-gutters">
+                {% sw_include '@Storefront/storefront/page/checkout/confirm/confirm-shipping.html.twig' %}
+            </div>
+        {% endblock %}
+    {% endblock %}
+
+    {% block page_checkout_confirm_hidden_line_items_information %}
+        {{ parent() }}
+    {% endblock %}
+
+    {% block page_checkout_confirm_customer_comment_header %}
+        {{ parent() }}
+    {% endblock %}
+
+    {% block page_checkout_confirm_customer_comment_control %}
+        {{ parent() }}
+    {% endblock %}
+
+{% endblock %}
+
+{% block page_checkout_confirm_tos_header %}
+    <div class="card-title confirm-tos-title">
+        {{ "checkout.confirmTermsHeader"|trans|sw_sanitize }}
+    </div>
+{% endblock %}
+
+{% block page_checkout_aside_container %}
+    <div class="checkout-aside-container">
+        {% block page_checkout_cart_header %}
+            <h2 class="confirm-product-header">
+                {{ "checkout.cartHeader"|trans|sw_sanitize }}
+            </h2>
+        {% endblock %}
+
+        {% block page_checkout_confirm_product_table %}
+            {{ parent() }}
+        {% endblock %}
+        <div class="row">
+            <div class="col-12 col-lg-7">
+                {% block page_checkout_confirm_tos %}
+                    {{ parent() }}
+                {% endblock %}
+            </div>
+            <div class="col-12 col-lg-5">
+                {% block page_checkout_aside_summary %}
+                    {{ parent() }}
+                {% endblock %}
+
+                {% block page_checkout_aside_actions %}
+                    {{ parent() }}
+                {% endblock %}
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block page_checkout_additional %}{% endblock %}

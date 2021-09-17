@@ -1,0 +1,106 @@
+/*
+Bootstrap variables
+==================================================
+Contains variable overrides for bootstrap variables located under
+shopRoot/src/vendor/shopware/storefront/Resources/app/storefront/vendor/bootstrap/scss/_variables.scss
+*/
+
+// Options
+$enable-responsive-font-sizes: false !default;
+$font-size-base: 0.875rem !default;
+$font-size-sm: 0.75rem !default;
+$font-size-xs: 0.6875rem !default;
+$asset-path: '../assets' !default;
+
+// Color system
+$gray-100: #f9f9f9 !default;
+$gray-200: #f1f3f4 !default;
+$gray-300: #e4e6ea !default;
+$gray-400: #cacccf !default;
+$gray-500: #afb5bd !default;
+$gray-600: #9099a4 !default;
+$gray-700: #525a62 !default;
+$gray-800: #31383c !default;
+$gray-900: #141719 !default;
+
+// Typography
+$h1-font-size: 24px !default;
+$h1-font-size-lg: 36px !default;
+$h2-font-size: 20px !default;
+$h2-font-size-lg: 28px !default;
+$h3-font-size: 24px !default;
+$h4-font-size: 20px !default;
+$h5-font-size: 16px !default;
+$h6-font-size: 14px !default;
+
+$font-weight-bold: 500 !default;
+$font-weight-bolder: 600 !default;
+
+// Components
+$border-radius: 0 !default;
+$border-radius-lg: 1px !default;
+$border-radius-sm: 0 !default;
+
+// Buttons + Forms
+$input-btn-padding-y-sm: 0.4375rem !default;
+$input-btn-padding-y: 0.4375rem !default;
+$input-btn-padding-y-lg: 0.875rem !default;
+
+// Button
+$btn-line-height-sm: 22px !default;
+$btn-line-height: 20px !default;
+$btn-font-size: 10px !default;
+$btn-font-size-sm: 10px !default;
+$btn-font-size-lg: 12px !default;
+$btn-padding-x: 24px !default;
+$btn-padding-y: 14px !default;
+$btn-padding-x-sm: 24px !default;
+$btn-padding-y-sm: 6px !default;
+$btn-padding-x-lg: 40px !default;
+$btn-padding-y-lg: 10px !default;
+
+$disabled-btn-border-color: #eceef0 !default;
+$btn-secondary-hover-color: #bca687 !default;
+
+// Forms
+$input-bg: transparent !default;
+$input-color: $sw-color-brand-primary !default;
+$input-border-color: $gray-300 !default;
+$input-placeholder-color: $gray-500 !default;
+$form-feedback-invalid-color: $sw-color-danger !default;
+$form-feedback-valid-color: $gray-900 !default;
+
+$input-padding-x: 0 !default;
+$input-font-size: 0.875rem !default;
+$input-font-size-lg: 1.125rem !default;
+
+// Select
+$custom-control-indicator-border-color: $gray-300 !default;
+$custom-checkbox-indicator-border-radius: 4px !default;
+
+$custom-select-indicator: url('#{$asset-path}/icon/chevron-down.svg') !default;
+$custom-select-bg-size: 1rem !default;
+
+$custom-switch-width: 1.75rem !default;
+$custom-switch-indicator-size: 0.75rem !default;
+$custom-control-indicator-border-color: $sw-color-brand-primary !default;
+
+// Badges
+$badge-font-size: 10px !default;
+
+// List items
+$list-group-action-color: $gray-900 !default;
+$list-group-action-hover-color: $gray-900 !default;
+$list-group-action-active-color: $gray-900 !default;
+
+// Grid
+$grid-gutter-width: 48px !default;
+$form-grid-gutter-width: $grid-gutter-width;
+
+// Modal
+$modal-content-box-shadow-xs: 0 0 20px 0 rgba(38, 38, 47, 0.2) !default;
+
+// Card
+$card-spacer-y: 20px;
+
+$line-height-base: 2 !default;

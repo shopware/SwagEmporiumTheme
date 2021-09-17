@@ -1,0 +1,57 @@
+{% sw_extends '@Storefront/storefront/page/error/error-maintenance.html.twig' %}
+
+{% block error_maintenance_header %}
+    <header class="header-main">
+        {% block error_maintenance_header_inner %}
+            <div class="container">
+                <div class="row align-items-center header-row justify-content-center">
+                    <div class="col-12 col-lg-auto text-center">
+                        {% sw_include '@Storefront/storefront/layout/header/logo.html.twig' %}
+                    </div>
+                </div>
+            </div>
+        {% endblock %}
+    </header>
+{% endblock %}
+
+{% block error_maintenance_main_content %}
+    {% if page is not null %}
+        {{ parent() }}
+    {% else %}
+        {% block error_maintenance_main_fallback %}
+            <div class="container container-maintenance align-middle d-flex">
+                <div class="row no-gutters justify-content-center w-100">
+                    <div class="col-12 col-lg-6 mb-5 mb-md-0">
+                        <div class="maintenance-image-wrap">
+                            {% block error_maintenance_main_picture %}
+                                <picture>
+                                    <source srcset="{{ asset('bundles/swagshowroomtheme/assets/images/maintenance-tablet.png', 'theme') }}"
+                                            media="(min-width: {{ theme_config('breakpoint.md') }}px) and (max-width: {{ theme_config('breakpoint.lg') - 1 }}px)">
+
+                                    <source srcset="{{ asset('bundles/swagshowroomtheme/assets/images/maintenance-mobile.png', 'theme') }}"
+                                            media="(max-width: {{ theme_config('breakpoint.md') - 1 }}px)">
+
+                                    <img src="{{ asset('bundles/swagshowroomtheme/assets/images/maintenance-desktop.png', 'theme') }}"
+                                         alt="{{ "general.maintenanceModeHeader"|trans|striptags }}"
+                                         class="mx-auto py-3 py-lg-5"/>
+                                </picture>
+                            {% endblock %}
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 mr-md-auto col-lg-4 offset-lg-1 align-self-lg-center">
+                        {% block error_maintenance_main_header %}
+                            <h2>{{ "general.maintenanceModeHeader"|trans }}</h2>
+                        {% endblock %}
+                        {% block error_maintenance_main_description %}
+                            <p>{{ "general.maintenanceModeDescription"|trans }}</p>
+                        {% endblock %}
+                    </div>
+                </div>
+            </div>
+        {% endblock %}
+    {% endif %}
+{% endblock %}
+
+{% block error_maintenance_footer %}
+    {% sw_include '@Storefront/storefront/layout/footer/footer-simple.html.twig' %}
+{% endblock %}

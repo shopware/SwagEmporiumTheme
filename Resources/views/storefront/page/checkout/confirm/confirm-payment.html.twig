@@ -1,0 +1,13 @@
+{% sw_extends '@Storefront/storefront/page/checkout/confirm/confirm-payment.html.twig' %}
+
+{% block page_checkout_confirm_payment_current_text %}
+    <strong>{{ "checkout.confirmCurrentPaymentShipping"|trans|sw_sanitize }}</strong>
+    <br>
+    <span>
+        {% if paymentMethodInvalid %}
+            {{ "checkout.confirmSelectionNone"|trans|sw_sanitize }}
+        {% else %}
+            {{ context.paymentMethod.translated.name }}
+        {% endif %}
+    </span>
+{% endblock %}

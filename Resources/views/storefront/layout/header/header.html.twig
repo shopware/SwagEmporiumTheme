@@ -1,0 +1,75 @@
+{% sw_extends '@Storefront/storefront/layout/header/header.html.twig' %}
+
+{% block layout_header_navigation %}
+    <div class="container">
+        <div class="row align-items-center header-row">
+            {% block layout_header_logo %}
+                <div class="header-logo-col-fixed">
+                    {% sw_include '@Storefront/storefront/layout/header/logo.html.twig' %}
+                </div>
+                <div class="col-2 d-none d-sm-block">
+                    <div class="menu-button">
+                        {% block layout_header_navigation_toggle_button %}
+                            <button class="btn nav-main-toggle-btn header-actions-btn pl-0"
+                                    type="button"
+                                    data-offcanvas-menu="true"
+                                    aria-label="{{ "general.menuLink"|trans|striptags }}">
+                                {% block layout_header_navigation_toggle_button_icon %}
+                                    {{ parent() }}
+                                {% endblock %}
+                                <span class="d-none d-sm-inline">{{ "general.menuLink"|trans|striptags }}</span>
+                            </button>
+                        {% endblock %}
+                    </div>
+                </div>
+                <div class="col-12 order-2 col-sm order-sm-1"></div>
+            {% endblock %}
+
+            {% block layout_header_actions %}
+                <div class="col-12 order-1 col-sm-auto order-sm-2 header-actions-col">
+                    <div class="row no-gutters">
+                        {% block layout_header_navigation_toggle %}
+                            {{ parent() }}
+                        {% endblock %}
+
+                        {% block layout_header_search_toggle %}
+                            <div class="col-auto d-none d-lg-block">
+                                <div class="language-currency">
+                                    {% sw_include '@Storefront/storefront/layout/header/actions/language-currency-widget.html.twig' %}
+                                </div>
+                            </div>
+
+                            <div class="col-auto">
+                                <div class="search-toggle">
+                                    <button class="btn header-actions-btn search-toggle-btn js-search-toggle-btn collapsed"
+                                            type="button"
+                                            data-toggle="collapse"
+                                            data-target="#searchCollapse"
+                                            aria-expanded="false"
+                                            aria-controls="searchCollapse"
+                                            aria-label="{{ "header.searchButton"|trans|striptags }}">
+                                        {% sw_icon 'search' %}
+                                    </button>
+                                </div>
+                            </div>
+                        {% endblock %}
+
+                        {% if config('core.cart.wishlistEnabled') %}
+                            {% block layout_header_actions_wishlist %}
+                                {{ parent() }}
+                            {% endblock %}
+                        {% endif %}
+
+                        {% block layout_header_actions_account %}
+                            {{ parent() }}
+                        {% endblock %}
+
+                        {% block layout_header_actions_cart %}
+                            {{ parent() }}
+                        {% endblock %}
+                    </div>
+                </div>
+            {% endblock %}
+        </div>
+    </div>
+{% endblock %}
