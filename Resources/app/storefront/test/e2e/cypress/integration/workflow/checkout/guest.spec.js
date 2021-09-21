@@ -19,6 +19,8 @@ describe(`Checkout as Guest`, () => {
         const accountPage = new AccountPageObject();
 
         // Product detail
+        cy.get('.search-toggle-btn').click();
+
         cy.get('.header-search-input').should('be.visible');
         cy.get('.header-search-input').type(product.name);
         cy.get('.search-suggest-product-name').contains(product.name);
@@ -94,6 +96,8 @@ describe(`Checkout as Guest`, () => {
             const accountPage = new AccountPageObject();
 
             // Product detail
+            cy.get('.search-toggle-btn').click();
+
             cy.get('.header-search-input').should('be.visible');
             cy.get('.header-search-input').type(product.name);
             cy.get('.search-suggest-product-name').contains(product.name);

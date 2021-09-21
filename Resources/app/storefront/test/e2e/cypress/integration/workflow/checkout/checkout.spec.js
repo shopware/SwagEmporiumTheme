@@ -26,6 +26,8 @@ describe('Checkout: Basic', { tags: ['@workflow', '@checkout'] }, () => {
         const accountPage = new AccountPageObject();
 
         // Product detail
+        cy.get('.search-toggle-btn').click();
+
         cy.get('.header-search-input')
             .type(product.name);
         cy.get('.search-suggest-product-name').contains(product.name);
@@ -39,6 +41,9 @@ describe('Checkout: Basic', { tags: ['@workflow', '@checkout'] }, () => {
         cy.get('.cart-item-price').contains('64');
         cy.contains('Continue shopping').should('be.visible');
         cy.contains('Continue shopping').click();
+
+        cy.wait(1000);
+        cy.scrollTo('top');
         cy.get('.header-cart-total').contains('64');
         cy.get('.header-cart-total').click();
         cy.get('.offcanvas').should('be.visible');
@@ -50,8 +55,7 @@ describe('Checkout: Basic', { tags: ['@workflow', '@checkout'] }, () => {
 
         // Login
         cy.get('.checkout-main').should('be.visible');
-        cy.get('.login-collapse-toggle').should('be.visible');
-        cy.get('.login-collapse-toggle').click();
+        cy.get('#loginCollapse').click();
 
         cy.get('#loginMail').type('test@example.com');
         cy.get('#loginPassword').type('shopware');

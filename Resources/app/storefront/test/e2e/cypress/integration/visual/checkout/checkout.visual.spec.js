@@ -29,6 +29,7 @@ describe('Checkout: Visual tests', () => {
         const accountPage = new AccountPageObject();
 
         // Product detail
+        cy.get('.search-toggle-btn').click();
         cy.get('.header-search-input')
             .type(product.name);
         cy.get('.search-suggest-product-name').contains(product.name);
@@ -71,8 +72,7 @@ describe('Checkout: Visual tests', () => {
 
         // Login
         cy.get('.checkout-main').should('be.visible');
-        cy.get('.login-collapse-toggle').should('be.visible');
-        cy.get('.login-collapse-toggle').click();
+        cy.get('#loginCollapse').click();
 
         // Take snapshot for visual testing on desktop
         cy.takeSnapshot('[Checkout] Login', accountPage.elements.loginCard, {widths: [375, 768, 1920]});
