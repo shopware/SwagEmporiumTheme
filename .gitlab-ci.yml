@@ -8,5 +8,5 @@
 
 include:
     project: 'shopware/6/product/platform'
-    ref: 'next-17211/add-ci-template-for-themes'
+    ref: 'trunk'
     file: '.gitlab/templates/theme.yml'
