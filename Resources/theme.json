@@ -1,15 +1,15 @@
 {
-    "name": "Shopware theme template",
+    "name": "Emporium Theme",
     "author": "Shopware AG",
     "views": [
         "@Storefront",
         "@SwagPayPal",
         "@SwagCmsExtensions",
         "@SwagCustomizedProducts",
-        "@Plugins",
-        "@SwagThemeTemplate"
+        "@SwagEmporiumTheme",
+        "@Plugins"
     ],
-    "previewMedia": "app/storefront/src/assets/images/showroomPreview.png",
+    "previewMedia": "app/storefront/src/assets/images/preview.png",
     "style": [
         "app/storefront/src/scss/overrides.scss",
         "@Storefront",
@@ -17,13 +17,37 @@
     ],
     "script": [
         "@Storefront",
-        "app/storefront/dist/storefront/js/swag-theme-template.js"
+        "app/storefront/dist/storefront/js/swag-emporium-theme.js"
     ],
     "asset": [
         "app/storefront/src/assets"
     ],
     "config": {
         "blocks": {
+            "themeColors": {
+                "label": {
+                  "en-GB": "Theme colors",
+                  "de-DE": "Themenfarben"
+                }
+            },
+            "typography": {
+                "label": {
+                  "en-GB": "Typography",
+                  "de-DE": "Typografie"
+                }
+            },
+            "statusColors": {
+                "label": {
+                  "en-GB": "Status messages",
+                  "de-DE": "Status-Meldungen"
+                }
+            },
+            "media": {
+                "label": {
+                  "en-GB": "Media",
+                  "de-DE": "Medien"
+                }
+            },
             "footer": {
                 "label": {
                     "en-GB": "Footer",
@@ -33,61 +57,133 @@
         },
         "fields": {
             "sw-color-brand-primary": {
+                "label": {
+                  "en-GB": "Primary colour",
+                  "de-DE": "Primärfarbe"
+                },
                 "value": "#26262f"
             },
             "sw-color-brand-secondary": {
+                "label": {
+                  "en-GB": "Secondary colour",
+                  "de-DE": "Sekundärfarbe"
+                },
                 "value": "#cab898"
             },
             "sw-border-color": {
+                "label": {
+                  "en-GB": "Border",
+                  "de-DE": "Rahmen"
+                },
                 "value": "#e4e6ea"
             },
             "sw-background-color": {
+                "label": {
+                  "en-GB": "Background",
+                  "de-DE": "Hintergrund"
+                },
                 "value": "#ffffff"
             },
             "sw-color-success": {
+                "label": {
+                  "en-GB": "Success",
+                  "de-DE": "Erfolg"
+                },
                 "value": "#4bc87b"
             },
             "sw-color-info": {
+                "label": {
+                  "en-GB": "Information",
+                  "de-DE": "Information"
+                },
                 "value": "#4babbc"
             },
             "sw-color-warning": {
+                "label": {
+                  "en-GB": "Notice",
+                  "de-DE": "Hinweis"
+                },
                 "value": "#ee994a"
             },
             "sw-color-danger": {
+                "label": {
+                  "en-GB": "Error",
+                  "de-DE": "Fehler"
+                },
                 "value": "#a1090b"
             },
             "sw-font-family-base": {
-                "value": "'Work Sans', sans-serif"
+                "label": {
+                  "en-GB": "Text font type",
+                  "de-DE": "Schriftart Text"
+                },
+                "value": "'Sen', sans-serif"
             },
             "sw-text-color": {
+                "label": {
+                  "en-GB": "Text colour",
+                  "de-DE": "Textfarbe"
+                },
                 "value": "#141719"
             },
             "sw-font-family-headline": {
-                "value": "'Work Sans', sans-serif"
+                "label": {
+                  "en-GB": "Headline font type",
+                  "de-DE": "Schriftart Überschrift"
+                },
+                "value": "'Sen', sans-serif"
             },
             "sw-headline-color": {
+                "label": {
+                  "en-GB": "Headline colour",
+                  "de-DE": "Überschriftfarbe"
+                },
                 "value": "#525a62"
             },
             "sw-color-price": {
+                "label": {
+                  "en-GB": "Price",
+                  "de-DE": "Preis"
+                },
                 "value": "#141719"
             },
             "sw-color-buy-button": {
+                "label": {
+                  "en-GB": "Buy button",
+                  "de-DE": "Kaufen-Button"
+                },
                 "value": "#26262f"
             },
             "sw-color-buy-button-text": {
+                "label": {
+                  "en-GB": "Buy button text",
+                  "de-DE": "Kaufen-Button-Text"
+                },
                 "value": "#fdfdfd"
             },
             "sw-logo-desktop": {
+                "label": {
+                  "en-GB": "Desktop",
+                  "de-DE": "Desktop"
+                },
                 "type": "media",
-                "value": "app/storefront/src/assets/logo/showroom-logo-desktop.svg"
+                "value": "app/storefront/src/assets/logo/emporium-logo-desktop.svg"
             },
             "sw-logo-tablet": {
+                "label": {
+                  "en-GB": "Tablet",
+                  "de-DE": "Tablet"
+                },
                 "type": "media",
-                "value": "app/storefront/src/assets/logo/showroom-logo-desktop.svg"
+                "value": "app/storefront/src/assets/logo/emporium-logo-desktop.svg"
             },
             "sw-logo-mobile": {
+                "label": {
+                  "en-GB": "Mobile",
+                  "de-DE": "Handy"
+                },
                 "type": "media",
-                "value": "app/storefront/src/assets/logo/showroom-logo-mobile.svg"
+                "value": "app/storefront/src/assets/logo/emporium-logo-mobile.svg"
             },
             "sw-footer-bg-color": {
                 "label": {
@@ -117,7 +213,7 @@
                     "de-DE": "Footer Logo"
                 },
                 "type": "media",
-                "value": "app/storefront/src/assets/logo/showroom-logo-footer-desktop.svg",
+                "value": "app/storefront/src/assets/logo/emporium-logo-footer-desktop.svg",
                 "editable": true,
                 "block": "media",
                 "order": 300
@@ -128,7 +224,7 @@
                     "de-DE": "Footer mobile Logo"
                 },
                 "type": "media",
-                "value": "app/storefront/src/assets/logo/showroom-logo-footer-mobile.svg",
+                "value": "app/storefront/src/assets/logo/emporium-logo-footer-mobile.svg",
                 "editable": true,
                 "block": "media",
                 "order": 400

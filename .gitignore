@@ -39,3 +39,5 @@ build/
 
 !**/.gitkeep
 /Resources/app/storefront/test/e2e/cypress/results/
+
+*/.DS_Store
