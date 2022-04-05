@@ -2,13 +2,22 @@
 .input-group-lg,
 .input-group-sm {
     .input-group-append {
+        margin-left: 0;
+        position: absolute;
+        right: 16px;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 4;
+
         .btn {
             padding: 0;
             background-color: transparent;
             line-height: $input-btn-padding-y-sm;
-
             border: none;
-            border-bottom: $input-border-width solid $input-border-color;
+        }
+
+        .form-control {
+            padding-right: 40px;
         }
     }
 
@@ -19,6 +28,30 @@
                     border-color: $input-focus-color;
                 }
             }
+        }
+    }
+}
+
+.input-group-lg {
+    > .input-group-prepend,
+    > .input-group-append {
+        > .btn {
+            padding: 0;
+        }
+    }
+}
+
+.input-group {
+    .input-group-append {
+        .btn.btn-primary {
+            font-weight: $font-weight-bold;
+            font-size: 10px;
+            line-height: 12px;
+            text-align: center;
+            color: $sw-color-brand-primary;
+            border: $border-width solid $sw-color-brand-primary;
+            border-radius: $border-radius-lg;
+            padding: 9px 14px;
         }
     }
 }

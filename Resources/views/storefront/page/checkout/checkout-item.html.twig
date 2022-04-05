@@ -40,6 +40,12 @@
                                     {{ parent() }}
                                 {% endblock %}
 
+                                {% block page_checkout_item_delivery_date %}
+                                    {{ parent() }}
+                                {% endblock %}
+
+                                {{ block('page_checkout_item_quantity') }}
+
                                 {% if lineItem.type == 'product' and lineItem.price.referencePrice is not null %}
                                     {% set price = lineItem.price %}
                                     {{ "checkout.priceUnitName"|trans|sw_sanitize }}
@@ -48,10 +54,6 @@
                                         ({{ price.referencePrice.price|currency }}{{ "general.star"|trans|sw_sanitize }} / {{ price.referencePrice.referenceUnit }} {{ price.referencePrice.unitName }})
                                     </span>
                                 {% endif %}
-
-                                {% block page_checkout_item_delivery_date %}
-                                    {{ parent() }}
-                                {% endblock %}
 
                                 {% if config('core.cart.wishlistEnabled') and lineItem.type == 'product' %}
                                     {% block page_checkout_item_wishlist %}
@@ -67,63 +69,15 @@
     </div>
 {% endblock %}
 
-{% block page_checkout_item_quantity %}
-    <div class="col-6 col-lg-2 cart-item-quantity">
-        <div class="row cart-item-quantity-row">
-
-            {% block page_checkout_item_quantity_label %}
-                <div class="col-12 cart-item-quantity-label">
-                    {{ "checkout.cartHeaderQuantity"|trans|sw_sanitize }}
-                </div>
-            {% endblock %}
-
-            {% block page_checkout_item_quantity_select %}
-                <div class="col-12">
-                    {% block page_checkout_item_quantity_form %}
-                        {{ parent() }}
-                    {% endblock %}
-                </div>
-            {% endblock %}
-        </div>
-    </div>
-
-{% endblock %}
-
-{% block page_checkout_item_quantity_number %}
-    <div class="d-flex justify-content-start cart-item-quantity">
-        {{ lineItem.quantity }}
-    </div>
-{% endblock %}
-
-{% block page_checkout_item_remove %}
-    <div class="col-6 col-lg-1 cart-item-remove">
-        {% block page_checkout_item_remove_form %}
-            {{ parent() }}
-        {% endblock %}
-    </div>
-{% endblock %}
-
-{% block page_checkout_item_unit_price %}
-    <div class="col-12 col-lg-2 cart-item-unit-price">
-        {% block page_checkout_item_unit_price_wrapper %}
-            {{ parent() }}
-        {% endblock %}
-    </div>
-{% endblock %}
-
-{% block page_checkout_item_total_price %}
-    <div class="col-12 col-lg-2 cart-item-total-price">
-        {% block page_checkout_item_total_price_wrapper %}
-            {{ parent() }}
-        {% endblock %}
-    </div>
-{% endblock %}
-
 {% block page_checkout_item_remove_submit %}
     <button type="submit"
             title="{{ "checkout.removeLineItem"|trans|striptags }}"
             data-product-id="{{ lineItem.id }}"
-            class="btn btn-sm cart-item-remove-button">
-        {% sw_icon 'x' style { 'size': 'sm', 'pack': 'solid' } %}
+            class="btn cart-item-remove-button">
+        {% sw_icon 'ic-close' style { 'pack': 'emporium' } %}
     </button>
+{% endblock %}
+
+{% block page_checkout_item_quantity_number %}
+    <input class="form-control cart-item-quantity" value=" {{ lineItem.quantity }}" />
 {% endblock %}

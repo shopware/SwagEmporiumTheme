@@ -1,7 +1,7 @@
 {% sw_extends '@Storefront/storefront/component/checkout/offcanvas-cart.html.twig' %}
 
 {% block utilities_offcanvas_close_icon %}
-    {% sw_icon 'arrow-head-left' style { 'pack':'showroom' } %}
+    {% sw_icon 'arrow-head-left' style { 'pack':'emporium' } %}
 {% endblock %}
 
 {% block component_offcanvas_cart %}
@@ -61,10 +61,10 @@
 
 {% block component_offcanvas_cart_actions_promotion_submit %}
     <div class="input-group-append">
-        <button class="btn btn-secondary"
+        <button class="btn btn-primary"
                 type="submit"
                 id="addPromotionOffcanvasCart">
-            {% sw_icon 'arrow-head-right' style { 'pack': 'showroom' } %}
+            {{ "checkout.addPromotionAction"|trans|sw_sanitize }}
         </button>
     </div>
 {% endblock %}

@@ -51,7 +51,7 @@ describe('Checkout: Basic', { tags: ['@workflow', '@checkout'] }, () => {
         cy.get(`${page.elements.cartItem}-label`).contains(product.name);
 
         // Checkout
-        cy.get('.offcanvas-cart-actions .btn-primary').click();
+        cy.get('.offcanvas-cart-actions .begin-checkout-btn').click();
 
         // Login
         cy.get('.checkout-main').should('be.visible');

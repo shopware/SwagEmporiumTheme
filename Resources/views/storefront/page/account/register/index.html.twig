@@ -3,7 +3,7 @@
 {% block page_account_register %}
     <div class="account-register">
         <div class="row account-register-login-headline">
-            <h1 class="col-12">{{ "showroom.account.loginOrRegisterHeadline"|trans|sw_sanitize }}</h1>
+            <h1 class="col-12">{{ "account.loginOrRegisterHeadline"|trans|sw_sanitize }}</h1>
         </div>
 
         {{ parent() }}
@@ -19,7 +19,7 @@
                      data-target="#collapseRegisterLogin"
                      aria-expanded="true"
                      aria-controls="collapseRegisterLogin">
-                    {{ "showroom.account.loginHeader"|trans|sw_sanitize }}
+                    {{ "account.loginHeader"|trans|sw_sanitize }}
                     <div class="global-collapse-column-toggle">
                         <span
                             class="global-collapse-plus-icon">{% sw_icon 'plus' style { 'size': 'md', 'color':'primary' } %}</span>
@@ -32,7 +32,7 @@
                      aria-labelledby="collapseRegisterLogin">
 
                     {% sw_include '@Storefront/storefront/component/account/login.html.twig' with {
-                        'cardTitle': "showroom.account.loginHeader"|trans|sw_sanitize
+                        'cardTitle': "account.loginHeader"|trans|sw_sanitize
                     } %}
                 </div>
             </div>

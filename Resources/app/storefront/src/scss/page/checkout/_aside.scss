@@ -49,9 +49,8 @@ $checkout-aside-spacing: 20px;
 }
 
 .cart-add-promotion {
-    input.form-control {
-        padding-top: 30px;
-        padding-bottom: 30px;
+    .input-group {
+        @extend .input-group-lg;
     }
 }
 
@@ -81,7 +80,7 @@ $checkout-aside-spacing: 20px;
 #addPromotionOffcanvasCartInput {
     @include text-truncate();
 
-    padding-right: $spacer-md;
+    padding-right: 80px;
 
     &:focus + div .icon {
         opacity: 1;
