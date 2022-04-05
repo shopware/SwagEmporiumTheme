@@ -10,18 +10,27 @@ $enable-responsive-font-sizes: false !default;
 $font-size-base: 0.875rem !default;
 $font-size-sm: 0.75rem !default;
 $font-size-xs: 0.6875rem !default;
-$asset-path: '../assets' !default;
+$asset-path: '#{$sw-asset-theme-url}/bundles/swagemporiumtheme/assets' !default;
+
+$top-and-bottom-color: darken($sw-color-brand-primary, 40%) !default; //#000639
+
+$primary-lighten: lighten($sw-color-brand-primary, 45%) !default; //#ebeeff
+$primary-darken: darken($sw-color-brand-primary, 10%) !default; //#0016d2
+
+$secondary-lighten-100: lighten($sw-color-brand-secondary, 10%) !default; //#e7f3f5
+$secondary-lighten-150: lighten($sw-color-brand-secondary, 15%) !default; //#f9fcfc
+$secondary-darken: darken($sw-color-brand-secondary, 10%) !default;  //#9fd1d7
 
 // Color system
-$gray-100: #f9f9f9 !default;
-$gray-200: #f1f3f4 !default;
+$gray-100: lighten($sw-border-color, 10%) !default; //#f8f9fa
+$gray-200: $sw-border-color !default; //#dadfe5
 $gray-300: #e4e6ea !default;
-$gray-400: #cacccf !default;
+$gray-400: lighten($sw-text-color, 40%) !default; //#767d97
 $gray-500: #afb5bd !default;
 $gray-600: #9099a4 !default;
-$gray-700: #525a62 !default;
+$gray-700: lighten($sw-text-color, 70%) !default; //#cdd0d9
 $gray-800: #31383c !default;
-$gray-900: #141719 !default;
+$gray-900: $sw-text-color !default; //#1c1e25
 
 // Typography
 $h1-font-size: 24px !default;

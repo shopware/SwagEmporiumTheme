@@ -61,21 +61,21 @@
                   "en-GB": "Primary colour",
                   "de-DE": "Primärfarbe"
                 },
-                "value": "#26262f"
+                "value": "#0620ff"
             },
             "sw-color-brand-secondary": {
                 "label": {
                   "en-GB": "Secondary colour",
                   "de-DE": "Sekundärfarbe"
                 },
-                "value": "#cab898"
+                "value": "#c3e2e6"
             },
             "sw-border-color": {
                 "label": {
                   "en-GB": "Border",
                   "de-DE": "Rahmen"
                 },
-                "value": "#e4e6ea"
+                "value": "#dadfe5"
             },
             "sw-background-color": {
                 "label": {
@@ -89,28 +89,28 @@
                   "en-GB": "Success",
                   "de-DE": "Erfolg"
                 },
-                "value": "#4bc87b"
+                "value": "#60d788"
             },
             "sw-color-info": {
                 "label": {
                   "en-GB": "Information",
                   "de-DE": "Information"
                 },
-                "value": "#4babbc"
+                "value": "#4d65ff"
             },
             "sw-color-warning": {
                 "label": {
                   "en-GB": "Notice",
                   "de-DE": "Hinweis"
                 },
-                "value": "#ee994a"
+                "value": "#ffae39"
             },
             "sw-color-danger": {
                 "label": {
                   "en-GB": "Error",
                   "de-DE": "Fehler"
                 },
-                "value": "#a1090b"
+                "value": "#e32166"
             },
             "sw-font-family-base": {
                 "label": {
@@ -124,7 +124,7 @@
                   "en-GB": "Text colour",
                   "de-DE": "Textfarbe"
                 },
-                "value": "#141719"
+                "value": "#1c1e25"
             },
             "sw-font-family-headline": {
                 "label": {
@@ -138,28 +138,29 @@
                   "en-GB": "Headline colour",
                   "de-DE": "Überschriftfarbe"
                 },
-                "value": "#525a62"
+                "value": "#1C1E25"
             },
             "sw-color-price": {
                 "label": {
                   "en-GB": "Price",
                   "de-DE": "Preis"
                 },
-                "value": "#141719"
+                "value": "#000639",
+                "editable": false
             },
             "sw-color-buy-button": {
                 "label": {
                   "en-GB": "Buy button",
                   "de-DE": "Kaufen-Button"
                 },
-                "value": "#26262f"
+                "value": "#000639"
             },
             "sw-color-buy-button-text": {
                 "label": {
                   "en-GB": "Buy button text",
                   "de-DE": "Kaufen-Button-Text"
                 },
-                "value": "#fdfdfd"
+                "value": "#fff"
             },
             "sw-logo-desktop": {
                 "label": {
@@ -185,28 +186,6 @@
                 "type": "media",
                 "value": "app/storefront/src/assets/logo/emporium-logo-mobile.svg"
             },
-            "sw-footer-bg-color": {
-                "label": {
-                    "en-GB": "Background colour",
-                    "de-DE": "Hintergrundfarbe"
-                },
-                "type": "color",
-                "value": "#26262f",
-                "editable": true,
-                "block": "footer",
-                "order": 100
-            },
-            "sw-footer-text-color": {
-                "label": {
-                    "en-GB": "Text colour",
-                    "de-DE": "Textfarbe"
-                },
-                "type": "color",
-                "value": "#fdfdfd",
-                "editable": true,
-                "block": "footer",
-                "order": 200
-            },
             "sw-footer-logo": {
                 "label": {
                     "en-GB": "Footer logo",
@@ -228,17 +207,6 @@
                 "editable": true,
                 "block": "media",
                 "order": 400
-            },
-            "sw-account-login-background": {
-                "label": {
-                    "en-GB": "Background of account login",
-                    "de-DE": "Hintergrund der Kontoanmeldung"
-                },
-                "type": "media",
-                "value": "app/storefront/src/assets/images/dillon-mangum-9489sFfgk4c-unsplash.jpg",
-                "editable": true,
-                "block": "media",
-                "order": 500
             },
             "sw-contact-form": {
                 "label": {
