@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <manifest xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/shopware/app-system/0.1.0/src/Core/Content/App/Manifest/Schema/manifest-1.0.xsd">
     <meta>
-        <name>SwagThemeTemplate</name>
-        <label>Shopware theme template</label>
-        <label lang="de-DE">Shopware Theme Template</label>
+        <name>SwagEmporiumTheme</name>
+        <label>Emporium Theme</label>
+        <label lang="de-DE">Emporium Theme</label>
         <description>Shopware theme template</description>
         <description lang="de-DE">Shopware theme template</description>
         <author>shopware AG</author>

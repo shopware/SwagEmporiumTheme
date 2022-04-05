@@ -1,2 +1,2 @@
 # 1.0.0
-- First version of `SwagThemeTemplate`
+- First version of `SwagEmporiumTheme`
