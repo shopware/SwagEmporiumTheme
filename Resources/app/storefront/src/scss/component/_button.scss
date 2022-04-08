@@ -1,88 +1,43 @@
-.btn,
-.btn-buy {
-    font-weight: 500;
-
-    &.disabled,
-    &:disabled {
-        color: $gray-600;
-    }
+.btn {
+    font-weight: $btn-font-weight;
+    @include disable-button($disabled-btn-primary-bg, $disabled-btn-color, $disabled-btn-primary-border-color);
 }
 
-.btn-primary,
-.btn-secondary,
-.btn-outline-secondary,
-.btn-light,
-.btn-link,
-.btn-buy {
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-}
-
-.btn-buy {
-    &:not(:disabled):not(.disabled) {
-        &:hover, &:focus, &:active {
-            background-color: $black;
+@each $color, $value in $theme-colors {
+    @if ($color != 'light') {
+        .btn-#{$color}:hover:not(:disabled) {
+            background-color: $white;
+            border-color: $value;
+            color: $value;
         }
     }
+}
+
+.btn-secondary,
+.btn-outline-secondary:hover{
+    color: $white;
 }
 
 .btn-secondary {
-    .icon {
-        color: $sw-color-buy-button-text;
-    }
-
-    &:not(:disabled):not(.disabled) {
-        &:hover, &:focus, &:active {
-            background-color: $btn-secondary-hover-color;
-        }
-    }
+    @include disable-button($disabled-btn-secondary-bg, $disabled-btn-color, $disabled-btn-secondary-border-color);
 }
 
 .btn-light {
-    background-color: $gray-200;
+    @include disable-button($disabled-btn-light-bg, $disabled-btn-color, $disabled-btn-light-border-color);
+    background-color: $gray-100;
+    color: $top-and-bottom-color;
 
-    &:not(:disabled):not(.disabled) {
-        &:hover, &:focus, &:active {
-            background-color: $gray-400;
-        }
+    &:hover:not(:disabled){
+        background-color: $sw-border-color;
     }
-}
-
-.btn-outline-secondary {
-    color: $sw-color-brand-primary;
-    border: 1px solid $sw-color-brand-primary;
-    background-color: $white;
-
-    &:not(:disabled):not(.disabled) {
-        &:hover, &:focus, &:active {
-            color: $btn-secondary-hover-color;
-            border: 1px solid $btn-secondary-hover-color;
-            background-color: $white;
-        }
-    }
-
-    &:disabled,
-    &.disabled {
-        background-color: unset;
-    }
-}
-
-.btn-link {
-    &:disabled,
-    &.disabled {
-        background-color: unset;
-        border: unset;
-    }
-}
-
-.btn-lg {
-    letter-spacing: $letter-spacing-base;
 }
 
 .btn-buy {
-    @include button-size($btn-padding-y, $btn-padding-x, $btn-font-size, $btn-line-height, $btn-border-radius);
+    @include disable-button($disabled-btn-primary-bg, $disabled-btn-color, $disabled-btn-primary-border-color);
 
-    @include media-breakpoint-up(lg) {
-        @include button-size($btn-padding-y-lg, $btn-padding-x-lg, $btn-font-size-lg, $btn-line-height-lg, $btn-border-radius-lg);
+    &:hover:not(:disabled) {
+        background-color: $white;
+        border-color: $sw-color-buy-button;
+        color: $sw-color-buy-button;
     }
 }

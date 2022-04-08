@@ -1,6 +1,6 @@
-$modal-padding: 50px;
+$modal-padding: 34px;
 $modal-padding-mobile: 20px;
-$modal-title-font-size: 18px;
+$modal-title-font-size: 24px;
 
 .modal {
 
@@ -37,6 +37,7 @@ $modal-title-font-size: 18px;
         .icon {
             width: 18px;
             height: 18px;
+            color: $sw-text-color;
         }
     }
 
