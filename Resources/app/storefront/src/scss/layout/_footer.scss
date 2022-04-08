@@ -38,12 +38,12 @@
     }
 
     .footer-bottom {
-        background: $sw-footer-bg-color;
-        color: $sw-footer-text-color;
+        background: $top-and-bottom-color;
+        color: $white;
         padding: 30px 0;
 
         a {
-            color: $sw-footer-text-color;
+            color: $white;
         }
 
         .footer-copyright {
@@ -259,11 +259,11 @@
 }
 
 .footer-simple {
-    background: $sw-footer-bg-color;
+    background: $top-and-bottom-color;
     padding: 30px 0;
 
     .footer-link {
-        color: $sw-footer-text-color;
+        color: $white;
         font-size: $showroom-font-size-base;
     }
 }
