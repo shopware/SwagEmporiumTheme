@@ -202,6 +202,12 @@
     }
 }
 
+.footer-newsletter-content {
+    .input-group {
+        @extend .input-group-lg;
+    }
+}
+
 .is-act-checkoutregisterpage {
     .footer-minimal {
         .footer-service-menu-list {

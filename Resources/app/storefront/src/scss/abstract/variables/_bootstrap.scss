@@ -24,29 +24,29 @@ $secondary-darken: darken($sw-color-brand-secondary, 10%) !default;  //#9fd1d7
 // Color system
 $gray-100: lighten($sw-border-color, 10%) !default; //#f8f9fa
 $gray-200: $sw-border-color !default; //#dadfe5
-$gray-300: #e4e6ea !default;
+$gray-300: #D9DAE2 !default;
 $gray-400: lighten($sw-text-color, 40%) !default; //#767d97
-$gray-500: #afb5bd !default;
-$gray-600: #9099a4 !default;
+$gray-500: #F3F5F6 !default;
+$gray-600: #2C3E50 !default;
 $gray-700: lighten($sw-text-color, 70%) !default; //#cdd0d9
-$gray-800: #31383c !default;
+$gray-800: #223CED !default;
 $gray-900: $sw-text-color !default; //#1c1e25
 
 // Typography
-$h1-font-size: 24px !default;
+$h1-font-size: 36px !default;
 $h1-font-size-lg: 36px !default;
-$h2-font-size: 20px !default;
+$h2-font-size: 28px !default;
 $h2-font-size-lg: 28px !default;
 $h3-font-size: 24px !default;
 $h4-font-size: 20px !default;
 $h5-font-size: 16px !default;
 $h6-font-size: 14px !default;
 
-$font-weight-bold: 500 !default;
-$font-weight-bolder: 600 !default;
+$font-weight-bold: 700 !default;
+$font-weight-bolder: 700 !default;
 
 // Components
-$border-radius: 0 !default;
+$border-radius: 1px !default;
 $border-radius-lg: 1px !default;
 $border-radius-sm: 0 !default;
 
@@ -72,28 +72,52 @@ $disabled-btn-border-color: #eceef0 !default;
 $btn-secondary-hover-color: #bca687 !default;
 
 // Forms
-$input-bg: transparent !default;
-$input-color: $sw-color-brand-primary !default;
+$input-height: 42px !default;
+$input-line-height: 1 !default;
+$input-bg: #fff !default;
+$input-color: $sw-text-color !default;
 $input-border-color: $gray-300 !default;
-$input-placeholder-color: $gray-500 !default;
-$form-feedback-invalid-color: $sw-color-danger !default;
-$form-feedback-valid-color: $gray-900 !default;
+$input-placeholder-color: $gray-400 !default;
+$input-padding-x: .9rem !default;
+$input-padding-y: .75rem !default;
+$input-font-size: 12px !default;
 
-$input-padding-x: 0 !default;
-$input-font-size: 0.875rem !default;
-$input-font-size-lg: 1.125rem !default;
+$input-height-lg: 56px;
+$input-padding-y-lg: 1rem;
+$input-padding-x-lg: 1.25rem;
+$input-font-size-lg: 15px;
 
+$input-focus-border-color: $input-border-color;
+
+$form-feedback-valid-color: $input-border-color !default;
 // Select
-$custom-control-indicator-border-color: $gray-300 !default;
+$custom-control-indicator-border-color: $gray-200!default;
+$custom-control-active-border-color: $input-border-color;
+
 $custom-checkbox-indicator-border-radius: 4px !default;
 
-$custom-select-indicator: url('#{$asset-path}/icon/chevron-down.svg') !default;
+$custom-select-box-shadow: none !default;
+$custom-select-focus-box-shadow: none !default;
+$custom-select-indicator: url('#{$asset-path}/icon/icon-pack/ic-chevron-down.svg') !default;
 $custom-select-bg-size: 1rem !default;
 
 $custom-switch-width: 1.75rem !default;
 $custom-switch-indicator-size: 0.75rem !default;
 $custom-control-indicator-border-color: $sw-color-brand-primary !default;
 
+//Custom control
+$custom-control-indicator-checked-color: $sw-color-brand-primary;
+$custom-control-indicator-checked-border-color: $sw-color-brand-primary;
+$custom-control-indicator-size: 1.125rem !default;
+$custom-control-indicator-focus-box-shadow: none !default;
+$custom-checkbox-indicator-icon-checked: url('#{$asset-path}/icon/icon-pack/ic-check.svg') !default;
+
+$custom-raido-indicator-checked-color: #fff;
+$custom-radio-indicator-icon-checked: str-replace(url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='#{$custom-raido-indicator-checked-color}'/%3e%3c/svg%3e"), "#", "%23") !default;
+
+$custom-switch-width: 1.75rem;
+$custom-switch-indicator-size: 0.625rem;
+$custom-control-indicator-checked-disabled-bg: $gray-200;
 // Badges
 $badge-font-size: 10px !default;
 
@@ -113,3 +137,6 @@ $modal-content-box-shadow-xs: 0 0 20px 0 rgba(38, 38, 47, 0.2) !default;
 $card-spacer-y: 20px;
 
 $line-height-base: 2 !default;
+
+//Icon
+$icon-base-color: $top-and-bottom-color;

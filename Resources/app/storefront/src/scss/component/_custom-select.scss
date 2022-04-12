@@ -1,0 +1,25 @@
+/*
+Custom Select
+==============================================
+Custom skin styling for bootstrap custom select menu.
+
+https://getbootstrap.com/docs/4.3/components/forms/#select-menu
+*/
+
+.custom-select {
+    outline: none;
+
+    &:disabled {
+        color: $gray-700;
+        background-color: $white;
+    }
+
+    &:invalid {
+        color: $custom-control-active-border-color;
+    }
+
+    &:hover {
+        border-color: $custom-select-border-color;
+        color: $input-color;
+    }
+}

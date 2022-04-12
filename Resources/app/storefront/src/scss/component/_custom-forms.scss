@@ -3,18 +3,48 @@
         line-height: $font-size-base * $line-height-base;
 
         &::before {
-            border-radius: 1px;
-            background-color: $gray-300;
+            border-radius: 8px;
+            background-color: $gray-200;
+            height: 18px;
         }
 
         &::after {
-            border-radius: 1px;
+            border-radius: 50%;
             background-color: $white;
+            top: 9px;
+            left: -32px;
+        }
+
+        small {
+            font-size: 100%;
         }
     }
 
     .custom-control-input:checked ~ .custom-control-label::after {
         background-color: $white;
+    }
+
+    .custom-control-input:disabled {
+        &:checked ~ .custom-control-label {
+            &:after {
+                background-color: $gray-700;
+            }
+
+            &:before {
+                border-color: $custom-control-indicator-checked-disabled-bg;
+            }
+        }
+
+        .custom-control-label {
+            &:before {
+                background-color: $custom-control-indicator-checked-disabled-bg;
+                border-color: $custom-control-indicator-checked-disabled-bg;
+            }
+
+            &:after {
+                background-color: $gray-700;
+            }
+        }
     }
 }
 
@@ -24,49 +54,38 @@
         line-height: $font-size-base * $line-height-base;
 
         &::before {
-            border-radius: 0;
+            border-radius: $border-radius-lg;
             background: $white;
+            border-color: $gray-300;
+            @include box-shadow(none);
         }
 
         &::after {
-            top: 8px;
-            left: -22px;
-            width: 12px;
-            height: 12px;
+            top: 2px;
+            left: -29px;
+            width: 24px;
+            height: 24px;
         }
     }
 }
 
-// Select
-.custom-select {
-    border: none;
-    outline: none;
-    border-bottom: $custom-select-border-width solid $custom-select-border-color;
 
-    &:invalid {
-        color: $gray-600;
+.custom-control-input {
+    ~ .custom-control-label {
+        font-size: $font-size-sm;
+        color: $gray-400;
+        letter-spacing: 0;
+        text-transform: capitalize;
     }
 
-    &:valid {
-        border-color: $custom-control-active-border-color;
-    }
-
-    &:disabled {
-        opacity: 0.4;
+    &:checked ~ .custom-control-label {
+        color: $input-color;
+        font-weight: $font-weight-bolder;
     }
 }
 
-.was-validated {
-    .custom-select {
-        &:invalid {
-            opacity: 1;
-            color: $form-feedback-invalid-color;
-        }
-    }
-}
-
-@include media-breakpoint-up(lg) {
-    .custom-select {
-        font-size: $custom-select-font-size-lg;
+.custom-radio {
+    strong {
+        line-height: 29px;
     }
 }

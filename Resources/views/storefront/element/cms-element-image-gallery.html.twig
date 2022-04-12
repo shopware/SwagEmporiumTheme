@@ -1,11 +1,11 @@
 {% sw_extends '@Storefront/storefront/element/cms-element-image-gallery.html.twig' %}
 
 {% block element_image_gallery_inner_control_prev_icon %}
-    {% sw_icon 'arrow-head-left' style { 'pack': 'showroom' } %}
+    {% sw_icon 'arrow-head-left' style { 'pack': 'emporium' } %}
 {% endblock %}
 
 {% block element_image_gallery_inner_control_next_icon %}
-    {% sw_icon 'arrow-head-right' style { 'pack': 'showroom' } %}
+    {% sw_icon 'arrow-head-right' style { 'pack': 'emporium' } %}
 {% endblock %}
 
 {% block element_image_gallery_inner %}
@@ -51,9 +51,9 @@
     <button
         class="base-slider-controls-prev gallery-slider-thumbnails-controls-prev">
         {% if galleryPosition == "left" %}
-            {% sw_icon 'arrow-head-up' style { 'pack': 'showroom' } %}
+            {% sw_icon 'arrow-head-up' style { 'pack': 'emporium' } %}
         {% elseif galleryPosition == "underneath" %}
-            {% sw_icon 'arrow-head-left' style { 'pack': 'showroom' } %}
+            {% sw_icon 'arrow-head-left' style { 'pack': 'emporium' } %}
         {% endif %}
     </button>
 {% endblock %}
@@ -62,17 +62,17 @@
     <button
         class="base-slider-controls-next gallery-slider-thumbnails-controls-next">
         {% if galleryPosition == "left" %}
-            {% sw_icon 'arrow-head-down' style { 'pack': 'showroom' } %}
+            {% sw_icon 'arrow-head-down' style { 'pack': 'emporium' } %}
         {% elseif galleryPosition == "underneath" %}
-            {% sw_icon 'arrow-head-right' style { 'pack': 'showroom' } %}
+            {% sw_icon 'arrow-head-right' style { 'pack': 'emporium' } %}
         {% endif %}
     </button>
 {% endblock %}
 
 {% block element_image_gallery_inner_zoom_modal_slider_control_prev_icon %}
-    {% sw_icon 'arrow-head-left' style { 'pack': 'showroom' } %}
+    {% sw_icon 'arrow-head-left' style { 'pack': 'emporium' } %}
 {% endblock %}
 
 {% block element_image_gallery_inner_zoom_modal_slider_control_next_icon %}
-    {% sw_icon 'arrow-head-right' style { 'pack': 'showroom' } %}
+    {% sw_icon 'arrow-head-right' style { 'pack': 'emporium' } %}
 {% endblock %}

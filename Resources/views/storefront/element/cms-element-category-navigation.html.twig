@@ -1,5 +1,5 @@
 <div class="cms-element-{{ element.type }}">
-    <h3 class="category-navigation-box-title">{{ "showroom.navigation.title"|trans|sw_sanitize }}</h3>
+    <h3 class="category-navigation-box-title">{{ "navigation.title"|trans|sw_sanitize }}</h3>
     <div class="category-navigation-box">
         {% sw_include '@Storefront/storefront/layout/sidebar/category-navigation.html.twig' with {
             navigationTree: page.header.navigation.tree,

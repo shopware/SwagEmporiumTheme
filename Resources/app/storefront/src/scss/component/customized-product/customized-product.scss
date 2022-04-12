@@ -32,22 +32,28 @@
 
 .swag-customized-products__item {
     &.swag-customized-products-option {
-        margin: 10px 0px;
-        background: $gray-100;
+        margin: 0;
+        background-color: $white;
+        border-top: $gray-300 solid $border-width;
+
+        &:last-child {
+            border-bottom: $gray-300 solid $border-width;
+        }
     }
 
     .form-group {
-        margin-bottom: 0;
+        margin: 0;
+        padding: 0;
     }
 
     .swag-customized-products__title-link-container {
-        padding: 10px 0px;
+        padding: 11px 10px;
 
         .swag-customized-products-option__title {
             text-transform: unset;
 
             .swag-customized-products-option-type-select-wrapper {
-                margin: 0px 5px;
+                margin: 0 5px;
             }
         }
     }
@@ -114,13 +120,24 @@
         }
     }
 
-    .swag-custommized-product-html-editor__toolbar,
+    .swag-custommized-product-html-editor {
+        border-radius: $border-radius-lg;
+    }
+
     .swag-custommized-product-html-editor__toolbar-button {
-        background-color: $sw-color-brand-primary;
+        padding: 0 10px;
+        background: $gray-500;
 
         .icon {
-            color: $white;
+            color: $gray-600;
         }
+    }
+
+    .swag-custommized-product-html-editor__toolbar {
+        background: $gray-500;
+        border-radius: 1px 1px 0 0;
+        border-bottom: none;
+        padding: 16px 8px;
     }
 
     .swag-custommized-product-html-editor__editor,
@@ -203,6 +220,55 @@
                     background-color: $sw-color-brand-primary;
                 }
             }
+        }
+    }
+}
+
+.swag-customized-products {
+    .swag-customized-products__title-link-toggle-icon {
+        position: absolute;
+        top: -1px;
+        right: 21px;
+
+        .icon {
+            width: 20px;
+            height: 20px;
+        }
+    }
+
+    .swag-customized-products-option__title {
+        font-size: 13px;
+        line-height: 21px;
+        letter-spacing: 0;
+        text-transform: capitalize;
+    }
+
+    .swag-customized-products__title-link-container,
+    .swag-customized-products-form-control {
+        margin: 0;
+    }
+}
+
+@include media-breakpoint-up(md) {
+    .swag-customized-products {
+        .swag-customized-products__title-link-toggle-icon {
+            top: 20px;
+
+            .icon {
+                width: 24px;
+                height: 24px;
+            }
+        }
+
+        .swag-customized-products-option__title {
+            font-size: 15px;
+            line-height: 24px;
+        }
+    }
+
+    .swag-customized-products__item {
+        .swag-customized-products__title-link-container {
+            padding: 20px 14px;
         }
     }
 }

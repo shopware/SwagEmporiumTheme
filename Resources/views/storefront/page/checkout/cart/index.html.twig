@@ -19,7 +19,7 @@
         <button class="btn btn-primary"
                 type="submit"
                 id="addPromotion">
-            {% sw_icon 'arrow-head-right' style { 'pack': 'showroom' } %}
+            {{ "checkout.addPromotionAction"|trans|sw_sanitize }}
         </button>
     </div>
 {% endblock %}

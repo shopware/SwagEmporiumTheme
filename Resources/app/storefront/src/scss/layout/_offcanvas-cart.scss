@@ -67,8 +67,8 @@ $cart-item-img-width: 80px;
     &-promotion-form {
         margin-bottom: $spacer-xl;
 
-        .form-control {
-            padding: 45px 0;
+        .input-group {
+            @extend .input-group-lg;
         }
     }
 
