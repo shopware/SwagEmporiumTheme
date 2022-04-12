@@ -14,25 +14,25 @@
             controls:false
         },
         thumbnailSlider: {
-            items: (galleryPosition == "underneath") ? 8 : 5,
+            items: (galleryPosition == "underneath") ? 8 : 6,
             gutter: 16,
             responsive: {
                 md: {
                     enabled: true,
                     controls: true,
-                    items: (galleryPosition == "underneath") ? 6 : 5,
+                    items: (galleryPosition == "underneath") ? 6 : 6,
                     gutter: 16
                 },
                 lg: {
                     enabled: true,
                     controls: true,
-                    items: (galleryPosition == "underneath") ? 8 : 5,
+                    items: (galleryPosition == "underneath") ? 8 : 6,
                     gutter: 16
                 },
                 xl: {
                     enabled: true,
                     controls: true,
-                    items: (galleryPosition == "underneath") ? 10 : 5,
+                    items: (galleryPosition == "underneath") ? 10 : 6,
                     gutter: 16
                 }
             }
@@ -51,7 +51,7 @@
     <button
         class="base-slider-controls-prev gallery-slider-thumbnails-controls-prev">
         {% if galleryPosition == "left" %}
-            {% sw_icon 'arrow-head-up' style { 'pack': 'emporium' } %}
+            {% sw_icon 'chevron-up' style { 'pack': 'emporium' } %}
         {% elseif galleryPosition == "underneath" %}
             {% sw_icon 'arrow-head-left' style { 'pack': 'emporium' } %}
         {% endif %}
@@ -62,7 +62,7 @@
     <button
         class="base-slider-controls-next gallery-slider-thumbnails-controls-next">
         {% if galleryPosition == "left" %}
-            {% sw_icon 'arrow-head-down' style { 'pack': 'emporium' } %}
+            {% sw_icon 'chevron-up' style { 'pack': 'emporium' } %}
         {% elseif galleryPosition == "underneath" %}
             {% sw_icon 'arrow-head-right' style { 'pack': 'emporium' } %}
         {% endif %}
