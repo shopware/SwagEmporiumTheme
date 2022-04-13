@@ -43,7 +43,6 @@ $h5-font-size: 16px !default;
 $h6-font-size: 14px !default;
 
 $font-weight-bold: 700 !default;
-$font-weight-bolder: 700 !default;
 
 // Components
 $border-radius: 1px !default;
@@ -58,15 +57,17 @@ $input-btn-padding-y-lg: 0.875rem !default;
 // Button
 $btn-line-height-sm: 22px !default;
 $btn-line-height: 20px !default;
-$btn-font-size: 10px !default;
+$btn-font-size: 13px !default;
 $btn-font-size-sm: 10px !default;
-$btn-font-size-lg: 12px !default;
+$btn-font-size-lg: 15px !default;
+$btn-font-weight: 700 !default;
 $btn-padding-x: 24px !default;
-$btn-padding-y: 14px !default;
+$btn-padding-y: 10px !default;
 $btn-padding-x-sm: 24px !default;
-$btn-padding-y-sm: 6px !default;
+$btn-padding-y-sm: 4px !default;
 $btn-padding-x-lg: 40px !default;
 $btn-padding-y-lg: 10px !default;
+$btn-border-radius: 1px !default;
 
 $disabled-btn-border-color: #eceef0 !default;
 $btn-secondary-hover-color: #bca687 !default;
@@ -140,3 +141,6 @@ $line-height-base: 2 !default;
 
 //Icon
 $icon-base-color: $top-and-bottom-color;
+
+// Alert
+$alert-padding-y: 11px;

@@ -56,3 +56,14 @@ $cms-form-cover-image-height-sm: 240px;
 // Top and bottom padding for cms form content
 $cms-form-top-and-bottom-padding: 80px;
 
+// Button
+$disabled-btn-color: $gray-700 !default;
+$disabled-btn-primary-bg: $primary-lighten !default;
+$disabled-btn-primary-border-color: $primary-lighten !default;
+
+$disabled-btn-secondary-bg: $secondary-lighten-150 !default;
+$disabled-btn-secondary-border-color: $secondary-lighten-150 !default;
+
+$disabled-btn-light-bg: $gray-100 !default;
+$disabled-btn-light-border-color: $gray-100 !default;
+$btn-scroll-top-icon-color: #2C3E50 !default;
