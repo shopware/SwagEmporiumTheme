@@ -53,8 +53,14 @@
                     "en-GB": "Footer",
                     "de-DE": "Footer"
                 }
-            }
-        },
+            },
+            "errorPages": {
+              "label": {
+                "en-GB": "Error Pages",
+                "de-DE": "Error Pages"
+              }
+          }
+    },
         "fields": {
             "sw-color-brand-primary": {
                 "label": {
@@ -227,6 +233,26 @@
                 "value": "app/storefront/src/assets/images/newsletter-form.png",
                 "editable": true,
                 "block": "media"
+            },
+            "sw-404-image": {
+                "label": {
+                  "en-GB": "404 Page Image",
+                  "de-DE": "404 Page Image"
+                },
+                "type": "media",
+                "value": "app/storefront/src/assets/images/404-image.png",
+                "editable": true,
+                "block": "errorPages"
+            },
+            "sw-maintenance-image": {
+                "label": {
+                  "en-GB": "Maintenance Page Image",
+                  "de-DE": "Maintenance Page Image"
+                },
+                "type": "media",
+                "value": "app/storefront/src/assets/images/maintenance.png",
+                "editable": true,
+                "block": "errorPages"
             }
         }
     }

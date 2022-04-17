@@ -2,5 +2,11 @@
   "checkout" : {
     "addPromotionAction" : "Add",
     "cartItemInfoId": "Order number"
+  },
+  "general": {
+    "404ErrorPageHeader": "Seite nicht gefunden",
+    "404ErrorDescription": "Es tut uns leid, aber es scheint, dass wir die Seite, die Sie suchen, nicht finden können. Möglicherweise existiert sie nicht mehr oder ist verschoben worden.",
+    "maintenanceModeHeader": "Wartungsmodus",
+    "maintenanceModeDescription": "Wir aktualisieren derzeit den Inhalt dieser Website. Bitte schauen Sie später wieder vorbei."
   }
 }
