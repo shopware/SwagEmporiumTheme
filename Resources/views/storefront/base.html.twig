@@ -3,3 +3,8 @@
 {% block base_navigation %}
 {% endblock %}
 
+{% block base_flashbags %}
+   {% apply spaceless %}
+       {{ parent() }}
+  {% endapply %}
+{% endblock %}

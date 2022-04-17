@@ -1,7 +1,9 @@
 .cms-section-sidebar {
     .cms-section-sidebar-sidebar-content {
-        background: $gray-100;
-        padding: $grid-gutter-width / 2;
+        padding: 0;
+        @include media-breakpoint-up(lg) {
+            max-width: 251px;
+        }
     }
 
     .filter-panel {
@@ -42,7 +44,7 @@
 
     .filter-panel-offcanvas-header {
         padding: 0;
-        margin-bottom: 30px;
+        margin-bottom: 10px;
         height: unset;
     }
 

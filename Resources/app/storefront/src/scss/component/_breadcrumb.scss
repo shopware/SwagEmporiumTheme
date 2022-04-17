@@ -1,9 +1,28 @@
 .breadcrumb {
-    a.is-active {
-        font-weight: normal;
+    padding-top: 24px;
+    padding-bottom: 16px;
+
+    &:empty {
+        padding: 0;
+    }
+
+    .breadcrumb {
+        padding: 0;
+        margin: 0;
+    }
+
+    a {
+        color: $sw-color-brand-primary;
+        font-size: 12px;
+
+        &.is-active {
+            font-weight: normal;
+            color: $gray-400;
+        }
     }
 
     .breadcrumb-placeholder {
+        color: $gray-300;
         &:first-child {
             margin-left: 0;
         }

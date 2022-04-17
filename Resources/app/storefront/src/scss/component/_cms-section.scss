@@ -1,5 +1,33 @@
 .cms-section {
     &.cms-section-sidebar {
         padding-top: 30px;
+
+        .cms-section-sidebar-sidebar-content {
+            padding-left: 0;
+
+            > .col-12 {
+                padding-left: 0;
+            }
+        }
+
+        .cms-block-category-navigation,
+        .cms-block-sidebar-filter {
+            .cms-block-container-row {
+                padding: 0;
+
+                .col-12 {
+                    padding: 0;
+                }
+            }
+        }
+
+        @include media-breakpoint-down(md) {
+            .cms-section-sidebar-main-content {
+                padding: 0;
+                .cms-block-container-row {
+                    padding: 0;
+                }
+            }
+        }
     }
 }
