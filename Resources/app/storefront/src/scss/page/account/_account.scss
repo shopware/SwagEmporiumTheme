@@ -73,16 +73,6 @@
     }
 
     @include media-breakpoint-down(md) {
-        h1, h2, .card-title {
-            color: $sw-color-brand-primary;
-        }
-
-        .content-main {
-            > .container {
-                background: $gray-100;
-            }
-        }
-
         .container-main {
             padding-top: 0;
             padding-bottom: 0;
