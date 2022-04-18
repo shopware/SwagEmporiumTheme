@@ -1,191 +1,189 @@
 {% sw_extends '@Storefront/storefront/layout/footer/footer.html.twig' %}
 
-{% block layout_footer_navigation %}
-    <div class="container">
-        <div id="footerColumns"
-             class="row footer-columns"
-             data-collapse-footer="true">
-            {% block layout_footer_navigation_hotline %}
-                <div class="col-12 col-md-3 footer-column js-footer-column">
-                    {% block layout_footer_navigation_hotline_headline %}
-                        {{ parent() }}
-                    {% endblock %}
-
-                    {% block layout_footer_navigation_hotline_content %}
-                        <div id="collapseFooterHotline"
-                             class="footer-column-content collapse js-footer-column-content footer-contact"
-                             aria-labelledby="collapseFooterHotlineTitle">
-                            <div class="footer-column-content-inner">
-                                <div class="footer-contact-hotline">
-                                    {{ 'footer.serviceHotline'|trans|sw_sanitize }}
-                                </div>
-                            </div>
-                            <div class="footer-contact-form">
-                                {{ 'footer.serviceContactLink'|trans({
-                                    '%url%': path('frontend.cms.page', { id: config('core.basicInformation.contactPage') })
-                                })|raw }}
-                            </div>
-                        </div>
-                    {% endblock %}
-                </div>
-            {% endblock %}
-
-            {% block layout_footer_navigation_columns %}
-                <div class="col-12 col-md">
-                    <div class="row">
-                        {% set orderIndex = 3 %}
-                        {% for root in page.footer.navigation.tree %}
-                            {% block layout_footer_navigation_column %}
-                                <div class="col-12 col-md-auto col-lg-6 footer-column js-footer-column">
-                                    {% block layout_footer_navigation_information_headline %}
-                                        {{ parent() }}
-                                    {% endblock %}
-
-                                    {% block layout_footer_navigation_information_content %}
-                                        {{ parent() }}
-                                    {% endblock %}
-                                </div>
-                            {% endblock %}
-
-                            {% set orderIndex = orderIndex + 1 %}
-                        {% endfor %}
-                    </div>
-                </div>
-            {% endblock %}
-
-            {% block layout_footer_navigation_newsletter %}
-                <div class="col-12 col-md-4 col-lg-3 footer-column footer-newsletter js-footer-column">
+{% block layout_footer_inner_container %}
+    {% block layout_footer_newsletter %}
+        <div class="footer-top">
+            <div class="container">
+                <div class="footer-newsletter">
                     <div class="footer-newsletter-container">
-                        {% block layout_footer_navigation_newsletter_headline %}
-                            <div
-                                class="footer-column-headline footer-headline js-footer-column-headline js-collapse-footer-column-trigger"
-                                id="collapseFooterNewsletterTitle"
-                                data-target="#collapseFooterNewsletter"
-                                aria-expanded="true"
-                                aria-controls="collapseFooterNewsletter">
-                                <span
-                                    class="d-md-none d-lg-block">{{ 'footer.newsletterHeadline'|trans|sw_sanitize }}</span>
-                                {% block layout_footer_navigation_newsletter_icons %}
-                                    <div class="footer-column-toggle">
-                                            <span class="footer-plus-icon">
-                                                {% sw_icon 'plus' %}
-                                            </span>
-                                        <span class="footer-minus-icon">
-                                                {% sw_icon 'minus' %}
-                                            </span>
-                                    </div>
-                                {% endblock %}
-                            </div>
-                        {% endblock %}
-
-                        {% block layout_footer_navigation_newsletter_content %}
+                        {% block layout_footer_newsletter_content %}
                             {% sw_include '@Storefront/storefront/layout/footer/footer-newsletter-widget.html.twig' %}
                         {% endblock %}
                     </div>
                 </div>
-            {% endblock %}
+            </div>
         </div>
-    </div>
-{% endblock %}
-
-{% block layout_footer_bottom %}
-    {% block layout_footer_service_menu %}
-        {% block layout_footer_service_menu_content %}
-            {{ parent() }}
-        {% endblock %}
     {% endblock %}
 
-    <div class="footer-bottom d-none d-md-block">
-        <div class="container">
-            <div class="row">
-                {% block layout_footer_logo %}
-                    <div class="col-4 footer-logo">
-                        <a class="footer-logo-main-link"
-                           href="{{ path('frontend.home.page') }}"
-                           title="{{ "header.logoLink"|trans|striptags }}">
-                            {% block layout_header_footer_image %}
-                                {% if theme_config('sw-footer-logo') %}
-                                    <img src="{{ theme_config('sw-footer-logo') |sw_encode_url }}"
-                                         alt="{{ "header.logoLink"|trans|striptags }}"
-                                         class="img-fluid header-logo-main-img"/>
-                                {% endif %}
+    {% block layout_footer_navigation %}
+        <div class="footer-middle">
+            <div class="container">
+                <div class="row footer-middle-wrap">
+                    <div class="col-12 col-lg-8 footer-navigation">
+                        <div id="footerColumns"
+                             class="row footer-columns"
+                             data-collapse-footer="true">
+                            {% block layout_footer_navigation_columns %}
+                                {% for root in page.footer.navigation.tree %}
+                                    {% block layout_footer_navigation_column %}
+                                        {# Change col-md-4 to col-md-3 #}
+                                        <div class="col-md-3 footer-column js-footer-column">
+                                            {{ block('layout_footer_navigation_information_headline') }}
+
+                                            {{ block('layout_footer_navigation_information_content') }}
+                                        </div>
+                                    {% endblock %}
+                                {% endfor %}
                             {% endblock %}
-                        </a>
-                    </div>
-                {% endblock %}
 
-                {% block layout_footer_vat %}
-                    <div class="col-4 footer-vat">
-                        {% if context.taxState == "gross" %}
-                            <span>
-                                {{ "footer.includeVat"|trans({
-                                    '%url%': path('frontend.cms.page',{ id: config('core.basicInformation.shippingPaymentInfoPage') })
-                                })|raw }}
-                            </span>
-                        {% else %}
-                            <span>
-                                {{ "footer.excludeVat"|trans({
-                                    '%url%': path('frontend.cms.page',{ id: config('core.basicInformation.shippingPaymentInfoPage') })
-                                })|raw }}
-                            </span>
-                        {% endif %}
-                    </div>
-                {% endblock %}
+                            {% block layout_footer_navigation_social %}
+                                <div class="col-md-3 footer-column js-footer-column">
+                                    {% block layout_footer_navigation_social_headline %}
+                                        <div class="footer-column-headline footer-headline js-footer-column-headline js-collapse-footer-column-trigger"
+                                             id="collapseFooterSocialTitle"
+                                            {{ dataBsTargetAttr }}="#collapseFooterSocial"
+                                            aria-expanded="true"
+                                            aria-controls="collapseFooterSocial">
+                                            {{ 'footer.socialMediaHeadline'|trans|sw_sanitize }}
+                                            {% block layout_footer_navigation_social_icons %}
+                                                <div class="footer-column-toggle">
+                                                <span class="footer-plus-icon">
+                                                    {% sw_icon 'plus' %}
+                                                </span>
+                                                    <span class="footer-minus-icon">
+                                                    {% sw_icon 'minus' %}
+                                                </span>
+                                                </div>
+                                            {% endblock %}
+                                        </div>
+                                    {% endblock %}
 
-                {% block layout_footer_copyright %}
-                    <div class="col-4 footer-copyright">
-                        {% sw_icon 'shopware' style { 'color': 'primary' } %}
-                        {{ "footer.copyrightInfo"|trans|sw_sanitize }}
+                                    {% block layout_footer_navigation_social_content %}
+                                        <div id="collapseFooterSocial"
+                                             class="footer-column-content collapse js-footer-column-content footer-contact"
+                                             aria-labelledby="collapseFooterSocialTitle">
+                                            <div class="footer-column-content-inner">
+                                                <ul class="list-unstyled">
+                                                    <li class="footer-link-item">
+                                                        <a class="links facebook"
+                                                           href="{{ theme_config('sw-facebook-link') |sw_encode_url }}"
+                                                           title="{{ "footer.facebookLink"|trans|striptags }}"
+                                                           rel="noopener"
+                                                           target="_blank">
+                                                            {% sw_icon 'ic-facebook' style {'pack' : 'emporium'} %}
+                                                            {{ 'footer.facebookHeadline'|trans|sw_sanitize }}
+                                                        </a>
+                                                    </li>
+                                                    <li class="footer-link-item">
+                                                        <a class="links instagram"
+                                                           href="{{ theme_config('sw-instagram-link') |sw_encode_url }}"
+                                                           title="{{ "footer.instagramLink"|trans|striptags }}"
+                                                           rel="noopener"
+                                                           target="_blank">
+                                                            {% sw_icon 'ic-instagram' style {'pack' : 'emporium'} %}
+                                                            {{ 'footer.instagramHeadline'|trans|sw_sanitize }}
+                                                        </a>
+                                                    </li>
+                                                    <li class="footer-link-item">
+                                                        <a class="links twitter"
+                                                           href="{{ theme_config('sw-twitter-link') |sw_encode_url }}"
+                                                           title="{{ "footer.twitterLink"|trans|striptags }}"
+                                                           rel="noopener"
+                                                           target="_blank">
+                                                            {% sw_icon 'ic-twitter' style {'pack' : 'emporium'} %}
+                                                            {{ 'footer.twitterHeadline'|trans|sw_sanitize }}
+                                                        </a>
+                                                    </li>
+                                                    <li class="footer-link-item">
+                                                        <a class="links tiktok"
+                                                           href="{{ theme_config('sw-tiktok-link') |sw_encode_url }}"
+                                                           title="{{ "footer.tiktokLink"|trans|striptags }}"
+                                                           rel="noopener"
+                                                           target="_blank">
+                                                            {% sw_icon 'ic-tiktok' style {'pack' : 'emporium'} %}
+                                                            {{ 'footer.tiktokHeadline'|trans|sw_sanitize }}
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    {% endblock %}
+                                </div>
+                            {% endblock %}
+                        </div>
                     </div>
-                {% endblock %}
-            </div>
-        </div>
-    </div>
 
-    <div class="footer-bottom footer-bottom-mobile d-md-none">
-        <div class="container row no-gutters">
-            {% block layout_footer_mobile_logo %}
-                <div class="col footer-logo d-flex align-items-center">
-                    <a class="footer-logo-main-link"
-                       href="{{ path('frontend.home.page') }}"
-                       title="{{ "header.logoLink"|trans|striptags }}">
-                        {% block layout_footer_mobile__image %}
-                            {% if theme_config('sw-footer-logo-mobile') %}
-                                <img src="{{ theme_config('sw-footer-logo-mobile')|sw_encode_url }}"
-                                     alt="{{ "header.logoLink"|trans|striptags }}"
-                                     class="img-fluid header-logo-main-img"/>
-                            {% endif %}
+                    <div class="col-12 col-lg-4 footer-hotline">
+                        {% block layout_footer_navigation_hotline %}
+                            {% block layout_footer_navigation_hotline_content %}
+                                <div class="footer-hotline-wrap">
+                                    {% block layout_footer_logo %}
+                                        <a class="footer-logo-main-link"
+                                           href="{{ path('frontend.home.page') }}"
+                                           title="{{ "header.logoLink"|trans|striptags }}">
+                                            {% if theme_config('sw-footer-logo') %}
+                                                <img src="{{ theme_config('sw-footer-logo')|sw_encode_url }}"
+                                                     alt="{{ "header.logoLink"|trans|striptags }}"
+                                                     class="footer-logo-main-img"/>
+                                            {% endif %}
+                                        </a>
+                                    {% endblock %}
+                                    <p>{{ 'footer.serviceHotlineHeadline'|trans|sw_sanitize }}</p>
+                                    <div class="footer-contact-hotline">
+                                        {{ 'footer.serviceHotline'|trans|sw_sanitize }}
+                                    </div>
+                                    <div class="footer-contact-form">
+                                        {{ 'footer.serviceContactLink'|trans({
+                                            '%url%': path('frontend.cms.page', { id: config('core.basicInformation.contactPage') })
+                                        })|raw }}
+                                    </div>
+                                </div>
+                            {% endblock %}
                         {% endblock %}
-                    </a>
+                    </div>
                 </div>
-            {% endblock %}
-
-            <div class="col-8">
-                {% block layout_footer_mobile_vat %}
-                    <div class="footer-vat">
-                        {% if context.taxState == "gross" %}
-                            <span>
-                            {{ "footer.includeVat"|trans({
-                                '%url%': path('frontend.cms.page',{ id: config('core.basicInformation.shippingPaymentInfoPage') })
-                            })|raw }}
-                        </span>
-                        {% else %}
-                            <span>
-                            {{ "footer.excludeVat"|trans({
-                                '%url%': path('frontend.cms.page',{ id: config('core.basicInformation.shippingPaymentInfoPage') })
-                            })|raw }}
-                        </span>
-                        {% endif %}
-                    </div>
-                {% endblock %}
-
-                {% block layout_footer_mobile_copyright %}
-                    <div class="footer-copyright">
-                        {% sw_icon 'shopware' style { 'color': 'primary' } %}
-                        {{ "footer.copyrightInfo"|trans|sw_sanitize }}
-                    </div>
-                {% endblock %}
             </div>
         </div>
-    </div>
+    {% endblock %}
+
+    {% block layout_footer_payment_shipping_logos %}
+        {% apply spaceless %}
+            {{ parent() }}
+        {% endapply %}
+    {% endblock %}
+
+    {% block layout_footer_bottom %}
+        <div class="footer-service">
+            {% block layout_footer_service_menu %}
+                {{ parent() }}
+            {% endblock %}
+        </div>
+
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 col-md-3">
+                        {% block layout_footer_quality_info %}
+                            <div class="footer-quality">
+                                {{ "footer.qualityInfo"|trans|sw_sanitize }}
+                            </div>
+                        {% endblock %}
+                    </div>
+
+                    <div class="col-12 col-md-6">
+                        {{ block('layout_footer_vat') }}
+                    </div>
+
+                    <div class="col-12 col-md-3">
+                        {% block layout_footer_copyright %}
+                            <div class="footer-copyright">
+                                {% sw_icon 'ic-shopware' style { 'pack': 'emporium' } %}
+                                {{ "footer.copyrightInfo"|trans|sw_sanitize }}
+                            </div>
+                        {% endblock %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% endblock %}
 {% endblock %}

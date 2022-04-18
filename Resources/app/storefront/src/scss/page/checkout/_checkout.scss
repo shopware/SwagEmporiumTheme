@@ -52,3 +52,12 @@ $checkout-aside-spacer-lg: 100px;
         }
     }
 }
+
+.is-ctl-checkout,
+.is-act-checkoutregisterpage {
+    .footer-minimal {
+        .footer-service-menu-list {
+            display: flex;
+        }
+    }
+}

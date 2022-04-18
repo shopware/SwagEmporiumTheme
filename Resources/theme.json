@@ -198,21 +198,20 @@
                     "de-DE": "Footer Logo"
                 },
                 "type": "media",
-                "value": "app/storefront/src/assets/logo/emporium-logo-footer-desktop.svg",
+                "value": "app/storefront/src/assets/logo/emporium-logo-footer.svg",
                 "editable": true,
                 "block": "media",
                 "order": 300
-            },
-            "sw-footer-logo-mobile": {
+            },"sw-footer-minimal-logo": {
                 "label": {
-                    "en-GB": "Footer mobile logo",
-                    "de-DE": "Footer mobile Logo"
+                    "en-GB": "Footer Minimal logo",
+                    "de-DE": "Footer Minimal Logo"
                 },
                 "type": "media",
-                "value": "app/storefront/src/assets/logo/emporium-logo-footer-mobile.svg",
+                "value": "app/storefront/src/assets/logo/emporium-logo-footer-minimal.svg",
                 "editable": true,
                 "block": "media",
-                "order": 400
+                "order": 300
             },
             "sw-contact-form": {
                 "label": {
@@ -253,6 +252,46 @@
                 "value": "app/storefront/src/assets/images/maintenance.png",
                 "editable": true,
                 "block": "errorPages"
+            },
+            "sw-facebook-link": {
+                "label": {
+                  "en-GB": "Facebook link",
+                  "de-DE": "Facebook-Link"
+                },
+                "type": "textarea",
+                "value": "https://www.facebook.com/",
+                "editable": true,
+                "block": "footer"
+            },
+            "sw-instagram-link": {
+                "label": {
+                  "en-GB": "Instagram link",
+                  "de-DE": "Instagram-Link"
+                },
+                "type": "textarea",
+                "value": "https://www.instagram.com/",
+                "editable": true,
+                "block": "footer"
+            },
+            "sw-twitter-link": {
+                "label": {
+                  "en-GB": "Twitter link",
+                  "de-DE": "Twitter-Link"
+                },
+                "type": "textarea",
+                "value": "https://www.twitter.com/",
+                "editable": true,
+                "block": "footer"
+            },
+            "sw-tiktok-link": {
+                "label": {
+                  "en-GB": "Tiktok link",
+                  "de-DE": "Tiktok-Link"
+                },
+                "type": "textarea",
+                "value": "https://www.tiktok.com/",
+                "editable": true,
+                "block": "footer"
             }
         }
     }

@@ -8,5 +8,18 @@
     "404ErrorDescription": "Es tut uns leid, aber es scheint, dass wir die Seite, die Sie suchen, nicht finden können. Möglicherweise existiert sie nicht mehr oder ist verschoben worden.",
     "maintenanceModeHeader": "Wartungsmodus",
     "maintenanceModeDescription": "Wir aktualisieren derzeit den Inhalt dieser Website. Bitte schauen Sie später wieder vorbei."
+  },
+  "footer": {
+    "qualityInfo": "Emporium - Quality since 1985",
+    "serviceHotline": "<a href=\"tel:+49180000000\">0180 - 000000</a>",
+    "serviceHotlineHeadline": "Support and counselling Mon-Fri, 9 am - 5 pm via:",
+    "socialMediaHeadline": "Social Media",
+    "facebookHeadline": "Facebook",
+    "instagramHeadline": "Instagram",
+    "twitterHeadline": "Twitter",
+    "tiktokHeadline": "Tiktok",
+    "newsletterInfo": "Newsletter",
+    "newsletterSubHeadline": "Subscribe to the free newsletter and ensure that you will no longer miss any offers or news of Demoshop.",
+    "newsletterYourEmail": "Email"
   }
 }
