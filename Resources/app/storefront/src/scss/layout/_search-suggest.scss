@@ -4,47 +4,40 @@ Search suggest
 Contains styles for the search suggest popover in the shop header.
 */
 
-$image-width-sm: 40px;
-$image-width-lg: 70px;
-$product-image-bg: $gray-100;
+$image-size-sm: 40px;
+$image-size-md: 60px;
+$image-size-lg: 90px;
 
-$search-suggest-padding-sm: 18px;
-$search-suggest-padding-md: 30px;
+$search-suggest-padding-sm: 15px;
+$search-suggest-padding-md: 35px;
 $search-suggest-padding-lg: 50px;
 
+$search-suggest-max-height-sm: 381px;
+$search-suggest-max-height-md: 515px;
+
 .search-suggest-container {
-    padding: 0 0 $search-suggest-padding-md;
     margin: 0;
-    top: 30px;
+    top: 8px;
     left: 0;
     right: 0;
-
     border: none;
-    box-shadow: none;
     position: relative;
-
-    &::after {
-        content: none;
-    }
-
-    .search-suggest-product:first-child {
-        border-top: 1px solid $border-color;
-    }
+    box-shadow: 0 2px 15px rgba(74, 84, 91, 0.13);
+    padding: $search-suggest-padding-sm $search-suggest-padding-sm 5px;
+    max-height: $search-suggest-max-height-sm;
+    overflow: auto;
 
     .search-suggest-product-link {
-        padding: 14px;
+        padding: 14px 0;
         font-size: 11px;
         font-weight: $font-weight-bold;
     }
 
     .search-suggest-product-image-container {
         border-radius: 2px;
-        width: $image-width-sm;
-        height: $image-width-sm;
+        width: $image-size-md;
+        height: $image-size-sm;
         margin: inherit;
-
-        background-color: $product-image-bg;
-        padding: 0 8px;
     }
 
     .search-suggest-product-image {
@@ -52,26 +45,46 @@ $search-suggest-padding-lg: 50px;
         max-height: 100%;
     }
 
+    .search-suggest-product-info {
+        font-size: $btn-font-size;
+        max-width: calc(100% - #{$image-size-md});
+    }
+
     .search-suggest-product-name {
         padding-left: $search-suggest-padding-sm;
+    }
+
+    .search-suggest-product-price {
+        text-align: left;
+        padding-left: $search-suggest-padding-sm;
+        padding-right: 0;
+
+        .search-suggest-product-price {
+            padding-left: 0;
+        }
     }
 
     @include media-breakpoint-up(md) {
         width: 100%;
         transform: none;
-        top: 55px;
+        max-height: $search-suggest-max-height-md;
+        padding: $search-suggest-padding-sm $search-suggest-padding-md 24px;
+
+        .search-suggest-product-image-container {
+            width: $image-size-lg;
+            height: $image-size-md;
+        }
+
+        .search-suggest-product-info {
+            display: flex;
+            justify-content: space-between;
+        }
     }
 
     @include media-breakpoint-up(lg) {
-        padding: 0 0 $search-suggest-padding-lg;
-
-        .search-suggest-product-image-container {
-            width: $image-width-lg;
-            height: $image-width-lg;
-        }
-
-        .search-suggest-product-name {
-            padding-left: $search-suggest-padding-md;
+        .search-suggest-product-info {
+            font-size: $btn-font-size-lg;
+            max-width: calc(100% - #{$image-size-lg});
         }
 
         .search-suggest-product-link {
@@ -81,15 +94,14 @@ $search-suggest-padding-lg: 50px;
 }
 
 .search-suggest-total {
-    padding: $search-suggest-padding-md 0 0;
-
+    padding: $search-suggest-padding-sm 0 0;
 
     .search-suggest-total-link {
-        font-size: 10px;
-        text-transform: uppercase;
+        font-size: $btn-font-size;
+        width: 100%;
     }
 
-    @include media-breakpoint-up(lg) {
-        padding: $search-suggest-padding-lg 0 0;
+    @include media-breakpoint-up(md) {
+        padding-top: $search-suggest-padding-md;
     }
 }
