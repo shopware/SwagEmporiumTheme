@@ -8,3 +8,15 @@
        {{ parent() }}
   {% endapply %}
 {% endblock %}
+
+{% block base_header %}
+    <header class="header-main">
+        {% sw_include '@Storefront/storefront/layout/header/top-bar.html.twig' %}
+
+        {% block base_header_inner %}
+            <div class="container">
+                {% sw_include '@Storefront/storefront/layout/header/header.html.twig' %}
+            </div>
+        {% endblock %}
+    </header>
+{% endblock %}
