@@ -9,10 +9,8 @@
         text-align: center;
 
         .page-link {
-            color: $sw-color-brand-primary;
-            width: 53px;
-            font-size: $font-size-sm;
-            font-weight: 500;
+            color: $sw-text-color;
+            font-size: 15px;
         }
 
         &.disabled .page-link,
@@ -29,8 +27,8 @@
 
         &.active {
             .page-link {
-                margin-top: 2px;
-                border-bottom: 2px solid $sw-color-brand-primary;
+                color: $sw-color-brand-primary;
+                font-weight: $font-weight-bold;
             }
         }
     }
@@ -43,7 +41,7 @@
     @include media-breakpoint-down(md) {
         .page-item {
             .page-link {
-                font-size: $showroom-font-size-sm;
+                font-size: 13px;
                 width: 32px;
             }
         }

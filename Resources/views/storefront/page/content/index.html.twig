@@ -1,0 +1,16 @@
+{% sw_extends '@Storefront/storefront/page/content/index.html.twig' %}
+
+{% block cms_content %}
+    {% set cmsPageClasses = ('cms-page ' ~ page.cmsPage.cssClass|striptags)|trim %}
+    <div class="{{ cmsPageClasses }} {% if page.cmsPage.locked %}cms-page-default{% endif %}">
+        {% block page_content_blocks %}
+            {% sw_include "@Storefront/storefront/page/content/detail.html.twig" with {'cmsPage': page.cmsPage} %}
+        {% endblock %}
+    </div>
+{% endblock %}
+
+{% block cms_breadcrumb %}
+    {% apply spaceless %}
+        {{ parent() }}
+    {% endapply %}
+{% endblock %}

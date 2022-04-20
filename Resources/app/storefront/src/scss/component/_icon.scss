@@ -7,10 +7,6 @@
   &.icon-lg {
     @include icon-lg();
   }
-
-    &.icon-emporium {
-        color: $white;
-    }
 }
 
 .btn {
