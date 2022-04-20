@@ -3,12 +3,11 @@ $modal-padding-mobile: 20px;
 $modal-title-font-size: 24px;
 
 .modal {
-
     &-title {
-        font-size: $modal-title-font-size;
-        line-height: 30px;
-        color: $gray-700;
-        font-weight: $font-weight-bold;
+        font-weight: $font-weight-normal;
+        font-size: 24px;
+        line-height: 34px;
+        color: $top-and-bottom-color;
     }
 
     &-dialog {
@@ -19,15 +18,35 @@ $modal-title-font-size: 24px;
         border: 1px solid $border-color;
         border-radius: 1px;
         box-shadow: $modal-content-box-shadow-xs;
+
+        .modal-title {
+            line-height: 34px;
+        }
+
+        .cms-element-text h2 {
+            font-weight: $font-weight-normal;
+            font-size: 24px;
+            line-height: 34px;
+            color: $top-and-bottom-color;
+        }
     }
 
     &-header {
         align-items: center;
-        padding: $modal-padding $modal-padding 40px;
+        padding: $modal-padding;
         border-bottom: unset;
 
         .close {
             padding: 0;
+            margin: 0;
+            position: absolute;
+            right: 34px;
+            top: 34px;
+            z-index: 1;
+        }
+
+        &.only-close {
+            padding: $modal-padding $modal-padding 0;
         }
     }
 
@@ -43,13 +62,21 @@ $modal-title-font-size: 24px;
 
     &-body {
         padding: 0 $modal-padding $modal-padding;
+
+        .cms-section .boxed {
+            padding: 0;
+        }
+
+        .cms-block-container {
+            padding: 0 !important;
+        }
     }
 
     .card-title {
-        font-weight: $font-weight-bold;
-        color: $sw-color-brand-primary;
-        font-size: $h2-font-size;
-        line-height: 40px;
+        font-weight: $font-weight-normal;
+        font-size: 24px;
+        line-height: 34px;
+        color: $top-and-bottom-color;
     }
 
     @include media-breakpoint-up(lg) {
