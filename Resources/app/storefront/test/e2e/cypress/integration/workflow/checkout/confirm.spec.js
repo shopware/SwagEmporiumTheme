@@ -29,8 +29,6 @@ describe('Checkout: Payment and Shipping methods selection', { tags: ['@workflow
         const page = new CheckoutPageObject();
 
         // add product to cart
-        cy.get('.search-toggle-btn').click();
-
         cy.get('.header-search-input')
             .should('be.visible')
             .type(product.name);
@@ -70,8 +68,6 @@ describe('Checkout: Payment and Shipping methods selection', { tags: ['@workflow
                 const page = new CheckoutPageObject();
 
                 // add product to cart
-                cy.get('.search-toggle-btn').click();
-
                 cy.get('.header-search-input')
                     .should('be.visible')
                     .type(product.name);
@@ -113,8 +109,6 @@ describe('Checkout: Payment and Shipping methods selection', { tags: ['@workflow
         const page = new CheckoutPageObject();
 
         // add product to cart
-        cy.get('.search-toggle-btn').click();
-
         cy.get('.header-search-input')
             .should('be.visible')
             .type(product.name);
