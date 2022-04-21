@@ -1,11 +1,45 @@
 {% sw_extends '@Storefront/storefront/layout/footer/footer-minimal.html.twig' %}
 
-{% block layout_footer_inner_container %}
-    <footer class="footer-minimal">
-        {% block layout_footer_bottom %}
-            <div class="footer-main">
-                {{ parent() }}
-            </div>
+{% block layout_footer_bottom %}
+    <div class="footer-service d-lg-none">
+        {% block layout_footer_service_menu %}
+            {{ parent() }}
         {% endblock %}
-    </footer>
+    </div>
+
+    <div class="footer-bottom">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-md-3 col-lg-4">
+                    {% block layout_footer_minimal_logo %}
+                        <a class="footer-logo-main-link"
+                           href="{{ path('frontend.home.page') }}"
+                           title="{{ "header.logoLink"|trans|striptags }}">
+                            {% if theme_config('sw-footer-minimal-logo') %}
+                                <img src="{{ theme_config('sw-footer-minimal-logo')|sw_encode_url }}"
+                                     alt="{{ "header.logoLink"|trans|striptags }}"
+                                     class="footer-logo-main-img"/>
+                            {% endif %}
+                        </a>
+                    {% endblock %}
+                </div>
+
+                <div class="col-12 col-md-6 col-lg-3 d-none d-lg-block">
+                    {% block layout_footer_service_menu_content %}
+                        {{ parent() }}
+                    {% endblock %}
+                </div>
+
+                <div class="col-12 col-md-6 col-lg-3">
+                    {{ block('layout_footer_vat') }}
+                </div>
+
+                <div class="col-12 col-md-3 col-lg-2">
+                    {% block layout_footer_copyright %}
+                        {{ parent() }}
+                    {% endblock %}
+                </div>
+            </div>
+        </div>
+    </div>
 {% endblock %}
