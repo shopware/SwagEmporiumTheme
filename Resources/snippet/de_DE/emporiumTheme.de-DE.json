@@ -21,5 +21,11 @@
     "newsletterInfo": "Newsletter",
     "newsletterSubHeadline": "Subscribe to the free newsletter and ensure that you will no longer miss any offers or news of Demoshop.",
     "newsletterYourEmail": "Email"
+  },  
+  "header": {
+    "topBarMessage": "Emporium - Quality since 1985",
+    "topBarFirst": "Free Shipping over 50€",
+    "topBarSecond": "Money Back Guaranty",
+    "topBarThird": "Secure payment method"
   }
 }

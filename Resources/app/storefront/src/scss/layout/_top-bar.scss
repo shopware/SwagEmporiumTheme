@@ -1,0 +1,97 @@
+.top-bar {
+    background-color: $top-and-bottom-color;
+    font-size: $input-font-size;
+    font-weight: $font-weight-bold;
+
+    &-nav {
+        justify-content: space-between;
+        color: $white;
+        align-items: center;
+
+        &-btn {
+            &:after {
+                content: none;
+            }
+
+            &.btn {
+                color: $white;
+                font-size: 13px;
+                font-weight: $font-weight-bold;
+                vertical-align: 50%;
+
+                .icon {
+                    color: $white;
+                }
+
+            }
+
+            &.btn:hover {
+                &,
+                .icon {
+                    color: $white;
+                }
+            }
+
+            .collapse-down-icon {
+                svg {
+                    top: 9px;
+                }
+            }
+        }
+    }
+
+    &-fact {
+        margin-right: 25px;
+
+        .icon {
+            width: auto;
+            height: auto;
+            color: $white;
+
+            svg {
+                width: 13px;
+            }
+        }
+    }
+
+    &-message {
+        margin-bottom: 0;
+        text-align: left;
+    }
+
+    &-currency,
+    &-language {
+        display: inline-flex;
+
+        &:empty {
+            display: none;
+        }
+
+        .dropdown-menu {
+            box-shadow: $popover-box-shadow;
+            border-color: $pop-over-border-color;
+        }
+    }
+
+    &-nav-text {
+        display: inline;
+    }
+
+    &-list-item {
+        padding: 4px 34px;
+        color: $gray-400;
+    }
+
+    @include media-breakpoint-up(lg) {
+        padding: 5px 0;
+    }
+}
+
+.dropdown.show {
+    .top-bar-nav-btn {
+        &,
+        .icon {
+            color: $white;
+        }
+    }
+}
