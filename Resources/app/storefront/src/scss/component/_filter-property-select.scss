@@ -1,12 +1,28 @@
-.filter-property-select-preview {
-    border-radius: 0;
-}
-
-.filter-property-select-preview.is-color {
-    border-radius: 20px;
-}
-
 .filter-property-select-preview-checkmark {
-    background: $sw-color-brand-primary;
-    border: unset;
+    border: 1px solid $border-color;
+    width: 34px;
+    height: 34px;
+    top: 2px;
+    left: -3px;
+    opacity: 1;
+    border-radius: 1px;
+    background-color: transparent;
+
+    .icon {
+        @extend .d-none;
+    }
+}
+
+.filter-property-select-preview {
+    width: 32px;
+    height: 32px;
+    border-radius: 1px;
+    border: 2px solid $white;
+}
+
+.filter-property-select-checkbox:checked {
+    ~ .filter-property-select-preview-checkmark {
+        transform: translateY(-5px);
+        border-color: $sw-color-brand-primary;
+    }
 }

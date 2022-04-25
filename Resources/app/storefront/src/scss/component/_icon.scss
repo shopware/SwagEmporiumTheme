@@ -4,39 +4,13 @@
 }
 
 .icon {
-  &.icon-lg {
-    @include icon-lg();
-  }
+    &.icon-lg {
+        @include icon-lg();
+    }
 
     &.icon-emporium {
-        color: $white;
-    }
-}
-
-.btn {
-    .icon {
-        > svg {
-            top: 2px;
+        footer & {
+            color: $white;
         }
     }
-}
-
-.is-right .offcanvas-close {
-    .icon svg {
-        top: 0.25rem;
-    }
-}
-
-.is-left .offcanvas-close {
-    .icon svg {
-        top: 0;
-    }
-}
-
-.icon-showroom {
-  .icon {
-    > svg {
-      top: 3px;
-    }
-  }
 }
