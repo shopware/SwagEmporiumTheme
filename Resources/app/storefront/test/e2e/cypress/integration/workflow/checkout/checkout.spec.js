@@ -51,6 +51,8 @@ describe('Checkout: Basic', { tags: ['@workflow', '@checkout'] }, () => {
         // Checkout
         cy.get('.offcanvas-cart-actions .begin-checkout-btn').click();
 
+        cy.get('.login-collapse-toggle').click();
+
         // Login
         cy.get('.checkout-main').should('be.visible');
         cy.get('#loginCollapse').click();

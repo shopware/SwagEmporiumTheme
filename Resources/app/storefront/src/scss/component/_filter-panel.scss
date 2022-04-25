@@ -31,6 +31,17 @@ $icon-check: url('#{$asset-path}/icon/icon-pack/ic-check.svg');
         margin: 0;
         flex-grow: 6;
         position: relative !important;
+
+        &.show {
+            .global-collapse-plus-icon {
+                display: none;
+            }
+
+            .global-collapse-minus-icon {
+                display: block;
+            }
+        }
+
         .filter-panel-item-toggle {
             background: $gray-100;
             border-color: $gray-100;
@@ -47,36 +58,29 @@ $icon-check: url('#{$asset-path}/icon/icon-pack/ic-check.svg');
         .filter-panel-item-dropdown {
             width: 100%;
             top: -6px !important;
-        }
-
-        .dropdown-menu {
             background: $gray-100;
             border-color: $gray-100;
-            margin: 0;
+
+            &:not(.dropdown-menu) {
+                margin-top: 6px;
+            }
         }
 
         .global-collapse-column-toggle {
             float: right;
             margin-left: auto;
-        }
 
-        .global-collapse-column-toggle,
-        .top-bar-list-icon {
-            pointer-events: none;
+            .icon {
+                color: $sw-text-color;
+
+                > svg {
+                    top: 4px;
+                }
+            }
         }
 
         .global-collapse-minus-icon {
             display: none;
-        }
-
-        &.show {
-            .global-collapse-plus-icon {
-                display: none;
-            }
-
-            .global-collapse-minus-icon {
-                display: block;
-            }
         }
 
         .filter-multi-select-count {
@@ -167,7 +171,7 @@ $icon-check: url('#{$asset-path}/icon/icon-pack/ic-check.svg');
         }
 
         .filter-active-remove {
-            font-size: $showroom-font-size-base;
+            font-size: 11px;
             right: -6px;
             top: 1px;
         }
@@ -326,8 +330,7 @@ $icon-check: url('#{$asset-path}/icon/icon-pack/ic-check.svg');
     }
 }
 .cms-block-sidebar-filter {
-    .filter-panel-items-container,
-    .filter-panel-offcanvas-header {
+    .filter-panel-items-container{
         display: none !important;
 
         @include media-breakpoint-up(lg) {

@@ -84,6 +84,10 @@ $logo-height-lg: 37px;
     &-icon {
         .icon {
             color: $top-and-bottom-color;
+
+            > svg {
+                top: 0;
+            }
         }
 
         &:hover {
@@ -127,7 +131,17 @@ $logo-height-lg: 37px;
             .icon {
                 width: 18px;
                 height: 18px;
+
+                > svg {
+                    top: 0;
+                }
             }
+        }
+    }
+
+    .btn.account-menu-btn {
+        .icon > svg {
+            top: 2px;
         }
     }
 
@@ -177,22 +191,6 @@ $logo-height-lg: 37px;
     }
 }
 
-.header-wishlist {
-    &-btn {
-        position: relative;
-    }
-
-    .header-wishlist-badge {
-        background: none;
-        right: 2px;
-        top: 3px;
-
-        svg {
-            width: 11px;
-        }
-    }
-}
-
 @include media-breakpoint-up(sm) {
     .header-logo-col {
         img {
@@ -230,51 +228,12 @@ $logo-height-lg: 37px;
                 padding: 10px 10px;
                 font-size: $h5-font-size;
             }
-
-            .icon {
-                @include icon-lg()
-            }
-        }
-
-        .menu-button {
-            .header-actions-btn {
-                display: flex;
-                align-items: center;
-                justify-content: center;
-
-                .icon {
-                    margin-right: $spacer;
-                }
-
-                .icon svg {
-                    top: 0;
-                }
-
-            }
-        }
-
-        .dropdown-menu {
-            &.open-in-center {
-                top: 61px !important;
-            }
         }
     }
 
     .header-logo-col {
         img {
             max-height: $logo-height-lg;
-        }
-    }
-
-    .header-wishlist {
-        .header-wishlist-badge {
-            background: none;
-            right: 9px;
-            top: 12px;
-
-            svg {
-                width: 18px;
-            }
         }
     }
 }

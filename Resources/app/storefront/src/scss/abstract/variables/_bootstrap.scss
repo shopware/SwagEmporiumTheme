@@ -6,10 +6,7 @@ shopRoot/src/vendor/shopware/storefront/Resources/app/storefront/vendor/bootstra
 */
 
 // Options
-$enable-responsive-font-sizes: false !default;
-$font-size-base: 0.875rem !default;
-$font-size-sm: 0.75rem !default;
-$font-size-xs: 0.6875rem !default;
+$font-size-base: 0.9375rem !default;
 $asset-path: '#{$sw-asset-theme-url}/bundles/swagemporiumtheme/assets' !default;
 
 $top-and-bottom-color: darken($sw-color-brand-primary, 40%) !default; //#000639
@@ -34,15 +31,11 @@ $gray-900: $sw-text-color !default; //#1c1e25
 
 // Typography
 $h1-font-size: 36px !default;
-$h1-font-size-lg: 36px !default;
 $h2-font-size: 28px !default;
-$h2-font-size-lg: 28px !default;
 $h3-font-size: 24px !default;
 $h4-font-size: 20px !default;
 $h5-font-size: 16px !default;
 $h6-font-size: 14px !default;
-
-$font-weight-bold: 700 !default;
 
 // Components
 $border-radius: 1px !default;
@@ -68,9 +61,6 @@ $btn-padding-y-sm: 4px !default;
 $btn-padding-x-lg: 40px !default;
 $btn-padding-y-lg: 10px !default;
 $btn-border-radius: 1px !default;
-
-$disabled-btn-border-color: #eceef0 !default;
-$btn-secondary-hover-color: #bca687 !default;
 
 // Forms
 $input-height: 42px !default;
@@ -100,11 +90,6 @@ $custom-checkbox-indicator-border-radius: 4px !default;
 $custom-select-box-shadow: none !default;
 $custom-select-focus-box-shadow: none !default;
 $custom-select-indicator: url('#{$asset-path}/icon/icon-pack/ic-chevron-down.svg') !default;
-$custom-select-bg-size: 1rem !default;
-
-$custom-switch-width: 1.75rem !default;
-$custom-switch-indicator-size: 0.75rem !default;
-$custom-control-indicator-border-color: $sw-color-brand-primary !default;
 
 //Custom control
 $custom-control-indicator-checked-color: $sw-color-brand-primary;
@@ -119,25 +104,6 @@ $custom-radio-indicator-icon-checked: str-replace(url("data:image/svg+xml,%3csvg
 $custom-switch-width: 1.75rem;
 $custom-switch-indicator-size: 0.625rem;
 $custom-control-indicator-checked-disabled-bg: $gray-200;
-// Badges
-$badge-font-size: 10px !default;
-
-// List items
-$list-group-action-color: $gray-900 !default;
-$list-group-action-hover-color: $gray-900 !default;
-$list-group-action-active-color: $gray-900 !default;
-
-// Grid
-$grid-gutter-width: 48px !default;
-$form-grid-gutter-width: $grid-gutter-width;
-
-// Modal
-$modal-content-box-shadow-xs: 0 0 20px 0 rgba(38, 38, 47, 0.2) !default;
-
-// Card
-$card-spacer-y: 20px;
-
-$line-height-base: 2 !default;
 
 //Icon
 $icon-base-color: $top-and-bottom-color;

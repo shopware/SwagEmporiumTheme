@@ -60,13 +60,17 @@ $maintenance-color: #7F868C;
     h1 {
         font-weight: $font-weight-normal;
     }
-    
+
     p {
         padding-bottom: 24px;
     }
 
     .text-center {
-        @extend .text-left;
+        @if (feature('v6.5.0.0')) {
+            @extend .text-start;
+        } @else {
+            @extend .text-left;
+        }
     }
 }
 

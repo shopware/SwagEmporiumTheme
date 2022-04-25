@@ -9,43 +9,6 @@ $footer-border-color: #D7DBDF;
 }
 
 .footer-main {
-    .footer-column-content-inner {
-        padding-bottom: 0;
-    }
-
-    .footer-newsletter-info {
-        font-size: $showroom-font-size-base;
-
-        .form-label {
-            font-size: $font-size-sm;
-        }
-    }
-
-    .footer-columns {
-        border-bottom: unset;
-    }
-
-    .footer-logo {
-        margin-right: 0;
-        margin-bottom: 0;
-
-        img {
-            max-height: $logo-max-height;
-        }
-
-        &.is-payment {
-            margin-right: 24px;
-        }
-    }
-
-    .footer-service-menu-item {
-        display: block;
-
-        &::after {
-            display: none;
-        }
-    }
-
     @include media-breakpoint-up(md) {
         .footer-columns {
             padding: 50px 0;

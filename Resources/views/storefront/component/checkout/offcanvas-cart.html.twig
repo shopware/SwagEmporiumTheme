@@ -4,67 +4,21 @@
     {% sw_icon 'arrow-head-left' style { 'pack':'emporium' } %}
 {% endblock %}
 
-{% block component_offcanvas_cart %}
-    {% set isCartNotEmpty = (page.cart.lineItems|length > 0) %}
-    <div class="offcanvas-cart">
-        {% block component_offcanvas_cart_header %}
-            <div class="offcanvas-cart-header">
-                <h1 class="mb-0">{{ "checkout.cartHeader"|trans|sw_sanitize }}</h1>
-            </div>
-        {% endblock %}
-
-        {% block component_offcanvas_cart_header_item_counter %}
-            {% if isCartNotEmpty %}
-                {% set checkoutItemCounter = page.cart.lineItems|length %}
-                <div class="offcanvas-cart-header-count">
-                    {{ "checkout.itemCounter"|trans({'%count%': checkoutItemCounter})|sw_sanitize }}</small>
-                </div>
-            {% endif %}
-        {% endblock %}
-
-        {% block component_offcanvas_cart_flashbags %}
-            {{ parent() }}
-        {% endblock %}
-
-        {% if isCartNotEmpty %}
-            {% block component_offcanvas_cart_items %}
-                {{ parent() }}
-            {% endblock %}
-        {% else %}
-            {% block component_offcanvas_cart_empty %}
-                {{ parent() }}
-            {% endblock %}
-        {% endif %}
-
-        {% block component_offcanvas_cart_summary %}
-            <div class="row">
-                <div class="col-12 col-lg-6 offset-lg-6">
-                    {% if isCartNotEmpty %}
-                        {% block component_offcanvas_summary %}
-                            {{ parent() }}
-                        {% endblock %}
-                    {% endif %}
-
-                    {% block component_offcanvas_cart_actions %}
-                        {{ parent() }}
-                    {% endblock %}
-                </div>
-            </div>
-        {% endblock %}
-    </div>
-
-    {% block component_offcanvas_cart_hidden_line_items_information %}
-        {{ parent() }}
-    {% endblock %}
-
-{% endblock %}
-
 {% block component_offcanvas_cart_actions_promotion_submit %}
-    <div class="input-group-append">
-        <button class="btn btn-primary"
+    {# @deprecated tag:v6.5.0 - Bootstrap v5 removes `input-group-append` wrapper and uses elements as direct childs of `input-group` #}
+    {% if feature('v6.5.0.0') %}
+        <button class="btn btn-secondary"
                 type="submit"
                 id="addPromotionOffcanvasCart">
             {{ "checkout.addPromotionAction"|trans|sw_sanitize }}
         </button>
-    </div>
+    {% else %}
+        <div class="input-group-append">
+            <button class="btn btn-secondary"
+                    type="submit"
+                    id="addPromotionOffcanvasCart">
+                {{ "checkout.addPromotionAction"|trans|sw_sanitize }}
+            </button>
+        </div>
+    {% endif %}
 {% endblock %}

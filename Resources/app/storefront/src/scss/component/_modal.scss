@@ -10,10 +10,6 @@ $modal-title-font-size: 24px;
         color: $top-and-bottom-color;
     }
 
-    &-dialog {
-        top: 50px;
-    }
-
     &-content {
         border: 1px solid $border-color;
         border-radius: 1px;
@@ -77,21 +73,5 @@ $modal-title-font-size: 24px;
         font-size: 24px;
         line-height: 34px;
         color: $top-and-bottom-color;
-    }
-
-    @include media-breakpoint-up(lg) {
-        .modal-title {
-            font-size: $h2-font-size;
-        }
-
-        &-dialog {
-            max-width: 800px;
-        }
-    }
-
-    @include media-breakpoint-down(sm) {
-        &-body {
-            padding: 0 $modal-padding-mobile $modal-padding-mobile;
-        }
     }
 }
