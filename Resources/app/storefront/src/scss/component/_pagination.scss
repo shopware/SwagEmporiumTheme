@@ -9,8 +9,10 @@
         text-align: center;
 
         .page-link {
-            color: $sw-text-color;
+            color: $gray-400;
             font-size: 15px;
+            line-height: 24px;
+            padding: 0 7px;
         }
 
         &.disabled .page-link,
@@ -20,8 +22,9 @@
         }
 
         &.disabled {
-            .page-link, .page-link svg {
-                color: $gray-300;
+            .page-link,
+            .page-link svg path {
+                stroke: $gray-300;
             }
         }
 
@@ -36,6 +39,23 @@
     .icon {
         width: 18px;
         height: 18px;
+
+        > svg {
+            top: 3px;
+
+            path {
+                stroke: $gray-900;
+                fill: none;
+            }
+        }
+    }
+
+    .page-last,
+    .page-first {
+        .icon {
+            width: 20px;
+            height: 20px;
+        }
     }
 
     @include media-breakpoint-down(md) {
