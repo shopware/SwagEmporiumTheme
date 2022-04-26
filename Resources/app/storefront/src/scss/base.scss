@@ -1,5 +1,5 @@
 /*
-Showroom theme styles
+Emporium theme styles
 ==================================================
 Contains the imports to all theme styles.
 
@@ -20,67 +20,39 @@ https://sass-guidelin.es/#the-7-1-pattern
 /*
  * Base stuff
  * ---------- */
-@import 'base/base';
 @import 'base/font';
-@import 'base/typography';
-@import 'base/icons';
 
 /*
  * Components
  * ---------- */
 @import 'component/button';
 @import 'component/alert';
-@import 'component/table';
 @import 'component/custom-forms';
 @import 'component/icon';
 @import 'component/forms';
-@import 'component/card';
 @import 'component/input-group';
 @import 'component/dropdown';
-@import 'component/product-box';
 @import 'component/language-currency-widget';
-@import 'component/account-menu';
-@import 'component/scroll-up';
 @import 'component/modal';
 @import 'component/pagination';
-@import 'component/offcanvas';
-@import 'component/tab-menu';
-@import 'component/nav';
 @import 'component/container';
-@import 'component/grid-framework';
-@import 'component/base-slider';
-@import 'component/payment-method';
 @import 'component/gallery-slider';
-@import 'component/product-slider';
 @import 'component/filter-panel';
-@import 'component/filter-multi-select';
-@import 'component/filter-range';
-@import 'component/filter-rating';
-@import 'component/filter-property-select';
-@import 'component/filter-boolean';
 @import 'component/cms-section-sidebar';
 @import 'component/cms-block';
 @import 'component/cms-element';
 @import 'component/cms-section';
 @import 'component/breadcrumb';
 @import 'component/category-navigation';
-@import 'component/quickview-modal';
-@import 'component/address-editor';
-@import 'component/quickview/quickview';
 @import 'component/customized-product/customized-product';
-@import 'component/product-wishlist';
-@import 'component/basic-captcha';
-@import 'component/fading-plugin';
 @import 'component/custom-select';
 /*
  * Layout-related sections
  * ----------------------- */
 @import 'layout/container';
 @import 'layout/header';
-@import 'layout/header-minimal';
 @import 'layout/footer';
 @import 'layout/search-suggest';
-@import 'layout/navigation-offcanvas';
 @import 'layout/offcanvas-cart';
 @import 'layout/scroll-up';
 @import 'layout/top-bar';
@@ -88,26 +60,8 @@ https://sass-guidelin.es/#the-7-1-pattern
 /*
  * Page-specific styles
  * -------------------- */
-@import 'page/account/login';
-@import 'page/account/register';
-@import 'page/account/aside';
-@import 'page/account/account';
-@import 'page/account/overview';
-@import 'page/account/profile';
-@import 'page/account/address';
-@import 'page/account/payment';
-@import 'page/account/order';
-@import 'page/account/order-detail';
-@import 'page/product-detail/configurator';
-@import 'page/product-detail/product-detail';
 @import 'page/error/maintenance';
 @import 'page/checkout/checkout';
 @import 'page/checkout/cart';
 @import 'page/checkout/cart-item';
 @import 'page/checkout/aside';
-@import 'page/checkout/confirm';
-@import 'page/checkout/finish';
-@import 'page/checkout/register';
-@import 'page/checkout/edit';
-@import 'page/checkout/customized-product-cart';
-@import 'page/checkout/cart-item-children';

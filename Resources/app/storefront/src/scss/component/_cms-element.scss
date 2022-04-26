@@ -1,6 +1,10 @@
 .cms-element-product-listing {
     .cms-element-product-listing-actions {
-        @extend .no-gutters;
+        @if (feature('v6.5.0.0')) {
+            @extend .g-0;
+        } @else {
+            @extend .no-gutters;
+        }
         padding-bottom: 30px;
         gap: 12px;
 
@@ -21,29 +25,6 @@
                 width: 100%;
             }
         }
-
-        @include media-breakpoint-up(sm) {
-            .pagination {
-                margin-left: -14px;
-            }
-        }
-
-        @include media-breakpoint-down(sm) {
-            border-bottom: unset;
-        }
-    }
-
-    .cms-listing-col {
-        &:last-child {
-            padding-bottom: 40px;
-        }
-    }
-}
-
-.cms-listing-col {
-    .product-overlay {
-        bottom: unset;
-        min-height: 100%;
     }
 }
 

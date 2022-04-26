@@ -20,16 +20,6 @@
             padding-right: 40px;
         }
     }
-
-    .form-control {
-        &:focus {
-            + .input-group-append {
-                .btn {
-                    border-color: $input-focus-color;
-                }
-            }
-        }
-    }
 }
 
 .input-group-lg {

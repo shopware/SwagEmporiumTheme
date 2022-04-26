@@ -9,7 +9,7 @@
 {% endblock %}
 
 {% block element_image_gallery_inner %}
-    {% set showroomGallerySliderOptions = {
+    {% set emporiumGallerySliderOptions = {
         slider: {
             controls:false
         },
@@ -39,7 +39,7 @@
         }
     } %}
 
-    {% set gallerySliderOptions = gallerySliderOptions|replace_recursive(showroomGallerySliderOptions) %}
+    {% set gallerySliderOptions = gallerySliderOptions|replace_recursive(emporiumGallerySliderOptions) %}
 
     {{ parent() }}
 {% endblock %}

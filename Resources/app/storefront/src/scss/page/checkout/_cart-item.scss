@@ -14,22 +14,6 @@ $cart-img-container-width: 100px;
         padding-right: 30px;
     }
 
-    &-img {
-        border-radius: $border-radius-sm;
-        padding: 0;
-        border: unset;
-    }
-
-    &-img-container {
-        width: $cart-img-container-width-sm;
-    }
-
-    &-quantity-label {
-        text-transform: uppercase;
-        letter-spacing: $letter-spacing-base;
-        font-weight: $font-weight-bold;
-    }
-
     &-details {
         display: flex;
         align-items: center;
@@ -44,10 +28,6 @@ $cart-img-container-width: 100px;
     &-info {
         margin-bottom: 0;
         padding: 0 0 14px;
-    }
-
-    &-total-price {
-        padding-bottom: $card-spacer-y;
     }
 
     &-unit-price {
@@ -90,23 +70,7 @@ $cart-img-container-width: 100px;
         display: none;
     }
 
-    &-ordernumber,
-    &-delivery-date {
-        margin-bottom: 0;
-        font-size: $font-size-sm;
-    }
-
-    &-quantity-container {
-        margin-left: 0;
-        width: 100%;
-    }
-
     @include media-breakpoint-up(md) {
-        &-total-price,
-        &-unit-price {
-            order: 2;
-        }
-
         &-quantity {
             order: 3;
             width: 80px;
@@ -118,32 +82,6 @@ $cart-img-container-width: 100px;
     }
 
     @include media-breakpoint-up(lg) {
-        &-info,
-        &-quantity,
-        &-unit-price,
-        &-total-price,
-        &-tax-price,
-        &-remove {
-            order: 0;
-        }
-
-        &-img-container {
-            width: $cart-img-container-width;
-        }
-
-        &-info {
-            padding-bottom: 0;
-        }
-
-        &-info,
-        &-total-price {
-            border-bottom: 0;
-        }
-
-        &-total-price {
-            padding-bottom: 0;
-        }
-
         &-unit-price {
             padding-top: 0;
         }
@@ -151,20 +89,6 @@ $cart-img-container-width: 100px;
         &-quantity {
             text-align: left;
             width: 126px;
-        }
-
-        &-unit-price,
-        &-total-price,
-        &-tax-price {
-            justify-content: flex-end;
-            align-items: center;
-        }
-
-        &-quantity-label,
-        &-unit-price-label,
-        &-total-price-label,
-        &-tax-price-label {
-            display: none;
         }
 
         &-quantity-container {
@@ -193,26 +117,6 @@ $cart-img-container-width: 100px;
 
             padding: 0;
         }
-    }
-}
-
-.cart-table-header {
-    letter-spacing: $letter-spacing-base;
-    font-weight: $font-weight-bold;
-    font-size: $font-size-sm;
-
-    padding-bottom: 30px;
-    text-transform: uppercase;
-    border: 0;
-    color: $sw-color-brand-primary;
-
-    @include media-breakpoint-down(md) {
-        display: none;
-    }
-
-    @include media-breakpoint-up(lg) {
-        display: block;
-        font-size: $table-head-font-size;
     }
 }
 
