@@ -43,7 +43,7 @@ describe('Checkout: Basic', { tags: ['@workflow', '@checkout'] }, () => {
         cy.wait(1000);
         cy.scrollTo('top');
         cy.get('.header-cart-total').contains('64');
-        cy.get('.header-cart-total').click();
+        cy.get('.header-cart-total').click({force: true});
         cy.get('.offcanvas').should('be.visible');
 
         cy.get(`${page.elements.cartItem}-label`).contains(product.name);

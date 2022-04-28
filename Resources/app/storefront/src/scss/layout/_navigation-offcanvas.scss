@@ -1,0 +1,111 @@
+$navigation-offcanvas-padding: 24px;
+$navigation-offcanvas-spacing: 10px;
+$navigation-offcanvas-height: calc(100vh - 130px);
+
+.navigation-offcanvas {
+    .offcanvas-close {
+        border: none;
+        background: $top-and-bottom-color;
+        font-weight: $font-weight-bold;
+        font-size: $btn-font-size;
+        padding: 15px $navigation-offcanvas-padding;
+
+        &,
+        .icon {
+            color: $white;
+
+            svg {
+                top: 0;
+            }
+        }
+    }
+
+    &-placeholder,
+    &-overlay {
+        min-height: $navigation-offcanvas-height !important;
+    }
+
+    &-list.main {
+        padding-top: $navigation-offcanvas-padding;
+        max-height: $navigation-offcanvas-height;
+        overflow-y: scroll;
+    }
+
+    &-link {
+        padding: $navigation-offcanvas-spacing 0;
+        font-size: $btn-font-size;
+        border-top: $border-width solid $gray-300;
+        margin-left: $navigation-offcanvas-padding;
+        margin-right: $navigation-offcanvas-padding;
+        line-height: 24px;
+
+        &-icon .icon svg {
+            top: 25%;
+            left: 50%;
+
+            path {
+                fill: none;
+            }
+        }
+    }
+
+    .is-back-link {
+        border: none;
+        width: auto;
+        padding-bottom: 0;
+        color: $top-and-bottom-color;
+        font-size: $btn-font-size;
+        font-weight: $font-weight-base;
+
+        svg {
+            top: 0;
+            left: 0;
+        }
+    }
+
+    .is-current-category {
+        border: none;
+        padding-top: 0;
+
+        span {
+            @extend .btn, .btn-primary;
+            width: 100%;
+            color: $white;
+            text-align: center;
+            margin: 14px 0;
+        }
+    }
+
+    &-list-item,
+    &-list-item:last-child {
+        border: none;
+    }
+
+    &-actions {
+        @extend .fixed-bottom;
+        display: flex;
+        background-color: $gray-100;
+        padding: 16px $navigation-offcanvas-padding;
+
+        .top-bar-nav-item {
+            width: 47%;
+            padding: 1px $navigation-offcanvas-spacing;
+            @if (feature('V6_5_0_0')) {
+                @extend .form-select;
+            } @else {
+                @extend .custom-select;
+            }
+
+            .dropdown-toggle {
+                font-weight: $font-weight-base;
+                width: 100%;
+                text-align: left;
+                color: $top-and-bottom-color;
+            }
+        }
+
+        @include media-breakpoint-up(sm) {
+            display: none;
+        }
+    }
+}
