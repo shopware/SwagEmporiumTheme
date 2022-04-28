@@ -1,0 +1,16 @@
+.product-review-rating,
+.product-review-point {
+    line-height: 0;
+}
+
+.product-review-rating {
+   display: block;
+}
+
+.point-rating {
+    &.point-blank {
+        .icon {
+            color: $icon-base-color;
+        }
+    }
+}

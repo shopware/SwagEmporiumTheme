@@ -1,0 +1,78 @@
+/*
+Product box for wishlist
+==============================================
+Styling for productbox component.
+*/
+
+.product-wishlist {
+    margin-top: 0;
+    position: absolute;
+    bottom: 20px;
+    right: 57px;
+
+    &-action-circle {
+        @extend .btn-light;
+
+        height: 32px;
+        width: 32px;
+        border-radius: 1px;
+        padding: 0;
+        position: unset;
+
+        &::before {
+            content: unset;
+        }
+
+        &:hover,
+        &:focus,
+        &:active {
+            background-color: $gray-200;
+        }
+    }
+
+    .icon-wishlist {
+        width: 14px;
+        height: 14px;
+
+        svg {
+            top: 3px;
+        }
+    }
+}
+
+.product-box {
+    &.box-minimal {
+        .product-wishlist {
+            bottom: 14px;
+            right: 51px;
+        }
+    }
+}
+
+@include media-breakpoint-up(md) {
+    .product-wishlist {
+        right: 67px;
+
+        &-action-circle {
+            height: 42px;
+            width: 42px;
+        }
+
+        .icon-wishlist {
+            width: 20px;
+            height: 18px;
+
+            svg {
+
+            }
+        }
+    }
+
+    .product-box {
+        &.box-minimal {
+            .product-wishlist {
+                right: 61px;
+            }
+        }
+    }
+}

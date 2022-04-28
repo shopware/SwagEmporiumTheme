@@ -7,6 +7,7 @@ shopRoot/src/vendor/shopware/storefront/Resources/app/storefront/vendor/bootstra
 
 // Options
 $font-size-base: 0.9375rem !default;
+$font-size-small: 12px !default;
 $asset-path: '#{$sw-asset-theme-url}/bundles/swagemporiumtheme/assets' !default;
 
 $top-and-bottom-color: darken($sw-color-brand-primary, 40%) !default; //#000639
