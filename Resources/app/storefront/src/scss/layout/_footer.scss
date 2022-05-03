@@ -334,6 +334,10 @@ $footer-border-color: #D7DBDF;
     line-height: 21px;
     color: $gray-900;
     padding: 0;
+
+    &:hover {
+        text-decoration: none;
+    }
 }
 
 @include media-breakpoint-down(sm) {
@@ -442,10 +446,6 @@ $footer-border-color: #D7DBDF;
     .footer-logo-main-link {
         max-width: 147px;
         margin: 0 auto 0 0;
-
-        .footer-minimal & {
-            margin: 0 auto 12px;
-        }
     }
 
     .footer-contact-hotline,
@@ -526,6 +526,25 @@ $footer-border-color: #D7DBDF;
         text-align: left;
     }
 
+    .footer-main {
+        .footer-columns {
+            border-bottom: none;
+        }
+    }
+
+    .footer-minimal {
+        .footer-service-menu-link {
+            font-size: $font-size-base;
+            line-height: 24px;
+        }
+
+        .footer-service-menu-list {
+            gap: 30px;
+        }
+    }
+}
+
+@include media-breakpoint-up(xl) {
     .footer-minimal,
     .footer-simple {
         .footer-service-menu-item,
@@ -538,12 +557,6 @@ $footer-border-color: #D7DBDF;
 
         .footer-vat {
             text-align: left;
-        }
-    }
-
-    .footer-main {
-        .footer-columns {
-            border-bottom: none;
         }
     }
 }
