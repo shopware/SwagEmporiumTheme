@@ -21,12 +21,13 @@
     "newsletterInfo": "Newsletter",
     "newsletterSubHeadline": "Subscribe to the free newsletter and ensure that you will no longer miss any offers or news of Demoshop.",
     "newsletterYourEmail": "Email"
-  },  
+  },
   "header": {
     "topBarMessage": "Emporium - Quality since 1985",
     "topBarFirst": "Free Shipping over 50€",
     "topBarSecond": "Money Back Guaranty",
     "topBarThird": "Secure payment method",
-    "searchAllResults": "Alle Suchergebnisse anzeigen"
+    "searchAllResults": "Alle Suchergebnisse anzeigen",
+    "supportInfo": "Haben Sie Fragen zu Ihrer Bestellung?<br /><strong>Service-Hotline <a href=\"tel:+4915114182323\">+49 151 14182323</a></strong>"
   }
 }
