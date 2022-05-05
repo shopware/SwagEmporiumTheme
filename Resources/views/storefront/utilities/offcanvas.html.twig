@@ -1,0 +1,11 @@
+{% sw_extends '@Storefront/storefront/utilities/offcanvas.html.twig' %}
+
+{# 
+@deprecated tag:v6.5.0 - Announcement:
+Bootstrap v5 comes with its own OffCanvas component.
+This template will be adjusted to use Bootstraps OffCanvas markup. 
+#}
+
+{% block utilities_offcanvas_close_text %}
+    {{ "general.menuLink"|trans|sw_sanitize }}
+{% endblock %}

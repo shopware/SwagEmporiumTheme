@@ -139,12 +139,6 @@ $logo-height-lg: 37px;
         }
     }
 
-    .btn.account-menu-btn {
-        .icon > svg {
-            top: 2px;
-        }
-    }
-
     .nav-main-toggle,
     .nav-main-toggle-btn {
         height: 100%;
@@ -199,7 +193,7 @@ $logo-height-lg: 37px;
     }
 }
 
-@include media-breakpoint-between(sm, md) {
+@include media-breakpoint-between(sm, lg) {
     .header-search-col,
     .header-search-form {
         position: static;
@@ -238,7 +232,7 @@ $logo-height-lg: 37px;
     }
 }
 
-@include media-breakpoint-down(md) {
+@include media-breakpoint-down(lg) {
     .header-search-col {
         .collapse:not(.show) {
             display: none;
