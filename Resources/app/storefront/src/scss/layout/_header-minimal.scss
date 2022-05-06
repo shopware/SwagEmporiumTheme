@@ -1,0 +1,80 @@
+/*
+Header minimal
+==================================================
+Contains custom styles for the minimal header which is used on checkout pages.
+*/
+
+.header-minimal {
+    background-color: $top-and-bottom-color;
+}
+
+.header-minimal-row {
+    padding: 16px 0;
+}
+
+.header-minimal-logo {
+    margin-bottom: 0;
+
+    .header-logo-picture {
+        max-width: 98px;
+    }
+
+    .logo-main-img {
+        max-width: 100%;
+        height: auto;
+    }
+}
+
+.header-minimal-contact {
+    order: -1;
+    color: $white;
+    font-size: $btn-font-size-sm;
+    line-height: 15px;
+
+    a {
+        color: $white;
+    }
+}
+
+.header-minimal-back-to-shop-button {
+    padding: 8px 14px;
+    font-size: $btn-font-size-sm;
+    line-height: 14px;
+}
+
+@include media-breakpoint-up(md) {
+    .header-minimal-logo {
+        justify-content: center;
+
+        .header-logo-picture {
+            max-width: 146px;
+        }
+    }
+
+    .header-minimal-contact {
+        padding-right: 0;
+    }
+}
+
+@include media-breakpoint-up(lg) {
+    .header-minimal-row {
+        padding: 27px 0;
+    }
+
+    .header-minimal-contact {
+        font-size: $font-size-small;
+        line-height: 18px;
+    }
+
+    .header-minimal-logo {
+        .header-logo-picture {
+            max-width: 206px;
+        }
+    }
+
+    .header-minimal-back-to-shop-button {
+        padding: 10px 25px;
+        font-size: $btn-font-size;
+        line-height: 20px;
+    }
+}
