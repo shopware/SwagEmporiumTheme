@@ -1,0 +1,33 @@
+{% sw_extends '@Storefront/storefront/component/product/card/badges.html.twig' %}
+
+{% block component_product_badges_discount %}
+    {% set price = product.calculatedPrice %}
+    {% if product.calculatedPrices.count > 0 %}
+        {% set price = product.calculatedPrices.last %}
+    {% endif %}
+
+    {% set listPrice = price.listPrice.percentage > 0 %}
+    {% set hasRange = product.calculatedPrices.count > 1 %}
+
+    {% if listPrice and not hasRange %}
+        <div class="badge badge-danger badge-discount">
+            {% sw_icon 'ic-discount' style { 'pack': 'emporium' } %}
+        </div>
+    {% endif %}
+{% endblock %}
+
+{% block component_product_badges_topseller %}
+    {% if product.markAsTopseller %}
+        <div class="badge badge-warning badge-topseller">
+            {% sw_icon 'ic-tip' style { 'pack': 'emporium' } %}
+        </div>
+    {% endif %}
+{% endblock %}
+
+{% block component_product_badges_new %}
+    {% if product.isNew %}
+        <div class="badge badge-success badge-new">
+            {% sw_icon 'ic-new' style { 'pack': 'emporium' } %}
+        </div>
+    {% endif %}
+{% endblock %}

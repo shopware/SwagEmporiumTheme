@@ -1,0 +1,48 @@
+{% sw_extends '@Storefront/storefront/component/product/card/box-standard.html.twig' %}
+
+{% block component_product_box_name %}
+    {{ parent() }}
+{% endblock %}
+
+{% block component_product_box_wishlist_action %}
+{% endblock %}
+
+{% block component_product_box_info %}
+    <div class="product-info">
+        {% block component_product_box_rating %}
+            {% apply spaceless %}
+                {{ parent() }}
+            {% endapply %}
+        {% endblock %}
+
+        {% block component_product_box_name_manufacturer_text %}
+            <div class="product-manufacturer">{{ product.manufacturer.name }}</div>
+        {% endblock %}
+
+        {{ block('component_product_box_name') }}
+
+        {{ block('component_product_box_variant_characteristics') }}
+
+        {{ block('component_product_box_description') }}
+
+        {% block component_product_box_divider %}
+            <hr class="product-box-divider"/>
+        {% endblock %}
+
+        {{ block('component_product_box_price') }}
+
+        {% block component_product_box_action %}
+            {{ parent() }}
+
+            {# Move product_box_wishlist_action from product-image to product-action #}
+            {% if config('core.cart.wishlistEnabled') %}
+                {% block component_product_box_action_wishlist %}
+                    {% sw_include '@Storefront/storefront/component/product/card/wishlist.html.twig' with {
+                        appearance: 'circle',
+                        productId: id
+                    } %}
+                {% endblock %}
+            {% endif %}
+        {% endblock %}
+    </div>
+{% endblock %}

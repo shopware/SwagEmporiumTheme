@@ -7,10 +7,43 @@
     &.icon-lg {
         @include icon-lg();
     }
+}
 
-    &.icon-emporium {
-        footer & {
-            color: $white;
+[class*='ic-'] {
+    > svg {
+        path {
+            fill: none;
+        }
+    }
+}
+
+.icon-emporium {
+    &.ic-star,
+    &.ic-star-filled {
+        color: $icon-review-color;
+    }
+
+    &.ic-star-filled {
+        > svg path {
+            fill: currentColor;
+        }
+    }
+
+    &.ic-cart {
+        color: $white;
+    }
+}
+
+.btn-light {
+    .icon {
+        color: $icon-base-color;
+    }
+}
+
+.btn-buy {
+    &:hover {
+        .icon {
+            color: $sw-color-buy-button;
         }
     }
 }
