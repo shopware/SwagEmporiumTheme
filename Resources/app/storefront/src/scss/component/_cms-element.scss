@@ -46,7 +46,7 @@
     .tns-ovh,
     .tns-inner,
     .gallery-slider-item-container {
-        height: 100%;;
+        height: 100%;
     }
     .gallery-slider-thumbnails-col.is-left {
         .gallery-slider-thumbnails-controls[style] {
@@ -100,4 +100,11 @@
         width: 100%;
         object-fit: cover;
     }
+}
+
+.cms-element-manufacturer-logo {
+    display: flex;
+    gap: 4px;
+    font-size: $font-size-small;
+    font-weight: $font-weight-bold;
 }

@@ -13,10 +13,10 @@
 
     a {
         color: $sw-color-brand-primary;
-        font-size: 12px;
+        font-size: $font-size-small;
 
         &.is-active {
-            font-weight: normal;
+            font-weight: $font-weight-normal;
             color: $gray-400;
         }
     }
