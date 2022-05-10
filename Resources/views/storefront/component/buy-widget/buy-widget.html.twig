@@ -1,0 +1,28 @@
+{% sw_extends '@Storefront/storefront/component/buy-widget/buy-widget.html.twig' %}
+
+{% block buy_widget_wishlist %}{% endblock %}
+
+{% block buy_widget_price %}
+    {% set price = page.product.calculatedPrice %}
+
+    {% if page.product.calculatedPrices|length == 1 %}
+        {% set price = page.product.calculatedPrices.first %}
+    {% endif %}
+
+    {% set listPrice = price.listPrice %}
+
+    <div class="product-detail-price-badge-container">
+        {{ parent() }}
+
+        {% if page.product.calculatedPrices|length <= 1 and listPrice %}
+            {% block buy_widget_was_price_badge %}
+                <div class="product-detail-badge badge-danger">
+                <span class="list-price-badge">
+                    {% sw_icon 'ic-discount' style { 'pack': 'emporium' } %}
+                </span>
+                    <span class="list-price-percentage">{{ "detail.listPricePercentage"|trans({'%price%': listPrice.percentage })|sw_sanitize }}</span>
+                </div>
+            {% endblock %}
+        {% endif %}
+    </div>
+{% endblock %}

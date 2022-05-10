@@ -38,6 +38,11 @@
     "dataColumnPrice": "Price",
     "listPricePercentage": "%price%% saved",
     "productNumberLabel": "Productnr.:",
-    "manufacturerLabel": "Manufacturer:"
+    "manufacturerLabel": "Manufacturer:",
+    "reviewRatingsFilterLabel": "Ratings filter",
+    "reviewLabel": "review",
+    "scrollUpButton": "Back to top",
+    "offcanvasCloseReviews": "Close reviews",
+    "offcanvasCloseDescription": "Close description"
   }
 }

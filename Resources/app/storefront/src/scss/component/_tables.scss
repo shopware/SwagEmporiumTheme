@@ -19,11 +19,16 @@
             &:nth-of-type(odd) {
                 background-color: $gray-100;
             }
+            &:nth-of-type(even) {
+                background-color: $white;
+            }
         }
     }
 
     > :not(caption) > * > * {
         box-shadow: none;
+        padding: 14px 24px;
+        line-height: 22px;
     }
 
     > :not(:first-child) {
@@ -49,8 +54,9 @@
             }
         }
 
-        .product-detail-advanced-list-price-wrapper {
-            color: $table-color;
-        }
+    .product-detail-advanced-list-price-wrapper {
+      color: $table-color;
+      font-weight: $font-weight-bold;
     }
+  }
 }

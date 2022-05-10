@@ -82,6 +82,9 @@ $input-font-size-lg: 15px;
 $input-focus-border-color: $input-border-color;
 
 $form-feedback-valid-color: $input-border-color !default;
+
+$form-select-indicator:             url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><path fill='none' stroke='#{$gray-900}' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/></svg>") !default;
+
 // Select
 $custom-control-indicator-border-color: $gray-200 !default;
 $custom-control-active-border-color: $input-border-color;
@@ -121,3 +124,13 @@ $table-color: $gray-400;
 // Style anchor elements.
 
 $link-hover-color: $sw-color-brand-primary !default;
+
+// Grid breakpoints
+$grid-breakpoints: (
+    xs: 0,
+    sm: 576px,
+    md: 768px,
+    lg: 992px,
+    xl: 1200px,
+    xxl: 1550px
+) !default;
