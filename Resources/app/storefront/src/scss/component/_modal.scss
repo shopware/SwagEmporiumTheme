@@ -5,7 +5,7 @@ $modal-title-font-size: 24px;
 .modal {
     &-title {
         font-weight: $font-weight-normal;
-        font-size: 24px;
+        font-size: $h3-font-size;
         line-height: 34px;
         color: $top-and-bottom-color;
     }
@@ -21,7 +21,7 @@ $modal-title-font-size: 24px;
 
         .cms-element-text h2 {
             font-weight: $font-weight-normal;
-            font-size: 24px;
+            font-size: $h3-font-size;
             line-height: 34px;
             color: $top-and-bottom-color;
         }
@@ -70,7 +70,7 @@ $modal-title-font-size: 24px;
 
     .card-title {
         font-weight: $font-weight-normal;
-        font-size: 24px;
+        font-size: $h3-font-size;
         line-height: 34px;
         color: $top-and-bottom-color;
     }

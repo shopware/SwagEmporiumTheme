@@ -1,0 +1,30 @@
+{% sw_extends '@Storefront/storefront/page/product-detail/buy-widget-price.html.twig' %}
+
+{% block page_product_detail_was_price_badge %}
+    <div class="product-detail-badges">
+        {% if page.product.isNew %}
+            <div class="product-detail-badge badge-success">
+                <div class="new-badge">
+                    {% sw_icon 'ic-tip' style { 'pack': 'emporium' } %}
+                </div>
+                <span class="new-label">{{ "listing.boxLabelNew"|trans|sw_sanitize }}</span>
+            </div>
+        {% endif %}
+
+        {% if page.product.markAsTopseller %}
+            <div class="product-detail-badge badge-warning">
+                <div class="topseller-badge">
+                    {% sw_icon 'ic-tip' style { 'pack': 'emporium' } %}
+                </div>
+                <span class="topseller-label">{{ "listing.boxLabelTopseller"|trans|sw_sanitize }}</span>
+            </div>
+        {% endif %}
+
+        <div class="product-detail-badge badge-danger">
+            <span class="list-price-badge">
+                {% sw_icon 'ic-discount' style { 'pack': 'emporium' } %}
+            </span>
+            <span class="list-price-percentage">{{ "detail.listPricePercentage"|trans({'%price%': listPrice.percentage })|sw_sanitize }}</span>
+        </div>
+    </div>
+{% endblock %}

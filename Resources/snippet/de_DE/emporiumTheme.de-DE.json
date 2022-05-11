@@ -29,5 +29,12 @@
     "topBarThird": "Secure payment method",
     "searchAllResults": "Alle Suchergebnisse anzeigen",
     "supportInfo": "Haben Sie Fragen zu Ihrer Bestellung?<br /><strong>Service-Hotline <a href=\"tel:+4915114182323\">+49 151 14182323</a></strong>"
+  },
+  "detail": {
+    "dataColumnQuantity": "Menge",
+    "dataColumnPrice": "Preis",
+    "listPricePercentage": "%price%% gerettet",
+    "productNumberLabel": "Artikelnr.:",
+    "manufacturerLabel": "Manufacturer:"
   }
 }

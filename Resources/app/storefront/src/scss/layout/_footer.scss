@@ -118,7 +118,7 @@ $footer-border-color: #D7DBDF;
     }
 
     @include media-breakpoint-up(lg) {
-        font-size: 24px;
+        font-size: $h3-font-size;
     }
 }
 
@@ -421,7 +421,7 @@ $footer-border-color: #D7DBDF;
 
     .footer-column-headline,
     .footer-column-headline a {
-        font-size: 16px;
+        font-size: $font-size-lg;
         font-weight: $font-weight-normal;
     }
 
@@ -515,7 +515,7 @@ $footer-border-color: #D7DBDF;
     }
 
     .footer-bottom {
-        font-size: 12px;
+        font-size: $font-size-small;
     }
 
     .footer-copyright {

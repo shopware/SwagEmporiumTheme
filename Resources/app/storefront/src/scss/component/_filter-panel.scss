@@ -45,7 +45,7 @@ $icon-check: url('#{$asset-path}/icon/icon-pack/ic-check.svg');
         .filter-panel-item-toggle {
             background: $gray-100;
             border-color: $gray-100;
-            font-size: 12px;
+            font-size: $font-size-small;
             display: flex;
             width: 100%;
             align-items: center;
@@ -135,7 +135,7 @@ $icon-check: url('#{$asset-path}/icon/icon-pack/ic-check.svg');
 
     .filter-active,
     .btn.filter-reset-all {
-        font-size: 12px;
+        font-size: $font-size-small;
         background-color: $white;
     }
 

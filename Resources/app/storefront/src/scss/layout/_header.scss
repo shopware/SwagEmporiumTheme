@@ -124,7 +124,7 @@ $logo-height-lg: 37px;
         .btn, &.btn {
             padding: 4px 8px;
             font-size: $h6-font-size;
-            font-weight: normal;
+            font-weight: $font-weight-normal;
             display: flex;
             align-items: center;
 
