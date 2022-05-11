@@ -1,0 +1,47 @@
+.nav-tabs {
+  font-size: 14px;
+  font-weight: $font-weight-bolder;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+
+  .nav-item {
+    margin-right: 0;
+    border-bottom: 1px solid $border-color;
+
+    &:first-child {
+      border-top: 1px solid $border-color;
+    }
+  }
+
+  .nav-link {
+    border-bottom-color: transparent;
+
+    &:hover {
+      background-color: transparent;
+    }
+  }
+
+  .product-detail-tab-preview {
+    letter-spacing: normal;
+    text-transform: none;
+    color: $body-color;
+  }
+
+  &.product-detail-tab-navigation-list {
+    border: 0;
+  }
+
+  @include media-breakpoint-up(sm) {
+    .nav-item {
+      border: 0;
+      
+      &:first-child {
+        border: none;
+      }
+
+      &:not(:first-child) {
+        margin-left: 30px;
+      }
+    }
+  }
+}
