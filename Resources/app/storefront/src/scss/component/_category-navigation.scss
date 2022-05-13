@@ -1,5 +1,6 @@
 .category-navigation {
     padding-left: 10px;
+
     &[class*='level-'] {
         &:not(.level-0) {
             .category-navigation-link {
@@ -13,7 +14,7 @@
     }
 
     &[class*='level-0'] {
-        > .category-navigation-entry  {
+        > .category-navigation-entry {
             border-bottom: none;
 
             > .category-navigation-link.in-path {
@@ -21,6 +22,7 @@
                 align-items: center;
                 justify-content: space-between;
                 gap: 10px;
+
                 &:after {
                     content: "";
                     background: url('#{$asset-path}/icon/icon-pack/ic-minus.svg') no-repeat center/1.5rem;
@@ -33,6 +35,7 @@
 
     &[class*='level-3'] {
         position: relative;
+
         &:before {
             content: "";
             display: block;
@@ -44,6 +47,7 @@
             top: 50%;
             transform: translateY(-50%);
         }
+
         .category-navigation-entry .category-navigation-link {
             font-size: $font-size-small;
         }

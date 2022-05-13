@@ -33,14 +33,16 @@
         min-height: 668px;
 
         .gallery-slider {
-            .tns-outer{
+            .tns-outer {
                 padding-bottom: 40px !important;
             }
         }
     }
+
     .gallery-slider-row {
         min-height: inherit;
     }
+
     .gallery-slider,
     .tns-outer,
     .tns-ovh,
@@ -48,6 +50,7 @@
     .gallery-slider-item-container {
         height: 100%;
     }
+
     .gallery-slider-thumbnails-col.is-left {
         .gallery-slider-thumbnails-controls[style] {
             display: block !important;
@@ -58,6 +61,7 @@
                 opacity: 0.1;
             }
         }
+
         .gallery-slider-thumbnails-controls-next,
         .gallery-slider-thumbnails-controls-prev {
             background-color: transparent;
@@ -71,6 +75,7 @@
 
         .gallery-slider-thumbnails-controls-next {
             bottom: -45px;
+
             .icon {
                 transform: rotate(180deg);
             }

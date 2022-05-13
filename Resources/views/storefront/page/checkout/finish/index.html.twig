@@ -1,0 +1,28 @@
+{% sw_extends '@Storefront/storefront/page/checkout/finish/index.html.twig' %}
+
+{% block page_checkout_finish_details %}{% endblock %}
+
+{% block page_checkout_main_content %}
+    {% sw_include '@Storefront/storefront/page/checkout/finish/finish-test.html.twig' %}
+
+    {{ parent() }}
+{% endblock %}
+
+{% block page_checkout_container %}
+    <div class="finish-detail-wrapper">
+        {% sw_include '@Storefront/storefront/page/checkout/finish/finish-data.html.twig' %}
+    </div>
+
+    {{ parent() }}
+{% endblock %}
+
+{% block base_flashbags_checkout %}
+    {% apply spaceless %}
+        {{ parent() }}
+    {% endapply %}
+{% endblock %}
+
+{% block page_checkout_finish_product_table %}
+    <h2 class="finish-checkout-title">{{ "checkout.finishOrderHeader"|trans|sw_sanitize }}</h2>
+    {{ parent() }}
+{% endblock %}

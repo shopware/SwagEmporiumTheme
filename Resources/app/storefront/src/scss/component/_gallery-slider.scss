@@ -2,58 +2,58 @@ $gallery-thumbnail-item-height: 46px;
 $gallery-thumbnail-item-gutter: 14px;
 
 .gallery-slider-thumbnails-col {
-  display: none;
+    display: none;
 
-  &.is-left {
-    .gallery-slider-thumbnails-item-inner {
-      padding: 0;
+    &.is-left {
+        .gallery-slider-thumbnails-item-inner {
+            padding: 0;
+        }
     }
-  }
 }
 
 .gallery-slider-thumbnails-item-inner {
-  border: 0;
+    border: 0;
 }
 
 @include media-breakpoint-up(lg) {
-  .cms-element-image-gallery {
+    .cms-element-image-gallery {
+        .gallery-slider-thumbnails-col {
+            display: block;
+        }
+    }
+
     .gallery-slider-thumbnails-col {
-      display: block;
-    }
-  }
-
-  .gallery-slider-thumbnails-col {
-    .gallery-slider-thumbnails-item {
-      border: none;
-      outline: none;
-      padding: 0;
-    }
-
-    &.is-left {
-      .gallery-slider-thumbnails-item {
-        // need to use !important here to overwrite core settings which is using !important
-        padding-bottom: 0 !important;
-
-        &:not(:last-child) {
-          margin-bottom: $gallery-thumbnail-item-gutter !important;
+        .gallery-slider-thumbnails-item {
+            border: none;
+            outline: none;
+            padding: 0;
         }
 
-        &:last-child {
-          margin-bottom: 1rem !important;
+        &.is-left {
+            .gallery-slider-thumbnails-item {
+                // need to use !important here to overwrite core settings which is using !important
+                padding-bottom: 0 !important;
+
+                &:not(:last-child) {
+                    margin-bottom: $gallery-thumbnail-item-gutter !important;
+                }
+
+                &:last-child {
+                    margin-bottom: 1rem !important;
+                }
+            }
+
+            .underneath-gallery-slider-controls {
+                display: initial;
+            }
         }
-      }
 
-      .underneath-gallery-slider-controls {
-        display: initial;
-      }
+
+        &.is-underneath {
+            .gallery-slider-thumbnails-item {
+                padding-right: 0 !important;
+                margin-right: $gallery-thumbnail-item-gutter;
+            }
+        }
     }
-
-
-    &.is-underneath {
-      .gallery-slider-thumbnails-item {
-        padding-right: 0 !important;
-        margin-right: $gallery-thumbnail-item-gutter;
-      }
-    }
-  }
 }

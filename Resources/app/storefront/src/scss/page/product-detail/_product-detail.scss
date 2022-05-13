@@ -31,6 +31,7 @@
 
             &-link {
                 text-decoration: none;
+
                 &:not(:hover) {
                     color: $gray-400;
                 }
@@ -61,8 +62,9 @@
             .list-price-badge {
                 margin: 0;
                 background-color: transparent;
+
                 .icon {
-                    color: inherit  ;
+                    color: inherit;
                 }
             }
 

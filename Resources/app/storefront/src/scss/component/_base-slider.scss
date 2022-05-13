@@ -1,40 +1,40 @@
 .base-slider-dots {
-  margin: 0;
-
-  .base-slider-dot,
-  button {
-    background-color: transparent;
-    border: 0;
-    height: unset;
-    width: unset;
-    padding: 0 4px;
-    border-radius: 0;
     margin: 0;
-    color: $gray-400;
 
-    &.tns-nav-active {
-      background-color: transparent;
-      color: $sw-color-brand-primary;
-      font-weight: $font-weight-bold;
+    .base-slider-dot,
+    button {
+        background-color: transparent;
+        border: 0;
+        height: unset;
+        width: unset;
+        padding: 0 4px;
+        border-radius: 0;
+        margin: 0;
+        color: $gray-400;
+
+        &.tns-nav-active {
+            background-color: transparent;
+            color: $sw-color-brand-primary;
+            font-weight: $font-weight-bold;
+        }
+
+        &:hover {
+            background-color: transparent;
+        }
+
+        &:not(:first-child) {
+            margin-left: 14px;
+        }
     }
 
-    &:hover {
-      background-color: transparent;
+    &.pagination {
+        flex-wrap: wrap;
+        padding: 1rem;
     }
-
-    &:not(:first-child) {
-      margin-left: 14px;
-    }
-  }
-
-  &.pagination {
-    flex-wrap: wrap;
-    padding: 1rem;
-  }
 }
 
 .gallery-slider-col {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
