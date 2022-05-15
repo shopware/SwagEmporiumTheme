@@ -1,0 +1,233 @@
+$line-item-img-size: 100px;
+$line-item-space-sm: 14px;
+$line-item-space: 24px;
+
+.line-item {
+    padding: $line-item-space-sm 0;
+
+    &-row {
+        position: relative;
+    }
+
+    &-info {
+        margin-bottom: 0;
+    }
+
+    &-ordernumber {
+        margin-top: 10px;
+        margin-bottom: 0;
+    }
+
+    &-info-img {
+        @extend .px-0;
+    }
+
+    &-img-container,
+    &-img {
+        height: $line-item-img-size;
+        width: $line-item-img-size;
+        border: none;
+        padding: 0;
+    }
+
+    &-info-img,
+    &-details {
+        padding: 0;
+    }
+
+    &-details {
+        @include make-col(8);
+    }
+
+    &-details-container {
+        padding-left: $line-item-space-sm;
+    }
+
+    &-label {
+        font-size: $btn-font-size;
+        font-weight: $font-weight-bold;
+        color: $top-and-bottom-color;
+    }
+
+    &-ordernumber,
+    &-delivery-date {
+        font-size: 10px;
+        font-weight: $font-weight-base;
+        color: $smoke-text-color;
+    }
+
+    .product-wishlist {
+        position: initial;
+        margin-top: $line-item-space-sm;
+
+        .icon-wishlist {
+            svg {
+                top: 0;
+            }
+        }
+    }
+
+    &-quantity,
+    &-tax-price,
+    &-unit-price,
+    &-total-price {
+        padding-left: $line-item-img-size + $line-item-space-sm;
+    }
+
+    &-quantity {
+        @if (feature('V6_5_0_0')) {
+            &-row {
+                @extend .g-0;
+            }
+        }
+
+        &-label {
+            display: none;
+        }
+
+        &-select-wrapper {
+            width: 100%;
+            padding-left: 0;
+
+            .line-item-quantity {
+                @extend .d-block;
+                padding-left: 0;
+                color: $smoke-text-color;
+            }
+
+            select {
+                min-width: 126px;
+                padding: 15px 20px;
+                background-color: $table-accent-bg;
+                border: none;
+                border-radius: 1px;
+            }
+        }
+    }
+
+    &-quantity,
+    &-tax-price,
+    &-unit-price {
+        color: $smoke-text-color;
+        font-size: $btn-font-size;
+
+        &-label {
+            color: $smoke-text-color;
+            font-weight: $font-weight-base;
+        }
+    }
+
+    &-product {
+        .line-item-unit-price,
+        .line-item-tax-price {
+            text-align: left;
+        }
+    }
+
+    &-total-price {
+        font-size: 13px;
+        color: $top-and-bottom-color;
+
+        &-label {
+            color: $top-and-bottom-color;
+        }
+    }
+
+    &-remove {
+        position: absolute;
+        top: 0;
+        right: 0;
+
+        .line-item-remove-button {
+            padding: 0;
+            background: none;
+            border: none;
+
+            .icon > svg {
+                top: 0;
+            }
+
+            &:hover {
+                background: none;
+            }
+        }
+    }
+
+    &:last-child {
+        border-bottom: $border-width solid $gray-300;
+    }
+}
+
+@include media-breakpoint-up(md) {
+    .line-item {
+        &-info {
+            @include make-col(6);
+        }
+
+        &-quantity {
+            &-label {
+                display: block;
+            }
+
+            &-select-wrapper {
+                .line-item-quantity {
+                    padding-left: $cart-grid-gutter-width;
+                }
+            }
+        }
+
+        &-ordernumber {
+            margin-top: 5px;
+        }
+
+        &-quantity,
+        &-tax-price,
+        &-unit-price,
+        &-total-price {
+            padding-left: 0;
+        }
+    }
+
+    .cart-table-header .cart-header-total-price,
+    .line-item-total-price {
+        padding-right: 2 * $line-item-space;
+    }
+
+    .cart-table-header .cart-header-row {
+        .cart-header-unit-price,
+        .cart-header-quantity,
+        .cart-header-tax-price {
+            padding-left: 0;
+            text-align: left;
+        }
+    }
+}
+
+@include media-breakpoint-up(lg) {
+    .line-item {
+        padding: $line-item-space 0;
+
+        &-label {
+            font-size: $btn-font-size-lg;
+        }
+
+        &-tax-price,
+        &-unit-price,
+        &-total-price {
+            font-size: $btn-font-size-lg;
+        }
+
+        &-ordernumber,
+        &-delivery-date {
+            font-size: $btn-font-size-lg;
+        }
+
+        &-details-container {
+            padding-left: $line-item-space;
+        }
+    }
+}
+
+.cart-header-info {
+    @extend .col-6;
+}
