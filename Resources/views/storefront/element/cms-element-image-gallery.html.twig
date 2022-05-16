@@ -45,11 +45,11 @@
 {% endblock %}
 
 {# unset the default gallery slider on product detail so the below arrow navigation can work #}
-{% block element_image_gallery_inner_controls %}{% endblock %}
+ {% block element_image_gallery_inner_controls %}{% endblock %}
 
 {% block element_image_gallery_inner_thumbnails_controls_prev %}
     <button
-        class="base-slider-controls-prev gallery-slider-thumbnails-controls-prev">
+            class="base-slider-controls-prev gallery-slider-thumbnails-controls-prev">
         {% if galleryPosition == "left" %}
             {% sw_icon 'chevron-up' style { 'pack': 'emporium' } %}
         {% elseif galleryPosition == "underneath" %}
@@ -60,7 +60,7 @@
 
 {% block element_image_gallery_inner_thumbnails_controls_next %}
     <button
-        class="base-slider-controls-next gallery-slider-thumbnails-controls-next">
+            class="base-slider-controls-next gallery-slider-thumbnails-controls-next">
         {% if galleryPosition == "left" %}
             {% sw_icon 'chevron-up' style { 'pack': 'emporium' } %}
         {% elseif galleryPosition == "underneath" %}
@@ -75,4 +75,32 @@
 
 {% block element_image_gallery_inner_zoom_modal_slider_control_next_icon %}
     {% sw_icon 'arrow-head-right' style { 'pack': 'emporium' } %}
+{% endblock %}
+
+{% block element_image_gallery_inner_col %}
+    <div class="gallery-slider-col{% if galleryPosition == "left" %} col order-1 order-md-2{% elseif galleryPosition == "underneath" %} col-12 order-1{% endif %}"
+         {% if zoomModal %}data-zoom-modal="true"{% endif %}>
+        {# option "magnifierOverGallery" shows zoom container over gallery #}
+        <div class="base-slider gallery-slider{% if navigationArrows == "outside" %} has-nav-outside{% endif %}{% if navigationDots == "outside" %} has-dots-outside{% endif %}{% if magnifierOverGallery %} js-magnifier-zoom-image-container{% endif %}">
+            {{ block('element_image_gallery_inner_wrapper') }}
+        </div>
+
+        {% block element_image_gallery_slider_dots %}
+            {% if imageCount > 1 and navigationDots %}
+                <div class="base-slider-dots pagination">
+                    {% block element_image_gallery_slider_dots_buttons %}
+                        {% for image in mediaItems %}
+                            {% block element_image_gallery_slider_dots_button %}
+                                <button class="base-slider-dot page-item"
+                                        data-nav-dot="{{ loop.index }}"
+                                        tabindex="-1">
+                                    {{ "%02d"|format(loop.index) }}
+                                </button>
+                            {% endblock %}
+                        {% endfor %}
+                    {% endblock %}
+                </div>
+            {% endif %}
+        {% endblock %}
+    </div>
 {% endblock %}
