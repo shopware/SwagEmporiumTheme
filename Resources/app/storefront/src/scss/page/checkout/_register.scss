@@ -114,6 +114,10 @@ $checkout-login-register-space-md: 50px;
         .login-form {
             padding-top: 10px;
             font-size: $btn-font-size;
+
+            .login-submit {
+                margin-left: $checkout-login-register-space-sm;
+            }
         }
 
         &:last-child {

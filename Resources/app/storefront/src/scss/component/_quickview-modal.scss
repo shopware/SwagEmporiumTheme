@@ -1,0 +1,101 @@
+$quick-view-img-size: 150px;
+
+.quickview-modal {
+    .modal-body {
+        .quickview-minimal-tittle,
+        .quickview-minimal-top,
+        .quickview-minimal-footer {
+            text-align: left;
+        }
+    }
+
+    .quickview-minimal-tittle {
+        font-weight: $font-weight-base;
+        color: $top-and-bottom-color;
+        margin-bottom: 36px;
+    }
+    .quickview-minimal-image {
+        .quickview-minimal-img {
+            height: $quick-view-img-size;
+            width: $quick-view-img-size;
+        }
+    }
+
+    .quickview-minimal-product-name {
+        font-size: $btn-font-size-lg;
+        font-weight: $font-weight-bold;
+        color: $top-and-bottom-color;
+    }
+
+    .quickview-minimal-product-number {
+        font-size: $btn-font-size-lg;
+        font-weight: $font-weight-base;
+        color: $smoke-text-color;
+        margin-top: 10px;
+    }
+
+    .footer-collapse-toggle {
+        .quickview-minimal-footer-heading {
+            margin: 0;
+            border: none;
+        }
+
+        &:hover {
+            text-decoration: none;
+        }
+    }
+
+    .quickview-minimal-footer-description {
+        margin-top: 27px;
+        color: $smoke-text-color;
+        font-size: $btn-font-size-lg;
+    }
+
+    .collapse-toogle {
+        padding: 17px 10px;
+        border-top: $border-width solid $border-color;
+
+        &:last-child {
+            border-bottom: $border-width solid $border-color;
+        }
+
+        .footer-collapse-toggle {
+            color: $sw-text-color;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            .icon-minus,
+            &.collapsed .icon-plus {
+                display: block;
+            }
+
+            .icon-plus,
+            &.collapsed .icon-minus {
+                display: none;
+            }
+
+            .icon svg {
+                top: 0;
+            }
+        }
+    }
+
+    @include media-breakpoint-only(md) {
+        .modal-dialog {
+            max-width: $modal-lg;
+            margin-left: $grid-gutter-width / 2;
+            margin-right: $grid-gutter-width / 2;
+        }
+    }
+
+    @include media-breakpoint-up(md) {
+        .quickview-minimal-image {
+            @include make-col(3);
+        }
+
+        .quickview-minimal-product {
+            @include make-col(9);
+        }
+    }
+}

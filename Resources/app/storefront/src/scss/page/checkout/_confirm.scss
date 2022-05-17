@@ -48,7 +48,7 @@
 
     .payment-method-description,
     .shipping-method-description {
-        font-size: 12px;
+        font-size: $font-size-small;
 
         p {
             margin-bottom: 0;
@@ -81,11 +81,6 @@
         font-size: 25px;
         font-weight: $font-weight-normal;
     }
-
-    .payment-method-description,
-    .shipping-method-description {
-        font-size: $font-size-small;
-    }
 }
 
 .card-title__wrapper {
@@ -110,11 +105,6 @@
 
         .confirm-main-header {
             font-size: $h2-font-size;
-        }
-
-        .payment-method-description,
-        .shipping-method-description {
-            font-size: $btn-font-size-lg;
         }
     }
 }

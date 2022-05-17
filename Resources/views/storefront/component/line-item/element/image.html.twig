@@ -1,0 +1,31 @@
+{% sw_extends '@Storefront/storefront/component/line-item/element/image.html.twig' %}
+
+{% block component_line_item_image %}
+    {% set thumbnail %}
+        {% if lineItem.cover.url %}
+            {{ block('component_line_item_image_thumbnails') }}
+        {% else %}
+            {% if fallbackIcon %}
+                {{ block ('component_line_item_image_fallback_icon') }}
+            {% else %}
+                {{ block('component_line_item_image_placeholder') }}
+            {% endif %}
+        {% endif %}
+    {% endset %}
+
+    {% if productLink %}
+        <a href="{{ seoUrl('frontend.detail.page', { 'productId': lineItem.referencedId }) }}"
+           class="line-item-img-link"
+           title="{{ label }}"
+            {% if controllerAction is same as('confirmPage') %}
+                {{ dataBsToggleAttr }}="modal"
+                data-modal-class="quickview-modal"
+                data-url="{{ path('widgets.quickview.minimal', { 'productId': lineItem.referencedId }) }}"
+            {% endif %}
+        >
+            {{ thumbnail }}
+        </a>
+    {% else %}
+        {{ thumbnail }}
+    {% endif %}
+{% endblock %}

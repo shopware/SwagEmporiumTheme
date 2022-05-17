@@ -8,7 +8,8 @@
     "continueShopping": "Warenkorb schließen",
     "welcomeBack": "Willkommen!",
     "addressLoginToggle": "Anmelden wenn Sie bereits ein Konto haben",
-    "addressHeader": "Ich bin neu"
+    "addressHeader": "Ich bin neu",
+    "productDetails": "Produktdetails"
   },
   "general": {
     "404ErrorPageHeader": "Seite nicht gefunden",

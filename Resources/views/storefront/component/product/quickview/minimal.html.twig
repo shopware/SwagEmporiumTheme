@@ -1,0 +1,34 @@
+{% sw_extends '@Storefront/storefront/component/product/quickview/minimal.html.twig' %}
+
+{% block component_product_quickview_minimal_top %}
+    <h3 class="quickview-minimal-tittle">
+        {{ "checkout.productDetails"|trans|sw_sanitize }}
+    </h3>
+
+    <div class="row quickview-minimal-top">
+        {{ block('component_product_quickview_minimal_img') }}
+
+        {{ block('component_product_quickview_minimal_product') }}
+    </div>
+{% endblock %}
+
+{% block component_product_quickview_minimal_footer %}
+    {% if page.product.translated.description %}
+        <div class="quickview-minimal-footer">
+            <div class="collapse-toogle">
+                <a href="#footerCollapse"
+                   class="footer-collapse-toggle"
+                   {{ dataBsToggleAttr }}="collapse"
+                   aria-expanded="true">
+                    {{ block ('component_product_quickview_minimal_footer_heading') }}
+                    {% sw_icon 'plus' %}
+                    {% sw_icon 'minus' %}
+                </a>
+
+                <div class="collapse show" id="footerCollapse">
+                    {{ block('component_product_quickview_minimal_footer_text') }}
+                </div>
+            </div>
+        </div>
+    {% endif %}
+{% endblock %}
