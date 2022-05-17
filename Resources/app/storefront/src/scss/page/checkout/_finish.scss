@@ -8,7 +8,7 @@
         > .checkout-card {
             width: 100vw;
             background-color: $secondary-lighten-150;
-            margin-left: -#{$grid-gutter-width / 2};
+            margin-left: calc((100% - 100vw) / 2);
             padding: 50px;
         }
     }
@@ -84,6 +84,30 @@
 
         .finish-checkout-title {
             padding-top: 34px;
+        }
+    }
+}
+
+.finish-detail-wrapper {
+    margin-bottom: 70px;
+}
+
+@include media-breakpoint-up(xl) {
+    .is-act-finishpage {
+        .cart-header-total-price,
+        .line-item-total-price {
+            width: 120px;
+            padding-right: 0;
+        }
+
+        .cart-header-quantity,
+        .line-item-quantity {
+            width: calc(50% - 240px);
+        }
+
+        .cart-table-header .cart-header-row .cart-header-quantity,
+        .line-item-row > .line-item-quantity {
+            padding-left: 20px;
         }
     }
 }

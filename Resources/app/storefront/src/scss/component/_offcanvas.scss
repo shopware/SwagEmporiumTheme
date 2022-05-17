@@ -1,0 +1,29 @@
+/*
+Offcanvas
+==============================================
+Move page content like the navigation menu in a sliding offcanvas menu.
+The sliding direction can be left or right.
+
+@deprecated tag:v6.5.0 - Announcement:
+Bootstrap v5 comes with its own OffCanvas component.
+This SCSS file will be adjusted to build up upon Bootstraps OffCanvas styling.
+
+@see https://getbootstrap.com/docs/5.1/components/offcanvas
+*/
+$offcanvas-close-color: #FDFDFD;
+
+.offcanvas {
+    .offcanvas-close {
+        font-weight: $font-weight-bold;
+        font-size: 13px;
+        line-height: 21px;
+        color: $offcanvas-close-color;
+        padding: 16px 24px;
+        background-color: $top-and-bottom-color;
+        border: none;
+
+        &:hover {
+            background-color: $top-and-bottom-color;
+        }
+    }
+}

@@ -1,19 +1,5 @@
 .offcanvas-cart {
-    &-promotion-form {
-        .input-group {
-            @extend .input-group-lg;
-        }
-    }
-
     .line-item {
-        &-details {
-            @include make-col(8);
-        }
-
-        &-details-container {
-            padding-left: $line-item-space-sm;
-        }
-
         &-quantity,
         &-total-price {
             padding-left: $line-item-img-size + $line-item-space-sm;
@@ -28,5 +14,79 @@
                 width: 100%;
             }
         }
+    }
+
+    .alert {
+        margin-top: 0;
+        margin-bottom: 24px;
+        line-height: 18px;
+    }
+
+    .flashbags:not(:empty) {
+        margin-top: 0;
+    }
+
+    .line-item-remove {
+        .icon {
+            width: 14px;
+            height: 14px;
+            color: $btn-scroll-top-icon-color;
+        }
+    }
+
+    .line-item-quantity {
+        margin-bottom: 0;
+
+        &-row {
+            margin-bottom: 15px;
+        }
+    }
+}
+
+.cart-offcanvas {
+    .offcanvas-content-container {
+        padding: 24px;
+    }
+
+    .line-item-quantity-select-wrapper select {
+        height: 42px;
+    }
+}
+
+.offcanvas-cart-header {
+    font-weight: $font-weight-normal;
+    font-size: 25px;
+    line-height: 34px;
+    margin-bottom: $btn-padding-x;
+}
+
+.offcanvas-cart-header-count {
+    @extend .d-none;
+}
+
+.offcanvas-cart-items {
+    border-top: $border-width solid $gray-300;
+    border-bottom: none;
+    margin-top: 0;
+
+    .line-item-info .line-item-row {
+        margin: 0;
+    }
+}
+
+.offcanvas-cart-actions {
+    .begin-checkout-btn {
+        @extend .btn-buy;
+
+        font-size: 13px;
+        line-height: 42px;
+        padding: 0;
+        height: 42px;
+    }
+
+    .btn-link {
+        @extend .btn-outline-primary;
+
+        margin-top: 16px;
     }
 }
