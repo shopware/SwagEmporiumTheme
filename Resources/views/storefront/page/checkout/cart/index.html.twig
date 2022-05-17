@@ -1,20 +1,41 @@
 {% sw_extends '@Storefront/storefront/page/checkout/cart/index.html.twig' %}
 
 {% block page_checkout_cart_add_promotion_submit %}
-    {# @deprecated tag:v6.5.0 - Bootstrap v5 removes `input-group-append` wrapper and uses elements as direct childs of `input-group` #}
-    {% if feature('v6.5.0.0') %}
-        <button class="btn btn-secondary"
-                type="submit"
-                id="addPromotion">
-            {{ "checkout.addPromotionAction"|trans|sw_sanitize }}
-        </button>
-    {% else %}
-        <div class="input-group-append">
-            <button class="btn btn-secondary"
-                    type="submit"
-                    id="addPromotion">
-                {{ "checkout.addPromotionAction"|trans|sw_sanitize }}
-            </button>
-        </div>
-    {% endif %}
+    <button class="btn btn-secondary"
+            type="submit"
+            id="addPromotion">
+        {{ "checkout.addPromotionAction"|trans|sw_sanitize }}
+    </button>
+{% endblock %}
+
+{% block page_checkout_cart_add_product_submit %}
+    <button class="btn btn-secondary"
+            type="submit"
+            id="addProductButton">
+        {{ "checkout.addPromotionAction"|trans|sw_sanitize }}
+    </button>
+{% endblock %}
+
+{% block page_checkout_cart_add_product %}
+    <div class="cart-add-product-container">
+        {% block page_checkout_cart_add_product_heading %}
+            <h5>{{ "checkout.addProductHeading"|trans|sw_sanitize }}</h5>
+        {% endblock %}
+
+        <form action="{{ path('frontend.checkout.product.add-by-number') }}"
+              data-form-csrf-handler="true"
+              class="cart-add-product"
+              method="post">
+
+            {{ block('page_checkout_cart_add_product_csrf') }}
+
+            {{ block('page_checkout_cart_add_product_redirect') }}
+
+            {{ block('page_checkout_cart_add_product_input_group') }}
+        </form>
+    </div>
+{% endblock %}
+
+{% block page_checkout_cart_shipping_costs_trigger %}
+    <h5>{{ "checkout.shippingCosts"|trans|sw_sanitize }}</h5>
 {% endblock %}

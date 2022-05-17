@@ -2,7 +2,9 @@
   "checkout" : {
     "addPromotionAction" : "Add",
     "cartItemInfoId": "Order number",
-    "finishOrderHeader": "Your order"
+    "finishOrderHeader": "Your order",
+    "addProductHeading": "Add Product via article number",
+    "shippingCosts": "Configure Shipping costs"
   },
   "general": {
     "404ErrorPageHeader": "Page not found",

@@ -1,10 +1,124 @@
+$checkout-aside-text-color: #7F868C;
+
 .cart-add-promotion {
     .input-group {
-        @extend .input-group-lg;
+        height: 42px;
+    }
+
+    .btn-secondary {
+        background-color: transparent;
+        color: $gray-800;
+        border-color: $gray-800;
+        padding: 5px;
+        height: 32px;
+        min-width: 48px;
+        position: absolute;
+        right: 5px;
+        top: 5px;
     }
 }
 
 #addPromotionInput,
 #addPromotionOffcanvasCartInput {
     padding-right: 80px;
+}
+
+.is-act-cartpage {
+    .checkout-aside-summary {
+        background-color: transparent;
+        padding: 0;
+    }
+
+    .checkout-aside-summary-header {
+        margin-bottom: 24px;
+        font-weight: $font-weight-normal;
+        font-size: 25px;
+        line-height: 34px;
+        color: $black;
+    }
+
+    .checkout-aside-summary-list {
+        font-size: 13px;
+        line-height: 21px;
+        color: $checkout-aside-text-color;
+        margin-bottom: 0;
+    }
+
+    .checkout-aside-summary-value {
+        margin-bottom: 0;
+    }
+
+    .checkout-aside-summary-total {
+        color: $top-and-bottom-color;
+        padding: 14px 0;
+        margin: 0 0 14px;
+        border-top: none;
+        border-bottom: 2px solid $gray-300;
+    }
+
+    .checkout-aside-summary-label,
+    .checkout-aside-summary-value {
+        &.summary-net {
+            margin-top: 0;
+        }
+    }
+
+    .checkout-aside-add-code {
+        margin-top: 24px;
+    }
+
+    .checkout-aside-action {
+        margin-top: 24px;
+    }
+}
+
+@include media-breakpoint-up(md) {
+    .is-act-cartpage {
+        .checkout-aside-container {
+            padding: 44px 34px;
+        }
+
+        .checkout-aside-summary-header {
+            font-size: $h2-font-size;
+            line-height: 34px;
+            margin-bottom: 34px;
+        }
+
+        .checkout-aside-summary-total {
+            padding-bottom: 24px;
+            margin-bottom: 24px;
+        }
+
+        .checkout-aside-summary-list {
+            font-size: $font-size-base;
+            line-height: 24px;
+        }
+
+        .checkout-aside-add-code {
+            margin-top: 34px;
+        }
+
+        .checkout-aside-action {
+            margin-top: 18px;
+        }
+    }
+
+    .cart-add-promotion {
+        .input-group {
+            height: 56px;
+            font-size: $font-size-base;
+            line-height: 24px;
+        }
+
+        .btn-secondary {
+            right: 12px;
+            top: 12px;
+        }
+    }
+
+    .begin-checkout-btn {
+        height: 60px;
+        font-size: $font-size-base;
+        padding: 18px;
+    }
 }
