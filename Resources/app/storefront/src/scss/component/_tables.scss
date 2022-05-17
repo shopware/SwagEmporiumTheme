@@ -1,56 +1,56 @@
 .table {
-  border: $border-width solid $border-color;
-  background-color: $white;
-
-  thead {
-    font-size: 10px;
-    letter-spacing: 1px;
-    text-transform: uppercase;
+    border: $border-width solid $border-color;
     background-color: $white;
-    color: $sw-color-price;
 
-    th {
-      font-weight: $font-weight-bold;
+    thead {
+        font-size: 10px;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        background-color: $white;
+        color: $sw-color-price;
+
+        th {
+            font-weight: $font-weight-bold;
+        }
     }
-  }
 
-  tbody {
-    tr {
-      &:nth-of-type(odd) {
-        background-color: $gray-100;
-      }
-    }
-  }
-
-  > :not(caption) > * > * {
-    box-shadow: none;
-  }
-
-  > :not(:first-child) {
-    border-top: 0;
-  }
-
-  &.table-striped {
-    border: none;
-  }
-
-  &.product-block-prices-grid {
     tbody {
-      .product-block-prices-row {
+        tr {
+            &:nth-of-type(odd) {
+                background-color: $gray-100;
+            }
+        }
+    }
+
+    > :not(caption) > * > * {
+        box-shadow: none;
+    }
+
+    > :not(:first-child) {
+        border-top: 0;
+    }
+
+    &.table-striped {
         border: none;
-
-        th.product-block-prices-cell-thin {
-          font-size: unset;
-        }
-
-        td.product-block-prices-cell {
-          color: $sw-color-price;
-        }
-      }
     }
 
-    .product-detail-advanced-list-price-wrapper {
-      color: $table-color;
+    &.product-block-prices-grid {
+        tbody {
+            .product-block-prices-row {
+                border: none;
+
+                th.product-block-prices-cell-thin {
+                    font-size: unset;
+                }
+
+                td.product-block-prices-cell {
+                    color: $sw-color-price;
+                }
+            }
+        }
+
+        .product-detail-advanced-list-price-wrapper {
+            color: $table-color;
+        }
     }
-  }
 }

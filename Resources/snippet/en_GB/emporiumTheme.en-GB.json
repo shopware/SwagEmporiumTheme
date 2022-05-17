@@ -1,7 +1,8 @@
 {
   "checkout" : {
     "addPromotionAction" : "Add",
-    "cartItemInfoId": "Order number"
+    "cartItemInfoId": "Order number",
+    "finishOrderHeader": "Your order"
   },
   "general": {
     "404ErrorPageHeader": "Page not found",

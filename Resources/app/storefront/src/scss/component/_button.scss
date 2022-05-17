@@ -14,7 +14,7 @@
 }
 
 .btn-secondary,
-.btn-outline-secondary:hover{
+.btn-outline-secondary:hover {
     color: $white;
 }
 
@@ -27,7 +27,7 @@
     background-color: $gray-100;
     color: $top-and-bottom-color;
 
-    &:hover:not(:disabled){
+    &:hover:not(:disabled) {
         background-color: $sw-border-color;
     }
 }

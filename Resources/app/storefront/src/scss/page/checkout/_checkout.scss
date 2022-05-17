@@ -6,3 +6,108 @@
         }
     }
 }
+
+.is-act-finishpage,
+.is-act-confirmpage {
+    .checkout {
+        .checkout-additional {
+            @include make-col(12);
+
+            margin: 0 0 34px 0;
+            padding: 0;
+
+            .card-title {
+                font-size: 25px;
+                border: none;
+                text-transform: none;
+                padding-bottom: 12px;
+                margin-bottom: 0;
+                font-weight: $font-weight-normal;
+                color: $sw-color-price;
+            }
+        }
+    }
+}
+
+.checkout {
+    .checkout-container {
+        padding-top: 34px;
+
+        .checkout-main {
+            margin-left: 0;
+        }
+
+        .checkout-aside {
+            @include make-col(12);
+            @include make-col-offset(0);
+        }
+    }
+}
+
+.checkout-product-table {
+    .cart-table-header {
+        .cart-header-row {
+            letter-spacing: 1px;
+            font-size: 10px;
+            font-weight: $font-weight-bold;
+            text-transform: uppercase;
+        }
+    }
+}
+
+@include media-breakpoint-only(md) {
+    .is-act-finishpage,
+    .is-act-confirmpage {
+        .checkout-aside {
+            @include make-row();
+
+            .checkout-additional,
+            .checkout-aside-container {
+                @include make-col(6);
+            }
+
+        }
+    }
+}
+
+@include media-breakpoint-up(lg) {
+    .checkout {
+        .checkout-container {
+            padding-top: 70px;
+
+            .checkout-main {
+                @include make-col(8);
+            }
+
+            .checkout-aside {
+                @include make-col(4);
+            }
+        }
+    }
+
+    .is-act-finishpage,
+    .is-act-confirmpage {
+        .checkout {
+            .checkout-additional {
+                margin: 0 0 50px 0;
+            }
+        }
+    }
+}
+
+@include media-breakpoint-up(xl) {
+    .checkout {
+        .checkout-container {
+            padding-top: 70px;
+
+            .checkout-main {
+                @include make-col(8);
+            }
+
+            .checkout-aside {
+                @include make-col(3);
+                @include make-col-offset(1);
+            }
+        }
+    }
+}

@@ -223,6 +223,7 @@ $icon-check: url('#{$asset-path}/icon/icon-pack/ic-check.svg');
     height: 42px;
     line-height: normal;
     font-size: 13px;
+
     &:hover {
         color: $white;
         background-color: $sw-color-brand-primary;
@@ -329,8 +330,9 @@ $icon-check: url('#{$asset-path}/icon/icon-pack/ic-check.svg');
         }
     }
 }
+
 .cms-block-sidebar-filter {
-    .filter-panel-items-container{
+    .filter-panel-items-container {
         display: none !important;
 
         @include media-breakpoint-up(lg) {
