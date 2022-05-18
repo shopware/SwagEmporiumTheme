@@ -1,0 +1,24 @@
+{% sw_extends '@Storefront/storefront/page/checkout/confirm/index.html.twig' %}
+
+{% block page_checkout_confirm_tos %}{% endblock %}
+{% block page_checkout_confirm_header %}{% endblock %}
+
+{% block page_checkout_main %}
+    <h1 class="confirm-main-header">
+        {{ "checkout.confirmHeader"|trans|sw_sanitize }}
+    </h1>
+
+    {{ parent() }}
+{% endblock %}
+
+{% block page_checkout_aside_summary %}
+    {{ parent() }}
+
+    <div class="confirm-tos">
+        {{ block('page_checkout_confirm_tos_header') }}
+
+        {{ block('page_checkout_confirm_revocation_notice') }}
+
+        {{ block('page_checkout_confirm_tos_control') }}
+    </div>
+{% endblock %}

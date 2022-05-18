@@ -17,7 +17,7 @@ $primary-darken: darken($sw-color-brand-primary, 10%) !default; //#0016d2
 
 $secondary-lighten-100: lighten($sw-color-brand-secondary, 10%) !default; //#e7f3f5
 $secondary-lighten-150: lighten($sw-color-brand-secondary, 15%) !default; //#f9fcfc
-$secondary-darken: darken($sw-color-brand-secondary, 10%) !default;  //#9fd1d7
+$secondary-darken: darken($sw-color-brand-secondary, 10%) !default; //#9fd1d7
 
 // Color system
 $gray-100: lighten($sw-border-color, 10%) !default; //#f8f9fa
@@ -60,7 +60,7 @@ $btn-padding-y: 10px !default;
 $btn-padding-x-sm: 24px !default;
 $btn-padding-y-sm: 4px !default;
 $btn-padding-x-lg: 40px !default;
-$btn-padding-y-lg: 10px !default;
+$btn-padding-y-lg: 19px !default;
 $btn-border-radius: 1px !default;
 
 // Forms
@@ -83,7 +83,7 @@ $input-focus-border-color: $input-border-color;
 
 $form-feedback-valid-color: $input-border-color !default;
 // Select
-$custom-control-indicator-border-color: $gray-200!default;
+$custom-control-indicator-border-color: $gray-200 !default;
 $custom-control-active-border-color: $input-border-color;
 
 $custom-checkbox-indicator-border-radius: 4px !default;
@@ -120,4 +120,4 @@ $table-color: $gray-400;
 //
 // Style anchor elements.
 
-$link-hover-color:                        $sw-color-brand-primary !default;
+$link-hover-color: $sw-color-brand-primary !default;

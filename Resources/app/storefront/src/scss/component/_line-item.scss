@@ -302,7 +302,9 @@ $line-item-space: 24px;
     }
 
     .cart-header-unit-price,
-    .line-item-unit-price {
+    .line-item-unit-price,
+    .cart-header-tax-price,
+    .line-item-tax-price {
         width: 120px;
     }
 
