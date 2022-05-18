@@ -4,10 +4,6 @@
         padding-top: 0;
     }
 
-    .checkout {
-
-    }
-
     .finish-detail-wrapper {
         > .checkout-card {
             width: 100vw;
@@ -56,6 +52,28 @@
         strong {
             font-weight: $font-weight-normal;
             color: #7F868C;
+        }
+    }
+
+    .line-item-quantity {
+        margin-bottom: 0;
+        padding-left: 0;
+
+        &-row {
+            justify-content: space-between;
+            margin-bottom: 0;
+        }
+
+        &-label {
+            display: inline;
+
+            @include media-breakpoint-up(md) {
+                display: none;
+            }
+        }
+
+        &-select-wrapper {
+            width: auto;
         }
     }
 

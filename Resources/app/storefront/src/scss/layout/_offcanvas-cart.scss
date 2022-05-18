@@ -4,4 +4,29 @@
             @extend .input-group-lg;
         }
     }
+
+    .line-item {
+        &-details {
+            @include make-col(8);
+        }
+
+        &-details-container {
+            padding-left: $line-item-space-sm;
+        }
+
+        &-quantity,
+        &-total-price {
+            padding-left: $line-item-img-size + $line-item-space-sm;
+
+            &-label {
+                display: none;
+            }
+        }
+
+        &-quantity{
+            &-select-wrapper {
+                width: 100%;
+            }
+        }
+    }
 }

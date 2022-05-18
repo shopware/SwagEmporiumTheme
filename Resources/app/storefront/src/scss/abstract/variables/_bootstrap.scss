@@ -91,6 +91,7 @@ $custom-checkbox-indicator-border-radius: 4px !default;
 $custom-select-box-shadow: none !default;
 $custom-select-focus-box-shadow: none !default;
 $custom-select-indicator: url('#{$asset-path}/icon/icon-pack/ic-chevron-down.svg') !default;
+$form-select-indicator-color: $gray-600 !default;
 
 //Custom control
 $custom-control-indicator-checked-color: $sw-color-brand-primary;
