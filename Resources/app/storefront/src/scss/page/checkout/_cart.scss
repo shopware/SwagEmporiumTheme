@@ -160,14 +160,8 @@
 }
 
 .is-act-cartpage,
-.is-ctl-checkout {
-    .checkout-aside-container {
-        background-color: $secondary-lighten-150;
-        padding: 24px;
-        max-width: 427px;
-        margin-left: auto;
-    }
-
+.is-ctl-checkout,
+.is-act-checkoutregisterpage {
     .checkout {
         .checkout-main {
             padding-top: 0;

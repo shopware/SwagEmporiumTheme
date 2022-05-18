@@ -1,5 +1,3 @@
-$checkout-aside-text-color: #7F868C;
-
 .cart-add-promotion {
     .input-group {
         height: 42px;
@@ -18,18 +16,36 @@ $checkout-aside-text-color: #7F868C;
     }
 }
 
+.checkout-aside-summary,
+.checkout-aside-products {
+    padding: 0;
+}
+
+.checkout-aside-products {
+    padding-bottom: 34px;
+}
+
 #addPromotionInput,
 #addPromotionOffcanvasCartInput {
     padding-right: 80px;
 }
 
-.is-act-cartpage {
+.is-act-cartpage,
+.is-ctl-checkout,
+.is-act-checkoutregisterpage {
+    .checkout-aside-container {
+        background-color: $secondary-lighten-150;
+        max-width: 427px;
+        margin-left: auto;
+    }
+
     .checkout-aside-summary {
         background-color: transparent;
         padding: 0;
     }
 
-    .checkout-aside-summary-header {
+    .checkout-aside-summary-header,
+    .checkout-aside-product-header {
         margin-bottom: 24px;
         font-weight: $font-weight-normal;
         font-size: 25px;
@@ -40,7 +56,7 @@ $checkout-aside-text-color: #7F868C;
     .checkout-aside-summary-list {
         font-size: 13px;
         line-height: 21px;
-        color: $checkout-aside-text-color;
+        color: $smoke-text-color;
         margin-bottom: 0;
     }
 
@@ -49,6 +65,7 @@ $checkout-aside-text-color: #7F868C;
     }
 
     .checkout-aside-summary-total {
+        font-size: $font-size-base;
         color: $top-and-bottom-color;
         padding: 14px 0;
         margin: 0 0 14px;
@@ -72,10 +89,33 @@ $checkout-aside-text-color: #7F868C;
     }
 }
 
+.is-act-cartpage {
+    .checkout-aside-container {
+        padding: 24px;
+    }
+}
+
+.is-ctl-checkout,
+.is-act-checkoutregisterpage {
+    .checkout-aside-container {
+        padding: 34px 24px 24px;
+    }
+}
+
+.is-ctl-checkout {
+    .checkout-aside-action {
+        .btn-primary {
+            @extend .btn-buy;
+        }
+    }
+}
+
 @include media-breakpoint-up(md) {
-    .is-act-cartpage {
+    .is-act-cartpage,
+    .is-ctl-checkout,
+    .is-act-checkoutregisterpage {
         .checkout-aside-container {
-            padding: 44px 34px;
+            padding: 44px 34px 34px;
         }
 
         .checkout-aside-summary-header {
