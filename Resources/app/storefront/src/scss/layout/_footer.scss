@@ -1,4 +1,3 @@
-$footer-color: #7F868C;
 $footer-border-color: #D7DBDF;
 
 @mixin service-menu-layout() {
@@ -92,7 +91,7 @@ $footer-border-color: #D7DBDF;
     p {
         font-size: 10px;
         line-height: 15px;
-        color: $footer-color;
+        color: $smoke-text-color;
 
         @include media-breakpoint-up(sm) {
             font-size: 13px;
@@ -248,7 +247,7 @@ $footer-border-color: #D7DBDF;
 .footer-link-item .links {
     font-size: 13px;
     line-height: 21px;
-    color: $footer-color;
+    color: $smoke-text-color;
     display: inline-block;
     vertical-align: middle;
 }
@@ -283,7 +282,7 @@ $footer-border-color: #D7DBDF;
         font-weight: $font-weight-normal;
         font-size: 10px;
         line-height: 15px;
-        color: $footer-color;
+        color: $smoke-text-color;
         margin-bottom: 14px;
     }
 

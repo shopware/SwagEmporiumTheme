@@ -2,4 +2,99 @@
     .checkout {
         padding-top: 0;
     }
+
+    .checkout-aside-container {
+        background-color: $secondary-lighten-150;
+        padding: 34px 24px 24px 24px;
+    }
+
+    .checkout-aside-summary {
+        padding: 0;
+    }
+
+    .checkout-aside-summary-list-container {
+        margin-bottom: 50px;
+    }
+
+    .confirm-tos {
+        .card-title {
+            border: none;
+            margin-bottom: 0;
+            padding-bottom: 14px;
+            font-weight: $font-weight-normal;
+        }
+    }
+
+    .form-check {
+        color: $smoke-text-color;
+    }
+
+    .form-check-label {
+        cursor: pointer;
+
+        strong {
+            font-weight: $font-weight-normal;
+            font-size: 15px;
+        }
+    }
+
+    .form-check-input:checked + .form-check-label {
+        strong {
+            font-weight: $font-weight-bold;
+            color: $gray-900;
+        }
+    }
+
+    .payment-method-description,
+    .shipping-method-description {
+        font-size: 12px;
+
+        p {
+            margin-bottom: 0;
+            color: $smoke-text-color;
+        }
+    }
+
+    .payment-method-image {
+        max-height: 50px;
+    }
+
+    .payment-method-image {
+        &::before {
+            content: '';
+            display: block;
+            width: 50px;
+            height: 50px;
+        }
+    }
+
+    .confirm-payment-shipping {
+        margin-bottom: 12px;
+    }
+
+    .confirm-address {
+        margin-bottom: 0;
+    }
+}
+
+.card-title__wrapper {
+    .card-title + a {
+        margin-left: 14px;
+
+        > .icon svg {
+            top: 10px;
+        }
+    }
+}
+
+@include media-breakpoint-up(lg) {
+    .is-act-confirmpage {
+        .checkout-aside-container {
+            padding: 44px 34px 34px 34px;
+        }
+
+        .confirm-payment-shipping {
+            margin-bottom: 50px;
+        }
+    }
 }

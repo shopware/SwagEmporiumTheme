@@ -42,6 +42,12 @@
             @include make-col-offset(0);
         }
     }
+
+    .checkout-aside-action {
+        .btn[type="submit"] {
+            @extend .btn-buy;
+        }
+    }
 }
 
 .checkout-product-table {
@@ -59,13 +65,13 @@
     .is-act-finishpage,
     .is-act-confirmpage {
         .checkout-aside {
-            @include make-row();
+            display: flex;
+            gap: 1rem;
 
             .checkout-additional,
             .checkout-aside-container {
-                @include make-col(6);
+                flex: 1;
             }
-
         }
     }
 }
