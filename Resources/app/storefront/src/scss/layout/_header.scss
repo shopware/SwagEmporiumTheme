@@ -70,15 +70,17 @@ $logo-height-lg: 37px;
     z-index: 101;
     max-width: unset;
     width: 100%;
-    top: -7px;
+    bottom: -7px;
 
     &-input,
     &-btn {
         border-color: $input-group-border-color;
     }
 
-    &-input {
-        border-right: $border-width solid $input-group-border-color;
+    @if (not feature('V6_5_0_0')) {
+        &-input {
+            border-right: $border-width solid $input-group-border-color;
+        }
     }
 
     &-icon {
@@ -156,7 +158,7 @@ $logo-height-lg: 37px;
         height: 15px;
         font-size: 8px;
         top: 3px;
-        left: 27px;
+        left: 15px;
         padding: 0;
         line-height: 15px;
     }
@@ -205,6 +207,9 @@ $logo-height-lg: 37px;
         height: $input-height-lg;
     }
 
+    .dekstop-nav-main-toggle-btn .icon {
+        margin-right: 10px;
+    }
 
     .header-cart {
         padding-left: 11px;
@@ -228,6 +233,18 @@ $logo-height-lg: 37px;
     .header-logo-col {
         img {
             max-height: $logo-height-lg;
+        }
+    }
+
+    .header-search-form {
+        justify-content: center;
+        width: 55%;
+        display: flex;
+
+        .search-suggest {
+            position: absolute;
+            top: 100%;
+            width: 100%;
         }
     }
 }

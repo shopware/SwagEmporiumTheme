@@ -12,10 +12,10 @@
 {% block layout_header_search %}
     <div class="col-12 order-2 col-sm order-sm-1 header-search-col">
         <div class="row">
-            <div class="col-sm-auto navigation-toggle-tablet">
+            <div class="navigation-toggle-tablet">
                 {{ block('layout_header_navigation_toggle_tablet') }}
             </div>
-            <div class="col header-search-form offset-lg-1">
+            <div class="header-search-form">
                 {% sw_include '@Storefront/storefront/layout/header/search.html.twig' %}
             </div>
         </div>
@@ -40,6 +40,7 @@
                 {% block layout_header_navigation_toggle_desktop_button_icon %}
                     {% sw_icon 'stack' %}
                 {% endblock %}
+                <span class="d-none d-lg-inline">{{ "general.menuLink"|trans|striptags }}</span>
             </button>
 
             <div class="dropdown-menu navigation-menu-dropdown" aria-labelledby="navigationWidget">
