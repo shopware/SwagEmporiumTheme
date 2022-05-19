@@ -1,11 +1,11 @@
 .nav-tabs {
     font-size: 14px;
     font-weight: $font-weight-bolder;
-    text-transform: uppercase;
     letter-spacing: 1px;
 
     .nav-item {
         margin-right: 0;
+        margin-bottom: 0;
         border-bottom: 1px solid $border-color;
 
         &:first-child {
@@ -15,6 +15,7 @@
 
     .nav-link {
         border-bottom-color: transparent;
+    text-transform: uppercase;
 
         &:hover {
             background-color: transparent;

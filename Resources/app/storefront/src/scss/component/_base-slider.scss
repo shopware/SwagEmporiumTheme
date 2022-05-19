@@ -21,15 +21,12 @@
         &:hover {
             background-color: transparent;
         }
-
-        &:not(:first-child) {
-            margin-left: 14px;
-        }
     }
 
     &.pagination {
         flex-wrap: wrap;
         padding: 1rem;
+        column-gap: 14px;
     }
 }
 

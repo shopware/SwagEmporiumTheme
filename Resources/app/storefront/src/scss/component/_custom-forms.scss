@@ -10,8 +10,8 @@
 
         &::after {
             border-radius: 50%;
-            background-color: $white;
-            top: 9px;
+            background-color: $primary;
+            top: 6px;
             left: -32px;
         }
 
@@ -93,4 +93,8 @@
 
 .custom-select {
     background-size: 1.5rem 1.5rem;
+
+    &-sm {
+        padding-right: 46px;
+    }
 }

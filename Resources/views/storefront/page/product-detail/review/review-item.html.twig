@@ -1,0 +1,13 @@
+{% sw_extends '@Storefront/storefront/page/product-detail/review/review-item.html.twig' %}
+
+{% block page_product_detail_review_item_info_date %}{% endblock %}
+
+{% block page_product_detail_review_item_content %}
+   {{ parent() }}
+
+    {% block clone_page_product_detail_review_item_info_date %}
+        <div class="col-12 product-detail-review-item-date">
+            <p>{{ review.createdAt|date }}</p>
+        </div>
+    {% endblock %}
+{% endblock %}

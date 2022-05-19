@@ -1,0 +1,63 @@
+{% sw_extends '@Storefront/storefront/page/product-detail/review/review-form.html.twig' %}
+
+{% block page_product_detail_review_form_cancel %}
+    <a href="#"
+       class="btn btn-light product-detail-review-cancel"
+    {{ dataBsToggleAttr }}="collapse"
+    {{ dataBsTargetAttr }}=".multi-collapse"
+    aria-expanded="false"
+    aria-controls="review-form review-list">
+    {{ "detail.reviewFormCancelText"|trans|sw_sanitize }}
+    </a>
+{% endblock %}
+
+{% block page_product_detail_review_form_rating %}
+    <div class="form-group col-12 product-detail-review-form-rating">
+        <label for="#review-form-rating">
+            {{ "detail.reviewFormRatingLabel"|trans|sw_sanitize }}{{ "general.required"|trans|sw_sanitize }}
+        </label>
+
+        <div id="review-form-rating"
+             class="product-detail-review-form-rating-input"
+             data-rating-system="true">
+            {% if data.get('points') is not empty %}
+                {% set currentPoints = data.get('points')|number_format %}
+            {% else %}
+                {% set currentPoints = reviews.matrix.maxPoints %}
+            {% endif %}
+
+            {% set maxPoints = reviews.matrix.maxPoints %}
+
+            {% for index, matrix in reviews.matrix.matrix %}
+                <div class="product-detail-review-form-rating-stars">
+                    <p class="h6 product-detail-review-form-rating-text">
+                        {{ "detail.review#{matrix.points}PointRatingText"|trans|sw_sanitize }}
+                    </p>
+                    <input class="product-detail-review-form-radio"
+                           type="radio"
+                           name="points"
+                           id="point-{{ index }}"
+                           value="{{ index }}"
+                        {% if currentPoints >= index %} checked="checked"{% endif %}>
+                    <div class="product-detail-review-form-stars">
+                        {% for point in 1..maxPoints %}
+                            {% if point <= index %}
+                                {% sw_include '@Storefront/storefront/component/review/point.html.twig' with {
+                                    type: 'full'
+                                } %}
+                            {% else %}
+                                {% sw_include '@Storefront/storefront/component/review/point.html.twig' with {
+                                    type: 'blank'
+                                } %}
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+                    <label data-review-form-point="{{ index }}"
+                           class="product-detail-review-form-rating-label"
+                           for="point-{{ index }}">
+                    </label>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

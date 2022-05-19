@@ -1,0 +1,34 @@
+.delivery-information {
+    display: flex;
+    align-items: center;
+
+    .delivery-status-indicator {
+        height: 16px;
+        width: 16px;
+        flex-shrink: 0;
+
+        .icon {
+            height: 100%;
+            width: 100%;
+            color: $white;
+
+            > svg {
+                top: 0;
+            }
+        }
+    }
+
+    @include media-breakpoint-up(md) {
+        .delivery-status-indicator {
+            height: 12px;
+            width: 12px;
+        }
+    }
+
+    @include media-breakpoint-up(xl) {
+        .delivery-status-indicator {
+            height: 24px;
+            width: 24px;
+        }
+    }
+}

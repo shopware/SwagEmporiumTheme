@@ -1,0 +1,133 @@
+{% sw_extends '@Storefront/storefront/page/product-detail/buy-widget.html.twig' %}
+
+{% block page_product_detail_delivery_informations %}{% endblock %}
+
+{% block page_product_detail_tax %}{% endblock %}
+
+{% block page_product_detail_reviews %}{% endblock %}
+
+{% block page_product_detail_wishlist %}{% endblock %}
+
+{% block page_product_detail_configurator_include %}{% endblock %}
+
+{% block page_product_detail_ordernumber_container %}
+    <div class="product-detail-manufacturer-container">
+        {% block clone_page_product_detail_manufacturer %}
+            {% if page.product.manufacturer %}
+                <div class="product-detail-manufacturer">
+                    {% block page_product_detail_manufacturer_inner %}
+                        {% block page_product_detail_manufacturer_link %}
+                            {{"detail.manufacturerLabel"|trans|trim}}
+                            <a href="{{ page.product.manufacturer.link }}"
+                               class="product-detail-manufacturer-link"
+                               rel="noreferrer noopener"
+                               target="_blank"
+                               title="{{ page.product.manufacturer.translated.name }}">
+                                {% if page.product.manufacturer.media %}
+                                    {% block page_product_detail_manufacturer_logo %}
+                                        <img src="{{ page.product.manufacturer.media|sw_encode_media_url }}"
+                                             class="product-detail-manufacturer-logo"
+                                             alt="{{ page.product.manufacturer.translated.name }}"/>
+                                    {% endblock %}
+                                {% else %}
+                                    {% block page_product_detail_manufacturer_text %}
+                                        {{ page.product.manufacturer.translated.name }}
+                                    {% endblock %}
+                                {% endif %}
+                            </a>
+                        {% endblock %}
+                    {% endblock %}
+                </div>
+            {% endif %}
+        {% endblock %}
+
+        {{ parent() }}
+
+        {% set price = page.product.calculatedPrice %}
+        {% if page.product.calculatedPrices|length == 1 %}
+            {% set price = page.product.calculatedPrices.first %}
+        {% endif %}
+
+        {% if page.product.purchaseUnit %}
+            {% block page_product_detail_price_unit %}
+                <div class="product-detail-price-unit">
+                    {% block page_product_detail_price_unit_label %}
+                        <span class="price-unit-label">
+                            {{ "detail.priceUnitName"|trans|sw_sanitize }}
+                        </span>
+                    {% endblock %}
+
+                    {% block page_product_detail_price_unit_content %}
+                        <span class="price-unit-content">
+                            {{ page.product.purchaseUnit }} {{ page.product.unit.name }}
+                        </span>
+                    {% endblock %}
+
+                    {% if price.referencePrice is not null %}
+                        {% block page_product_detail_price_unit_reference_content %}
+                            <span class="price-unit-reference-content">
+                                ({{ price.referencePrice.price|currency }}{{ "general.star"|trans|sw_sanitize }} / {{ price.referencePrice.referenceUnit }} {{ price.referencePrice.unitName }})
+                            </span>
+                        {% endblock %}
+                    {% endif %}
+                </div>
+            {% endblock %}
+        {% endif %}
+    </div>
+
+    {% block clone_page_product_detail_tabs %}
+        <div class="product-detail-tabs">
+            {% sw_include '@Storefront/storefront/page/product-detail/tabs.html.twig' %}
+        </div>
+    {% endblock %}
+{% endblock %}
+
+{% block page_product_detail_price %}
+    <div class="product-detail-info-container">
+        <div class="product-detail-info-container__left">
+            {% block clone_page_product_detail_delivery_informations %}
+                <div class="product-detail-delivery-information">
+                    {% sw_include '@Storefront/storefront/component/delivery-information.html.twig' %}
+                </div>
+            {% endblock %}
+        </div>
+
+        <div class="product-detail-info-container__right {% if page.product.calculatedPrices|length > 1 %}w-100{% endif %}">
+            {{ parent() }}
+
+            {% block clone_page_product_detail_tax %}
+                <div class="product-detail-tax-container">
+                    {% if context.taxState == "gross" %}
+                        {% set taxText = "general.grossTaxInformation"|trans|sw_sanitize %}
+                    {% else %}
+                        {% set taxText = "general.netTaxInformation"|trans|sw_sanitize %}
+                    {% endif %}
+
+                    <p class="product-detail-tax">
+                        {% block page_product_detail_tax_link %}
+                            <a class="product-detail-tax-link"
+                               href="{{ path('frontend.cms.page',{ id: config('core.basicInformation.shippingPaymentInfoPage') }) }}"
+                               title="{{ taxText }}"
+                            {{ dataBsToggleAttr }}="modal"
+                            data-url="{{ path('frontend.cms.page',{ id: config('core.basicInformation.shippingPaymentInfoPage') }) }}">
+                            {{ taxText }}
+                            </a>
+                        {% endblock %}
+                    </p>
+                </div>
+            {% endblock %}
+        </div>
+    </div>
+{% endblock %}
+
+{% block page_product_detail_data %}
+    {% block clone_page_product_detail_configurator_include %}
+        {% if page.product.parentId and page.configuratorSettings|length > 0 %}
+            <div class="product-detail-configurator-container">
+                {% sw_include '@Storefront/storefront/page/product-detail/configurator.html.twig' %}
+            </div>
+        {% endif %}
+    {% endblock %}
+
+    {{ parent() }}
+{% endblock %}

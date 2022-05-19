@@ -1,0 +1,66 @@
+{% sw_extends '@Storefront/storefront/element/cms-element-cross-selling.html.twig' %}
+
+{% block cms_element_cross_selling_tabs_content_container %}
+    <div class="tab-content">
+        {% if element.data.crossSellings.elements is defined %}
+            {% for item in element.data.crossSellings.elements|filter(item => item.total > 0 and item.crossSelling.active == true) %}
+                {% set crossSelling = item.crossSelling %}
+                {% set products = item.products %}
+                {% set id = crossSelling.id %}
+                <div class="tab-pane fade show{% if loop.first %} active{% endif %}"
+                     id="cross-selling-tab-{{ id }}-pane"
+                     role="tabpanel"
+                     aria-labelledby="cross-selling-tab-{{ id }}">
+                    {% set config = {
+                        'title': {
+                            'value': crossSelling.name
+                        },
+                        'border': {
+                            'value': false
+                        },
+                        'rotate': {
+                            'value': false
+                        },
+                        'products': {
+                            'value': products
+                        },
+                        'boxLayout': {
+                            'value': sliderConfig.boxLayout.value
+                        },
+                        'elMinWidth': {
+                            'value': sliderConfig.elMinWidth.value
+                        },
+                        'navigation': {
+                            'value': false
+                        },
+                        'displayDots': {
+                            'value': true
+                        },
+                        'displayMode': {
+                            'value': sliderConfig.displayMode.value
+                        },
+                        'verticalAlign': {
+                            'value': center
+                        },
+                        'edgePadding': {
+                            'value': 10
+                        }
+                    } %}
+
+                    {% block cms_element_cross_selling_tabs_content_container_slider %}
+                        {% sw_include "@Storefront/storefront/element/cms-element-product-slider.html.twig" with {
+                            sliderConfig: config,
+                            element: {
+                                'data': {
+                                    'products': products
+                                },
+                                type: 'product-slider'
+                            }
+                        } %}
+                    {% endblock %}
+
+                </div>
+            {% endfor %}
+        {% endif %}
+    </div>
+{% endblock %}
