@@ -105,8 +105,10 @@
             }
 
             .checkout-aside {
-                @include make-col(3);
-                @include make-col-offset(1);
+                @include make-col(4);
+
+                margin-left: auto;
+                max-width: 427px;
             }
         }
     }
