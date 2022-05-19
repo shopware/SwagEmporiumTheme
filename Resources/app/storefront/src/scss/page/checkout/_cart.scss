@@ -18,6 +18,13 @@
 
     .cart-item-remove-button {
         padding: 0;
+        background-color: transparent;
+        border: none;
+
+        &:not(:disabled)
+        &:hover:not(:disabled) {
+            background-color: transparent;
+        }
     }
 
     > .cart-item-info-img {
@@ -85,7 +92,7 @@
     }
 
     .form-group {
-        @extend .col-6;
+        @extend .col-12;
         @extend .col-md-4;
 
         label {
@@ -189,17 +196,31 @@
     }
 }
 
-.begin-checkout-btn {
-    @extend .btn-buy;
-
-    font-size: 13px;
-    line-height: 21px;
+.is-act-cartpage {
+    .checkout-aside-action {
+        .begin-checkout-btn {
+            font-size: 13px;
+            line-height: 42px;
+            padding: 0;
+            height: 42px;
+        }
+    }
 }
 
 @include media-breakpoint-up(lg) {
     .is-act-cartpage {
         .container-main {
             padding-top: 50px;
+        }
+    }
+
+    .is-act-cartpage {
+        .checkout-aside-action {
+            .begin-checkout-btn {
+                font-size: $font-size-base;
+                line-height: 60px;
+                height: 60px;
+            }
         }
     }
 }

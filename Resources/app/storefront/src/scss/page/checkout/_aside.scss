@@ -1,4 +1,5 @@
-.cart-add-promotion {
+.cart-add-promotion,
+.offcanvas-cart-promotion-form {
     .input-group {
         height: 42px;
     }
@@ -13,6 +14,7 @@
         position: absolute;
         right: 5px;
         top: 5px;
+        z-index: 4;
     }
 }
 
@@ -156,9 +158,10 @@
         }
     }
 
-    .begin-checkout-btn {
+    .checkout-aside-action .begin-checkout-btn {
         height: 60px;
         font-size: $font-size-base;
         padding: 18px;
+        line-height: 38px;
     }
 }

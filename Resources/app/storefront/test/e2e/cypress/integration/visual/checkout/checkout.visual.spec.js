@@ -50,8 +50,8 @@ describe('Checkout: Visual tests', () => {
         cy.get('.offcanvas').should('be.visible');
         cy.get('.cart-item-price').contains('64');
         cy.get('.offcanvas').should('be.visible');
-        cy.contains('Continue shopping').should('be.visible');
-        cy.contains('Continue shopping').click();
+        cy.contains('Close Cart').should('be.visible');
+        cy.contains('Close Cart').click();
 
         cy.scrollTo('top');
         cy.wait(1000);

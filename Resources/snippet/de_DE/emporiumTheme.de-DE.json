@@ -4,7 +4,8 @@
     "cartItemInfoId": "Order number",
     "finishOrderHeader": "Ihre Bestellung",
     "addProductHeading": "Produkt über Artikelnummer hinzufügen",
-    "shippingCosts": "Versandkosten konfigurieren"
+    "shippingCosts": "Versandkosten konfigurieren",
+    "continueShopping": "Warenkorb schließen"
   },
   "general": {
     "404ErrorPageHeader": "Seite nicht gefunden",

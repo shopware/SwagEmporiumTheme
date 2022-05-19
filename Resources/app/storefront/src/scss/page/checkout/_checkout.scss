@@ -42,12 +42,6 @@
             @include make-col-offset(0);
         }
     }
-
-    .checkout-aside-action {
-        .btn[type="submit"] {
-            @extend .btn-buy;
-        }
-    }
 }
 
 .checkout-product-table {
