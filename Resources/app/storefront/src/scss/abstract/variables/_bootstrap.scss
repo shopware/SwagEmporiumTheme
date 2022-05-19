@@ -71,7 +71,7 @@ $input-color: $sw-text-color !default;
 $input-border-color: $gray-300 !default;
 $input-placeholder-color: $gray-400 !default;
 $input-padding-x: .9rem !default;
-$input-padding-y: .75rem !default;
+$input-padding-y: 13px !default;
 $input-font-size: 12px !default;
 
 $input-height-lg: 56px;
@@ -88,6 +88,7 @@ $form-select-indicator:             url("data:image/svg+xml,<svg xmlns='http://w
 // Select
 $custom-control-indicator-border-color: $gray-200 !default;
 $custom-control-active-border-color: $input-border-color;
+$form-select-padding-x: 14px;
 
 $custom-checkbox-indicator-border-radius: 4px !default;
 

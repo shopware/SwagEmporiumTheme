@@ -1,3 +1,6 @@
+$checkout-login-register-space-sm: 24px;
+$checkout-login-register-space-md: 50px;
+
 .is-act-checkoutregisterpage {
     .checkout .checkout-container {
         .checkout-aside {
@@ -45,13 +48,128 @@
             @include make-col(12);
         }
     }
+
+    .container-main {
+        padding-top: $checkout-login-register-space-sm;
+    }
+
+    .address-main-header {
+        font-weight: $font-weight-base;
+        font-size: $h2-font-size;
+        margin-bottom: $checkout-login-register-space-sm;
+    }
+
+    .checkout-main {
+        .card-title {
+            text-transform: uppercase;
+            font-size: $btn-font-size-sm;
+            font-weight: $font-weight-bold;
+            color: $gray-800;
+            width: fit-content;
+            margin-bottom: 25px;
+            border-bottom: 2px solid $gray-800;
+        }
+
+        .form-label {
+            display: none;
+        }
+    }
+
+    .collapse-toogle {
+        padding: 8px 10px;
+        border-top: $border-width solid $border-color;
+
+        .login-collapse-toggle,
+        .register-collapse-toggle {
+            color: $sw-text-color;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            .icon-minus,
+            &.collapsed .icon-plus {
+                display: block;
+            }
+
+            .icon-plus,
+            &.collapsed .icon-minus {
+                display: none;
+            }
+
+            strong {
+                font-size: $btn-font-size;
+            }
+
+            svg {
+                top: 0;
+                width: 14px;
+                height: 14px;
+            }
+
+            &:hover {
+                text-decoration: none;
+            }
+        }
+
+        .login-form {
+            padding-top: 10px;
+            font-size: $btn-font-size;
+        }
+
+        &:last-child {
+            border-bottom: $border-width solid $border-color;
+        }
+    }
+
+    .register-card {
+        margin-top: 30px;
+    }
+
+    .custom-control-input {
+        @extend .form-check-input;
+
+        &:checked ~ .custom-control-label {
+            font-size: $font-size-small;
+            font-weight: $font-weight-base;
+            color: $gray-400;
+        }
+    }
+
+    .form-check-input,
+    .custom-control-input {
+        width: 15px;
+        height: 15px;
+    }
+
+    .register-different-shipping label {
+        font-size: $font-size-small;
+        margin: 2px 0 0 3px;
+        color: $gray-400;
+    }
+
+    .register-different-shipping {
+        font-size: $font-size-small;
+    }
+
+    .login-submit,
+    .register-submit {
+        .btn-primary {
+            width: 100%;
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+    }
+
+    .form-group:empty {
+        margin: 0;
+    }
 }
 
 @include media-breakpoint-up(md) {
     .is-act-checkoutregisterpage {
         .checkout-aside-container {
             max-width: 100%;
-            padding: 34px 24px;
+            padding: 34px $checkout-login-register-space-sm;
         }
 
         .checkout-aside-summary {
@@ -61,6 +179,28 @@
 
         .line-item-info {
             min-height: auto;
+        }
+
+        .container-main {
+            padding-top: $checkout-login-register-space-md;
+        }
+
+        .address-main-header {
+            margin-bottom: $checkout-login-register-space-md;
+        }
+
+        .register-collapse-toggle,
+        .login-collapse-toggle {
+            strong {
+                font-size: $btn-font-size-lg;
+            }
+        }
+
+        .login-submit,
+        .register-submit {
+            .btn-primary {
+                width: auto;
+            }
         }
     }
 }
@@ -79,5 +219,14 @@
             padding-top: 34px;
             padding-bottom: 0;
         }
+
+        .container-main {
+            padding-top: 70px;
+        }
+
+        .collapse-toogle {
+            padding: 17px 10px;
+        }
     }
+
 }
