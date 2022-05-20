@@ -19,7 +19,7 @@
     {% else %}
         <div class="main-navigation-wrapper">
             {% block layout_main_navigation_menu_item_title %}
-                <a class="nav-link main-navigation-link{% if category.id == page.header.navigation.active.id or category.id in activePath %} active{% endif %}{% if treeItem.children|length > 0 %} has-child{% endif %}"
+                <a class="nav-link main-navigation-link{% if category.id == page.header.navigation.active.id %} active{% endif %}{% if category.id in activePath %} in-path{% endif %}"
                    href="{{ category_url(category) }}"
                    itemprop="url"
                    {% if category_linknewtab(category) %}target="_blank"{% endif %}
