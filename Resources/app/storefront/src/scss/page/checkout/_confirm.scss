@@ -1,4 +1,5 @@
-.is-act-confirmpage {
+.is-act-confirmpage,
+.is-ctl-accountorder {
     .checkout {
         padding-top: 0;
     }
@@ -75,6 +76,16 @@
     .confirm-address {
         margin-bottom: 0;
     }
+
+    .confirm-main-header {
+        font-size: 25px;
+        font-weight: $font-weight-normal;
+    }
+
+    .payment-method-description,
+    .shipping-method-description {
+        font-size: $font-size-small;
+    }
 }
 
 .card-title__wrapper {
@@ -95,6 +106,15 @@
 
         .confirm-payment-shipping {
             margin-bottom: 50px;
+        }
+
+        .confirm-main-header {
+            font-size: $h2-font-size;
+        }
+
+        .payment-method-description,
+        .shipping-method-description {
+            font-size: $btn-font-size-lg;
         }
     }
 }
