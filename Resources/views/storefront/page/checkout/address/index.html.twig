@@ -1,0 +1,45 @@
+{% sw_extends '@Storefront/storefront/page/checkout/address/index.html.twig' %}
+
+{% block page_checkout_address %}
+    {% block page_checkout_address_header %}
+        <h1 class="address-main-header">
+            {{ "checkout.welcomeBack"|trans|sw_sanitize }}
+        </h1>
+    {% endblock %}
+
+    {% block page_checkout_address_login %}
+        <div class="collapse-toogle">
+            {% block page_checkout_address_login_toggle %}
+                <a href="#loginCollapse"
+                   class="login-collapse-toggle collapsed"
+                   {{ dataBsToggleAttr }}="collapse"
+                   aria-expanded="false">
+                    <strong>{{ "checkout.addressLoginToggle"|trans|sw_sanitize }}</strong>
+                    {% sw_icon 'plus' %}
+                    {% sw_icon 'minus' %}
+                </a>
+            {% endblock %}
+
+            <div class="collapse" id="loginCollapse">
+                {{ block('page_checkout_address_login_card') }}
+            </div>
+        </div>
+    {% endblock %}
+
+    {% block page_checkout_address_register %}
+        <div class="collapse-toogle">
+            <a href="#registerCollapse"
+               class="register-collapse-toggle"
+               {{ dataBsToggleAttr }}="collapse"
+               aria-expanded="true">
+                <strong>{{ "checkout.addressHeader"|trans|sw_sanitize }}</strong>
+                {% sw_icon 'plus' %}
+                {% sw_icon 'minus' %}
+            </a>
+
+            <div class="collapse show" id="registerCollapse">
+                {{ block('page_checkout_address_register_card') }}
+            </div>
+        </div>
+    {% endblock %}
+{% endblock %}

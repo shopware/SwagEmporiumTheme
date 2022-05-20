@@ -5,7 +5,10 @@
     "finishOrderHeader": "Your order",
     "addProductHeading": "Add Product via article number",
     "shippingCosts": "Configure Shipping costs",
-    "continueShopping": "Close Cart"
+    "continueShopping": "Close Cart",
+    "welcomeBack": "Welcome!",
+    "addressLoginToggle": "Login if you already have an account",
+    "addressHeader": "I am new"
   },
   "general": {
     "404ErrorPageHeader": "Page not found",

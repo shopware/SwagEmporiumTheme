@@ -1,0 +1,29 @@
+{% sw_extends '@Storefront/storefront/page/checkout/address/register.html.twig' %}
+
+{% block component_account_register_personal_account_fields %}
+    {% apply spaceless %}
+        {{ parent() }}
+    {% endapply %}
+{% endblock %}
+
+{% block component_account_register_required_fields %}
+{% endblock %}
+
+{% block component_account_register_privacy %}
+{% endblock %}
+
+{% block component_account_register_submit %}
+    <div class="row align-items-center">
+        <div class="col-12 col-md-6">
+            {% sw_include '@Storefront/storefront/component/privacy-notice.html.twig' %}
+
+            <p class="register-required-info">
+                {{ "general.requiredFields"|trans|sw_sanitize }}
+            </p>
+        </div>
+
+        <div class="col-12 col-md-6">
+            {{ parent() }}
+        </div>
+    </div>
+{% endblock %}

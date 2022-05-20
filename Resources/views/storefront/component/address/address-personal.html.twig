@@ -1,0 +1,11 @@
+{% sw_extends '@Storefront/storefront/component/address/address-personal.html.twig' %}
+
+{% block component_address_personal_fields_salutation %}
+    <div class="form-group col-sm-6">
+        {{ block('component_address_personal_fields_salutation_label') }}
+
+        {{ block('component_address_form_salutation_select') }}
+
+        {{ block('component_address_form_salutation_select_error') }}
+    </div>
+{% endblock %}

@@ -15,3 +15,9 @@
 
     {{ parent() }}
 {% endblock %}
+
+{% block base_flashbags_checkout %}
+    {% apply spaceless %}
+        {{ parent() }}
+    {% endapply %}
+{% endblock %}

@@ -5,7 +5,10 @@
     "finishOrderHeader": "Ihre Bestellung",
     "addProductHeading": "Produkt über Artikelnummer hinzufügen",
     "shippingCosts": "Versandkosten konfigurieren",
-    "continueShopping": "Warenkorb schließen"
+    "continueShopping": "Warenkorb schließen",
+    "welcomeBack": "Willkommen!",
+    "addressLoginToggle": "Anmelden wenn Sie bereits ein Konto haben",
+    "addressHeader": "Ich bin neu"
   },
   "general": {
     "404ErrorPageHeader": "Seite nicht gefunden",
