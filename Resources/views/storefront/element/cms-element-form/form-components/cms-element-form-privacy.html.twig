@@ -1,0 +1,17 @@
+{% sw_extends '@Storefront/storefront/element/cms-element-form/form-components/cms-element-form-privacy.html.twig' %}
+
+{% block cms_form_privacy_opt_in %}
+    <div class="form-group form-privacy">
+        {{ parent() }}
+
+        {% block cms_form_privacy_and_term %}
+            <small>{{ "general.privacyAndTerm"|trans({
+                    '%privacyUrl%': path('frontend.cms.page', { id: config('core.basicInformation.privacyPage') }),
+                    '%tosUrl%': path('frontend.cms.page', { id: config('core.basicInformation.tosPage')} )
+                })|raw }}</small>
+        {% endblock %}
+    </div>
+{% endblock %}
+
+
+

@@ -34,3 +34,53 @@
 textarea.form-control {
     min-height: 128px;
 }
+
+.form-text {
+    &.form-info-required {
+        font-size: $font-size-small;
+        line-height: 18px;
+        color: $gray-400;
+        display: flex;
+        align-items: center;
+        margin-top: 6px;
+
+        .icon {
+            width: 18px;
+            height: 18px;
+            margin-right: 13px;
+
+            svg {
+                top: 0;
+            }
+        }
+    }
+}
+
+.form-privacy {
+    margin-bottom: 24px;
+
+    > div:not(.form-text) {
+        font-weight: $font-weight-bold;
+        font-size: 13px;
+        color: $top-and-bottom-color;
+    }
+
+    small {
+        display: none;
+    }
+}
+
+@include media-breakpoint-up(md) {
+    .col-salutation {
+        margin-left: 0;
+        margin-right: 50%;
+    }
+}
+
+@include media-breakpoint-up(lg) {
+    .col-lg-4 {
+        &.col-salutation {
+            margin-right: 0;
+        }
+    }
+}

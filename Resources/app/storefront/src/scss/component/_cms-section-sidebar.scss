@@ -1,8 +1,15 @@
 .cms-section-sidebar {
     .cms-section-sidebar-sidebar-content {
         padding: 0;
-        @include media-breakpoint-up(lg) {
-            max-width: 251px;
+    }
+
+    @include media-breakpoint-up(lg) {
+        .cms-block-category-navigation {
+            max-width: 320px;
+
+            .cms-page-default & {
+                max-width: 280px;
+            }
         }
     }
 

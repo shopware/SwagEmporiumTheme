@@ -339,7 +339,7 @@ $footer-border-color: #D7DBDF;
     }
 }
 
-@include media-breakpoint-down(sm) {
+@include media-breakpoint-down(md) {
     .footer-bottom {
         padding: 24px 0;
     }

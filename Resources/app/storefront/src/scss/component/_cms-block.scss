@@ -292,6 +292,18 @@
             }
         }
     }
+
+    .boxed {
+        padding: 0;
+
+        > .col-12 {
+            padding: 0;
+        }
+    }
+
+    &.cms-block-form {
+        overflow: visible;
+    }
 }
 
 .cms-page-default {
@@ -300,10 +312,6 @@
     }
 
     .cms-block-image-text {
-        .cms-block-container {
-            padding: 0 !important;
-        }
-
         .cms-block-container-row {
             flex-direction: column;
             margin: 0;
@@ -322,10 +330,18 @@
         }
     }
 
-    .cms-block-product-listing {
+    .cms-block-product-listing,
+    .cms-block-form,
+    .cms-block-category-navigation {
         .cms-block-container {
             padding-left: 0 !important;
             padding-right: 0 !important;
         }
+    }
+}
+
+.modal {
+    .cms-section {
+        overflow: visible;
     }
 }

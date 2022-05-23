@@ -66,6 +66,10 @@ $modal-title-font-size: 24px;
         .cms-block-container {
             padding: 0 !important;
         }
+
+        .cms-block-container-row > .col-12 {
+            padding: 0;
+        }
     }
 
     .card-title {
@@ -73,5 +77,13 @@ $modal-title-font-size: 24px;
         font-size: $h3-font-size;
         line-height: 34px;
         color: $top-and-bottom-color;
+    }
+}
+
+@include media-breakpoint-up(sm) {
+    // Automatically set modal's width for larger viewports
+    .modal-dialog {
+        max-width: $modal-lg;
+        width: 80%;
     }
 }

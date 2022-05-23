@@ -24,4 +24,8 @@
     .breadcrumb-placeholder {
         color: $gray-300;
     }
+
+    @include media-breakpoint-down(md) {
+        display: none;
+    }
 }

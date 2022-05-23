@@ -1,0 +1,33 @@
+{% sw_extends '@Storefront/storefront/element/cms-element-form/form-types/newsletter-form.html.twig' %}
+
+{% block cms_form_newsletter_select_salutation %}
+    {% sw_include '@Storefront/storefront/element/cms-element-form/form-components/cms-element-form-select-salutation.html.twig'
+        with { additionalClass: 'col-lg-4' }
+    %}
+{% endblock %}
+
+{% block cms_form_newsletter_input_first_name %}
+    {% sw_include '@Storefront/storefront/element/cms-element-form/form-components/cms-element-form-input.html.twig'
+        with {
+        fieldName: 'firstName',
+        additionalClass: 'col-lg-4',
+        label: 'newsletter.labelFirstName',
+        placeholder: 'newsletter.placeholderFirstName'
+    }
+    %}
+{% endblock %}
+
+{% block cms_form_newsletter_input_last_name %}
+    {% sw_include '@Storefront/storefront/element/cms-element-form/form-components/cms-element-form-input.html.twig'
+        with {
+        fieldName: 'lastName',
+        additionalClass: 'col-lg-4',
+        label: 'newsletter.labelLastName',
+        placeholder: 'newsletter.placeholderLastName'
+    }
+    %}
+{% endblock %}
+
+{% block cms_form_newsletter_submit %}
+    {% sw_include '@Storefront/storefront/element/cms-element-form/form-components/cms-element-form-submit.html.twig' with { submitText: 'newsletter.submitText'} %}
+{% endblock %}
