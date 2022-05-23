@@ -2,7 +2,7 @@
 
 {% block component_delivery_information_shipping_free %}
     <p class="delivery-information delivery-shipping-free">
-        <span class="delivery-status-indicator bg-info">
+        <span class="delivery-status-indicator bg-success">
             {% sw_icon 'checkmark-xxs' style { 'pack': 'emporium' } %}
         </span>
         {{ "general.deliveryShippingFree"|trans|sw_sanitize }}
@@ -26,7 +26,7 @@
           href="http://schema.org/PreOrder"/>
     <p class="delivery-information delivery-preorder">
         <span class="delivery-status-indicator bg-warning">
-            {% sw_icon 'checkmark-xxs' style { 'pack': 'emporium' } %}
+            {% sw_icon 'ic-info' style { 'pack': 'emporium' } %}
         </span>
 
         {{ "general.deliveryShipping"|trans|sw_sanitize }} {{ product.releaseDate|format_date('long', locale=app.request.locale) }}
@@ -36,8 +36,8 @@
 {% block component_delivery_information_available %}
     <link itemprop="availability" href="http://schema.org/InStock"/>
     <p class="delivery-information delivery-available">
-        <span class="delivery-status-indicator bg-success">
-            {% sw_icon 'checkmark-xxs' style { 'pack': 'emporium' } %}
+        <span class="delivery-status-indicator bg-warning">
+            {% sw_icon 'ic-info' style { 'pack': 'emporium' } %}
         </span>
 
         {{ "detail.deliveryTimeAvailable"|trans({
@@ -50,7 +50,7 @@
     <link itemprop="availability" href="http://schema.org/LimitedAvailability"/>
     <p class="delivery-information delivery-soldout">
         <span class="delivery-status-indicator bg-danger">
-            {% sw_icon 'checkmark-xxs' style { 'pack': 'emporium' } %}
+            {% sw_icon 'ic-close' style { 'pack': 'emporium' } %}
         </span>
 
         {{ "detail.soldOut"|trans|sw_sanitize }}
@@ -61,7 +61,7 @@
     <link itemprop="availability" href="http://schema.org/LimitedAvailability"/>
     <p class="delivery-information delivery-restock">
         <span class="delivery-status-indicator bg-warning">
-            {% sw_icon 'checkmark-xxs' style { 'pack': 'emporium' } %}
+            {% sw_icon 'ic-info' style { 'pack': 'emporium' } %}
         </span>
         {{ "detail.deliveryTimeRestock"|trans({
             '%count%': product.restockTime,

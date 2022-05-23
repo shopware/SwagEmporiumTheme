@@ -113,3 +113,9 @@
     font-size: $font-size-small;
     font-weight: $font-weight-bold;
 }
+
+.cms-element-buy-box {
+    .product-detail-price-container {
+        row-gap: 7px;
+    }
+}
