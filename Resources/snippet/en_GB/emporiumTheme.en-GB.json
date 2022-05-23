@@ -49,5 +49,8 @@
     "scrollUpButton": "Back to top",
     "offcanvasCloseReviews": "Close reviews",
     "offcanvasCloseDescription": "Close description"
+  },
+  "account": {
+    "overviewProfile": "Personal information"
   }
 }

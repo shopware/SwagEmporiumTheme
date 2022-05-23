@@ -1,0 +1,89 @@
+.account-overview-card {
+    font-size: 13px;
+
+    .card-title__wrapper {
+        display: flex;
+
+        .card-title {
+            line-height: 24px;
+            padding-bottom: 0;
+            border-width: 2px;
+            border-color: $gray-800;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            font-size: 10px;
+            color: $gray-800;
+            margin-bottom: 1rem;
+        }
+
+        .card-title + a {
+            margin-left: 14px;
+
+            > .icon svg {
+                top: 0;
+            }
+        }
+    }
+}
+
+.account-overview-payment {
+    .card-body {
+        strong {
+            color: $top-and-bottom-color;
+        }
+    }
+}
+
+.account-overview-profile {
+    p:is(:empty) {
+        display: none;
+    }
+}
+
+.account-overview-newsletter {
+    margin-top: 18px;
+    padding: 34px 0px;
+    border-top: $border-width solid $border-color;
+    border-bottom: $border-width solid $border-color;
+}
+
+.account-overview-newest-order {
+    padding-top: 34px;
+}
+
+.account-overview-newsletter,
+.account-overview-newest-order {
+    .card-title {
+        padding-bottom: 0;
+        border: none;
+        font-weight: $font-weight-normal;
+        line-height: 22px;
+        font-size: 1rem;
+        margin-bottom: 24px;
+    }
+}
+
+.account-overview {
+    &__subtitle {
+        font-weight: $font-weight-normal;
+        line-height: 22px;
+        font-size: 1rem;
+        margin-bottom: 24px;
+    }
+
+    &-card {
+        margin-bottom: 0;
+    }
+}
+
+@include media-breakpoint-up(xxl) {
+    .account-overview-card {
+        font-size: 15px;
+
+        .card-title__wrapper {
+            .card-title {
+                margin-bottom: 26px;
+            }
+        }
+    }
+}

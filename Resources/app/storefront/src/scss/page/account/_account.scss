@@ -1,0 +1,125 @@
+.is-ctl-accountprofile {
+    .container-main {
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+}
+
+.account-content {
+    .account-content-aside,
+    .account-content-main {
+        padding-top: $grid-gutter-width / 2;
+    }
+
+    .account-content-aside {
+        border-right: $border-width solid $border-color;
+    }
+
+    .account-aside-footer {
+        border-top: none;
+        padding-top: 17px;
+    }
+
+    .account-overview {
+        color: $smoke-text-color;
+    }
+
+    .account-welcome {
+        margin-bottom: 34px;
+        padding-bottom: 8px;
+        border-bottom: $border-width solid $border-color;
+    }
+
+    .account-welcome h1,
+    .account-aside-header {
+        font-size: 25px;
+        font-weight: $font-weight-normal;
+        line-height: 34px;
+    }
+
+    .account-aside-header {
+        padding-bottom: 17px;
+        border: none;
+    }
+
+    .account-aside-list-group {
+        font-size: 13px;
+    }
+
+    .account-aside-item {
+        color: $smoke-text-color;
+        padding-top: 7px;
+        padding-bottom: 7px;
+        line-height: 21px;
+
+        &.is-active {
+            color: $top-and-bottom-color;
+        }
+    }
+
+    .account-aside-btn {
+        @extend .btn-outline-primary;
+        @extend .btn;
+
+        > .icon {
+            display: none;
+        }
+    }
+
+    @include media-breakpoint-up(md) {
+        .account-content-aside {
+            @include make-col(4);
+            display: block;
+        }
+
+        .account-content-main {
+            @include make-col(8);
+        }
+
+        .account-aside-list-group {
+            flex-direction: column;
+        }
+
+        .account-aside-header,
+        .account-aside-footer,
+        .account-aside-item {
+            padding-left: 0;
+            padding-right: 0;
+        }
+    }
+
+    @include media-breakpoint-up(lg) {
+        .account-content-aside {
+            @include make-col(3);
+        }
+
+        .account-content-main {
+            @include make-col(8);
+            margin-left: 75px;
+        }
+
+        .account-welcome {
+            margin-bottom: 50px;
+            padding-bottom: 18px;
+        }
+
+        .account-welcome h1,
+        .account-aside-header {
+            font-size: $h2-font-size;
+        }
+    }
+
+    @include media-breakpoint-up(xxl) {
+        .account-aside-list-group {
+            font-size: 15px;
+        }
+
+        .account-aside-header {
+            padding-bottom: 43px;
+        }
+
+        .account-aside-footer {
+            padding-top: 27px;
+        }
+    }
+}

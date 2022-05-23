@@ -1,0 +1,55 @@
+{% sw_extends '@Storefront/storefront/page/account/index.html.twig' %}
+
+{% block page_account_overview_profile_actions %}{% endblock %}
+
+{% block page_account_overview_payment_actions %}{% endblock %}
+
+{% block page_account_overview_addresses_include %}{% endblock %}
+
+{% block page_account_overview_profile_title %}
+    <div class="card-title__wrapper">
+        {{ parent() }}
+
+        <a href="{{ path('frontend.account.profile.page') }}"
+           title="{{ "account.overviewChangeProfile"|trans|striptags }}">
+            {% sw_icon 'ic-edit' style { 'pack':'emporium' } %}
+        </a>
+    </div>
+{% endblock %}
+
+{% block page_account_overview_payment_title %}
+    <div class="card-title__wrapper">
+        {{ parent() }}
+
+        <a href="{{ path('frontend.account.payment.page') }}"
+           title="{{ "account.overviewChangePayment"|trans|striptags }}">
+            {% sw_icon 'ic-edit' style { 'pack':'emporium' } %}
+        </a>
+    </div>
+{% endblock %}
+
+{% block page_account_overview_main %}
+    <h2 class="account-overview__subtitle">{{ "account.overviewProfile"|trans|sw_sanitize }}</h2>
+
+    <div class="row js-account-overview-addresses">
+        {{ block('page_account_overview_profile') }}
+
+        {{ block('page_account_overview_payment') }}
+
+        {% sw_include "@Storefront/storefront/page/account/address.html.twig" %}
+    </div>
+{% endblock %}
+
+{% block page_account_overview_profile %}
+    <div class="col-sm-6 col-xxl-3 card-col account-overview-card account-overview-profile">
+        {{ block('page_account_overview_profile_card') }}
+    </div>
+{% endblock %}
+
+{% block page_account_overview_payment %}
+    <div class="col-sm-6 col-xxl-3 card-col account-overview-card account-overview-payment">
+        {% block page_account_overview_payment_card %}
+            {{ parent() }}
+        {% endblock %}
+    </div>
+{% endblock %}
