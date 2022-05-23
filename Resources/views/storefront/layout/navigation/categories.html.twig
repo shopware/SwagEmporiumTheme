@@ -7,13 +7,14 @@
 {% endblock %}
 
 {% block layout_navigation_categories_item_link %}
+{#    {{ dump(treeItem.category) }}#}
     {% if treeItem.category.type == 'folder' %}
-        <div class="nav-item nav-link navigation-flyout-link is-level-{{ level }}{% if treeItem.category.visibleChildCount < 1 %} last-child{% endif %}"
+        <div class="nav-item nav-link navigation-flyout-link is-level-{{ level }}{% if id is same as(activeId) %} active{% endif %}{% if id in activePath %} in-path{% endif %}"
              title="{{ name }}">
             <span itemprop="name">{{ name }}</span>
         </div>
     {% else %}
-        <a class="nav-item nav-link navigation-flyout-link is-level-{{ level }}{% if id == activeId or id in activePath %} active{% endif %}{% if treeItem.category.visibleChildCount < 1 %} last-child{% endif %}"
+        <a class="nav-item nav-link navigation-flyout-link is-level-{{ level }}{% if id is same as(activeId) %} active{% endif %}{% if id in activePath %} in-path{% endif %}"
            href="{{ link }}"
            itemprop="url"
            {% if category_linknewtab(treeItem.category) %}target="_blank"

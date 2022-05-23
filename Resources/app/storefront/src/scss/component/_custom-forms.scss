@@ -61,7 +61,7 @@
         }
 
         &::after {
-            top: 2px;
+            top: 0;
             left: -29px;
             width: 24px;
             height: 24px;
@@ -75,7 +75,6 @@
         font-size: $font-size-sm;
         color: $gray-400;
         letter-spacing: 0;
-        text-transform: capitalize;
     }
 
     &:checked ~ .custom-control-label {

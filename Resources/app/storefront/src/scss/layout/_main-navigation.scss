@@ -13,6 +13,7 @@ https://getbootstrap.com/docs/4.3/components/navs/
 
 .navigation-menu-dropdown {
     padding-top: 0;
+    padding-bottom: 0;
     top: 137px !important;
     left: 0 !important;
     transform: translate(0) !important;
@@ -64,9 +65,11 @@ https://getbootstrap.com/docs/4.3/components/navs/
     }
 
     .navigation-flyout-categories {
-        &:not(.is-level-0),
-        &:not(.is-level-1) {
-            margin-left: 24px;
+        margin-left: 24px;
+
+        &.is-level-0,
+        &.is-level-1 {
+            margin-left: 0;
         }
 
         &.is-level-2 {
@@ -93,11 +96,6 @@ https://getbootstrap.com/docs/4.3/components/navs/
     }
 
     .nav-item {
-        &.has-child {
-            display: flex;
-            align-items: flex-start;
-        }
-
         &.navigation-flyout-link {
             margin: 0 0 8px;
             font-weight: $font-weight-normal;
@@ -106,9 +104,8 @@ https://getbootstrap.com/docs/4.3/components/navs/
             color: $gray-400;
             padding: 0;
 
-            &.is-level-3,
-            &.is-level-4,
-            &.is-level-5 {
+            &:not(.is-level-0),
+            &:not(.is-level-1){
                 font-size: 13px;
                 line-height: 18px;
             }
@@ -123,18 +120,17 @@ https://getbootstrap.com/docs/4.3/components/navs/
                 }
             }
 
-            &.active {
+            &.in-path {
                 color: $gray-900;
                 font-weight: $font-weight-bold;
             }
-        }
-
-        &.last-child {
-            &:hover {
-                color: $sw-color-brand-primary;
-            }
 
             &.active {
+                color: $sw-color-brand-primary;
+                font-weight: $font-weight-bold;
+            }
+
+            &:hover {
                 color: $sw-color-brand-primary;
             }
         }
