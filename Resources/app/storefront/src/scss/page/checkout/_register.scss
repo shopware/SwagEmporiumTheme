@@ -8,6 +8,11 @@ $checkout-login-register-space-md: 50px;
         }
     }
 
+    .container-main,
+    .checkout {
+        padding: 0;
+    }
+
     .checkout-aside-container {
         display: flex;
         flex-direction: column-reverse;
@@ -47,10 +52,6 @@ $checkout-login-register-space-md: 50px;
         .line-item-info {
             @include make-col(12);
         }
-    }
-
-    .container-main {
-        padding-top: $checkout-login-register-space-sm;
     }
 
     .address-main-header {
@@ -164,8 +165,40 @@ $checkout-login-register-space-md: 50px;
         }
     }
 
+    .register-submit {
+        margin-bottom: $checkout-login-register-space-sm;
+    }
+
     .form-group:empty {
         margin: 0;
+    }
+
+    .register-required-info,
+    small.form-text {
+        font-size: $font-size-small;
+        color: $smoke-text-color;
+    }
+
+    .register-required-info {
+        display: flex;
+        align-items: center;
+
+        .icon {
+            color: $gray-600;
+            margin-right: 10px;
+
+            svg {
+                top: 0;
+                fill: none;
+            }
+        }
+    }
+
+    .checkout-aside-product-counter {
+        font-size: $input-font-size-lg;
+        color: $smoke-text-color;
+        font-weight: $font-weight-base;
+        text-transform: capitalize;
     }
 }
 
@@ -185,12 +218,8 @@ $checkout-login-register-space-md: 50px;
             min-height: auto;
         }
 
-        .container-main {
-            padding-top: $checkout-login-register-space-md;
-        }
-
         .address-main-header {
-            margin-bottom: $checkout-login-register-space-md;
+            margin-bottom: $checkout-login-register-space-sm;
         }
 
         .register-collapse-toggle,
@@ -205,6 +234,10 @@ $checkout-login-register-space-md: 50px;
             .btn-primary {
                 width: auto;
             }
+        }
+
+        .register-submit {
+            margin-bottom: 0;
         }
     }
 }
@@ -222,10 +255,6 @@ $checkout-login-register-space-md: 50px;
         .checkout-aside-products {
             padding-top: 34px;
             padding-bottom: 0;
-        }
-
-        .container-main {
-            padding-top: 70px;
         }
 
         .collapse-toogle {

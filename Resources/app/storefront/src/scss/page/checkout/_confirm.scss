@@ -4,6 +4,10 @@
         padding-top: 0;
     }
 
+    .container-main {
+        padding-top: 50px;
+    }
+
     .checkout-aside-container {
         background-color: $secondary-lighten-150;
         padding: 34px 24px 24px 24px;
@@ -11,6 +15,7 @@
 
     .checkout-aside-summary {
         padding: 0;
+        background: none;
     }
 
     .checkout-aside-summary-list-container {
@@ -94,7 +99,12 @@
 }
 
 @include media-breakpoint-up(lg) {
-    .is-act-confirmpage {
+    .is-act-confirmpage,
+    .is-ctl-accountorder {
+        .container-main {
+            padding-top: 70px;
+        }
+
         .checkout-aside-container {
             padding: 44px 34px 34px 34px;
         }
