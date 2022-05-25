@@ -43,3 +43,16 @@
         </div>
     {% endblock %}
 {% endblock %}
+
+{% block page_checkout_address_products_header %}
+    {% set isCartNotEmpty = (page.cart.lineItems|length > 0) %}
+    <div class="d-flex justify-content-between align-items-baseline">
+        {{ parent() }}
+
+        {% if isCartNotEmpty %}
+            <div class="checkout-aside-product-counter">
+                {{ "checkout.itemCounter"|trans({'%count%': page.cart.lineItems|length})|sw_sanitize }}</small>
+            </div>
+        {% endif %}
+    </div>
+{% endblock %}

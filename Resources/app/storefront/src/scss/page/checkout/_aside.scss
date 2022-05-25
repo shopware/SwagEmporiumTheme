@@ -37,7 +37,6 @@
 .is-act-checkoutregisterpage {
     .checkout-aside-container {
         background-color: $secondary-lighten-150;
-        max-width: 427px;
         margin-left: auto;
     }
 
@@ -53,6 +52,10 @@
         font-size: 25px;
         line-height: 34px;
         color: $black;
+    }
+
+    .checkout-aside-product-header {
+        font-size: $h4-font-size;
     }
 
     .checkout-aside-summary-list {
@@ -163,5 +166,21 @@
         font-size: $font-size-base;
         padding: 18px;
         line-height: 38px;
+    }
+}
+
+@include media-breakpoint-up(lg) {
+    .is-act-checkoutregisterpage {
+        .checkout-aside-product-header {
+            font-size: $h3-font-size;
+        }
+    }
+
+    .is-act-cartpage,
+    .is-ctl-checkout,
+    .is-act-checkoutregisterpage {
+        .checkout-aside-container {
+            max-width: 427px;
+        }
     }
 }

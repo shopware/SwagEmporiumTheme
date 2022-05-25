@@ -8,6 +8,7 @@
 }
 
 .is-act-finishpage,
+.is-act-editorder,
 .is-act-confirmpage {
     .checkout {
         .checkout-additional {
@@ -86,10 +87,12 @@
     }
 
     .is-act-finishpage,
-    .is-act-confirmpage {
+    .is-act-confirmpage,
+    .is-ctl-accountorder {
         .checkout {
             .checkout-additional {
                 margin: 0 0 50px 0;
+                width: 100%;
             }
         }
     }
