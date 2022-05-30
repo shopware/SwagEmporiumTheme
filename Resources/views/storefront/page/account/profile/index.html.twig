@@ -1,0 +1,178 @@
+{% sw_extends '@Storefront/storefront/page/account/profile/index.html.twig' %}
+
+{% set formRowClass = "row g-0 g-sm-2" %}
+
+{% block page_account_profile_personal_action_buttons %}{% endblock %}
+
+{% block page_account_profile_credentials_current_mail %}
+    <div class="col-12 col-md-8">
+        {{ block('page_account_profile_credentials_current_mail_label') }}
+    </div>
+{% endblock %}
+
+{% block page_account_profile_credentials_change_password %}
+    <div class="col-12 col-sm-6 col-md-5 col-lg-2">
+        <div class="d-grid">
+            <a class="account-profile-change btn btn-outline-primary{% if not passwordFormViolation %} collapsed{% endif %}"
+            {{ dataBsToggleAttr }}="collapse"
+            href="#profile-password-form"
+            role="button"
+            aria-expanded="{% if passwordFormViolation %}true{% else %}false{% endif %}"
+            aria-controls="profile-password-form">
+            {{ "account.profileChangePassword"|trans|sw_sanitize }}
+            </a>
+        </div>
+    </div>
+{% endblock %}
+
+{% block page_account_profile_credentials_change_mail %}
+    <div class="col-12 col-sm-6 col-md-5 col-lg-2">
+        <div class="d-grid">
+            <a class="account-profile-change btn btn-outline-primary{% if not emailFormViolation %} collapsed{% endif %}"
+            {{ dataBsToggleAttr }}="collapse"
+            href="#profile-email-form"
+            role="button"
+            aria-expanded="{% if emailFormViolation %}true{% else %}false{% endif %}"
+            aria-controls="profile-email-form">
+            {{ "account.profileChangeEmail"|trans|sw_sanitize }}
+            </a>
+        </div>
+    </div>
+{% endblock %}
+
+{% block page_account_profile_personal_required %}
+    <div class="card-actions-container">
+        <p class="account-profile-required-info required-fields">
+            {% sw_icon 'ic-info' style { 'pack': 'emporium' } %}
+            {{ "general.requiredFields"|trans|sw_sanitize }}
+        </p>
+        {% block clone_page_account_profile_personal_action_buttons %}
+            <div class="card-actions">
+                {% block page_account_profile_personal_action_button_send %}
+                    <button type="submit"
+                            class="profile-form-submit btn btn-primary"
+                            title="{{ "account.profileSaveChanges"|trans|striptags }}">
+                        {{ "account.profileSaveChanges"|trans|sw_sanitize }}
+                    </button>
+                {% endblock %}
+            </div>
+        {% endblock %}
+    </div>
+{% endblock %}
+
+{% block page_account_profile_mail_required %}
+    <p class="account-profile-required-info required-fields">
+        {% sw_icon 'ic-info' style { 'pack': 'emporium' } %}
+        {{ "general.requiredFields"|trans|sw_sanitize }}
+    </p>
+{% endblock %}
+
+{% block page_account_profile_password_required %}
+    <p class="account-profile-required-info required-fields">
+        {% sw_icon 'ic-info' style { 'pack': 'emporium' } %}
+        {{ "general.requiredFields"|trans|sw_sanitize }}
+    </p>
+{% endblock %}
+
+{% block page_account_profile_mail_action_button_send %}
+    <div class="d-grid d-sm-block">
+        <button type="submit"
+                class="profile-form-submit btn btn-primary"
+                title="{{ "account.profileSaveChanges"|trans|striptags }}">
+            {{ "account.profileSaveChanges"|trans|sw_sanitize }}
+        </button>
+    </div>
+{% endblock %}
+
+{% block page_account_profile_password_action_button_send %}
+    <div class="d-grid d-sm-block">
+        <button type="submit"
+                class="profile-form-submit btn btn-primary"
+                title="{{ "account.profileSaveChanges"|trans|striptags }}">
+            {{ "account.profileSaveChanges"|trans|sw_sanitize }}
+        </button>
+    </div>
+{% endblock %}
+
+{% block page_account_delete_account_confirm_button %}
+    <div class="text-end">
+        <button class="btn btn-primary type="submit">
+            {{ "account.profileDeleteButton"|trans|sw_sanitize }}
+        </button>
+    </div>
+{% endblock %}
+
+{% block page_account_profile_mail_password %}
+    <div class="{{ formRowClass }}">
+        <div class="form-group col-12 col-sm-6">
+            {{ block('page_account_profile_mail_password_label') }}
+
+            {{ block('page_account_profile_mail_password_input') }}
+
+            {{ block('page_account_profile_mail_password_input_error') }}
+        </div>
+    </div>
+{% endblock %}
+
+{% block page_account_profile_current_password %}
+    <div class="{{ formRowClass }}">
+        <div class="col-12 col-sm-6 form-group">
+            {{ block('page_account_profile_current_password_label') }}
+
+            {{ block('page_account_profile_current_password_input') }}
+
+            {{ block('page_account_profile_current_password_input_error') }}
+        </div>
+    </div>
+{% endblock %}
+
+{% block page_account_profile_credentials_container %}
+    <div class="row align-items-center g-2 g-sm-4">
+        {{ block('page_account_profile_credentials_current_mail') }}
+
+        {{ block('page_account_profile_credentials_change_mail') }}
+
+        {{ block('page_account_profile_credentials_change_password') }}
+    </div>
+{% endblock %}
+
+{% block page_account_profile_mail %}
+    <div class="col-sm-6 form-group">
+        {{ block('page_account_profile_mail_label') }}
+
+        {{ block('page_account_profile_mail_input') }}
+
+        {{ block('page_account_profile_mail_input_error') }}
+    </div>
+{% endblock %}
+
+{% block page_account_profile_mail_confirmation %}
+    <div class="col-sm-6 form-group">
+        {{ block('page_account_profile_personal_mail_confirmation_label') }}
+
+        {{ block('page_account_profile_mail_confirmation_input') }}
+
+        {{ block('page_account_profile_mail_confirmation_input_error') }}
+    </div>
+{% endblock %}
+
+
+{% block page_account_profile_new_password %}
+    <div class="col-sm-6 form-group">
+        {{ block('page_account_profile_new_password_label') }}
+
+        {{ block('page_account_profile_new_password_input') }}
+
+        {{ block('page_account_profile_new_password_input_error') }}
+    </div>
+{% endblock %}
+
+{% block page_account_profile_new_password_confirmation %}
+    <div class="col-sm-6 form-group">
+        {{ block('page_account_profile_new_password_confirmation_label') }}
+
+        {{ block('page_account_profile_new_password_confirmation_input') }}
+
+        {{ block('page_account_profile_new_password_confirmation_error') }}
+    </div>
+{% endblock %}

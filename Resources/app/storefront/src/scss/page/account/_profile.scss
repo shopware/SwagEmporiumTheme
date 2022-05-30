@@ -1,0 +1,139 @@
+.account-profile {
+    &-personal {
+        padding-bottom: 50px;
+        border-bottom: $border-width solid $border-color;
+    }
+
+    .account-deleting {
+        margin-bottom: 30px;
+    }
+
+    .contact-type {
+        @extend .col-lg-2;
+    }
+
+    .contact-title:empty {
+        display: none;
+    }
+
+    .card-title {
+        border-bottom: none;
+        font-weight: $font-weight-normal;
+        margin-bottom: 35px;
+        padding-bottom: 0;
+    }
+
+    .card-actions-container {
+        display: flex;
+        align-items: flex-start;
+        gap: 30px;
+        justify-content: space-between;
+        flex-direction: column-reverse;
+        margin-top: 0px;
+
+        .account-profile-required-info {
+            margin-bottom: 0;
+        }
+
+        .card-actions {
+            width: 100%;
+
+            .btn {
+                width: 100%;
+            }
+        }
+    }
+
+    .form-label {
+        display: none;
+    }
+
+    .form-group {
+        margin-bottom: 10px;
+    }
+
+    .profile-content > * {
+        margin-bottom: 35px;
+    }
+
+    .account-profile-required-info, .text-muted {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        color: $smoke-text-color !important;
+        font-size: $font-size-small;
+
+        .icon svg {
+            top: 0;
+        }
+    }
+
+    .account-deleting {
+        color: $smoke-text-color;
+        border-top: $border-width solid $border-color;
+    }
+
+    .account-profile-mail {
+        color: $smoke-text-color;
+    }
+
+    .confirm-delete-account-modal {
+        .modal-body, h6 {
+            color: $smoke-text-color;
+            font-weight: $font-weight-normal;
+        }
+    }
+
+    @include media-breakpoint-up(md) {
+        .contact-title:empty {
+            display: flex;
+        }
+
+        .card-actions-container {
+            gap: 10px;
+            flex-direction: row;
+            align-items: center;
+            margin-top: 8px;
+
+            .card-actions {
+                width: auto;
+            }
+        }
+
+        .confirm-delete-account-modal {
+            .modal-dialog {
+                min-width: 727px;
+            }
+        }
+
+        .account-deleting {
+            margin-bottom: 50px;
+        }
+    }
+
+    @include media-breakpoint-up(lg) {
+        .contact-title {
+            margin-right: 50%;
+
+            ~ .form-group {
+                @include make-col(6);
+            }
+
+            &:empty {
+                display: none;
+
+                ~ .form-group {
+                    @include make-col(5);
+                }
+            }
+        }
+
+        .card-title {
+            font-size: 20px;
+        }
+
+        .account-deleting {
+            margin-bottom: 80px;
+        }
+    }
+}

@@ -6,6 +6,8 @@
 }
 
 .account-content {
+    min-height: inherit;
+
     .account-content-aside,
     .account-content-main {
         padding-top: $grid-gutter-width / 2;
@@ -70,6 +72,12 @@
         .account-content-aside {
             @include make-col(4);
             display: block;
+
+            .account-aside-item {
+                .icon {
+                    display: none;
+                }
+            }
         }
 
         .account-content-main {
