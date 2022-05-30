@@ -225,14 +225,6 @@
 
         .product-detail-tax {
             font-size: 10px;
-
-            &-link {
-                text-decoration: none;
-
-                &:not(:hover) {
-                    color: $gray-400;
-                }
-            }
         }
 
         .product-detail-badge {
@@ -291,20 +283,32 @@
         .multi-collapse.show + .product-detail-accordion {
             display: none;
         }
+
+        .product-detail-tab-navigation-list {
+            margin-bottom: 20px;
+        }
     }
 
     &-scroll-up-button {
         position: sticky;
-        bottom: 0;
+        bottom: 4px;
         display: inline-flex;
-        left: 50%;
-        transform: translateX(-50%);
+        left: 100%;
 
-        .btn {
+        .btn-scroll-up {
             display: none;
-            &:not(:hover) {
-                background-color: $white;
-                color: $primary;
+            padding: 5px 15px;
+
+            .icon {
+                width: 10px;
+
+                svg {
+                    top: 3px
+                }
+            }
+
+            &:not(:hover) .icon {
+                color: $white;
             }
         }
     }

@@ -9,7 +9,9 @@
         {% sw_include '@Storefront/storefront/page/product-detail/buy-widget.html.twig' %}
 
         <div class="product-detail-scroll-up-button" data-buybox-scroll-up="true">
-            <button class="btn btn-outline-primary btn-scroll-up">{{ "detail.scrollUpButton"|trans|sw_sanitize }}</button>
+            <button class="btn btn-primary btn-scroll-up">
+                {% sw_icon 'chevron-up' style { 'pack': 'emporium' } %}
+            </button>
         </div>
     </div>
 {% endblock %}

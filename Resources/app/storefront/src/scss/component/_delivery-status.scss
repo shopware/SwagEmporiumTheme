@@ -6,6 +6,9 @@
         height: 16px;
         width: 16px;
         flex-shrink: 0;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
 
         .icon {
             height: 100%;
@@ -15,6 +18,14 @@
             > svg {
                 top: 0;
             }
+        }
+    }
+
+    &.delivery-preorder,
+    &.delivery-information {
+        .delivery-status-indicator.bg-warning .icon {
+            width: 15px;
+            height: 15px;
         }
     }
 
