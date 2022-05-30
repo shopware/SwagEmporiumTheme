@@ -1,0 +1,128 @@
+$account-menu-spacing: 24px;
+
+.account-menu-offcanvas {
+    .offcanvas-close {
+        .icon {
+            color: $gray-300;
+        }
+    }
+
+    .account-menu-header {
+        padding-bottom: $account-menu-spacing;
+        line-height: 1;
+    }
+
+    .account-menu-inner {
+        .account-aside-item {
+            font-size: $btn-font-size;
+            font-weight: $font-weight-bold;
+            border-bottom: $border-width solid $border-color;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 11px;
+
+            .icon svg {
+                top: 7px;
+            }
+        }
+    }
+
+    .account-menu-login {
+        padding: $account-menu-spacing 0;
+
+        .account-menu-register {
+            margin-top: 12px;
+        }
+    }
+}
+
+.account-menu-dropdown {
+    padding: 26px $account-menu-spacing;
+    min-width: 270px;
+    box-shadow: $popover-box-shadow;
+
+    .account-menu-header {
+        border: none;
+        padding: 0;
+        text-transform: capitalize;
+    }
+
+    .account-aside-list-group {
+        margin-top: 10px;
+    }
+
+    .account-aside-item {
+        color: $gray-400;
+
+        &.is-active {
+            color: $primary;
+        }
+
+        &:hover {
+            color: $sw-color-brand-primary;
+        }
+
+        &:last-child {
+            padding-bottom: 4px;
+        }
+
+        .icon {
+            display: none;
+        }
+    }
+
+    .header-account-menu {
+        .account-aside-footer {
+            border-top: $border-width solid $border-color;
+            margin-top: 15px;
+        }
+    }
+
+    .account-menu-register {
+        margin-top: 13px;
+        margin-bottom: 6px;
+
+        a:hover {
+            text-decoration: none;
+        }
+    }
+
+    .account-menu-login {
+        margin-bottom: 14px;
+        padding-top: 22px;
+    }
+}
+
+.account-menu {
+    .account-aside-btn {
+        @extend .btn-outline-primary;
+        margin-top: 24px;
+        width: 100%;
+        padding: 12px 0;
+
+        .icon {
+            display: none;
+        }
+
+        &:hover {
+            text-decoration: none;
+        }
+    }
+
+    .header-account-menu {
+        .account-guest-abort {
+            border: none;
+            margin: 0;
+
+            .account-aside-btn {
+                margin: 0;
+            }
+        }
+    }
+
+    .account-menu-header {
+        font-size: $h4-font-size;
+        font-weight: $font-weight-base;
+    }
+}

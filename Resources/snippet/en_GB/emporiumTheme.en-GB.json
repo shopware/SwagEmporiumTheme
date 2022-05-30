@@ -51,6 +51,8 @@
     "offcanvasCloseDescription": "Close description"
   },
   "account": {
-    "overviewProfile": "Personal information"
+    "overviewProfile": "Personal information",
+    "orRegister": "",
+    "orRegisterLink": "Register"
   }
 }
