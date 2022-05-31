@@ -292,7 +292,7 @@
     &-scroll-up-button {
         position: sticky;
         bottom: 4px;
-        display: inline-flex;
+        display: none;
         left: 100%;
 
         .btn-scroll-up {
@@ -874,11 +874,24 @@
 
     @include media-breakpoint-down(sm) {
         &-tabs:not(.product-detail-cross-selling) {
+            margin-bottom: 0;
             @include description-review-mobile();
 
             .product-detail-tab-navigation-link {
                 font-size: 13px;
             }
+
+            .product-detail-tab-navigation-list {
+                margin-bottom: 0;
+            }
+        }
+
+        &-content, &-buy {
+            margin-bottom: 0;
+        }
+
+        &-cross-selling .card-tabs {
+            margin-top: 0;
         }
     }
 
@@ -979,6 +992,10 @@
             &-filter {
                 padding: 20px 10px 14px 10px;
             }
+        }
+
+        &-scroll-up-button {
+            display: inline-flex;
         }
     }
 
