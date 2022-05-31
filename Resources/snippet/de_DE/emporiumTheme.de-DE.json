@@ -53,6 +53,8 @@
   "account": {
     "overviewProfile": "Persönliche Informationen",
     "orRegister": "",
-    "orRegisterLink": "Registrieren"
+    "orRegisterLink": "Registrieren",
+    "profileCredentialsTitle": "Email & passwort",
+    "profileChangeEmail": "Ändern Sie email"
   }
 }
