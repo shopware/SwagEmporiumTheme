@@ -1,0 +1,9 @@
+{% sw_extends '@Storefront/storefront/page/account/order-history/order-detail-document-item.html.twig' %}
+
+{% block page_account_order_document_item_detail_view_file_btn_text %}
+    <a href="{{ documentLink }}"
+       target="_blank"
+       class="document-item-view-file-text-btn">
+        {% sw_icon 'ic-eye' style { 'pack':'emporium' } %}
+    </a>
+{% endblock %}

@@ -268,7 +268,7 @@ $checkout-login-register-space-md: 50px;
 
         .contact-type,
         .contact-title,
-        .contact-salutation{
+        .contact-salutation {
             @include make-col(6);
         }
     }

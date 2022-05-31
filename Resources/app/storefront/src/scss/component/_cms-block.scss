@@ -79,6 +79,7 @@
 
         .product-detail-review-teaser {
             margin-top: 16px;
+
             p {
                 display: none;
             }
@@ -184,6 +185,7 @@
         .multi-collapse {
             @extend .col-7;
             margin-left: 0;
+
             &.show, &.collapsing {
                 ~ .product-detail-accordion,
                 ~ .product-detail-review-actions,
@@ -209,7 +211,7 @@
 
         @include media-breakpoint-down(lg) {
             .product-detail-review-main > .multi-collapse,
-            .product-detail-review-item-info .alert{
+            .product-detail-review-item-info .alert {
                 width: 100%;
             }
 

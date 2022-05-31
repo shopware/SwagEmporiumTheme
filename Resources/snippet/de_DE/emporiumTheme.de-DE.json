@@ -70,5 +70,8 @@
   },
   "contact": {
     "submitText": "Senden"
+  },
+  "order": {
+    "orderSummary": "Zusammenfassung"
   }
 }

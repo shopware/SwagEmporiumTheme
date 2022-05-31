@@ -19,6 +19,7 @@
             &:nth-of-type(odd) {
                 background-color: $gray-100;
             }
+
             &:nth-of-type(even) {
                 background-color: $white;
             }
@@ -54,9 +55,9 @@
             }
         }
 
-    .product-detail-advanced-list-price-wrapper {
-      color: $table-color;
-      font-weight: $font-weight-bold;
+        .product-detail-advanced-list-price-wrapper {
+            color: $table-color;
+            font-weight: $font-weight-bold;
+        }
     }
-  }
 }
