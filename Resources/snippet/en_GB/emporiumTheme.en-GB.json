@@ -15,7 +15,9 @@
     "404ErrorPageHeader": "Page not found",
     "404ErrorDescription": "We are sorry, it seems we can't find the page you're looking for. It may no longer exist or may have been moved.",
     "maintenanceModeHeader": "Maintenance mode",
-    "maintenanceModeDescription": "We are currently updating the contents of this site. Please check back later."
+    "maintenanceModeDescription": "We are currently updating the contents of this site. Please check back later.",
+    "privacyNotice": "I have read the <a data-toggle=\"modal\" data-url=\"%privacyUrl%\" href=\"%privacyUrl%\" title=\"Data protection information\">data protection information</a>",
+    "privacyAndTerm": "This site is protected by hCaptcha and its <a data-toggle=\"modal\" data-bs-toggle=\"modal\" data-url=\"%privacyUrl%\" href=\"%privacyUrl%\" title=\"Privacy Policy\">Privacy Policy</a> and <a data-toggle=\"modal\" data-bs-toggle=\"modal\" data-url=\"%tosUrl%\" href=\"%tosUrl%\" title=\"Terms of Service\">Terms of Service</a> apply."
   },
   "footer": {
     "qualityInfo": "Emporium - Quality since 1985",
@@ -56,5 +58,11 @@
     "orRegisterLink": "Register",
     "profileCredentialsTitle": "Email & password",
     "profileChangeEmail": "Change email"
+  },
+  "newsletter": {
+    "submitText": "Sign up"
+  },
+  "contact": {
+    "submitText": "Send"
   }
 }

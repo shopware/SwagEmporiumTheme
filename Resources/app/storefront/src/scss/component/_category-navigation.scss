@@ -1,55 +1,82 @@
 .category-navigation {
-    padding-left: 10px;
+    padding-left: 20px;
 
     &[class*='level-'] {
         &:not(.level-0) {
             .category-navigation-link {
-                font-size: $h6-font-size;
-            }
-
-            .category-navigation-link.is-active {
-                color: $gray-900;
+                font-size: $font-size-base;
+                padding: 8px 0;
             }
         }
     }
 
     &[class*='level-0'] {
-        > .category-navigation-entry {
-            border-bottom: none;
+        font-size: $font-size-base;
+        line-height: 24px;
+        padding: 18px 0;
 
-            > .category-navigation-link.in-path {
+        > .category-navigation-entry {
+            > .category-navigation-link {
                 display: flex;
                 align-items: center;
                 justify-content: space-between;
                 gap: 10px;
+                font-weight: $font-weight-bold;
 
                 &:after {
                     content: "";
-                    background: url('#{$asset-path}/icon/icon-pack/ic-minus.svg') no-repeat center/1.5rem;
-                    height: 24px;
-                    width: 24px;
+                    background: url('#{$asset-path}/icon/icon-pack/ic-plus.svg') no-repeat center/1.5rem;
+                    height: 14px;
+                    width: 14px;
+                }
+
+                &.in-path,
+                &.is-active {
+                    &:after {
+                        background: url('#{$asset-path}/icon/icon-pack/ic-minus.svg') no-repeat center/1.5rem;
+                    }
+                }
+            }
+        }
+    }
+
+    &[class*='level-1'] {
+        padding-left: 10px;
+        padding-bottom: 10px;
+    }
+
+    &[class*='level-2'] {
+        .category-navigation {
+            padding-left: 14px;
+            position: relative;
+
+            &:before {
+                content: "";
+                display: block;
+                position: absolute;
+                height: 100%;
+                width: 1px;
+                background: $gray-300;
+                left: 0;
+                top: 0;
+            }
+
+            .category-navigation-entry {
+                .category-navigation-link {
+                    font-size: 13px;
+                    line-height: 18px;
                 }
             }
         }
     }
 
     &[class*='level-3'] {
-        position: relative;
-
-        &:before {
-            content: "";
-            display: block;
-            position: absolute;
-            height: 90%;
-            width: 1px;
-            background: $gray-300;
-            left: 0;
-            top: 50%;
-            transform: translateY(-50%);
-        }
-
-        .category-navigation-entry .category-navigation-link {
-            font-size: $font-size-small;
+        .category-navigation {
+            .category-navigation-entry {
+                .category-navigation-link {
+                    padding: 0;
+                }
+            }
         }
     }
 

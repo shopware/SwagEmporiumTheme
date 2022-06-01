@@ -1,0 +1,17 @@
+{% sw_extends '@Storefront/storefront/element/cms-element-form.html.twig' %}
+
+{% block element_form %}
+    {%  set config = element.fieldConfig.elements %}
+
+    <div class="cms-element-{{ element.type }} {{ element.config.type.value }}">
+        {% set formViolations = app.request.get('errors') %}
+
+        <div class="card">
+            <div class="card-body">
+                {% block element_form_wrapper %}
+                    {{ parent() }}
+                {% endblock %}
+            </div>
+        </div>
+    </div>
+{% endblock %}

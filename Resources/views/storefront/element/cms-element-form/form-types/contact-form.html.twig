@@ -1,0 +1,53 @@
+{% sw_extends '@Storefront/storefront/element/cms-element-form/form-types/contact-form.html.twig' %}
+
+{% block cms_form_contact_select_salutation %}
+    {% sw_include '@Storefront/storefront/element/cms-element-form/form-components/cms-element-form-select-salutation.html.twig'
+        with {
+        additionalClass: 'col-md-6 col-salutation',
+        required: true
+    }
+    %}
+{% endblock %}
+
+{% block cms_form_contact_input_first_name %}
+    {% set firstNameFieldRequired = config('core.basicInformation.firstNameFieldRequired') == true %}
+    {% sw_include '@Storefront/storefront/element/cms-element-form/form-components/cms-element-form-input.html.twig'
+        with {
+        fieldName: 'firstName',
+        required: firstNameFieldRequired,
+        additionalClass: 'col-md-6',
+        label: 'account.personalFirstNameLabel',
+        placeholder: 'account.personalFirstNamePlaceholder'
+    }
+    %}
+{% endblock %}
+
+{% block cms_form_contact_input_last_name %}
+    {% set lastNameFieldRequired = config('core.basicInformation.lastNameFieldRequired') == true %}
+    {% sw_include '@Storefront/storefront/element/cms-element-form/form-components/cms-element-form-input.html.twig'
+        with {
+        fieldName: 'lastName',
+        required: lastNameFieldRequired,
+        additionalClass: 'col-md-6',
+        label: 'account.personalLastNameLabel',
+        placeholder: 'account.personalLastNamePlaceholder'
+    }
+    %}
+{% endblock %}
+
+{% block cms_form_contact_comment_textarea %}
+    {% sw_include '@Storefront/storefront/element/cms-element-form/form-components/cms-element-form-textarea.html.twig'
+        with {
+        rows: 5,
+        required: true,
+        fieldName: 'comment',
+        additionalClass: 'col-md-6',
+        label: 'contact.commentLabel',
+        placeholder: 'contact.commentPlaceholder'
+    }
+    %}
+{% endblock %}
+
+{% block cms_form_contact_submit %}
+    {% sw_include '@Storefront/storefront/element/cms-element-form/form-components/cms-element-form-submit.html.twig' with { submitText: 'contact.submitText'} %}
+{% endblock %}
