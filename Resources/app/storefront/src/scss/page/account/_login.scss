@@ -1,0 +1,308 @@
+$account-login-register-spacer: 10px;
+$account-login-register-spacer-md: 15px;
+$account-login-register-spacer-lg: 34px;
+
+.is-act-loginpage {
+    .form-label,
+    .login-cancel {
+        display: none;
+    }
+
+    .account-register-container {
+        padding-bottom: 30px;
+    }
+
+    .row {
+        margin-top: 0;
+
+        .form-group {
+            margin-top: 5px;
+            margin-bottom: 5px;
+
+            &:empty {
+                margin: 0;
+            }
+        }
+    }
+
+    .btn-lg,
+    .form-select {
+        height: $input-height;
+    }
+
+    .login-card .card-title,
+    .register-card .card-title {
+        font-size: 25px;
+        font-weight: $font-weight-base;
+        border-bottom: none;
+        margin-top: 18px;
+    }
+
+    .login-form-description,
+    .register-billing .card-title,
+    .register-shipping .card-title {
+        color: $gray-800;
+        font-weight: $font-weight-bold;
+        font-size: $btn-font-size-sm;
+        line-height: 1;
+        text-transform: uppercase;
+        width: fit-content;
+        padding-bottom: 5px;
+        border-bottom: 2px solid $gray-800;
+        margin-bottom: 25px;
+        letter-spacing: 1px;
+    }
+
+    .login-form-description {
+        margin-bottom: 20px;
+    }
+
+    .login-actions .btn-group,
+    .login-submit,
+    .login-submit .btn-primary,
+    .register-submit .btn-primary {
+        width: 100%;
+    }
+
+    .login-password-recover {
+        text-align: center;
+        font-weight: $font-weight-base;
+        font-size: $btn-font-size;
+    }
+
+    .login-card {
+        border-bottom: $border-width solid $border-color;
+        padding-bottom: 24px;
+        margin-bottom: $account-login-register-spacer-lg;
+
+        .login-actions {
+            display: flex;
+            flex-direction: column-reverse;
+            margin-top: $account-login-register-spacer-md;
+
+            .login-password-recover {
+                margin-bottom: 0;
+                margin-top: $spacer;
+            }
+        }
+    }
+
+    .register-card {
+        .card-title {
+            margin-top: 0;
+            margin-bottom: 5px;
+        }
+
+        .register-address {
+            margin-top: 24px;
+            margin-bottom: 27px;
+        }
+
+        .register-personal {
+            margin-bottom: 11px;
+
+            > label {
+                font-size: $btn-font-size-sm;
+                text-transform: uppercase;
+                margin-bottom: 0;
+                margin-top: 10px;
+            }
+        }
+
+        .register-different-shipping {
+            margin-bottom: 5px;
+            margin-top: 5px;
+
+            label {
+                font-size: $font-size-small;
+            }
+        }
+
+        .register-shipping {
+            padding-top: $account-login-register-spacer;
+        }
+
+        .register-submit .btn {
+            padding: $account-login-register-spacer;
+            margin-top: $account-login-register-spacer;
+        }
+
+        .register-billing,
+        .register-shipping {
+            .card-title {
+                margin-bottom: 20px;
+            }
+        }
+
+        .register-required-info {
+            display: flex;
+            align-items: center;
+            padding-bottom: 26px;
+            border-bottom: $border-width solid $border-color;
+
+            .icon {
+                margin-right: $account-login-register-spacer-md;
+
+                svg {
+                    fill: none;
+                    top: 0;
+                }
+            }
+        }
+    }
+
+    .register-required-info,
+    small.form-text {
+        font-size: $font-size-small;
+        color: $smoke-text-color;
+    }
+
+    .custom-select:invalid {
+        color: $gray-400;
+    }
+
+    .was-validated {
+        .custom-control-input:checked {
+            ~ .custom-control-label::before {
+                border-color: $sw-color-brand-primary;
+                background-color: $sw-color-brand-primary;
+            }
+        }
+    }
+
+    @include media-breakpoint-up(md) {
+        .container-main {
+            padding: 0;
+
+            .account-login-container,
+            .account-register-container {
+                padding-top: $account-login-register-spacer-lg;
+                padding-bottom: 70px;
+            }
+
+            .account-register-container {
+                border-left: $border-width solid $border-color;
+            }
+        }
+
+        .login-form-mail,
+        .login-form-password {
+            @include make-col(12);
+        }
+
+        .login-card,
+        .register-card {
+            border-bottom: none;
+            padding-bottom: 0;
+
+            .card-title {
+                margin-top: 0;
+                margin-bottom: $account-login-register-spacer;
+            }
+        }
+
+        .login-advantages {
+            display: block;
+            background-color: $gray-500;
+            padding: 25px;
+
+            font-weight: $font-weight-base;
+            font-size: $font-size-small;
+            .login-advantages-header {
+                font-weight: $font-weight-base;
+            }
+
+            ul {
+                list-style: none;
+                padding-left: 0;
+                margin-bottom: 0;
+
+                li {
+                    color: $smoke-text-color;
+                    display: flex;
+
+                    &:before {
+                        content: '';
+                        background-color: $sw-color-brand-primary;;
+                        display: inline-block;
+                        height: 3px;
+                        width: 3px;
+                        border-radius: 50%;
+                        margin-right: $account-login-register-spacer;
+                        margin-top: 8px;
+                    }
+                }
+            }
+        }
+
+        .register-required-info {
+            padding-bottom: $account-login-register-spacer-lg;
+        }
+
+        .register-personal {
+            .contact-type {
+                @include make-col(6);
+            }
+        }
+    }
+
+    @include media-breakpoint-up(lg) {
+        .account-login-container {
+            padding-right: 85px;
+        }
+
+        .account-register-container {
+            padding-left: 85px;
+        }
+
+        .login-advantages {
+            padding: $account-login-register-spacer-lg;
+            font-size: $btn-font-size-lg;
+
+            .login-advantages-header {
+                font-size: $h4-font-size;
+            }
+        }
+
+        .login-card,
+        .register-card {
+            .card-title {
+                margin-bottom: $account-login-register-spacer-md;
+            }
+
+            .card-body > .card-title {
+                font-size: $h2-font-size;
+            }
+        }
+
+        .register-card {
+            .register-shipping {
+                padding-top: 30px;
+            }
+
+            .register-different-shipping {
+                margin-top: $account-login-register-spacer-md;
+            }
+        }
+
+        .register-submit .btn {
+            width: auto;
+            min-width: 200px;
+        }
+
+        .contact-title,
+        .contact-salutation {
+            @include make-col(6);
+        }
+    }
+
+    @include media-breakpoint-up(xxl) {
+        .account-login-container {
+            padding-right: 165px;
+        }
+
+        .account-register-container {
+            padding-left: 165px;
+        }
+    }
+}

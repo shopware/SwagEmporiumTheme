@@ -1,0 +1,19 @@
+{% sw_extends '@Storefront/storefront/page/account/register/index.html.twig' %}
+
+{% block page_account_register_login_container %}
+    <div class="col-md-4 account-login-container">
+        {% sw_include '@Storefront/storefront/component/account/login.html.twig' with {
+            'cardTitle': "account.loginHeader"|trans|sw_sanitize
+        } %}
+
+        {{ block('page_account_register_advantages') }}
+    </div>
+{% endblock %}
+
+{% block page_account_register_container %}
+    <div class="col-md-8 account-register-container">
+        {% sw_include '@Storefront/storefront/component/account/register.html.twig' with {
+            'cardTitle': "account.registerPersonalHeader"|trans|sw_sanitize
+        } %}
+    </div>
+{% endblock %}

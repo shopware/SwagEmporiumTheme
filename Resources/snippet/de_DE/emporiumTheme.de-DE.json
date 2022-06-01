@@ -57,7 +57,13 @@
     "orRegister": "",
     "orRegisterLink": "Registrieren",
     "profileCredentialsTitle": "Email & passwort",
-    "profileChangeEmail": "Ändern Sie email"
+    "profileChangeEmail": "Ändern Sie email",
+    "loginHeader": "Anmeldung",
+    "loginFormDescription": "E-Mail und Passwort eingeben",
+    "loginPasswordRecover": "Haben Sie Ihr Passwort vergessen?",
+    "personalBirthdaySelectDay": "Geburtstag",
+    "personalBirthdaySelectMonth": "Geburtsmonat",
+    "personalBirthdaySelectYear": "Geburtsjahr"
   },
   "newsletter": {
     "submitText": "Registrieren Sie sich"

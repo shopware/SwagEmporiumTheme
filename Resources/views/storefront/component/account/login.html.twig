@@ -34,3 +34,18 @@
     </div>
 {% endblock %}
 
+{% block component_account_login_form_mail %}
+    <div class="form-group col-md-6 login-form-mail">
+        {{ block('component_account_login_form_mail_label') }}
+
+        {{ block('component_account_login_form_mail_input') }}
+    </div>
+{% endblock %}
+
+{% block component_account_login_form_password %}
+    <div class="form-group col-md-6 login-form-password">
+        {{ block('component_account_login_form_password_label') }}
+
+        {{ block('component_account_login_form_password_input') }}
+    </div>
+{% endblock %}
