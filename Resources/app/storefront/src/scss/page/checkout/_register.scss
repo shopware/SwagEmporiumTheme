@@ -124,10 +124,36 @@ $checkout-login-register-space-md: 50px;
         &:last-child {
             border-bottom: $border-width solid $border-color;
         }
+
+        .row {
+            margin-top: 0;
+
+            .form-group {
+                margin-top: 5px;
+                margin-bottom: 5px;
+
+                &:empty {
+                    margin: 0;
+                }
+            }
+        }
     }
 
     .register-card {
         margin-top: 30px;
+
+        .register-guest-control,
+        .register-different-shipping {
+            margin-top: 16px;
+        }
+
+        .register-address {
+            margin-bottom: 30px;
+        }
+
+        .register-shipping {
+            padding-top: 10px;
+        }
     }
 
     .custom-control-input {
@@ -148,7 +174,7 @@ $checkout-login-register-space-md: 50px;
 
     .register-different-shipping label {
         font-size: $font-size-small;
-        margin: 2px 0 0 3px;
+        margin: 2px 0 0 5px;
         color: $gray-400;
     }
 
@@ -239,6 +265,12 @@ $checkout-login-register-space-md: 50px;
         .register-submit {
             margin-bottom: 0;
         }
+
+        .contact-type,
+        .contact-title,
+        .contact-salutation{
+            @include make-col(6);
+        }
     }
 }
 
@@ -261,5 +293,4 @@ $checkout-login-register-space-md: 50px;
             padding: 17px 10px;
         }
     }
-
 }

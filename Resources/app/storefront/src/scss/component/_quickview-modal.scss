@@ -2,6 +2,9 @@ $quick-view-img-size: 150px;
 
 .quickview-modal {
     .modal-body {
+        max-height: 90vh;
+        overflow-y: auto;
+
         .quickview-minimal-tittle,
         .quickview-minimal-top,
         .quickview-minimal-footer {
@@ -81,15 +84,21 @@ $quick-view-img-size: 150px;
         }
     }
 
-    @include media-breakpoint-only(md) {
+    @include media-breakpoint-up(md) {
         .modal-dialog {
             max-width: $modal-lg;
-            margin-left: $grid-gutter-width / 2;
-            margin-right: $grid-gutter-width / 2;
+        }
+
+        .quickview-minimal-image {
+            @include make-col(4);
+        }
+
+        .quickview-minimal-product {
+            @include make-col(8);
         }
     }
 
-    @include media-breakpoint-up(md) {
+    @include media-breakpoint-up(lg) {
         .quickview-minimal-image {
             @include make-col(3);
         }

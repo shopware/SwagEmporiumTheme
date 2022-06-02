@@ -45,7 +45,6 @@ $account-menu-spacing: 24px;
     .account-menu-header {
         border: none;
         padding: 0;
-        text-transform: capitalize;
     }
 
     .account-aside-list-group {
@@ -124,5 +123,6 @@ $account-menu-spacing: 24px;
     .account-menu-header {
         font-size: $h4-font-size;
         font-weight: $font-weight-base;
+        text-transform: capitalize;
     }
 }
