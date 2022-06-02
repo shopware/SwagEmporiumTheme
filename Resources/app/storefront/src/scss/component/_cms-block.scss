@@ -1,13 +1,4 @@
 .cms-block {
-    .cms-block-container {
-        h3 {
-            border-bottom: 1px solid $border-color;
-            font-size: 0;
-            line-height: 0;
-            margin-bottom: 0;
-        }
-    }
-
     &.cms-block-gallery-buybox {
         overflow: visible;
     }
@@ -322,6 +313,7 @@
         .col-md-6:first-child {
             max-width: none;
             padding: 0;
+            width: auto;
         }
 
         .col-md-6:last-child {

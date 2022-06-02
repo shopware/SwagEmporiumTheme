@@ -23,7 +23,6 @@ export default class EmporiumScrollUpPlugin extends Plugin {
 
     _debouncedOnScroll() {
         // When the user scrolls down 400px from the top of the buybox area, then show the button
-        console.log(this._parentScroller.scrollBottom);
         if (this._parentScroller.scrollTop > 400) {
             this._scrollUpElement.style.display = 'inline-block';
         } else {
