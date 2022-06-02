@@ -2,6 +2,9 @@ $quick-view-img-size: 150px;
 
 .quickview-modal {
     .modal-body {
+        max-height: 90vh;
+        overflow-y: auto;
+
         .quickview-minimal-tittle,
         .quickview-minimal-top,
         .quickview-minimal-footer {
@@ -84,8 +87,6 @@ $quick-view-img-size: 150px;
     @include media-breakpoint-only(md) {
         .modal-dialog {
             max-width: $modal-lg;
-            margin-left: $grid-gutter-width / 2;
-            margin-right: $grid-gutter-width / 2;
         }
     }
 
