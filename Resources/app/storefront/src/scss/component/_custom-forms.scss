@@ -87,6 +87,35 @@
     strong {
         line-height: 29px;
     }
+
+    .custom-control-label {
+        cursor: pointer;
+    }
+
+    .custom-control-label::after {
+        // stylelint-disable-next-line property-blacklist
+        border-radius: 50%;
+        width: 6px;
+        height: 6px;
+        top: 8px;
+        left: -20px;
+        background-color: $white;
+    }
+
+    .custom-control-input:checked ~ .custom-control-label {
+        font-weight: $font-weight-bold;
+
+        &::after {
+            background-image: none;
+        }
+    }
+
+    .custom-control-input:disabled {
+        &:checked ~ .custom-control-label::before {
+            background-color: $custom-control-indicator-checked-disabled-bg;
+            border-color: $custom-control-indicator-checked-disabled-bg;
+        }
+    }
 }
 
 
