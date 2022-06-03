@@ -115,6 +115,7 @@ $account-login-register-spacer-lg: 34px;
 
             label {
                 font-size: $font-size-small;
+                font-weight: $font-weight-bold;
             }
         }
 
@@ -124,7 +125,6 @@ $account-login-register-spacer-lg: 34px;
 
         .register-submit .btn {
             padding: $account-login-register-spacer;
-            margin-top: $account-login-register-spacer;
         }
 
         .register-billing,
