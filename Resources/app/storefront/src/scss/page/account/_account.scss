@@ -27,8 +27,8 @@
     }
 
     .account-welcome {
-        margin-bottom: 34px;
-        padding-bottom: 8px;
+        margin-bottom: 18px;
+        padding-bottom: $spacer-lg;
         border-bottom: $border-width solid $border-color;
     }
 
@@ -37,6 +37,7 @@
         font-size: 25px;
         font-weight: $font-weight-normal;
         line-height: 34px;
+        margin-bottom: 14px;
     }
 
     .account-aside-header {
@@ -94,6 +95,14 @@
             padding-left: 0;
             padding-right: 0;
         }
+
+        .account-welcome {
+            margin-bottom: 34px;
+        }
+
+        .account-aside-header {
+            padding-top: $spacer-md;
+        }
     }
 
     @include media-breakpoint-up(lg) {
@@ -107,8 +116,7 @@
         }
 
         .account-welcome {
-            margin-bottom: 50px;
-            padding-bottom: 18px;
+            margin-bottom: $spacer-xl;
         }
 
         .account-welcome h1,
@@ -129,5 +137,14 @@
         .account-aside-footer {
             padding-top: 27px;
         }
+    }
+}
+
+.account-welcome {
+    p {
+        font-size: 13px;
+        line-height: 21px;
+        margin: $spacer-xs 0 0;
+        color: $smoke-text-color;
     }
 }
