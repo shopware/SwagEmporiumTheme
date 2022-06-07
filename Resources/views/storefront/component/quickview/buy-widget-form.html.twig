@@ -1,0 +1,17 @@
+{% sw_extends '@Storefront/storefront/component/quickview/buy-widget-form.html.twig' %}
+
+{% block page_product_detail_buy_quantity_container %}
+    {% block page_product_detail_wishlist_button %}
+        {% if config('core.cart.wishlistEnabled') %}
+            <div class="swag-cms-extensions-quickview-content--wishlist-button col-12">
+                {% sw_include '@Storefront/storefront/component/product/card/wishlist.html.twig' with {
+                    showText: false,
+                    size: 'md',
+                    productId: page.product.id
+                } %}
+            </div>
+        {% endif %}
+    {% endblock %}
+
+    {{ parent() }}
+{% endblock %}

@@ -1,0 +1,372 @@
+$swag-cms-extensions-carousel-icon-size: 20px;
+
+.swag-cms-extensions-quickview-modal {
+    background-color: rgba($smoke-text-color, 0.5);
+
+    .modal-content {
+        margin: 50px;
+        border-radius: 1px;
+        border: none;
+    }
+
+    .modal-dialog {
+        margin: 0 auto;
+        height: 100%;
+    }
+
+    .swag-cms-extensions-quickview-close-button {
+        top: 18px;
+        right: 20px;
+
+        button.close {
+            line-height: 0;
+
+            &:focus {
+                outline: none;
+            }
+        }
+    }
+
+    .modal-open & {
+        overflow: hidden;
+        padding-right: 0 !important;
+    }
+
+    div[data-swag-paypal-express-button='true'],
+    div[data-swag-paypal-installment-banner='true'] {
+        @include make-col(8);
+        padding-left: 25px;
+    }
+}
+
+#swag-cms-extensions-quickview-carousel {
+    .carousel-control {
+        &-prev, &-next {
+            background-color: transparent;
+
+            .icon {
+                width: $swag-cms-extensions-carousel-icon-size;
+                height: $swag-cms-extensions-carousel-icon-size;
+                color: $top-and-bottom-color;
+            }
+        }
+    }
+}
+
+.swag-cms-extensions-quickview-close-button {
+    .close {
+        opacity: 1;
+    }
+
+    .icon {
+        width: $swag-cms-extensions-carousel-icon-size;
+        height: $swag-cms-extensions-carousel-icon-size;
+        color: $gray-600;
+
+        > svg {
+            top: 0;
+        }
+    }
+}
+
+.swag-cms-extensions-quickview-container {
+    &.container {
+        padding: $spacer-lg;
+    }
+
+    .swag-cms-extensions-quickview-header-headline {
+        font-size: $font-size-lg;
+        line-height: 21px;
+        padding-right: $spacer-lg;
+    }
+
+    .swag-cms-extensions-quickview-content {
+        margin-top: $spacer-md;
+    }
+
+    .swag-cms-extensions-quickview-content--buy-quantity {
+        flex: 0 0 calc(100% - 52px);
+        max-width: calc(100% - 52px);
+        margin-bottom: 0;
+        order: -1;
+    }
+
+    .swag-cms-extensions-quickview-product-buy-form form {
+        margin-bottom: 14px;
+    }
+
+    .product-detail-info-container {
+        gap: 0;
+        margin-bottom: 0;
+    }
+
+    .swag-cms-extensions-quickview-content--buy-button {
+        flex: 0 0 52px;
+        max-width: 52px;
+
+        .btn-buy {
+            width: 100%;
+            height: 42px;
+            padding: 0;
+            font-size: 0;
+        }
+    }
+
+    .swag-cms-extensions-quickview-detail-page-button {
+        @extend .btn-outline-primary;
+
+        font-size: 13px;
+        line-height: 22px;
+        padding: 9px;
+    }
+
+    .product-detail-quantity-select {
+        height: 42px;
+    }
+
+    .product-detail-buy {
+        margin-bottom: 0;
+    }
+}
+
+.swag-cms-extensions-quickview-rating {
+    .icon {
+        width: 10px;
+        height: 10px;
+    }
+}
+
+.swag-cms-extensions-quickview-content-left {
+    .gallery-slider-item {
+        min-height: 1px !important;
+        padding-bottom: 100%;
+    }
+
+    .gallery-slider-row {
+        border-bottom: $border-width solid $gray-300;
+        margin-left: -$spacer-lg;
+        margin-right: -$spacer-lg;
+    }
+}
+
+.swag-cms-extensions-quickview-content-right {
+   > .swag-cms-extensions-quickview-header {
+       @extend .d-none;
+   }
+}
+
+.swag-cms-extensions-quickview-header {
+    > .col-md-7 {
+        @include make-col(12);
+    }
+}
+
+.swag-cms-extensions-quickview-header-manufacturer {
+    padding: 0;
+    margin-bottom: $spacer-sm;
+}
+
+.swag-cms-extensions-quickview-content--wishlist-button {
+    flex: 0 0 52px;
+    max-width: 52px;
+
+    .icon {
+        width: 18px;
+        height: 18px;
+    }
+
+    .product-wishlist-action-circle {
+        width: 42px;
+        height: 42px;
+    }
+
+    ~ .swag-cms-extensions-quickview-content--buy-quantity {
+        flex: 0 0 calc(100% - 104px);
+        max-width: calc(100% - 104px);
+    }
+}
+
+@include media-breakpoint-up(sm) {
+    .swag-cms-extensions-quickview-modal {
+        .modal-dialog {
+            max-width: 1480px;
+            width: 100%;
+        }
+    }
+
+    .swag-cms-extensions-quickview-container {
+        .swag-cms-extensions-quickview-manufacturer-logo {
+            text-align: left;
+        }
+    }
+}
+
+@include media-breakpoint-up(md) {
+    .swag-cms-extensions-quickview-modal {
+        .swag-cms-extensions-quickview-close-button {
+            @extend .d-md-block;
+        }
+    }
+
+    .swag-cms-extensions-quickview-container {
+        .swag-cms-extensions-quickview-header-headline {
+            font-size: $h3-font-size;
+            line-height: 34px;
+        }
+
+        .swag-cms-extensions-quickview-content--buy-quantity,
+        .swag-cms-extensions-quickview-content--buy-button {
+            flex: 0 0 50%;
+            max-width: 50%;
+        }
+
+        .swag-cms-extensions-quickview-content--wishlist-button {
+            ~ .swag-cms-extensions-quickview-content--buy-button {
+                flex: 0 0 calc(50% - 52px);
+                max-width: calc(50% - 52px);
+            }
+        }
+    }
+}
+
+@include media-breakpoint-up(lg) {
+    .swag-cms-extensions-quickview-modal {
+        .swag-cms-extensions-quickview-close-button {
+            top: 56px;
+            right: 56px;
+        }
+    }
+
+    .swag-cms-extensions-quickview-container {
+        > .swag-cms-extensions-quickview-header {
+            @extend .d-lg-none;
+        }
+
+        .product-detail-info-container + .product-detail-reviews {
+            display: none;
+        }
+
+        &.container {
+            padding: 50px 50px 20px;
+        }
+
+        .swag-cms-extensions-quickview-content {
+            margin-top: 0;
+            align-items: center;
+        }
+
+        .product-detail-info-container__right {
+            display: inline-block;
+            margin-left: auto;
+
+            &.w-100 {
+                margin-top: 24px;
+            }
+        }
+
+        .product-detail-price-container {
+            justify-content: flex-end;
+        }
+
+        .product-detail-tax {
+            margin-bottom: 14px;
+        }
+    }
+
+    .swag-cms-extensions-quickview-content-right {
+        > .swag-cms-extensions-quickview-header {
+            @extend .d-lg-block;
+        }
+    }
+
+    .swag-cms-extensions-quickview-content-left {
+        margin-bottom: auto;
+
+        .gallery-slider-col {
+            padding: 0 30px 0 20px;
+        }
+
+        .gallery-slider-row {
+            margin-bottom: 0;
+            border-bottom: none;
+        }
+    }
+
+    .swag-cms-extensions-quickview-rating {
+        .product-review-rating {
+            display: block;
+            margin-bottom: 50px;
+        }
+    }
+}
+
+@include media-breakpoint-up(xl) {
+    #swag-cms-extensions-quickview-carousel {
+        .carousel-control {
+            &-prev, &-next {
+                top: 50%;
+                transform: translate(0, -50%);
+
+                .icon {
+                    width: 18px;
+                    height: 36px;
+                }
+            }
+
+            &-prev {
+                left: calc(32vw - 30rem);
+            }
+
+            &-next {
+                right: calc(32vw - 30rem);
+            }
+        }
+    }
+
+    .swag-cms-extensions-quickview-container {
+        .swag-cms-extensions-quickview-header-headline {
+            font-size: $h3-font-size;
+            line-height: 34px;
+            margin-bottom: 18px;
+        }
+
+        .product-detail-quantity-select {
+            height: 60px;
+        }
+
+        .swag-cms-extensions-quickview-content--buy-quantity {
+            flex: 0 0 230px;
+            max-width: 230px;
+        }
+
+        .swag-cms-extensions-quickview-content--wishlist-button {
+            flex: 0 0 70px;
+            max-width: 70px;
+
+            ~ .swag-cms-extensions-quickview-content--buy-button {
+                flex: 0 0 calc(100% - 300px);
+                max-width: calc(100% - 300px);
+            }
+        }
+
+        .swag-cms-extensions-quickview-content--buy-button {
+            flex: 0 0 calc(100% - 230px);
+            max-width: calc(100% - 230px);
+
+            .btn-buy {
+                font-size: $font-size-base;
+                line-height: 24px;
+                height: 60px;
+            }
+        }
+
+        .swag-cms-extensions-quickview-product-buy-form form {
+            margin-bottom: 34px;
+        }
+
+        .swag-cms-extensions-quickview-detail-page-button {
+            font-size: $font-size-base;
+            line-height: 40px;
+        }
+    }
+}

@@ -131,6 +131,10 @@
         }
     }
 
+    &-name {
+        width: 100%;
+    }
+
     &-name,
     &-price {
         font-size: $font-size-lg;
@@ -1147,6 +1151,18 @@
             padding: 24px;
         }
     }
+}
+
+[class*='product-detail-buy'] {
+    div[itemprop="offers"] {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+.product-detail-configurator-container,
+.swag-cms-extensions-quickview-detail-configurator {
+    order: -1;
 }
 
 .offcanvas { // TODO: will be removed after EMT-21 done

@@ -18,6 +18,25 @@
     color: $white;
 }
 
+.btn-outline-primary {
+    background-color: $white;
+    color: $sw-color-brand-primary;
+
+    &:not(:disabled):not(.disabled) {
+        &:hover,
+        &:focus,
+        &:active {
+            color: $white;
+            background-color: $sw-color-brand-primary;
+        }
+    }
+
+    &:disabled,
+    &.disabled {
+        background-color: $disabled-btn-secondary-bg;
+    }
+}
+
 .btn-secondary {
     @include disable-button($disabled-btn-secondary-bg, $disabled-btn-color, $disabled-btn-secondary-border-color);
 }

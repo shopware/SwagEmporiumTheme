@@ -35,12 +35,12 @@
         }
     }
 
-    .custom-radio {
+    .payment-method-radio {
         strong {
             font-weight: $font-weight-normal;
         }
 
-        .custom-control-input:checked ~ .custom-control-label {
+        .payment-method-input:checked ~ .payment-method-label {
             strong {
                 font-weight: $font-weight-bold;
                 color: $gray-900;
