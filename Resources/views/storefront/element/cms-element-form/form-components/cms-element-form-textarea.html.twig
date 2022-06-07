@@ -1,0 +1,20 @@
+{% sw_extends '@Storefront/storefront/element/cms-element-form/form-components/cms-element-form-textarea.html.twig' %}
+
+{% block cms_element_form_textarea_textarea %}
+    {% apply spaceless %}
+        <textarea name="{{ fieldName }}"
+                  id="form-{{ fieldName }}"
+                  placeholder="{{ placeholder|trans }}{% if required %}{{ "general.required"|trans|sw_sanitize }}{% endif %}"
+                  {% if rows %}rows="{{ rows }}"{% endif %}
+            {% if required %}required="required"{% endif %}
+                          class="form-control{% if formViolations.getViolations( '/' ~ fieldName ) %} is-invalid{% endif %}">
+                    {{ data.get(fieldName) }}
+                </textarea>
+    {% endapply %}
+
+    {% if formViolations.getViolations( '/' ~ fieldName ) is not empty %}
+        {% sw_include '@Storefront/storefront/utilities/form-violation.html.twig' with {
+            violationPath: ('/' ~ fieldName)
+        } %}
+    {% endif %}
+{% endblock %}

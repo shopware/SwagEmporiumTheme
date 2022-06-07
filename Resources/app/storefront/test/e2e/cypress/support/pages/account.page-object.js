@@ -55,8 +55,12 @@ export default class AccountPageObject {
             addressRoot: '.account-address',
             addressForm: '.account-address-form',
             addressBox: '.address-box',
+            editModal: '#billing-address-create-edit',
+            createModal: '#billing-address-create-new',
             overViewBillingAddress: '.overview-billing-address',
-            overViewShippingAddress: '.overview-shipping-address'
+            overViewShippingAddress: '.overview-shipping-address',
+            shippingEditModal: '#shipping-address-create-edit',
+            shippingCreateModal: '#shipping-address-create-new'
         };
     }
 

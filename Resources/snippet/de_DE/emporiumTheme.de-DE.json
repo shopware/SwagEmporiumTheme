@@ -9,7 +9,9 @@
     "welcomeBack": "Willkommen!",
     "addressLoginToggle": "Anmelden wenn Sie bereits ein Konto haben",
     "addressHeader": "Ich bin neu",
-    "productDetails": "Produktdetails"
+    "productDetails": "Produktdetails",
+    "addPromotionPlaceholder": "Gutschein-Code eingeben",
+    "addProductPlaceholder": "Produktnummer eingeben"
   },
   "general": {
     "404ErrorPageHeader": "Seite nicht gefunden",
@@ -63,13 +65,38 @@
     "loginPasswordRecover": "Haben Sie Ihr Passwort vergessen?",
     "personalBirthdaySelectDay": "Geburtstag",
     "personalBirthdaySelectMonth": "Geburtsmonat",
-    "personalBirthdaySelectYear": "Geburtsjahr"
+    "personalBirthdaySelectYear": "Geburtsjahr",
+    "defaultAddressHeadline": "Standardadresse",
+    "addressListBodyHeadline": "Adresse",
+    "overviewBillingModalHeader": "Ihre Rechnungsadresse",
+    "overviewShippingModalHeader": "Ihre Lieferadresse",
+    "addressesTitleCurrentBillingAddress": "Rechnungsadresse",
+    "addressesTitleCurrentShippingAddress": "Lieferanschrift",
+    "personalSalutationPlaceholder": "Anrede eingeben",
+    "personalFirstNamePlaceholder": "Vorname eingeben",
+    "personalLastNamePlaceholder": "Nachname eingeben",
+    "personalMailPlaceholder": "Neue E-Mail-Adresse eingeben",
+    "personalMailConfirmationPlaceholder": "Wiederholen Sie Ihre E-Mail-Adresse",
+    "personalPasswordPlaceholder": "Passwort eingeben",
+    "personalPhonePlaceholder": "Telefonnummer eingeben"
+  },
+  "address": {
+    "streetPlaceholder": "Straße und Hausnummer eingeben",
+    "additionalField1Placeholder": "Adresszusatz eingeben",
+    "additionalField2Placeholder": "Adresszusatz eingeben",
+    "zipcodePlaceholder": "Postleitzahl eingeben",
+    "cityPlaceholder": "Ort eingeben",
+    "countryPlaceholder": "Land auswählen",
+    "phoneNumberPlaceholder": "Telefonnummer eingeben",
+    "companyNamePlaceholder": "Firma eingeben"
   },
   "newsletter": {
     "submitText": "Registrieren Sie sich"
   },
   "contact": {
-    "submitText": "Senden"
+    "submitText": "Senden",
+    "subjectPlaceholder": "Betreff eingeben",
+    "commentPlaceholder": "Kommentar eingeben"
   },
   "order": {
     "orderSummary": "Zusammenfassung"

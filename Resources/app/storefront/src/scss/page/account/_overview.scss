@@ -91,3 +91,155 @@
         }
     }
 }
+
+.modal-dialog .js-address-editor {
+    color: $smoke-text-color;
+
+    .address-editor-headline {
+        font-size: $h4-font-size;
+        margin-bottom: 24px;
+        font-weight: $font-weight-normal;
+    }
+
+    .address-editor-card {
+        .btn {
+            @extend .btn-link;
+            background-color: transparent;
+            padding-left: 0;
+            padding-right: 0;
+            width: auto;
+            border: none;
+        }
+    }
+
+    .card-title {
+        line-height: 24px;
+        padding-bottom: 0;
+        border-width: 2px;
+        border-color: $gray-800;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        font-size: 10px;
+        color: $gray-800;
+        margin-bottom: 1rem;
+        display: inline-block;
+        width: fit-content;
+        font-weight: $font-weight-bold;
+
+        + a {
+            margin-left: 14px;
+
+            > .icon svg {
+                top: 0;
+            }
+        }
+
+        + p {
+            margin-bottom: 0;
+        }
+    }
+
+    .address-editor-card {
+        padding-bottom: 16px;
+        border-bottom: $border-width solid $border-color;
+    }
+
+    .form-group {
+        @include make-col(12);
+        margin-top: 0;
+        margin-bottom: 10px;
+
+        &:empty,
+        .form-label{
+            display: none;
+        }
+    }
+
+    .js-close-address-editor {
+        @if (feature('V6_5_0_0')) {
+            .row {
+                @extend .g-0;
+            }
+        }
+
+    }
+
+    .js-field-toggle-contact-type-company {
+        + .row,
+        + .form-row {
+            .form-group.col-4 {
+                @include make-col(4);
+                padding-right: 10px;
+            }
+
+            .form-group.col-8 {
+                @include make-col(8);
+            }
+        }
+    }
+
+    .address-form-actions .btn {
+        width: 100%;
+    }
+
+    .address-required-info {
+        font-size: $font-size-sm;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+
+        .icon svg {
+            top: 0;
+        }
+    }
+
+    .default-address-editor {
+        > .row {
+            gap: 10px;
+
+            > *,
+            .btn {
+                width: 100%;
+                margin-bottom: 0;
+                max-width: none;
+                flex-basis: 100%;
+            }
+        }
+    }
+
+    @include media-breakpoint-up(lg) {
+        display: flex;
+
+        .default-address-editor {
+            min-width: 220px;
+            flex-shrink: 0;
+
+            > .row {
+                flex-direction: column;
+
+                > *,
+                .btn {
+                    @if (feature('V6_5_0_0')) {
+                        width: 90%;
+                    } @else {
+                        min-width: 90%;
+                        max-width: 90%;
+                        flex-basis: 90%;
+                    }
+                }
+            }
+        }
+
+        #billing-addressEditorAccordion,
+        #shipping-addressEditorAccordion {
+            flex-grow: 1;
+            margin-top: 58px;
+            border-left: $border-width solid $border-color;
+            padding-left: 70px;
+
+            .collapse > * {
+                padding-top: 0;
+            }
+        }
+    }
+}

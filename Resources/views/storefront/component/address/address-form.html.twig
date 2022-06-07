@@ -1,5 +1,109 @@
 {% sw_extends '@Storefront/storefront/component/address/address-form.html.twig' %}
 
+{% block component_address_form_company_name_input %}
+    <input type="text"
+           class="form-control{% if violationPath %} is-invalid{% endif %}"
+           id="{{ idPrefix ~ prefix }}company"
+           placeholder="{{ "address.companyNamePlaceholder"|trans|striptags }}{% if prefix != "shippingAddress" and accountTypeRequired %}{{ "general.required"|trans|sw_sanitize }}{% endif %}"
+           name="{{ prefix }}[company]"
+           value="{{ data.get('company') }}"
+           {% if prefix != "shippingAddress" and accountTypeRequired %}required="required"{% endif %}>
+{% endblock %}
+
+{% block component_address_form_phone_number_input %}
+    <input type="text"
+           class="form-control"
+           id="{{ idPrefix ~ prefix }}AddressPhoneNumber"
+           placeholder="{{ "address.phoneNumberPlaceholder"|trans|striptags }}{{ config('core.loginRegistration.phoneNumberFieldRequired') ? "general.required"|trans|sw_sanitize }}"
+           name="{{ prefix }}[phoneNumber]"
+           value="{{ data.get('phoneNumber') }}"
+        {{ config('core.loginRegistration.phoneNumberFieldRequired') ? 'required="true"' }}>
+{% endblock %}
+
+{% block component_address_form_country_select %}
+    <select class="country-select {{ formSelectClass }}{% if violationPath %} is-invalid{% endif %}"
+            id="{{ idPrefix ~ prefix }}AddressCountry"
+            name="{{ prefix }}[countryId]"
+            required="required"
+            data-initial-country-id="{{ initialCountryId }}">
+        {% if not initialCountryId %}
+            <option disabled="disabled"
+                    value=""
+                    selected="selected">
+                {{ "address.countryPlaceholder"|trans|sw_sanitize }}{{ "general.required"|trans|sw_sanitize }}
+            </option>
+        {% endif %}
+        {% for country in page.countries %}
+            <option {% if country.id == initialCountryId %}
+                selected="selected"
+            {% endif %}
+                value="{{ country.id }}"
+                data-vat-id-required="{{ country.vatIdRequired }}"
+                {% if feature('FEATURE_NEXT_15707') and  not country.shippingAvailable and disableNonShippableCountries %}
+                disabled="disabled"
+                {% endif %}>
+                {{ country.translated.name }}{% if feature('FEATURE_NEXT_15707') and showNoShippingPostfix and not country.shippingAvailable %} {{ "address.countryPostfixNoShipping"|trans|sw_sanitize }}{% endif %}
+            </option>
+        {% endfor %}
+    </select>
+{% endblock %}
+
+{% block component_address_form_city_input %}
+    <input type="text"
+           class="form-control{% if violationPath %} is-invalid{% endif %}"
+           id="{{ idPrefix ~ prefix }}AddressCity"
+           placeholder="{{ "address.cityPlaceholder"|trans|striptags }}{{ "general.required"|trans|sw_sanitize }}"
+           name="{{ prefix }}[city]"
+           value="{{ data.get('city') }}"
+           data-form-validation-required
+           {% if requiredMessage is defined %}data-form-validation-required-message="{{ requiredMessage }}"{% endif %}
+           required="required">
+{% endblock %}
+
+{% block component_address_form_zipcode_input %}
+    <input type="text"
+           class="form-control{% if violationPath %} is-invalid{% endif %}"
+           id="{{ idPrefix ~ prefix }}AddressZipcode"
+           placeholder="{{ "address.zipcodePlaceholder"|trans|striptags }}{{ "general.required"|trans|sw_sanitize }}"
+           name="{{ prefix }}[zipcode]"
+           value="{{ data.get('zipcode') }}"
+           data-form-validation-required
+           {% if requiredMessage is defined %}data-form-validation-required-message="{{ requiredMessage }}"{% endif %}
+           required="required">
+{% endblock %}
+
+{% block component_address_form_additional_field1_input %}
+    <input type="text"
+           class="form-control {% if violationPath %} is-invalid{% endif %}"
+           id="{{ idPrefix ~ prefix }}AdditionalField1"
+           placeholder="{{ "address.additionalField1Placeholder"|trans|striptags }}{{ config('core.loginRegistration.additionalAddressField1Required') ? "general.required"|trans|sw_sanitize }}"
+           name="{{ prefix }}[additionalAddressLine1]"
+           value="{{ data.get('additionalAddressLine1') }}"
+        {{ config('core.loginRegistration.additionalAddressField1Required') ? 'required="true"' }}>
+{% endblock %}
+
+{% block component_address_form_additional_field2_input %}
+    <input type="text"
+           class="form-control {% if violationPath %} is-invalid{% endif %}"
+           id="{{ idPrefix ~ prefix }}AdditionalField2"
+           placeholder="{{ "address.additionalField2Placeholder"|trans|striptags }}{{ config('core.loginRegistration.additionalAddressField2Required') ? "general.required"|trans|sw_sanitize }}"
+           name="{{ prefix }}[additionalAddressLine2]"
+           value="{{ data.get('additionalAddressLine2') }}"
+        {{ config('core.loginRegistration.additionalAddressField2Required') ? 'required="true"' }}>
+{% endblock %}
+
+{% block component_address_form_street_input %}
+    <input type="text"
+           class="form-control{% if violationPath %} is-invalid{% endif %}"
+           id="{{ idPrefix ~ prefix }}AddressStreet"
+           placeholder="{{ "address.streetPlaceholder"|trans|striptags }}{{ "general.required"|trans|sw_sanitize }}"
+           name="{{ prefix }}[street]"
+           value="{{ data.get('street') }}"
+           data-form-validation-required
+           {% if requiredMessage is defined %}data-form-validation-required-message="{{ requiredMessage }}"{% endif %}
+           required="required">
+{% endblock %}
+
 {% block component_address_form_address_fields %}
     <div class="{{ formRowClass }}">
         {% block component_address_form_street %}
@@ -121,3 +225,22 @@
     </div>
 {% endblock %}
 
+{% block component_address_form_company %}
+    {% if showFormCompany %}
+        {% if config('core.loginRegistration.showAccountTypeSelection') %}
+            {% set accountTypeRequired = true %}
+        {% endif %}
+
+        {% if config('core.loginRegistration.showAccountTypeSelection') or prefix == "address" or prefix == "shippingAddress" or hasSelectedBusiness %}
+            <div class="{{ formRowClass }} {% if prefix == "shippingAddress" or hasSelectedBusiness %}address-contact-type-company{% elseif prefix == "address" %}js-field-toggle-contact-type-company d-flex{% else %}js-field-toggle-contact-type-company d-none{% endif %}">
+                {% block component_address_form_company_fields %}
+                    {{ block('component_address_form_company_name') }}
+
+                    {{ block('component_address_form_company_department') }}
+
+                    {{ block('component_address_form_company_vatId') }}
+                {% endblock %}
+            </div>
+        {% endif %}
+    {% endif %}
+{% endblock %}

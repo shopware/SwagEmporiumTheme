@@ -1,0 +1,10 @@
+{% sw_extends '@Storefront/storefront/component/address/address-editor-modal-create-address.html.twig' %}
+
+{% block component_address_address_editor_modal_create_address_required_hint %}
+    <p class="address-required-info required-fields">
+        {% block component_address_address_editor_modal_create_address_required_hint_text %}
+            {% sw_icon 'ic-info' style { 'pack': 'emporium' } %}
+            {{ "general.requiredFields"|trans|sw_sanitize }}
+        {% endblock %}
+    </p>
+{% endblock %}

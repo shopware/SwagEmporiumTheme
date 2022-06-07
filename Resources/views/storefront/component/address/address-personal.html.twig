@@ -1,5 +1,66 @@
 {% sw_extends '@Storefront/storefront/component/address/address-personal.html.twig' %}
 
+{% block component_address_personal_company_name_input %}
+    <input type="text"
+           class="form-control{% if violationPath %} is-invalid{% endif %}"
+           id="{{ idPrefix ~ prefix }}company"
+           placeholder="{{ "address.companyNamePlaceholder"|trans|striptags }}{{ "general.required"|trans|sw_sanitize }}"
+           name="company"
+           value="{{ data.get('company') }}"
+           data-form-validation-required
+           {% if requiredMessage is defined %}data-form-validation-required-message="{{ requiredMessage }}"{% endif %}
+           required="required">
+{% endblock %}
+
+{% block component_address_form_salutation_select %}
+    <select id="{{ idPrefix ~ prefix }}personalSalutation"
+            class="{{ formSelectClass }}{% if formViolations.getViolations('/salutationId') is not empty %} is-invalid{% endif %}"
+            name="{% if prefix %}{{ prefix }}[salutationId]{% else %}salutationId{% endif %}"
+            required="required">
+        {% if not data.get('salutationId') %}
+            <option disabled="disabled"
+                    selected="selected"
+                    value="">
+                {{ "account.personalSalutationPlaceholder"|trans|sw_sanitize }}{{ "general.required"|trans|sw_sanitize }}
+            </option>
+        {% endif %}
+        {% for salutation in page.salutations %}
+            <option {% if salutation.id == data.get('salutationId') %}
+                selected="selected"
+            {% endif %}
+                value="{{ salutation.id }}">
+                {{ salutation.translated.displayName }}
+            </option>
+        {% endfor %}
+    </select>
+{% endblock %}
+
+{% block component_address_personal_fields_first_name_input %}
+    <input type="text"
+           class="form-control{% if violationPath is not empty %} is-invalid{% endif %}"
+           autocomplete="section-personal given-name"
+           id="{{ idPrefix ~ prefix }}personalFirstName"
+           placeholder="{{ "account.personalFirstNamePlaceholder"|trans|striptags }}{{ "general.required"|trans|sw_sanitize }}"
+           name="{% if prefix %}{{ prefix }}[firstName]{% else %}firstName{% endif %}"
+           value="{{ data.get('firstName') }}"
+           data-form-validation-required
+           {% if requiredMessage is defined %}data-form-validation-required-message="{{ requiredMessage }}"{% endif %}
+           required="required">
+{% endblock %}
+
+{% block component_address_personal_fields_last_name_input %}
+    <input type="text"
+           class="form-control{% if violationPath %} is-invalid{% endif %}"
+           autocomplete="section-personal family-name"
+           id="{{ idPrefix ~ prefix }}personalLastName"
+           placeholder="{{ "account.personalLastNamePlaceholder"|trans|striptags }}{{ "general.required"|trans|sw_sanitize }}"
+           name="{% if prefix %}{{ prefix }}[lastName]{% else %}lastName{% endif %}"
+           value="{{ data.get('lastName') }}"
+           data-form-validation-required
+           {% if requiredMessage is defined %}data-form-validation-required-message="{{ requiredMessage }}"{% endif %}
+           required="required">
+{% endblock %}
+
 {% block component_address_personal_fields_salutation %}
     <div class="form-group col-sm-6 col-lg-2 contact-salutation">
         {{ block('component_address_form_salutation_select') }}

@@ -39,3 +39,25 @@
 {% block page_checkout_cart_shipping_costs_trigger %}
     <h5>{{ "checkout.shippingCosts"|trans|sw_sanitize }}</h5>
 {% endblock %}
+
+{% block page_checkout_cart_add_promotion_input %}
+    <input type="text"
+           name="code"
+           class="form-control"
+           id="addPromotionInput"
+           placeholder="{{ "checkout.addPromotionPlaceholder"|trans|striptags }}{{ "general.required"|trans|sw_sanitize }}"
+           aria-label="{{ "checkout.addPromotionLabel"|trans|striptags }}"
+           aria-describedby="addPromotion"
+           required="required">
+{% endblock %}
+
+{% block page_checkout_cart_add_product_input %}
+    <input type="text"
+           name="number"
+           class="form-control"
+           id="addProductInput"
+           placeholder="{{ "checkout.addProductPlaceholder"|trans|striptags }}{{ "general.required"|trans|sw_sanitize }}"
+           aria-label="{{ "checkout.addProductLabel"|trans|striptags }}"
+           aria-describedby="addProductButton"
+           required="required">
+{% endblock %}
