@@ -29,16 +29,6 @@
 }
 
 .cms-element-image-gallery {
-    @include media-breakpoint-up(md) {
-        min-height: 668px;
-
-        .gallery-slider {
-            .tns-outer {
-                padding-bottom: 40px !important;
-            }
-        }
-    }
-
     .gallery-slider-row {
         min-height: inherit;
     }
@@ -92,18 +82,19 @@
         color: $sw-text-color;
     }
 
-    .gallery-slider-thumbnails-item {
-        width: 120px;
-        height: 80px;
-
-        &.tns-nav-active {
-            border: 1px solid #0620FF;
-        }
-    }
-
     .gallery-slider-thumbnails-image {
         width: 100%;
         object-fit: cover;
+    }
+
+    @include media-breakpoint-up(md) {
+        min-height: 668px;
+
+        .gallery-slider {
+            .tns-outer {
+                padding-bottom: 40px !important;
+            }
+        }
     }
 }
 
