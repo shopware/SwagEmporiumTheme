@@ -90,6 +90,10 @@
 
     .custom-control-label {
         cursor: pointer;
+
+        &:before {
+            top: 4px;
+        }
     }
 
     .custom-control-label::after {
@@ -97,7 +101,7 @@
         border-radius: 50%;
         width: 6px;
         height: 6px;
-        top: 8px;
+        top: 10px;
         left: -20px;
         background-color: $white;
     }

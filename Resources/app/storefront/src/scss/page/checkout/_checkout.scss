@@ -56,6 +56,12 @@
     }
 }
 
+.is-act-checkoutregisterpage {
+    .checkout-container {
+        margin-bottom: 100px;
+    }
+}
+
 @include media-breakpoint-only(md) {
     .is-act-finishpage,
     .is-act-confirmpage {
