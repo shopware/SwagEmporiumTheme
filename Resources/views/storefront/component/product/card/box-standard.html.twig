@@ -33,16 +33,6 @@
 
         {% block component_product_box_action %}
             {{ parent() }}
-
-            {# Move product_box_wishlist_action from product-image to product-action #}
-            {% if config('core.cart.wishlistEnabled') %}
-                {% block component_product_box_action_wishlist %}
-                    {% sw_include '@Storefront/storefront/component/product/card/wishlist.html.twig' with {
-                        appearance: 'circle',
-                        productId: id
-                    } %}
-                {% endblock %}
-            {% endif %}
         {% endblock %}
     </div>
 {% endblock %}

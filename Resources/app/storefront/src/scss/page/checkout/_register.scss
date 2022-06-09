@@ -137,6 +137,22 @@ $checkout-login-register-space-md: 50px;
                 }
             }
         }
+
+        .login-actions {
+            .btn-group {
+                width: 100%;
+            }
+
+            .login-submit,
+            .login-cancel {
+                width: 50%;
+
+                .btn {
+                    width: 100%;
+                    @extend .mx-0;
+                }
+            }
+        }
     }
 
     .register-card {
@@ -270,6 +286,19 @@ $checkout-login-register-space-md: 50px;
         .contact-title,
         .contact-salutation {
             @include make-col(6);
+        }
+
+        .collapse-toogle {
+            .login-actions {
+                .btn-group {
+                    width: 50%;
+                    padding-right: 5px;
+                }
+            }
+
+            div[data-swag-paypal-express-button='true'] {
+                padding-right: 5px;
+            }
         }
     }
 }

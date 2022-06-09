@@ -7,8 +7,8 @@ Styling for productbox component.
 .product-wishlist {
     margin-top: 0;
     position: absolute;
-    bottom: 20px;
-    right: 57px;
+    top: 0;
+    right: 50px;
 
     &-action-circle {
         @extend .btn-light;
@@ -51,8 +51,6 @@ Styling for productbox component.
 
 @include media-breakpoint-up(md) {
     .product-wishlist {
-        right: 67px;
-
         &-action-circle {
             height: 42px;
             width: 42px;

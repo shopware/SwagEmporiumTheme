@@ -240,6 +240,7 @@ $account-login-register-spacer-lg: 34px;
             padding-bottom: $account-login-register-spacer-lg;
         }
 
+        .register-shipping,
         .register-personal {
             .contact-type {
                 @include make-col(6);
