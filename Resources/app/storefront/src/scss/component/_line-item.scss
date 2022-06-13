@@ -181,6 +181,24 @@ $line-item-space: 24px;
     }
 }
 
+.is-order {
+    .line-item {
+        &-row {
+            align-items: center;
+        }
+
+        &-info {
+            min-height: unset;
+        }
+
+        &-quantity,
+        &-unit-price,
+        &-total-price {
+            @include make-col(12);
+        }
+    }
+}
+
 @include media-breakpoint-up(md) {
     .cart-header-info {
         @include make-col(6);
@@ -253,6 +271,21 @@ $line-item-space: 24px;
         .cart-header-tax-price {
             padding-left: 0;
             text-align: left;
+        }
+    }
+
+    .is-order {
+        .line-item-total-price-label {
+            display: block;
+        }
+
+        .line-item {
+            &-quantity,
+            &-tax-price,
+            &-unit-price,
+            &-total-price {
+                padding-left: $line-item-img-size + $line-item-space-sm;
+            }
         }
     }
 }
@@ -334,5 +367,58 @@ $line-item-space: 24px;
 .is-offcanvas {
     .line-item-info {
         @include make-col(12);
+    }
+}
+
+.is-order {
+    .line-item-info {
+        width: 100%;
+    }
+
+    .line-item {
+        &-quantity-label,
+        &-unit-price-label,
+        &-total-price-label {
+            max-width: 100px;
+        }
+    }
+}
+
+@include media-breakpoint-up(xxl) {
+    .order-item-detail {
+        .is-order {
+            .line-item {
+                &-info {
+                    @include make-col(6);
+                }
+
+                &-quantity,
+                &-unit-price,
+                &-total-price {
+                    @include make-col(2);
+                }
+
+                &-total-price {
+                    display: block;
+                }
+            }
+        }
+    }
+
+    .is-order {
+        .line-item {
+            &-quantity,
+            &-tax-price,
+            &-unit-price,
+            &-total-price {
+                padding-left: $grid-gutter-width / 2;
+            }
+        }
+    }
+
+    .order-detail-content {
+        > .row > .col-xxl-7 {
+            padding-right: 0;
+        }
     }
 }

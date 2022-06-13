@@ -171,6 +171,7 @@
 
     &-price-unit {
         font-size: 10px;
+
         .price-unit-label {
             font-weight: $font-weight-bold;
         }
@@ -200,8 +201,9 @@
         .list-price-badge {
             margin: 0;
             background-color: transparent;
+
             .icon {
-                color: inherit  ;
+                color: inherit;
             }
         }
 
@@ -425,7 +427,7 @@
             font-weight: $font-weight-bold;
         }
 
-        &-options{
+        &-options {
             gap: 10px;
         }
 
@@ -672,9 +674,9 @@
         }
 
         &-rating {
-           > label {
-               display: none;
-           }
+            > label {
+                display: none;
+            }
         }
 
         &-rating-input {
@@ -1024,6 +1026,7 @@
 
             > *:not(:last-child) {
                 position: relative;
+
                 &:before {
                     color: $gray-300;
                     content: "|";
@@ -1222,6 +1225,7 @@
 
     .product-detail-review-share {
         width: 29px;
+
         p {
             margin-bottom: 4px;
         }

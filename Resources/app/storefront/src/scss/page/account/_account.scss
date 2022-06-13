@@ -1,4 +1,4 @@
-.is-ctl-accountprofile {
+:is(.is-ctl-accountprofile, .is-act-accountaddressoverview, .is-act-paymentoverview, .is-act-orderoverview) {
     .container-main {
         padding-top: 0;
         padding-bottom: 0;
@@ -22,14 +22,16 @@
         padding-top: 17px;
     }
 
-    .account-overview {
-        color: $smoke-text-color;
-    }
-
     .account-welcome {
-        margin-bottom: 18px;
-        padding-bottom: $spacer-lg;
+        margin-bottom: 34px;
+        padding-bottom: 14px;
         border-bottom: $border-width solid $border-color;
+        font-size: 13px;
+        color: $smoke-text-color;
+
+        p {
+            margin-bottom: 0;
+        }
     }
 
     .account-welcome h1,
@@ -116,7 +118,9 @@
         }
 
         .account-welcome {
-            margin-bottom: $spacer-xl;
+            margin-bottom: 50px;
+            padding-bottom: 24px;
+            font-size: 15px;
         }
 
         .account-welcome h1,
@@ -128,6 +132,10 @@
     @include media-breakpoint-up(xxl) {
         .account-aside-list-group {
             font-size: 15px;
+        }
+
+        .account-welcome {
+            padding-bottom: 34px;
         }
 
         .account-aside-header {

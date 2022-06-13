@@ -85,5 +85,20 @@ $modal-title-font-size: 24px;
     .modal-dialog {
         max-width: $modal-lg;
         width: 80%;
+
+        &.order-history-cancel-modal {
+            max-width: 500px;
+
+            .modal-content {
+                border: none;
+                border-radius: 1px;
+                box-shadow: none;
+            }
+
+            .modal-footer {
+                border: none;
+                padding-top: 0;
+            }
+        }
     }
 }
