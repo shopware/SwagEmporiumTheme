@@ -1,6 +1,31 @@
 .cms-block {
     &.cms-block-gallery-buybox {
         overflow: visible;
+
+        .gallery-slider-thumbnails-container {
+            &:not(.is-underneath) {
+                .gallery-slider-thumbnails-item {
+                    width: 120px;
+                    height: 80px;
+                    flex-shrink: 0;
+                }
+            }
+
+            .gallery-slider-thumbnails-item {
+                height: 80px;
+                flex-shrink: 0;
+
+                &.tns-nav-active {
+                    .gallery-slider-thumbnails-item-inner {
+                        border: $border-width solid $primary;
+                    }
+                }
+
+                .gallery-slider-thumbnails-item-inner {
+                    padding: 0;
+                }
+            }
+        }
     }
 
     &.cms-block-sidebar-filter {

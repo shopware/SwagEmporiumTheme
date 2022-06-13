@@ -47,13 +47,5 @@ $gallery-thumbnail-item-gutter: 14px;
                 display: initial;
             }
         }
-
-
-        &.is-underneath {
-            .gallery-slider-thumbnails-item {
-                padding-right: 0 !important;
-                margin-right: $gallery-thumbnail-item-gutter;
-            }
-        }
     }
 }

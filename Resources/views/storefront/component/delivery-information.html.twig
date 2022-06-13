@@ -14,7 +14,7 @@
           href="http://schema.org/LimitedAvailability"/>
     <p class="delivery-information delivery-not-available">
         <span class="delivery-status-indicator bg-danger">
-            {% sw_icon 'checkmark-xxs' style { 'pack': 'emporium' } %}
+            {% sw_icon 'ic-close' style { 'pack': 'emporium' } %}
         </span>
 
         {{ "general.deliveryNotAvailable"|trans|sw_sanitize }}
@@ -36,8 +36,8 @@
 {% block component_delivery_information_available %}
     <link itemprop="availability" href="http://schema.org/InStock"/>
     <p class="delivery-information delivery-available">
-        <span class="delivery-status-indicator bg-warning">
-            {% sw_icon 'ic-info' style { 'pack': 'emporium' } %}
+        <span class="delivery-status-indicator bg-success">
+            {% sw_icon 'checkmark-xxs' style { 'pack': 'emporium' } %}
         </span>
 
         {{ "detail.deliveryTimeAvailable"|trans({
