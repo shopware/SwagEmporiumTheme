@@ -41,7 +41,7 @@
 }
 
 .btn-buy {
-    &:hover {
+    &:hover:not(:disabled) {
         .icon {
             color: $sw-color-buy-button;
         }

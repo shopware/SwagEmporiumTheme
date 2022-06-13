@@ -11,7 +11,8 @@
     "addressHeader": "I am new",
     "productDetails": "Product details",
     "addPromotionPlaceholder": "Enter gift card number or discount code",
-    "addProductPlaceholder": "Enter product number"
+    "addProductPlaceholder": "Enter product number",
+    "lineItemContainerHeadline": "Configuration"
   },
   "general": {
     "404ErrorPageHeader": "Page not found",

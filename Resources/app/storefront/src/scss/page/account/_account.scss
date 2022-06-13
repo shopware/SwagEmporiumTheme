@@ -110,6 +110,10 @@
         .account-aside-header {
             padding-top: $spacer-md;
         }
+
+        .order-detail-item-customized-products .account-item-children {
+            margin-left: 115px;
+        }
     }
 
     @include media-breakpoint-up(lg) {

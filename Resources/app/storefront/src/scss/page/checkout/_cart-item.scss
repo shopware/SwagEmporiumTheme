@@ -122,6 +122,87 @@ $cart-item-space-sm: 18px;
     color: $gray-400;
 }
 
+.cart-aside-item-children,
+.cart-item-customized-products,
+.order-detail-item-customized-products {
+    .cart-item-children,
+    .cart-aside-item-children,
+    .account-item-children {
+        background-color: transparent;
+        padding: 11px 10px;
+        border-top: $border-width solid $border-color;
+        border-bottom: $border-width solid $border-color;
+    }
+
+    .cart-item-children-element,
+    .account-item-children-element,
+    .cart-aside-item-children-element {
+        font-size: 0;
+    }
+
+    .cart-item-headline-text,
+    .account-item-headline-text,
+    .cart-aside-item-headline-text {
+        font-size: 13px;
+    }
+
+    .cart-item-headline,
+    .account-item-headline,
+    .cart-aside-item-headline {
+        display: flex;
+        align-items: center;
+    }
+
+    .cart-item-child-label,
+    .account-item-child-label,
+    .cart-aside-item-child-label {
+        .swag-fade-container-shrinked {
+            height: auto;
+        }
+
+        &.nesting-level-0 {
+            font-size: 10px;
+            text-transform: uppercase;
+            font-weight: $font-weight-bold;
+            color: $sw-text-color;
+        }
+
+        &:not(.nesting-level-0) {
+            margin-left: 13px;
+            font-size: $font-size-sm;
+        }
+    }
+
+    .cart-item-children-element-divider,
+    .account-item-children-element-divider,
+    .cart-aside-item-children-element-divider {
+        display: block;
+        border-top: none;
+        margin: 8px 0;
+    }
+
+    .cart-item-child-label-bullet::marker,
+    .account-item-child-label-bullet::marker,
+    .cart-aside-item-child-label-bullet::marker {
+        color: $primary;
+    }
+
+    .cart-item-collapse-button,
+    .account-item-collapse-button,
+    .cart-aside-item-collapse-button {
+        &.collapsed {
+            .ic-minus {
+                display: none;
+            }
+        }
+        &:not(.collapsed) {
+            .ic-plus {
+                display: none;
+            }
+        }
+    }
+}
+
 .cart-item-quantity-container {
     width: 100%;
     padding-left: 0;

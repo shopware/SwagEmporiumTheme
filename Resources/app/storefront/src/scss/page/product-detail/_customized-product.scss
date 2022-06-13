@@ -1,0 +1,532 @@
+.swag-customized-products {
+    &__item .form-group,
+    &__card {
+        position: static;
+    }
+
+    &__item {
+        &:last-child {
+            margin-bottom: 20px;
+        }
+
+        .swag-custommized-product-html-editor__toolbar {
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+    }
+
+    &__introduction {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__image {
+        order: -1;
+        max-height: 180px;
+        width: 100%;
+        object-fit: cover;
+    }
+
+    &-options-datetime-wrapper {
+        .date-picker-clear[disabled] {
+            display: none;
+        }
+    }
+
+    .swag-customized-products__title {
+        font-weight: $font-weight-normal;
+        margin-bottom: 14px;
+        color: $top-and-bottom-color;
+    }
+
+    .swag-customized-products__title-link-toggle-icon {
+        top: 0;
+        width: auto;
+        right: 0;
+    }
+
+    &__description {
+        color: $smoke-text-color;
+    }
+
+    &-configuration__description {
+        color: $smoke-text-color;
+        font-size: $font-size-sm;
+        margin-top: 0;
+    }
+
+    &__title-link-container {
+        border-bottom: none;
+    }
+
+    &__link-container {
+        position: relative;
+    }
+
+    &__type-colorselect {
+        .swag-customized-products-option-type-select-checkboxes-label__property-bubble {
+            height: 52px;
+            width: 52px;
+            border-radius: 0;
+        }
+
+        .swag-customized-products__boolean {
+            border: none;
+        }
+
+        .swag-customized-products-option-type-select-checkboxes-label:before {
+            background-color: transparent;
+        }
+
+        .swag-customized-products-form-control[type="checkbox"] {
+            ~ .swag-customized-products-option-type-select-checkboxes-label::before {
+                transform: none;
+                width: 100%;
+                height: 100%;
+            }
+        }
+    }
+
+    &__type-datetime {
+        .swag-customized-products-options-datetime {
+            color: $sw-text-color;
+        }
+    }
+
+    &__type-imageselect {
+        .swag-customized-products-option-type-select-checkboxes-label__property-image {
+            width: 52px;
+            height: 52px;
+            margin-top: 0 !important;
+            margin-bottom: 0 !important;
+
+            img {
+                height: 100%;
+                width: 100%;
+            }
+        }
+
+        .swag-customized-products-option-type-select-checkboxes-label:before {
+            background-color: transparent;
+        }
+    }
+
+    &-option-type-select-checkboxes-label {
+        padding-left: 10px;
+        min-height: 72px;
+
+        .no-selection,
+        .no-selection ~ .swag-customized-products-option-type-select-checkboxes-label__surcharge-info {
+            display: none;
+        }
+
+        .no-selection ~ .swag-customized-products-option-type-select-checkboxes-label__property {
+            text-align: center;
+        }
+
+        .swag-customized-products-option__price-tag {
+            font-size: $font-size-base;
+            font-weight: $font-weight-normal;
+            white-space: nowrap;
+        }
+    }
+
+    &-form-control {
+        + .swag-customized-products-option-type-select-checkboxes-label:before {
+            border-width: $border-width !important;
+            top: 0;
+        }
+
+        &:hover {
+            + .swag-customized-products-option-type-select-checkboxes-label:before {
+                border-color: $primary;
+            }
+        }
+
+        &:checked + .swag-customized-products-option-type-select-checkboxes-label {
+            .swag-customized-products-option__price-tag {
+                font-weight: $font-weight-bold;
+            }
+        }
+    }
+
+    &__type-select {
+        border-radius: 0;
+        border: none;
+
+        .swag-customized-products__boolean {
+            display: flex;
+            align-items: center;
+            border: none;
+            position: relative;
+        }
+
+        .swag-customized-products-form-control {
+            @extend .custom-select;
+
+            ~ .swag-customized-products-option-type-select-checkboxes-label {
+                position: static;
+                min-height: 51px;
+
+                &:after {
+                    content: '';
+                    top: 50%;
+                    transform: translateY(-50%);
+                    display: inline-block;
+                }
+            }
+
+            &[type="radio"] {
+                &:checked {
+                    ~ .swag-customized-products-option-type-select-checkboxes-label:after {
+                        width: 6px;
+                        height: 6px;
+                        box-shadow: 0 0 0 4px $primary, 0 0 0 3px $primary;
+                    }
+                }
+
+                ~ .swag-customized-products-option-type-select-checkboxes-label {
+                    padding-left: 35px;
+
+                    &:after {
+                        width: 8px;
+                        height: 8px;
+                        border-radius: 100%;
+                        margin-right: 0.5em;
+                        background: transparent;
+                        box-shadow: 0 0 0 2px $white, 0 0 0 3px $gray-200;
+                        left: 15px;
+                    }
+                }
+            }
+
+            &[type="checkbox"] {
+                &:checked {
+                    ~ .swag-customized-products-option-type-select-checkboxes-label:after {
+                        background: $custom-checkbox-indicator-icon-checked no-repeat 50%/70% 70% $primary;
+                        border: none;
+                    }
+                }
+
+                ~ .swag-customized-products-option-type-select-checkboxes-label {
+                    padding-left: 40px;
+
+                    &::before {
+                        transform: none;
+                        width: 100%;
+                        height: 100%;
+                        background-color: transparent;
+                    }
+
+                    &::after {
+                        height: 16px;
+                        width: 16px;
+                        left: 16px;
+                        transition: 0.3s;
+                        visibility: visible !important;
+                        border: $border-width solid $gray-200;
+                    }
+                }
+            }
+        }
+
+        .swag-customized-products-option-type-select-checkboxes-label__property,
+        .swag-customized-products-option-type-select-checkboxes-label__surcharge-info {
+            position: relative;
+
+            &:empty {
+                display: none;
+            }
+        }
+    }
+
+    &-option-type-select-checkboxes-label__surcharge-info {
+        text-align: right;
+    }
+
+    &-configuration__description:empty {
+        margin: 0;
+
+        ~ .swag-customized-products-configuration__items {
+            margin-top: 0;
+        }
+    }
+
+    .swag-customized-products-configuration__items {
+        margin-bottom: 20px;
+    }
+
+    .customized-products-upload__dropzone {
+        border: $border-width dashed $sw-border-color;
+        background-color: transparent;
+
+        &-icon > .icon {
+            height: 40px;
+            width: 40px;
+        }
+
+        &-icon > .icon,
+        &-text-headline {
+            color: $sw-text-color;
+        }
+
+        &-text-restrictions {
+            color: $smoke-text-color;
+        }
+
+        &-button {
+            .btn {
+                @extend .btn-outline-primary;
+            }
+        }
+    }
+
+    &-image-zoom {
+        margin-right: 50px !important;
+
+        .swag-customized-products-option__image {
+            + .icon {
+                position: absolute;
+                right: -35px;
+                transform: translateY(-50%);
+                top: 50%;
+
+                svg {
+                    top: 0;
+                }
+            }
+        }
+    }
+
+    .customized-products-upload-files {
+        &-element__container {
+            padding-top: 9px;
+            padding-bottom: 9px;
+
+            &-close-button .icon {
+                color: $smoke-text-color;
+
+                svg {
+                    top: 5px
+                }
+            }
+
+            &-filename {
+                font-weight: $font-weight-bold;
+            }
+        }
+
+        &-element {
+            &.is--error {
+                .customized-products-upload-files-element__container-filename {
+                    color: $danger;
+                }
+
+                .customized-products-upload-files-element__container-icon .icon {
+                    color: $sw-text-color;
+                }
+            }
+
+            &.is--success {
+                .customized-products-upload-files-element__container {
+                    border-color: $primary;
+                }
+            }
+        }
+    }
+
+    &-share__card {
+        .btn {
+            @extend .btn-primary;
+            padding: 10px 24px;
+            font-size: 13px;
+            line-height: 20px;
+        }
+
+        .input-group {
+            > .form-control {
+                padding-right: 64px;
+
+                ~ .input-group-append {
+                    right: 5px;
+
+                    .btn {
+                        padding: 7px 14px;
+                        right: 0;
+                    }
+                }
+            }
+
+        }
+
+        .input-group-append .icon {
+            color: $primary;
+            width: 14px;
+            height: 14px;
+
+            svg {
+                top: 2px;
+            }
+        }
+    }
+
+    &__type-imageselect {
+        .swag-customized-products__boolean {
+            border: none;
+        }
+
+        .swag-customized-products-form-control[type="checkbox"] {
+            ~ .swag-customized-products-option-type-select-checkboxes-label::before {
+                transform: none;
+                width: 100%;
+                height: 100%;
+                background-color: transparent;
+            }
+        }
+    }
+
+    .swag-customized-product__price-display {
+        padding: 0;
+
+        .card-title {
+            border-bottom: none;
+            margin: 0;
+            padding: 18px 25px;
+
+            &:first-child {
+                text-transform: uppercase;
+                font-size: 10px;
+            }
+        }
+
+        .price-display__list {
+            margin-bottom: 0;
+            border-bottom: $border-width solid $border-color;
+            background-color: $white;
+
+            > * {
+                margin: 0;
+                padding: 13px 25px;
+                font-size: $font-size-sm;
+                color: $smoke-text-color;
+
+                &:nth-child(odd) {
+                    background-color: $gray-100;
+                }
+            }
+
+            .price-display__summary {
+                background-color: transparent;
+                > * {
+                    font-size: $font-size-base;
+                }
+
+                .price-display__label {
+                    font-weight: $font-weight-normal;
+                }
+
+                .price-display__price {
+                    color: $sw-text-color;
+                }
+            }
+
+            ~ .card-title {
+                padding-bottom: 0;
+                font-weight: $font-weight-normal;
+                font-size: $h4-font-size;
+            }
+
+            ~ .price-display__list {
+                .price-display__summary {
+                    background-color: transparent;
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    padding-top: 0;
+                }
+
+                .price-display__price {
+                    font-size: $h3-font-size;
+                }
+            }
+
+            &.list__one-time-price {
+                .price-display__summary {
+                    width: 100%;
+                    padding-top: 13px;
+                }
+
+                .price-display__price {
+                    font-size: $font-size-base;
+                }
+
+                .price-display__item {
+                    display: none;
+                }
+            }
+        }
+    }
+
+    .swag-customized-products__title-link-toggle-icon .icon {
+        width: 16px;
+        height: 16px;
+    }
+
+    &.is--step-by-step {
+        .swag-customized-products-start-wizard {
+            align-self: flex-start;
+        }
+
+        .swag-customized-products-pager {
+            border-top: none;
+            margin-top: 18px;
+            padding-left: 40px;
+            padding-right: 40px;
+
+            &__button {
+                padding: 10px 24px;
+                font-size: 13px;
+                line-height: 20px;
+            }
+        }
+
+        .swag-customized-products-form-control {
+            + .swag-customized-products-option-type-select-checkboxes-label:before {
+                top: 0;
+            }
+        }
+
+        .swag-customized-products__navigation-holder {
+            border-bottom: none;
+
+            .form-group {
+                margin-left: 40px;
+                margin-right: 40px;
+            }
+        }
+    }
+
+    @include media-breakpoint-down(sm) {
+        &__card {
+            padding: 0 !important;
+            border: none !important;
+        }
+
+        .collapsingCustomizedProductsOption {
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+    }
+
+    @include media-breakpoint-up(lg) {
+        &__item .swag-customized-products__title-link-container {
+            padding-top: 18px;
+            padding-bottom: 18px;
+        }
+
+        .collapsingCustomizedProductsOption {
+            padding-left: 14px;
+            padding-right: 14px;
+        }
+    }
+}
