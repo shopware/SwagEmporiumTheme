@@ -42,8 +42,41 @@
         }
     }
 
-    .cart-item-price {
-        margin-left: 0;
+    @if (not feature('v6.5.0.0')) {
+        .cart-item-price {
+            margin-left: 0;
+
+            .cart-item-reference-price {
+                display: block;
+                color: $top-and-bottom-color;
+                font-weight: $font-weight-bold;
+            }
+        }
+
+        .cart-quantity-price {
+            display: block;
+        }
+
+        .cart-item-quantity {
+            padding: 0;
+            margin-bottom: 15px;
+
+            @extend .col-12;
+        }
+
+        .cart-item-price {
+            text-align: left;
+        }
+
+        .cart-item-details {
+            margin-bottom: 0;
+        }
+
+        .cart-item-details-container {
+            .cart-item-details {
+                margin-right: 10px;
+            }
+        }
     }
 }
 
