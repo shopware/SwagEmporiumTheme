@@ -1,28 +1,47 @@
 .cms-element-product-listing {
     .cms-element-product-listing-actions {
-        @if (feature('v6.5.0.0')) {
-            @extend .g-0;
-        } @else {
-            @extend .no-gutters;
-        }
-        padding-bottom: 30px;
+        padding: 0;
+        margin-bottom: 24px;
         gap: 12px;
 
-        &:before {
-            content: "";
+        > .col-md-auto {
+            &:first-child {
+                margin-left: auto;
+            }
         }
 
-        &:before,
         .sorting {
             margin-top: 0;
-            width: 260px;
-
-            @include media-breakpoint-down(md) {
-                width: 180px;
+            width: 100%;
+        
+            @include media-breakpoint-up(md) {
+                width: 260px;
             }
+        }
+    }
+}
 
-            @include media-breakpoint-down(sm) {
-                width: 100%;
+.cms-page-default {
+    @include media-breakpoint-up(lg) {
+        .cms-element-product-listing-actions {
+            > .col-md-auto {
+                &:first-child {
+                    padding-right: 0;
+                    padding-left: 260px;
+                    flex-grow: 1;
+                }
+            }
+        }
+    }
+}
+
+.cms-section-sidebar {
+    .cms-element-product-listing-actions {
+        @include media-breakpoint-up(lg) {
+            > .col-md-auto {
+                &:first-child {
+                    @include make-col(6);
+                }
             }
         }
     }

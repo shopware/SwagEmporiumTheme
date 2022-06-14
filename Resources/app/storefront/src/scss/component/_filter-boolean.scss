@@ -8,9 +8,7 @@ This filter item should only be used inside a filter panel.
 .filter-boolean {
     background: $gray-100;
     border-color: $gray-100;
-    display: flex;
     width: 100%;
-    align-items: center;
     padding: 5px 15px;
 
     &:hover {
@@ -19,8 +17,14 @@ This filter item should only be used inside a filter panel.
     }
 
     .form-check {
-        min-height: 24px;
+        height: 100%;
         margin-bottom: 0;
+        display: flex;
+        align-items: center;
+    }
+
+    &-input {
+        margin-top: 0;
     }
 }
 
