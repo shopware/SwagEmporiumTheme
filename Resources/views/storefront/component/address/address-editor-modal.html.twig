@@ -1,0 +1,19 @@
+{% sw_extends '@Storefront/storefront/component/address/address-editor-modal.html.twig' %}
+
+{% block component_address_address_editor_modal_inner %}
+    <div class="default-address-editor">
+        <h2 class="address-editor-headline">
+            {% if changeBilling %}
+                {{ "account.overviewBillingModalHeader"|trans|sw_sanitize }}
+            {% elseif changeShipping %}
+                {{ "account.overviewShippingModalHeader"|trans|sw_sanitize }}
+            {% endif %}
+        </h2>
+
+        {{ block('component_address_address_editor_modal_accordion_overview') }}
+
+        {{ block('component_address_address_editor_modal_accordion_actions') }}
+    </div>
+
+    {{ block('component_address_address_editor_modal_accordion') }}
+{% endblock %}

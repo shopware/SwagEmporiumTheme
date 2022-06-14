@@ -21,3 +21,14 @@
         </div>
     {% endif %}
 {% endblock %}
+
+{% block component_offcanvas_cart_actions_promotion_input %}
+    <input type="text"
+           name="code"
+           class="form-control"
+           id="addPromotionOffcanvasCartInput"
+           placeholder="{{ "checkout.addPromotionPlaceholder"|trans|striptags }}{{ "general.required"|trans|sw_sanitize }}"
+           aria-label="{{ "checkout.addPromotionLabel"|trans|striptags }}"
+           aria-describedby="addPromotionOffcanvasCart"
+           required="required">
+{% endblock %}

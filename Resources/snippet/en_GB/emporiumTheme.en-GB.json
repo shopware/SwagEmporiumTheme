@@ -9,7 +9,9 @@
     "welcomeBack": "Welcome!",
     "addressLoginToggle": "Login if you already have an account",
     "addressHeader": "I am new",
-    "productDetails": "Product details"
+    "productDetails": "Product details",
+    "addPromotionPlaceholder": "Enter gift card number or discount code",
+    "addProductPlaceholder": "Enter product number"
   },
   "general": {
     "404ErrorPageHeader": "Page not found",
@@ -63,13 +65,38 @@
     "loginPasswordRecover": "Forget your password?",
     "personalBirthdaySelectDay": "Day of Birth",
     "personalBirthdaySelectMonth": "Month of Birth",
-    "personalBirthdaySelectYear": "Year of Birth"
+    "personalBirthdaySelectYear": "Year of Birth",
+    "defaultAddressHeadline": "Default address",
+    "addressListBodyHeadline": "Address",
+    "overviewBillingModalHeader": "Your billing address",
+    "overviewShippingModalHeader": "Your shipping address",
+    "addressesTitleCurrentBillingAddress": "Billing address",
+    "addressesTitleCurrentShippingAddress": "Shipping address",
+    "personalSalutationPlaceholder": "Enter salutation",
+    "personalFirstNamePlaceholder": "Enter first name",
+    "personalLastNamePlaceholder": "Enter last name",
+    "personalMailPlaceholder": "Enter new email address",
+    "personalMailConfirmationPlaceholder": "Please enter your email address once again",
+    "personalPasswordPlaceholder": "Enter password",
+    "personalPhonePlaceholder": "Enter phone number"
+  },
+  "address": {
+    "streetPlaceholder": "Enter street address",
+    "additionalField1Placeholder": "Enter additional address line",
+    "additionalField2Placeholder": "Enter additional address line",
+    "zipcodePlaceholder": "Enter postal code",
+    "cityPlaceholder": "Enter city",
+    "countryPlaceholder": "Select country",
+    "phoneNumberPlaceholder": "Enter phone number",
+    "companyNamePlaceholder": "Enter company"
   },
   "newsletter": {
     "submitText": "Sign up"
   },
   "contact": {
-    "submitText": "Send"
+    "submitText": "Send",
+    "subjectPlaceholder": "Enter subject",
+    "commentPlaceholder": "Enter comment"
   },
   "order": {
     "orderSummary": "Summary"

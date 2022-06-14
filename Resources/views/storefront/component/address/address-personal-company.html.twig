@@ -1,0 +1,13 @@
+{% sw_extends '@Storefont/storefront/component/address/address-personal-company.html.twig' %}
+
+{% block component_address_form_company_name_input %}
+    <input type="text"
+           class="form-control{% if violationPath %} is-invalid{% endif %}"
+           id="{{ idPrefix ~ prefix }}company"
+           placeholder="{{ "address.companyNamePlaceholder"|trans|striptags }}{% if accountTypeRequired %}{{ "general.required"|trans|sw_sanitize }}{% endif %}"
+           name="{{ prefix }}[company]"
+           value="{{ address.get('company') }}"
+           data-form-validation-required
+           {% if requiredMessage is defined and accountTypeRequired %}data-form-validation-required-message="{{ requiredMessage }}"{% endif %}
+        {% if accountTypeRequired %}required="required"{% endif %}>
+{% endblock %}

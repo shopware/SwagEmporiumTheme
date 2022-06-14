@@ -1,4 +1,4 @@
-:is(.is-ctl-accountprofile, .is-act-accountaddressoverview, .is-act-paymentoverview, .is-act-orderoverview) {
+:is(.is-ctl-accountprofile, .is-act-accountaddressoverview, .is-act-paymentoverview, .is-act-orderoverview, .is-ctl-address) {
     .container-main {
         padding-top: 0;
         padding-bottom: 0;
@@ -20,6 +20,11 @@
     .account-aside-footer {
         border-top: none;
         padding-top: 17px;
+    }
+
+    .account-overview,
+    .account-address {
+        color: $smoke-text-color;
     }
 
     .account-welcome {
