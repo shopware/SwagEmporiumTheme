@@ -118,13 +118,24 @@
         }
     }
 
-    .form-select {
-        height: 60px;
-        font-weight: $font-weight-bold;
-        font-size: $font-size-base;
-        line-height: 24px;
-        padding: 18px 24px;
-        background-position: right 1.4rem center;
+    @if (feature('V6_5_0_0')) {
+        .form-select {
+            height: 60px;
+            font-weight: $font-weight-bold;
+            font-size: $font-size-base;
+            line-height: 24px;
+            padding: 18px 24px;
+            background-position: right 1.4rem center;
+        }
+    } @else {
+        .custom-select {
+            height: 60px;
+            font-weight: $font-weight-bold;
+            font-size: $font-size-base;
+            line-height: 24px;
+            padding: 18px 24px;
+            background-position: right 1.4rem center;
+        }
     }
 }
 
@@ -210,31 +221,10 @@
     }
 }
 
-.is-act-cartpage {
-    .checkout-aside-action {
-        .begin-checkout-btn {
-            font-size: 13px;
-            line-height: 42px;
-            padding: 0;
-            height: 42px;
-        }
-    }
-}
-
 @include media-breakpoint-up(lg) {
     .is-act-cartpage {
         .container-main {
             padding-top: 50px;
-        }
-    }
-
-    .is-act-cartpage {
-        .checkout-aside-action {
-            .begin-checkout-btn {
-                font-size: $font-size-base;
-                line-height: 60px;
-                height: 60px;
-            }
         }
     }
 }

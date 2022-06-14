@@ -52,6 +52,13 @@
 }
 
 .btn-buy {
+    line-height: 42px;
+    padding: 0;
+
+    @include media-breakpoint-up(lg) {
+        line-height: 60px;
+    }
+
     @include disable-button($disabled-btn-primary-bg, $disabled-btn-color, $disabled-btn-primary-border-color);
 
     &:hover:not(:disabled) {

@@ -8,56 +8,19 @@
         </div>
 
         <div class="col-12 cms-block footer-newsletter-content">
-            <div class="cms-element-form">
-                {% block layout_footer_navigation_newsletter_form_element %}
-                    <form action="{{ path('frontend.form.newsletter.register.handle') }}"
-                          method="post"
-                          data-form-csrf-handler="true"
-                          data-form-validation="true">
-                        {% block layout_footer_navigation_newsletter_form_content %}
-                            <div class="form-content">
-                                {% block layout_footer_navigation_newsletter_form_email %}
-                                    <label class="form-label footer-newsletter-your-email">{{ 'footer.newsletterYourEmail'|trans|sw_sanitize }}</label>
-                                    <div class="input-group">
-                                        <input name="email"
-                                               type="email"
-                                               class="form-control"
-                                               placeholder="{{ 'newsletter.placeholderMail'|trans }}"
-                                               aria-label="{{ 'newsletter.placeholderMail'|trans }}"
-                                               aria-describedby="footerNewsletterBtnAddon">
-                                        <div class="input-group-append">
-                                            <button class="btn btn-link"
-                                                    type="button"
-                                                    title="{{ 'newsletter.formSubmit'|trans|striptags }}"
-                                                    id="footerNewsletterBtnAddon">
-                                                {% sw_icon 'ic-newsletter' style {'pack' : 'emporium'} %}
-                                            </button>
-                                        </div>
-                                    </div>
-                                {% endblock %}
-                            </div>
-                        {% endblock %}
-
-                        {% sw_include '@Storefront/storefront/component/captcha/base.html.twig'
-                            with {
-                            'captchas': config('core.basicInformation.activeCaptchasV2'),
-                            'additionalClass' : 'col-md-4',
-                            'formId': 'newsletter-form'
-                        }
-                        %}
-
-                        {% block layout_footer_navigation_newsletter_form_hidden_fields %}
-                            <div class="form-hidden-fields">
-                                <input type="hidden"
-                                       value="{{ constant('Shopware\\Storefront\\Controller\\FormController::SUBSCRIBE') }}"
-                                       name="option">
-                                {{ sw_csrf('frontend.form.newsletter.register.handle') }}
-                                <input type="submit" class="submit--hidden d-none" />
-                            </div>
-                        {% endblock %}
-                    </form>
-                {% endblock %}
-            </div>
+            {% block layout_footer_navigation_newsletter_content %}
+                <a
+                    href="{{ path('frontend.cms.page',{ id: config('core.basicInformation.newsletterPage')}) }}"
+                {{ dataBsToggleAttr }}="modal"
+                data-url="{{ path('frontend.cms.page',{ id: config('core.basicInformation.newsletterPage')}) }}"
+                class="btn btn-outline-primary"
+                role="button"
+                title="{{ 'newsletter.submitText'|trans|striptags }}"
+                id="footerNewsletterBtnAddon"
+                >
+                {{ 'newsletter.submitText'|trans|striptags }}
+                </a>
+            {% endblock %}
         </div>
     </div>
 {% endblock %}

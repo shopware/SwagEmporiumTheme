@@ -111,6 +111,13 @@
         }
     }
 
+    &-credentials {
+        .btn-outline-primary {
+            width: 100%;
+            margin-top: 10px;
+        }
+    }
+
     @include media-breakpoint-up(lg) {
         .contact-title {
             margin-right: 50%;

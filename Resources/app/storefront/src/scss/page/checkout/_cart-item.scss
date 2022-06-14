@@ -148,7 +148,7 @@ $cart-item-space-sm: 18px;
 
 @include media-breakpoint-up(md) {
     .cart-item {
-        padding: $spacer-lg 0;
+        padding: $cart-item-space-sm 0;
 
         &-quantity-label,
         &-unit-price-label,
@@ -190,6 +190,10 @@ $cart-item-space-sm: 18px;
     .cart-item-details-container {
         .cart-item-quantity {
             display: none;
+
+            .offcanvas-cart & {
+                display: block;
+            }
         }
     }
 
