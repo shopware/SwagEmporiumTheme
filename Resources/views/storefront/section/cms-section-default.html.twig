@@ -2,6 +2,9 @@
 
 {% block page_content_section_default %}
     {% set layout = section.sizingMode ? section.sizingMode|replace({"_": "-"}) : "container" %}
+
+    {% sw_include '@SwagCmsExtensions/storefront/section/quickview/component.html.twig' ignore missing %}
+
     <div class="cms-section-default">
         {% for block in section.blocks %}
 

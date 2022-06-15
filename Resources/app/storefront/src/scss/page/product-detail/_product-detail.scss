@@ -1299,3 +1299,18 @@
         }
     }
 }
+
+.buy-widget {
+    [data-swag-paypal-installment-banner="true"] {
+        @extend .mb-0;
+    }
+    @if (feature('V6_5_0_0')) {
+        > .row {
+            @extend .mb-0;
+        }
+    } @else {
+        > .form-row {
+            @extend .mb-0;
+        }
+    }
+}

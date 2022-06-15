@@ -111,8 +111,24 @@
     .checkout-aside-action {
         .btn-primary {
             @extend .btn-buy;
+
+            padding: 0;
         }
     }
+}
+
+.checkout-aside-item-image {
+    padding: 0;
+    width: 100%;
+    max-width: 100px;
+    flex: 0 0 100px;
+}
+
+.checkout-aside-item-data {
+    padding: 0 0 14px 14px;
+    flex: 0 0 calc(100% - 100px);
+    max-width: calc(100% - 100px);
+    display: block;
 }
 
 @include media-breakpoint-up(md) {
@@ -149,7 +165,8 @@
     }
 
     .cart-add-promotion {
-        .input-group {
+        .input-group,
+        .form-control {
             height: 56px;
             font-size: $font-size-base;
             line-height: 24px;

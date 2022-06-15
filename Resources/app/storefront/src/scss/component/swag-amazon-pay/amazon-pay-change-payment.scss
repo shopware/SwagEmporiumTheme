@@ -1,0 +1,10 @@
+#swag-amazon-pay-change-amazon-payment-logo {
+    float: right;
+    margin-top: $spacer-sm;
+    max-width: 100px;
+    max-height: 50px;
+
+    @media screen and (min-width: 575px) and (max-width: 700px) {
+        height: auto;
+    }
+}

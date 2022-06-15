@@ -1,0 +1,26 @@
+#swag-amazon-pay-product-detail-wrapper {
+    > .col-8 {
+        @include make-col(12);
+    }
+}
+
+.swag-amazon-pay-wrapper {
+    margin: 0;
+}
+
+.swag-amazon-pay-account-link-amazon {
+    .card-body {
+        padding-top: 50px;
+        border-top: $border-width solid $border-color;
+    }
+}
+
+@include media-breakpoint-up(md) {
+    #swag-amazon-pay-product-detail-wrapper {
+        > .col-8 {
+            @include make-col(8);
+
+            padding-left: 5px;
+        }
+    }
+}
