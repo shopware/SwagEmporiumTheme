@@ -7,6 +7,9 @@ $icon-check: url('#{$asset-path}/icon/icon-pack/ic-check.svg');
 
     &-wrapper {
         display: block;
+        padding: 24px 0;
+        border-top: $border-width solid $border-color;
+        border-bottom: $border-width solid $border-color;
     }
 
     &-items-container {
@@ -31,6 +34,7 @@ $icon-check: url('#{$asset-path}/icon/icon-pack/ic-check.svg');
         margin: 0;
         flex-grow: 6;
         position: relative !important;
+        font-size: $font-size-small;
 
         &.show {
             .global-collapse-plus-icon {
@@ -45,7 +49,6 @@ $icon-check: url('#{$asset-path}/icon/icon-pack/ic-check.svg');
         .filter-panel-item-toggle {
             background: $gray-100;
             border-color: $gray-100;
-            font-size: $font-size-small;
             display: flex;
             width: 100%;
             align-items: center;
@@ -124,19 +127,14 @@ $icon-check: url('#{$asset-path}/icon/icon-pack/ic-check.svg');
         margin: 0;
     }
 
-    .btn.filter-reset-all {
+    :is(.filter-active, .filter-reset-all) {
         border-radius: 1px;
-        padding-top: 2px;
-
-        &:hover {
-            background-color: $sw-color-danger;
-        }
-    }
-
-    .filter-active,
-    .btn.filter-reset-all {
         font-size: $font-size-small;
         background-color: $white;
+    }
+
+    .filter-reset-all {
+        padding-top: 2px;
     }
 
     .filter-active {
@@ -161,11 +159,6 @@ $icon-check: url('#{$asset-path}/icon/icon-pack/ic-check.svg');
     }
 
     @include media-breakpoint-down(md) {
-        .filter-panel-items-container {
-            border-top: 1px solid $border-color;
-            padding-top: 20px;
-        }
-
         .filter-active-preview {
             display: none;
         }
@@ -305,19 +298,45 @@ $icon-check: url('#{$asset-path}/icon/icon-pack/ic-check.svg');
 
 .offcanvas-filter {
     .filter-panel-offcanvas-header {
-        padding-bottom: 0;
+        background-color: $top-and-bottom-color;
+        padding: 16px 24px;
+        height: auto;
+        margin-bottom: 24px;
 
-        h3 {
-            color: $sw-color-brand-primary;
+        .icon {
+            color: $white;
         }
+    }
+
+    .icon {
+        width: 1rem;
+        height: 1rem;
+
+        svg {
+            top: 0;
+        }
+    }
+    
+    .filter-panel-offcanvas-title {
+        color: $white;
+    }
+
+    .filter-panel-offcanvas-title {
+        font-size: 13px;
+        font-weight: $font-weight-bold;
     }
 
     .filter-panel-items-container {
         display: flex;
+        gap: 10px;
     }
 
     .filter-panel-active-container {
         display: none;
+    }
+
+    .filter-panel-item {
+        flex-basis: 100%;
     }
 
     @include media-breakpoint-up(md) {
