@@ -1,5 +1,50 @@
 {% sw_extends '@Storefront/storefront/component/product/card/action.html.twig' %}
 
+{% block component_product_box_action_inner %}
+    {% set id = product.id %}
+    <div class="product-action">
+
+        {# Move product_box_wishlist_action from product-image to product-action #}
+        {% if config('core.cart.wishlistEnabled') %}
+            {% block component_product_box_action_wishlist %}
+                {% sw_include '@Storefront/storefront/component/product/card/wishlist.html.twig' with {
+                    appearance: 'circle',
+                    productId: id
+                } %}
+            {% endblock %}
+        {% endif %}
+
+        {% set isAvailable = not product.isCloseout or (product.availableStock >= product.minPurchase) %}
+        {% set displayFrom = product.calculatedPrices.count > 1 %}
+        {% set displayBuyButton = isAvailable and not displayFrom and product.childCount <= 0 %}
+
+        {% if displayBuyButton and config('core.listing.allowBuyInListing') %}
+            {{ block ('component_product_box_action_buy') }}
+        {% else %}
+            {% block component_product_box_action_detail %}
+                {# @deprecated tag:v6.5.0 - Bootstrap v5 removes `btn-block` class, use `d-grid` wrapper instead #}
+                {% if feature('v6.5.0.0') %}
+                    <div class="d-grid">
+                        <a href="{{ seoUrl('frontend.detail.page', {'productId': id}) }}"
+                           class="btn btn-light"
+                           title="{{ "listing.boxProductDetails"|trans|striptags }}">
+                            {% sw_icon 'ic-info' style { 'pack': 'emporium' } %}
+                        </a>
+                    </div>
+                {% else %}
+                    <a href="{{ seoUrl('frontend.detail.page', {'productId': id}) }}"
+                       class="btn btn-block btn-light"
+                       title="{{ "listing.boxProductDetails"|trans|striptags }}">
+                        {% sw_icon 'ic-info' style { 'pack': 'emporium' } %}
+                    </a>
+                {% endif %}
+            {% endblock %}
+        {% endif %}
+    </div>
+
+    {{ block('component_product_box_action_meta') }}
+{% endblock %}
+
 {% block page_product_detail_product_buy_button %}
     {# @deprecated tag:v6.5.0 - Bootstrap v5 removes `btn-block` class, use `d-grid` wrapper instead #}
     {% if feature('v6.5.0.0') %}
@@ -14,24 +59,5 @@
                 title="{{ "listing.boxAddProduct"|trans|striptags }}">
             {% sw_icon 'ic-cart' style { 'pack': 'emporium' } %}
         </button>
-    {% endif %}
-{% endblock %}
-
-{% block component_product_box_action_detail %}
-    {# @deprecated tag:v6.5.0 - Bootstrap v5 removes `btn-block` class, use `d-grid` wrapper instead #}
-    {% if feature('v6.5.0.0') %}
-        <div class="d-grid">
-            <a href="{{ seoUrl('frontend.detail.page', {'productId': id}) }}"
-               class="btn btn-light"
-               title="{{ "listing.boxProductDetails"|trans|striptags }}">
-                {% sw_icon 'ic-info' style { 'pack': 'emporium' } %}
-            </a>
-        </div>
-    {% else %}
-        <a href="{{ seoUrl('frontend.detail.page', {'productId': id}) }}"
-           class="btn btn-block btn-light"
-           title="{{ "listing.boxProductDetails"|trans|striptags }}">
-            {% sw_icon 'ic-info' style { 'pack': 'emporium' } %}
-        </a>
     {% endif %}
 {% endblock %}

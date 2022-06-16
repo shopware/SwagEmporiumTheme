@@ -263,9 +263,7 @@ hr.product-box-divider {
 
 .product-action {
     margin-top: 0;
-    position: absolute;
-    right: 20px;
-    bottom: 20px;
+    position: relative;
 
     .btn-buy,
     .btn-light {
@@ -275,6 +273,9 @@ hr.product-box-divider {
         display: flex;
         align-items: center;
         justify-content: center;
+        position: absolute;
+        top: -42px;
+        right: 0;
 
         .icon {
             width: 15px;
@@ -284,6 +285,11 @@ hr.product-box-divider {
                 top: 0;
             }
         }
+    }
+
+    [data-swag-paypal-express-button='true'] {
+        @extend .pt-2;
+        line-height: 0;
     }
 }
 
@@ -358,4 +364,8 @@ hr.product-box-divider {
             }
         }
     }
+}
+
+div[data-swag-cms-extensions-quickview-box='true'] {
+    height: 100%;
 }

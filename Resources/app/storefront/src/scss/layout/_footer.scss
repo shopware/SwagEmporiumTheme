@@ -371,12 +371,6 @@ $footer-border-color: #D7DBDF;
         align-items: flex-start;
     }
 
-    div[data-swag-paypal-installment-banner="true"] {
-        max-width: 100%;
-        flex: 0 0 100%;
-        margin-bottom: $spacer;
-    }
-
     .footer-hotline-wrap {
         flex-wrap: wrap;
     }
@@ -562,4 +556,8 @@ $footer-border-color: #D7DBDF;
             text-align: left;
         }
     }
+}
+
+img[alt='PayPal'] {
+    height: 35px;
 }
