@@ -1,0 +1,69 @@
+{% sw_extends '@Storefront/storefront/component/quickview/index.html.twig' %}
+
+{% block swag_cms_extensions_component_quickview_close_button %}
+    <div class="swag-cms-extensions-quickview-close-button">
+        <button type="button" class="close" aria-label="Close" data-dismiss="modal">
+            {% sw_icon 'ic-close' style { 'pack': 'emporium' } %}
+        </button>
+    </div>
+{% endblock %}
+
+{% block swag_cms_extensions_component_quickview_content %}
+    <div class="swag-cms-extensions-quickview-content row">
+
+        <div class="swag-cms-extensions-quickview-content-left col-lg-6">
+            {% block swag_cms_extensions_component_quickview_header_manufacturer %}
+                <div class="swag-cms-extensions-quickview-header-manufacturer col-md-5">
+                    <div class="swag-cms-extensions-quickview-manufacturer-logo">
+                        <a href="{{ page.product.manufacturer.link }}"
+                           class="product-detail-manufacturer-link"
+                           title="{{ page.product.manufacturer.translated.name }}">
+                            {% if page.product.manufacturer.media %}
+                                <img src="{{ page.product.manufacturer.media|sw_encode_media_url }}"
+                                     class="product-detail-manufacturer-logo img-fluid float-right"
+                                     alt="{{ page.product.manufacturer.translated.name }}"/>
+                            {% else %}
+                                {{ page.product.manufacturer.translated.name }}
+                            {% endif %}
+                        </a>
+                    </div>
+                    <div class="swag-cms-extensions-quickview-manufacturer-name">
+                        <a href="{{ page.product.manufacturer.link }}"
+                           class="product-detail-manufacturer-link"
+                           title="{{ page.product.manufacturer.translated.name }}">
+                            {{ page.product.manufacturer.translated.name }}
+                        </a>
+                    </div>
+                </div>
+            {% endblock %}
+
+            {% if page.product.media %}
+                {% sw_include '@Storefront/storefront/element/cms-element-image-gallery.html.twig' with {
+                    'mediaItems': mediaItems,
+                    'displayMode': 'cover',
+                    'minHeight': '400px',
+                    'navigationArrows': 'inside',
+                    'navigationDots': 'inside',
+                    'galleryPosition': 'left',
+                    'isProduct': true,
+                    'zoom': true,
+                    'gutter': 1,
+                    'zoomImageContainerSelector': "[data-swag-cms-extensions-quickview-carousel-product-id=\"#{page.listingProductId}\"] .js-magnifier-zoom-image-container",
+                    'zoomModal': false,
+                    'startIndexThumbnails': page.product.cover.position + 1,
+                    'startIndexSlider': page.product.cover.position + 1
+                } %}
+            {% endif %}
+        </div>
+
+        <div class="product-detail-buy swag-cms-extensions-quickview-content-right col-lg-6">
+            {% block swag_cms_extensions_component_quickview_right_header %}
+                <div class="swag-cms-extensions-quickview-header row">
+                    {% sw_include '@SwagCmsExtensions/storefront/component/quickview/headline.html.twig' %}
+                </div>
+            {% endblock %}
+
+            {% sw_include '@SwagCmsExtensions/storefront/component/quickview/buy-widget.html.twig' %}
+        </div>
+    </div>
+{% endblock %}

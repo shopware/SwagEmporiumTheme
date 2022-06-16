@@ -8,8 +8,6 @@
 
 {% block page_product_detail_wishlist %}{% endblock %}
 
-{% block page_product_detail_configurator_include %}{% endblock %}
-
 {% block page_product_detail_ordernumber_container %}
     <div class="product-detail-manufacturer-container">
         {% block clone_page_product_detail_manufacturer %}
@@ -118,16 +116,4 @@
             {% endblock %}
         </div>
     </div>
-{% endblock %}
-
-{% block page_product_detail_data %}
-    {% block clone_page_product_detail_configurator_include %}
-        {% if page.product.parentId and page.configuratorSettings|length > 0 %}
-            <div class="product-detail-configurator-container">
-                {% sw_include '@Storefront/storefront/page/product-detail/configurator.html.twig' %}
-            </div>
-        {% endif %}
-    {% endblock %}
-
-    {{ parent() }}
 {% endblock %}

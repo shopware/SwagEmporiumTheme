@@ -1,0 +1,184 @@
+$swag-scroll-navigation-menu-border-radius: 1px;
+$swag-scroll-navigation-menu-border-radius-xl: 50px;
+$swag-scroll-navigation-menu-box-shadow: 0px 0px 20px rgba(0, 6, 57, 10%);
+$scroll-navigation-sidebar-line-color: #BDC0C6;
+
+.scroll-navigation-sidebar-mobile-menu {
+    display: flex;
+    align-items: center;
+    width: 173px;
+    border-radius: $swag-scroll-navigation-menu-border-radius;
+    box-shadow: $swag-scroll-navigation-menu-box-shadow;
+
+    .scroll-navigation-sidebar-mobile-button-icon:focus {
+        outline: none;
+    }
+}
+
+.scroll-navigation-sidebar-mobile-button {
+    padding: 13px 16px;
+
+    &:first-child {
+        padding-left: 24px;
+        padding-right: 24px;
+        border-right: none;
+        position: relative;
+
+        &:after {
+            content: '';
+            display: block;
+            width: 1px;
+            height: 32px;
+            background-color: $gray-300;
+            position: absolute;
+            top: 9px;
+            right: 0;
+        }
+    }
+
+    &:nth-child(2) {
+        padding-left: 25px;
+    }
+
+    &:last-child {
+        padding-right: 25px;
+    }
+}
+
+.scroll-navigation-sidebar-mobile-button-icon {
+    > span {
+        width: 12px;
+        height: 12px;
+    }
+
+    &.scroll-navigation-menu-toggle {
+        > span {
+            width: 18px;
+            height: 18px;
+
+            > svg {
+                top: 7px;
+            }
+        }
+    }
+}
+
+.scroll-navigation-sidebar {
+    right: 0;
+    bottom: 10px;
+
+    &.list--visible {
+        border-radius: 1px;
+        left: 14px;
+        right: 14px;
+        padding: 10px 0;
+
+        .scroll-navigation-sidebar-close {
+            top: -34px;
+            right: 0;
+            line-height: 0;
+            padding: 14px 14px 10px;
+            background-color: $white;
+            box-shadow: 0 10px $white, $swag-scroll-navigation-menu-box-shadow;
+
+            .icon {
+                width: 10px;
+                height: 10px;
+                color: $gray-600;
+            }
+
+            .icon > svg {
+                top: 0;
+            }
+        }
+    }
+}
+
+.scroll-navigation-sidebar-entry-label {
+    font-size: $font-size-sm;
+    line-height: 21px;
+    color: $smoke-text-color;
+    padding: 10px 23px;
+}
+
+.scroll-navigation-sidebar-entry--active {
+    > .scroll-navigation-sidebar-entry-label {
+        font-weight: $font-weight-bold;
+    }
+
+    > .scroll-navigation-sidebar-entry-bullet {
+        transform: scale(2.3);
+        //margin-left: 2px;
+    }
+}
+
+.scroll-navigation-sidebar-entry-bullet {
+    background-color: $scroll-navigation-sidebar-line-color;
+}
+
+.scroll-navigation-sidebar-entry-line {
+    margin-right: -0.35rem;
+    border-right-color: $scroll-navigation-sidebar-line-color;
+}
+
+.scroll-navigation-sidebar-entry {
+    &:last-child {
+        > .scroll-navigation-sidebar-entry-bullet {
+            margin-left: 2px;
+        }
+    }
+}
+
+@include media-breakpoint-up(sm) {
+    .scroll-navigation-sidebar {
+        &.list--visible {
+            left: auto;
+        }
+    }
+}
+
+@include media-breakpoint-up(xl) {
+    .scroll-navigation-sidebar-entry {
+        &:last-child {
+            > .scroll-navigation-sidebar-entry-bullet {
+                margin-left: 0;
+            }
+        }
+    }
+}
+
+@include media-breakpoint-up(xl) {
+    .scroll-navigation-sidebar {
+        border-radius: $swag-scroll-navigation-menu-border-radius;
+        height: fit-content;
+        left: 24px;
+        right: auto;
+        padding: 0;
+
+        &.list--visible {
+            left: 24px;
+            right: auto;
+            padding: 0;
+            height: fit-content;
+        }
+
+        &-close,
+        &-mobile-menu {
+            @extend .d-xl-none;
+        }
+    }
+
+    .scroll-navigation-sidebar-entry-line {
+        margin-right: -0.325rem;
+    }
+
+    .scroll-navigation-sidebar-entry--active {
+        > .scroll-navigation-sidebar-entry-bullet {
+            margin-left: 0;
+        }
+    }
+
+    .scroll-navigation-sidebar-entry-label {
+        padding: 8px 10px;
+    }
+}

@@ -1,7 +1,0 @@
-.swag-cms-extensions-quickview-modal {
-    div[data-swag-paypal-express-button='true'],
-    div[data-swag-paypal-installment-banner='true'] {
-        @include make-col(8);
-        padding-left: 25px;
-    }
-}
