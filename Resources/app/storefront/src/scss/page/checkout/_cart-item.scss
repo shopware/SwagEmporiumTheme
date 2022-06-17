@@ -355,6 +355,14 @@ $cart-item-space-sm: 18px;
 
     .cart-item-quantity {
         width: calc(50% - 310px);
+
+        @if (not feature('V6_5_0_0')) {
+            &.form-control {
+                min-width: 80px;
+            }
+        } @else {
+
+        }
     }
 
     .cart-item-unit-price,

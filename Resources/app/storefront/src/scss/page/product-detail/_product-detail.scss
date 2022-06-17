@@ -945,6 +945,7 @@
         .product-detail-buy {
             max-height: 670px;
             overflow: auto;
+            padding-left: 70px;
         }
 
         &-delivery-information {
@@ -1098,6 +1099,7 @@
             .btn-buy {
                 font-size: $font-size-base;
                 height: 60px;
+                line-height: 38px;
                 padding-bottom: 10px;
                 padding-top: 10px;
             }
