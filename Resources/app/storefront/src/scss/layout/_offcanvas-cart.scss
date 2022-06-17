@@ -60,6 +60,7 @@
         .cart-item-quantity {
             padding: 0;
             margin-bottom: 15px;
+            text-align: left;
 
             @extend .col-12;
         }
@@ -80,11 +81,14 @@
     }
 }
 
+.offcanvas,
 .cart-offcanvas {
     .offcanvas-content-container {
         padding: 24px;
     }
+}
 
+.cart-offcanvas {
     @if (feature('v6.5.0.0')) {
         .line-item-quantity-select-wrapper select {
             height: 42px;
