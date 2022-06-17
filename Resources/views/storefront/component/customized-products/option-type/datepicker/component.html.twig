@@ -1,0 +1,14 @@
+{% sw_extends '@Storefront/storefront/component/customized-products/option-type/datepicker/component.html.twig' %}
+
+{% block swag_customized_products_option_type_template_datepicker_input_suffix %}
+    <button id="open-button-option-id-{{ option.id }}"
+            class="swag-customized-products-date-picker-button date-picker-open input-group-append px-2 pb-2"
+            type="button"
+            tabindex="-1">
+        {% if type == 'time' %}
+            {% sw_icon 'clock' %}
+        {% else %}
+            {% sw_icon 'ic-date' style { 'pack': 'emporium' } %}
+        {% endif %}
+    </button>
+{% endblock %}

@@ -1,0 +1,9 @@
+{% sw_extends '@Storefont/storefront/component/customized-products/_include/price-detail-box.html.twig' %}
+
+{% block swag_customized_products_price_detail_box_one_time_price_header %}{% endblock %}
+
+{% block swag_customized_products_price_detail_box_one_time_price_list_summary_label %}
+    <span class="price-display__label">
+        {{ 'customizedProducts.priceDisplay.subTotal' | trans }} ({{ 'customizedProducts.priceDisplay.oneTimePrice' | trans }})
+    </span>
+{% endblock %}
