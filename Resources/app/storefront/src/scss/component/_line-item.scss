@@ -102,23 +102,34 @@ $line-item-space: 24px;
         &-label {
             display: none;
         }
+    }
 
-        &-select-wrapper {
-            width: 100%;
+    &-quantity-select-wrapper {
+        width: 100%;
+        padding-left: 0;
+
+        .line-item-quantity {
+            @extend .d-block;
             padding-left: 0;
+            color: $smoke-text-color;
+        }
 
-            .line-item-quantity {
-                @extend .d-block;
-                padding-left: 0;
-                color: $smoke-text-color;
-            }
+        select,
+        .line-item-quantity {
+            padding: 15px 20px;
+            background-color: $table-accent-bg;
+            border: none;
+            border-radius: 1px;
+            min-width: 80px;
+        }
 
-            select {
-                padding: 15px 20px;
-                background-color: $table-accent-bg;
-                border: none;
-                border-radius: 1px;
-                min-width: 80px;
+        .line-item-quantity {
+            font-size: $font-size-small;
+            color: $gray-900;
+
+            .offcanvas-cart & {
+                padding-left: 15px;
+
             }
         }
     }
@@ -212,7 +223,7 @@ $line-item-space: 24px;
 
         &-info {
             @include make-col(6);
-            min-height: 112px;
+            min-height: 100px;
         }
 
         &-quantity {

@@ -36,6 +36,12 @@ textarea.form-control {
 }
 
 .form-text {
+    font-size: $font-size-base;
+
+    .data-protection-information {
+        color: $smoke-text-color;
+    }
+
     &.form-info-required {
         font-size: $font-size-small;
         line-height: 18px;

@@ -1,3 +1,7 @@
 .form-select {
     min-height: 42px;
+
+    &:invalid {
+        color: $input-placeholder-color;
+    }
 }

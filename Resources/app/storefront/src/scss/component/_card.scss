@@ -22,3 +22,9 @@
         }
     }
 }
+
+@if (not feature('V6_5_0_0')) {
+    .card-title {
+        margin-bottom: 10px;
+    }
+}

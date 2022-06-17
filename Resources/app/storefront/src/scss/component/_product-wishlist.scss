@@ -6,9 +6,33 @@ Styling for productbox component.
 
 .product-wishlist {
     margin-top: 0;
-    position: absolute;
-    top: 0;
-    right: 50px;
+
+    .product-box & {
+        position: absolute;
+        top: 0;
+        right: 50px;
+    }
+
+    .icon-wishlist {
+        width: 16px;
+        height: 16px;
+    }
+
+    @if (not feature('V6_5_0_0')) {
+        .cart-item-details-container & {
+            position: unset;
+        }
+
+        &-action {
+            align-items: center;
+        }
+    } @else {
+        .icon-wishlist {
+            svg {
+                top: 3px;
+            }
+        }
+    }
 
     &-action-circle {
         @extend .btn-light;
@@ -29,24 +53,6 @@ Styling for productbox component.
             background-color: $gray-200;
         }
     }
-
-    .icon-wishlist {
-        width: 16px;
-        height: 16px;
-
-        svg {
-            top: 3px;
-        }
-    }
-}
-
-.product-box {
-    &.box-minimal {
-        .product-wishlist {
-            bottom: 14px;
-            right: 51px;
-        }
-    }
 }
 
 @include media-breakpoint-up(md) {
@@ -59,18 +65,6 @@ Styling for productbox component.
         .icon-wishlist {
             width: 20px;
             height: 20px;
-
-            svg {
-
-            }
-        }
-    }
-
-    .product-box {
-        &.box-minimal {
-            .product-wishlist {
-                right: 61px;
-            }
         }
     }
 }

@@ -15,7 +15,7 @@ https://getbootstrap.com/docs/4.3/components/forms/#select-menu
     }
 
     &:invalid {
-        color: $custom-control-active-border-color;
+        color: $input-placeholder-color;
     }
 
     &:hover {

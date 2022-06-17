@@ -20,6 +20,7 @@ https://getbootstrap.com/docs/4.3/components/navs/
     width: 100%;
     border-bottom: none;
     box-shadow: 0 20px 20px rgba(26, 34, 52, 10%);
+    margin-top: 0;
 }
 
 @include media-breakpoint-up(lg) {

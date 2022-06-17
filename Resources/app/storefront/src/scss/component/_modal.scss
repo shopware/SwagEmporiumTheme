@@ -1,6 +1,7 @@
 $modal-padding: 34px;
 $modal-padding-mobile: 20px;
 $modal-title-font-size: 24px;
+$modal-content-box-shadow-xs:  0 0 20px rgba(0, 6, 57, 0.1);
 
 .modal {
     &-title {
@@ -77,6 +78,7 @@ $modal-title-font-size: 24px;
         font-size: $h3-font-size;
         line-height: 34px;
         color: $top-and-bottom-color;
+        border-bottom: none;
     }
 }
 
