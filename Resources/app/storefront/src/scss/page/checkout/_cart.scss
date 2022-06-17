@@ -22,7 +22,7 @@
         background-color: transparent;
         border: none;
 
-        &:not(:disabled)
+        &:not(:disabled),
         &:hover:not(:disabled) {
             background-color: transparent;
         }
@@ -121,7 +121,7 @@
     @if (feature('V6_5_0_0')) {
         .form-select {
             height: 60px;
-            font-weight: $font-weight-bold;
+            font-weight: $font-weight-base;
             font-size: $font-size-base;
             line-height: 24px;
             padding: 18px 24px;
@@ -130,7 +130,7 @@
     } @else {
         .custom-select {
             height: 60px;
-            font-weight: $font-weight-bold;
+            font-weight: $font-weight-base;
             font-size: $font-size-base;
             line-height: 24px;
             padding: 18px 24px;
@@ -225,6 +225,12 @@
     .is-act-cartpage {
         .container-main {
             padding-top: 50px;
+        }
+
+        .checkout-product-table {
+            div[data-swag-paypal-installment-banner='true'] {
+                margin-bottom: 0;
+            }
         }
     }
 }
