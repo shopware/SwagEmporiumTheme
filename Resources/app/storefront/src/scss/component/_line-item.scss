@@ -114,23 +114,14 @@ $line-item-space: 24px;
             color: $smoke-text-color;
         }
 
-        select,
-        .line-item-quantity {
+        select {
             padding: 15px 20px;
             background-color: $table-accent-bg;
             border: none;
             border-radius: 1px;
             min-width: 80px;
-        }
-
-        .line-item-quantity {
             font-size: $font-size-small;
             color: $gray-900;
-
-            .offcanvas-cart & {
-                padding-left: 15px;
-
-            }
         }
     }
 
@@ -423,7 +414,7 @@ $line-item-space: 24px;
             &-tax-price,
             &-unit-price,
             &-total-price {
-                padding-left: $grid-gutter-width / 2;
+                padding-left: $grid-gutter-width;
             }
         }
     }
