@@ -163,6 +163,11 @@
     color: $top-and-bottom-color;
     font-weight: $font-weight-bold;
     text-transform: uppercase;
+
+    .order-header-quantity,
+    .order-header-price {
+        text-align: left;
+    }
 }
 
 .order-detail-content-row {
