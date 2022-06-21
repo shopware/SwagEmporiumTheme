@@ -1,0 +1,13 @@
+.b2b--plugin {
+    .module-statistic {
+        form[action='/b2bstatistic/grid'] ~ .flex-grow-1 {
+            padding-left: 30px;
+        }
+
+        .grid-form-filter {
+            .btn-light {
+                @extend .btn-outline-primary;
+            }
+        }
+    }
+}

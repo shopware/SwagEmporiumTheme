@@ -1,0 +1,37 @@
+.b2b__listing-toggle {
+    .btn {
+        padding: 8px 11px;
+
+        .icon {
+            height: 18px;
+            width: 18px;
+
+            & > svg {
+                top: 3px;
+            }
+        }
+
+        &.btn-primary,
+        &.btn-outline-primary:hover {
+            .icon > svg {
+                color: $white;
+            }
+        }
+
+        &.btn-outline-primary,
+        &.btn-primary:hover {
+            .icon svg {
+                color: $sw-color-brand-primary;
+            }
+        }
+
+        &:first-child {
+            margin-right: 4px;
+        }
+    }
+}
+
+.b2b-remote-list-orderlist h4 {
+    font-size: $h5-font-size;
+    font-weight: $font-weight-base;
+}

@@ -1,0 +1,40 @@
+.b2b--modal {
+    .b2b--modal-content {
+        .bottom--actions {
+            padding-bottom: 20px;
+
+            .btn {
+                padding: 10px 24px;
+            }
+        }
+
+        .b2b--message-container {
+            margin-bottom: 40px;
+        }
+
+        .input-group svg {
+            height: 16px;
+            width: 16px;
+        }
+    }
+}
+
+.js--modal__title {
+    width: 100%;
+}
+
+.b2b--confirm-modal-header {
+    margin-top: 30px;
+}
+
+.b2b--confirm-modal-footer {
+    .b2b--cancel-action {
+        @extend .btn-secondary;
+    }
+}
+
+@include media-breakpoint-up(md) {
+    #b2bModal .modal-dialog {
+        max-width: $modal-xl;
+    }
+}

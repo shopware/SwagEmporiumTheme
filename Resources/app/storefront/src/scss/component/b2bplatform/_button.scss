@@ -1,0 +1,71 @@
+.b2b--orderlist-remote {
+    .b2b--orderlist-add {
+        .input-group-append {
+            .btn {
+                height: 32px;
+                padding: 0;
+                min-width: 48px;
+                font-size: $btn-font-size-sm;
+                font-weight: $font-weight-bold;
+            }
+
+            .orderlist-create-abort {
+                @extend .btn-outline-secondary;
+                border: $border-width solid $sw-color-brand-secondary;
+                right: 60px;
+                width: 50px;
+            }
+
+            .orderlist-create-save {
+                @extend .btn-outline-primary;
+                right: 5px;
+                width: 50px;
+            }
+        }
+    }
+}
+
+.b2b--orderlist-remote {
+    min-width: 400px;
+}
+
+.input-group-append .btn {
+    right: 5px;
+    max-width: 200px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.b2b-discount-field {
+    padding-right: 59px;
+
+    .input-group-append .btn {
+        height: 100%;
+        right: 0;
+        width: 60px;
+        background-color: $sw-color-brand-primary;
+        color: $white;
+        border-color: $sw-color-brand-primary;
+
+        &:hover {
+            background-color: $white;
+            color: $sw-color-brand-primary;
+        }
+    }
+}
+
+button[data-target='offer-detail-product'] {
+    @extend .btn-outline-primary;
+}
+
+button.is--b2b-acl-controller-b2bofferthroughcheckout {
+    @extend .btn-primary;
+}
+
+form[action='/b2bcreateofferthroughcart/createOffer'] {
+    .btn-lg {
+        padding: 0;
+        height: 60px;
+    }
+}

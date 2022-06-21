@@ -8,6 +8,7 @@ https://getbootstrap.com/docs/4.3/components/forms/#select-menu
 
 .custom-select {
     outline: none;
+    line-height: 15px;
 
     &:disabled {
         color: $gray-700;

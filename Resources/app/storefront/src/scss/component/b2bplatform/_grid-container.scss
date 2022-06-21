@@ -1,0 +1,40 @@
+.b2b--grid-container {
+    padding-bottom: 65px;
+
+    .b2b-table__actions {
+        .select-field select {
+            padding-right: 40px;
+        }
+    }
+}
+
+.module-listingview__pagination {
+    text-align: center;
+}
+
+.b2b--orderlist-tableview {
+    padding-bottom: 5px;
+}
+
+.b2b--orderlist-dropdown.custom-select[disabled]:hover {
+    color: $gray-700;
+}
+
+.action--cart-add {
+    .btn[disabled]:hover svg{
+        color: $white;
+    }
+}
+
+.is-ctl-product {
+    .b2b-remote-list-orderlist.is--b2b-acl-action-index {
+        width: 100%;
+    }
+}
+
+[class*='is-ctl-b2b'] {
+    select {
+        @extend .form-control;
+        @extend .custom-select;
+    }
+}

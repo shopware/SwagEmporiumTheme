@@ -1,0 +1,27 @@
+.b2b--component-pagination {
+    .btn {
+        background: none;
+        font-size: $btn-font-size-lg;
+        padding: 0;
+        animation: none;
+        border: none;
+
+        &:hover {
+            border: none;
+            background: none;
+        }
+    }
+
+    .btn-light {
+        color: $gray-400;
+    }
+
+    .btn-primary {
+        color: $sw-color-brand-primary;
+        font-weight: $font-weight-bold;
+    }
+
+    .btn[disabled] .icon {
+        color: $smoke-text-color;
+    }
+}

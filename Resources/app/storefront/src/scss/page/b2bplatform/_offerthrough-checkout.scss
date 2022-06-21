@@ -1,0 +1,101 @@
+.is-ctl-b2bofferthroughcheckout {
+    .checkout {
+        .checkout-container {
+            .checkout-main {
+                @include make-col(12);
+
+                .b2b--plugin,
+                .b2b--ajax-panel,
+                .b2b--checkout-offer {
+                    @extend .mx-0;
+                }
+            }
+
+            .confirm-main-header {
+                &,
+                & ~.checkout-card .card-body{
+                    text-align: left;
+                    margin-bottom: 0;
+                }
+            }
+
+            .block-group {
+                @extend .row;
+
+                .block {
+                    @extend .col-6;
+
+                    .btn-primary {
+                        width: auto;
+                        margin-left: auto;
+                    }
+                }
+            }
+
+            .is--b2b-acl-action-updateDiscount {
+                .card-title {
+                    font-size: $h4-font-size;
+                    text-transform: uppercase;
+                    border: none;
+                }
+            }
+        }
+    }
+
+    .header-minimal-back-to-shop {
+        .btn.header-minimal-back-to-shop-button {
+            @extend .btn-light;
+            padding: 10px 25px;
+            background-color: $gray-100;
+        }
+    }
+
+    form[action='/b2bofferthroughcheckout/backToCheckout'] {
+        .btn {
+            padding: 5px;
+            display: flex;
+            height: $input-height;
+            align-items: center;
+
+            svg {
+                top: 0;
+            }
+        }
+    }
+
+    form[action='/b2bofferthroughcheckout/sendOffer'] {
+        .input-group-append .btn {
+            @extend .btn-primary;
+            top: 75px;
+            right: 0;
+            height: $input-height;
+            font-size: $btn-font-size;
+        }
+    }
+
+    .b2b--checkout-offer {
+        h4 {
+            color: $gray-900;
+            font-weight: $btn-font-size-sm;
+            font-weight: $font-weight-bold;
+            text-transform: uppercase;
+        }
+        table {
+            border-collapse: collapse;
+            color: $gray-400;
+            font-size: $btn-font-size-lg;
+
+            tbody tr {
+                &:nth-of-type(odd),
+                &:nth-of-type(odd) td {
+                    background-color: $white;
+                }
+
+                &:nth-of-type(even),
+                &:nth-of-type(even) td {
+                    background-color: $gray-100;
+                }
+            }
+        }
+    }
+}

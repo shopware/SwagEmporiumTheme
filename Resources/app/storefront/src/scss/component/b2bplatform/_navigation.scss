@@ -1,0 +1,18 @@
+.b2b--navigation {
+    background: transparent;
+
+    &:before,
+    &:after {
+        width: calc((100vw - 100% - 15px) / 2);
+        border-bottom-width: $border-width;
+        background: transparent;
+    }
+
+    .b2b--navigation-mainmenu:after {
+        height: $border-width;
+    }
+}
+
+.b2b--tab-menu .tab--navigation {
+    border-width: 1px;
+}
