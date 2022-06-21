@@ -13,7 +13,7 @@
         .sorting {
             margin-top: 0;
             width: 100%;
-        
+
             @include media-breakpoint-up(md) {
                 width: 260px;
             }
@@ -181,6 +181,10 @@
             margin-top: 6px;
             margin-bottom: 16px;
         }
+
+        .captcha-google-re-captcha-v3 {
+            font-size: $font-size-sm;
+        }
     }
 }
 
@@ -207,9 +211,13 @@
 
             .btn-primary {
                 position: absolute;
-                bottom: 24px;
+                bottom: 0;
                 right: 0;
                 width: 238px;
+            }
+
+            .captcha-google-re-captcha-v3 {
+                margin-bottom: 16px;
             }
         }
 

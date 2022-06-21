@@ -1,0 +1,17 @@
+.basic-captcha-content {
+    &-code {
+        gap: 10px;
+    }
+
+    &-refresh-icon:hover {
+        background-color: $white !important;
+    }
+
+    &-image img {
+        height: 100%;
+    }
+}
+
+.captcha-google-re-captcha-v3 {
+    color: $smoke-text-color;
+}
