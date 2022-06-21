@@ -1,7 +1,6 @@
 {
   "checkout" : {
     "addPromotionAction" : "Add",
-    "cartItemInfoId": "Order number",
     "finishOrderHeader": "Ihre Bestellung",
     "addProductHeading": "Produkt über Artikelnummer hinzufügen",
     "shippingCosts": "Versandkosten konfigurieren",
