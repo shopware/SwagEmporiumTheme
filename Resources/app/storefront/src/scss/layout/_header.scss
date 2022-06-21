@@ -83,7 +83,6 @@ $logo-height-lg: 37px;
 
 .header-search {
     margin: 0;
-    z-index: 101;
     max-width: unset;
     width: 100%;
     bottom: -7px;
@@ -127,7 +126,7 @@ $logo-height-lg: 37px;
     }
 
     &-form {
-        z-index: 1;
+        z-index: $search-suggest-zindex;
         width: 100%;
 
         .header-search-input {
