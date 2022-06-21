@@ -1,7 +1,11 @@
 .search-page {
   .cms-element-product-listing-wrapper {
     margin-top: 20px;
-  } 
+  }
+
+  .filter-panel-wrapper-toggle {
+      margin-bottom: 0;
+  }
 
   @include media-breakpoint-up(lg) {
     .cms-element-product-listing-actions {
