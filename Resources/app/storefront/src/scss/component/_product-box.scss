@@ -269,7 +269,7 @@ hr.product-box-divider {
         align-items: center;
         justify-content: center;
         position: absolute;
-        top: -42px;
+        top: -32px;
         right: 0;
 
         .icon {
@@ -337,6 +337,7 @@ hr.product-box-divider {
         .btn-light {
             width: 42px;
             height: 42px;
+            top: -42px;
 
             .icon {
                 width: 20px;

@@ -1,0 +1,14 @@
+{% sw_extends '@Storefront/storefront/component/product/card/box-wishlist.html.twig' %}
+
+{% block component_product_wishlist_remove_submit %}
+    <button type="submit" class="btn product-wishlist-btn product-wishlist-btn-remove">
+        {% sw_icon 'ic-close' style { 'class': 'icon-wishlist icon-wishlist-remove', 'size': size, 'pack': 'emporium' } %}
+    </button>
+{% endblock %}
+
+{% block component_product_box_manufacturer %}
+    <div class="product-manufacturer">{{ product.manufacturer.translated.name }}</div>
+{% endblock %}
+
+{% block component_product_box_delivery_time %}
+{% endblock %}
