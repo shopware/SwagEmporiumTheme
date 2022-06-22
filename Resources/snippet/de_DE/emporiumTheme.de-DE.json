@@ -100,5 +100,8 @@
   },
   "order": {
     "orderSummary": "Zusammenfassung"
+  },
+  "captcha": {
+    "basicCaptchaPlaceholder" : "Bitte geben Sie die abgebildeten Zeichen ein*"
   }
 }
