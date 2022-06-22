@@ -39,6 +39,18 @@
         .product-detail-buybox {
             @extend .col-md-5;
         }
+
+        @include media-breakpoint-up(lg) {
+            .product-detail-buy {
+                padding-left: 25px !important;
+            }
+        }
+
+        @include media-breakpoint-up(xl) {
+            .product-detail-buy {
+                padding-left: 75px !important;
+            }
+        }
     }
 
     &.cms-block-sidebar-filter {
