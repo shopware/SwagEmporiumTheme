@@ -127,6 +127,11 @@ $swag-cms-extensions-carousel-icon-size: 20px;
     .product-detail-buy {
         margin-bottom: 0;
     }
+
+    .product-detail-quantity-input {
+        background-color: $gray-100;
+        border: none;
+    }
 }
 
 .swag-cms-extensions-quickview-rating {
@@ -330,7 +335,8 @@ $swag-cms-extensions-carousel-icon-size: 20px;
             margin-bottom: 18px;
         }
 
-        .product-detail-quantity-select {
+        .product-detail-quantity-select,
+        .product-detail-quantity-input {
             height: 60px;
         }
 

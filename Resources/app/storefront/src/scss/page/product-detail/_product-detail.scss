@@ -980,11 +980,15 @@
         }
 
         &-main {
-            border-bottom: $border-width solid $border-color;
+            .product-detail & {
+                border-bottom: $border-width solid $border-color;
+            }
         }
 
         &-media {
-            border-right: $border-width solid $border-color;;
+            .product-detail & {
+                border-right: $border-width solid $border-color;;
+            }
         }
     }
 
@@ -1024,12 +1028,25 @@
         &-scroll-up-button {
             display: inline-flex;
         }
+
+        &-main {
+            .cms-block-gallery-buybox & {
+                border-bottom: $border-width solid $border-color;
+            }
+        }
+
+        &-media {
+            .cms-block-gallery-buybox & {
+                border-right: $border-width solid $border-color;;
+            }
+        }
     }
 
     @include media-breakpoint-up(xl) {
         .product-detail-media {
             padding-right: 75px;
         }
+
         .product-detail-buy {
             padding-left: 75px;
         }
