@@ -254,6 +254,16 @@
                 "editable": true,
                 "block": "errorPages"
             },
+            "sw-wishlist-empty": {
+                "label": {
+                  "en-GB": "Wishlist empty state",
+                  "de-DE": "Wunschzettel leerer Zustand"
+                },
+                "type": "media",
+                "value": "app/storefront/src/assets/images/wishlist_empty.png",
+                "editable": true,
+                "block": "wishlist"
+            },
             "sw-facebook-link": {
                 "label": {
                   "en-GB": "Facebook link",

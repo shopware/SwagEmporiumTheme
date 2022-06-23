@@ -1,0 +1,104 @@
+.is-ctl-wishlist {
+    .content-main {
+        overflow: hidden;
+    }
+
+    .container-main {
+        padding: 0;
+    }
+}
+
+.wishlist-listing-col {
+    margin-top: 100px;
+    text-align: center;
+
+    .cms-element-product-listing & {
+        margin-bottom: 125px;
+    }
+
+    .wishlist-listing-empty {
+        height: auto;
+        max-width: 324px;
+        margin: 0 auto;
+    }
+
+    .wishlist-listing-header {
+        margin-top: 100px;
+        font-weight: $font-weight-normal;
+        font-size: $h1-font-size;
+        line-height: 40px;
+    }
+
+    .wishlist-listing-description {
+        font-size: $font-size-base;
+        line-height: 24px;
+    }
+}
+
+.wishlist-headline {
+    margin: 0 -100%;
+    font-weight: $font-weight-normal;
+    font-size: 30px;
+    line-height: 34px;
+    height: auto;
+    padding: 33px;
+    background-color: $top-and-bottom-color;
+    color: white;
+}
+
+.wishlist-page {
+    .cms-element-product-listing {
+        > .pagination-nav {
+            padding-bottom: $spacer-lg;
+        }
+    }
+
+    .cms-element-product-listing {
+        .cms-element-product-listing-actions {
+            gap: 0;
+            margin-top: $spacer-lg;
+        }
+    }
+}
+
+// @deprecated tag:v6.5.0 - Bootstrap v5 uses the breakpoint itself instead of the next breakpoint in `media-breakpoint-down()`, use `md` instead of `sm`.
+@include media-breakpoint-down(if(feature('v6.5.0.0'), md, sm)) {
+    .wishlist-listing-empty {
+        max-height: none;
+    }
+}
+
+@include media-breakpoint-up(md) {
+    .wishlist-headline {
+        font-size: $h1-font-size;
+        line-height: 40px;
+        padding: 80px;
+    }
+
+    .wishlist-page {
+        .cms-element-product-listing {
+            > .pagination-nav {
+                padding-bottom: 30px;
+            }
+        }
+
+        .cms-element-product-listing {
+            .cms-element-product-listing-actions {
+                margin-bottom: 30px;
+                margin-top: 30px;
+            }
+        }
+
+        .col-md-auto {
+            width: 100%;
+        }
+    }
+}
+
+@include media-breakpoint-up(xl) {
+    .wishlist-headline {
+        font-size: $h1-font-size;
+        line-height: 40px;
+        padding: 130px;
+    }
+}
