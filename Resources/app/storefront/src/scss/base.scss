@@ -65,6 +65,7 @@ https://sass-guidelin.es/#the-7-1-pattern
 @import 'component/quickview/quickview';
 @import 'component/scroll-navigation/scroll-navigation';
 @import 'component/basic-captcha';
+@import 'forms/form-select';
 @import 'component/b2bplatform/listing';
 @import 'component/b2bplatform/dashboard-teaser';
 @import 'component/b2bplatform/navigation';
@@ -80,6 +81,8 @@ https://sass-guidelin.es/#the-7-1-pattern
 @import 'component/b2bplatform/upload';
 @import 'component/b2bplatform/button';
 @import 'component/b2bplatform/accordion';
+
+
 /*
  * Layout-related sections
  * ----------------------- */
@@ -124,6 +127,5 @@ https://sass-guidelin.es/#the-7-1-pattern
 @import 'page/b2bplatform/sales-representative';
 @import 'page/b2bplatform/dashboard';
 @import 'page/wishlist/wishlist';
-
-@import 'forms/form-select';
 @import 'page/account/login';
+@import 'page/search/search';

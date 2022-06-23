@@ -1,0 +1,19 @@
+.search-page {
+  .cms-element-product-listing-wrapper {
+    margin-top: 20px;
+  }
+
+  .filter-panel-wrapper-toggle {
+      margin-bottom: 0;
+  }
+
+  @include media-breakpoint-up(lg) {
+    .cms-element-product-listing-actions {
+      .col-md-auto:first-child {
+        padding-right: 0;
+        padding-left: 260px;
+        flex-grow: 1;
+      }
+    }
+  }
+}

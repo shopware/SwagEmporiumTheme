@@ -4,12 +4,16 @@ $icon-check: url('#{$asset-path}/icon/icon-pack/ic-check.svg');
 
 .filter-panel {
     margin-bottom: 0;
+    gap: 24px;
 
     &-wrapper {
         display: block;
-        padding: 24px 0;
-        border-top: $border-width solid $border-color;
-        border-bottom: $border-width solid $border-color;
+
+        @include media-breakpoint-up(lg) {
+            padding: 24px 0;
+            border-top: $border-width solid $border-color;
+            border-bottom: $border-width solid $border-color;
+        }
     }
 
     &-items-container {
@@ -23,11 +27,20 @@ $icon-check: url('#{$asset-path}/icon/icon-pack/ic-check.svg');
         }
     }
 
-    &-active-container:not(:empty) {
-        margin-top: 24px;
-        display: flex;
-        gap: 10px;
-        flex-wrap: wrap;
+    &-active-container {
+        display: none;
+
+        &:not(:empty) {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            width: 100%;
+
+            @include media-breakpoint-down(if(feature('V6_5_0_0'), lg, md)) {
+                padding: 14px 0;
+                border-bottom: $border-width solid $border-color;
+            }
+        }
     }
 
     .filter-panel-item {
@@ -171,7 +184,7 @@ $icon-check: url('#{$asset-path}/icon/icon-pack/ic-check.svg');
 
         .filter-panel-active-container {
             width: 100%;
-            margin-top: 14px;
+            margin-top: 0;
         }
 
         .filter-multi-select,
@@ -316,7 +329,7 @@ $icon-check: url('#{$asset-path}/icon/icon-pack/ic-check.svg');
             top: 0;
         }
     }
-    
+
     .filter-panel-offcanvas-title {
         color: $white;
     }
