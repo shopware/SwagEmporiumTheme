@@ -1,0 +1,122 @@
+.b2b-table {
+    background: $white;
+    border-left: none;
+    border-right: none;
+
+    th,
+    td {
+        padding: 10px 20px;
+        line-height: $h2-font-size;
+
+        .icon,
+        svg {
+            width: 16px;
+            height: 16px;
+        }
+    }
+
+    tr {
+        td.col-actions {
+            text-align: center;
+
+            .btn {
+                height: 28px;
+                border-radius: 4px;
+                padding: 4px 8px;
+
+                .icon svg {
+                    top: 0;
+                }
+            }
+        }
+    }
+
+    .headline-product {
+        font-size: $input-font-size-lg;
+    }
+
+    .col-name {
+        width: 30%;
+
+        &[data-label='Product'] {
+            width: 40%;
+        }
+    }
+
+    .col-quantity[data-label='Quantity'] {
+        width: 20%;
+    }
+
+    .col-headline {
+        .headline-product {
+            padding: 0;
+        }
+    }
+
+    .b2b--search-container {
+        padding: 0;
+    }
+
+    thead th {
+        border-bottom-width: 2px;
+    }
+}
+
+.b2b--modal-content .b2b--grid-container,
+.b2b-table {
+    tbody tr {
+        &:nth-of-type(odd),
+        &:nth-of-type(odd) td{
+            background-color: $white;
+        }
+
+        &:nth-of-type(even),
+        &:nth-of-type(even) td {
+            background-color: $gray-100;
+        }
+    }
+}
+
+.b2b--assignment-grid {
+    .b2b-table thead th {
+        border-bottom-color: $sw-color-brand-primary;
+        border-bottom-width: 2px;
+    }
+}
+
+.b2b-table__actions {
+    padding: 10px !important;
+
+    input[type='search'] {
+        height: $input-height;
+    }
+}
+
+.module-ordernumber,
+.module-fastorder {
+    .table-responsive {
+        overflow-x: initial;
+    }
+
+    .b2b--search-container {
+        position: relative;
+
+        .b2b--search-results {
+            width: 100%;
+            max-width: 100%;
+        }
+    }
+}
+
+.table--fastorder {
+    td[data-label='Product'] {
+        color: $gray-900;
+    }
+}
+
+[data-label='Order amount'],
+div[data-label='Unit price'],
+.b2b-listing-price,
+.b2b-listing-price__price-wrapper {
+    color: $gray-900;
+}

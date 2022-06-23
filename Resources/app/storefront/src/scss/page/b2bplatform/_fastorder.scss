@@ -1,0 +1,35 @@
+.module-fastorder--grid-messages {
+    padding-left: 10px;
+}
+.is-ctl-checkout {
+    .b2b-remote-list-orderlist {
+        .b2b--orderlist-dropdown {
+            height: 60px;
+        }
+
+        h4 {
+            font-weight: $font-weight-bold;
+            font-size: $btn-font-size-sm;
+            line-height: 24px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+    }
+}
+
+.b2b-upload__configuration-content {
+    label {
+        width: 45%;
+        padding: 0;
+
+        &:nth-child(odd) {
+            margin-right: 25px;
+        }
+    }
+}
+
+.is-ctl-b2border {
+    .block table td {
+        background: $gray-100;
+    }
+}

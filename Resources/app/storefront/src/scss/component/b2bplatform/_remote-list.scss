@@ -1,0 +1,18 @@
+.b2b-remote-list__actions {
+    .action--cart-add {
+        .btn-primary {
+            display: flex;
+
+            .icon svg {
+                top: 0;
+            }
+
+            &:hover {
+                .icon {
+                    color: $sw-color-brand-primary;
+                }
+            }
+        }
+
+    }
+}

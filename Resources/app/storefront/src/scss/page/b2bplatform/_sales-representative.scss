@@ -1,0 +1,28 @@
+.is-ctl-b2baccount,
+.is-ctl-b2bsalesrepresentative {
+    .container .top-bar {
+        &:before {
+            content: '';
+            height: 50px;
+            background-color: $top-and-bottom-color;
+            position: absolute;
+            width: 100%;
+            left: 0;
+            top: 0;
+        }
+
+        .container {
+            padding: 0;
+        }
+    }
+}
+
+.account-menu-header {
+    a:hover {
+        text-decoration: none;
+    }
+}
+
+.is--b2b-acl-controller-b2bsalesrepresentative a {
+    color: $gray-400;
+}
