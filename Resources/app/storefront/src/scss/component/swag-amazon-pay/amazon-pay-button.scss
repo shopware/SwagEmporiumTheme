@@ -5,13 +5,20 @@
 }
 
 .swag-amazon-pay-wrapper {
-    margin: 0;
+    &.account-link {
+        margin: 0
+    }
 }
 
 .swag-amazon-pay-account-link-amazon {
     .card-body {
-        padding-top: 50px;
-        border-top: $border-width solid $border-color;
+        padding-bottom: 50px;
+        border-bottom: $border-width solid $border-color;
+    }
+
+    .account-profile & {
+        margin: 0 0 3rem;
+        order: -1;
     }
 }
 

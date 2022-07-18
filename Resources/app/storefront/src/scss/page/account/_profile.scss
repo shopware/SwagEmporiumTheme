@@ -1,4 +1,7 @@
 .account-profile {
+    display: flex;
+    flex-direction: column;
+
     &-personal {
         padding-bottom: 50px;
         border-bottom: $border-width solid $border-color;
@@ -82,6 +85,11 @@
             color: $smoke-text-color;
             font-weight: $font-weight-normal;
         }
+    }
+
+    .account-welcome,
+    .account-profile-personal {
+        order: -1;
     }
 
     @include media-breakpoint-up(md) {

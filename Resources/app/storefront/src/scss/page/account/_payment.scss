@@ -55,6 +55,11 @@
     }
 }
 
+.payment-methods {
+    max-width: 422px;
+    padding-right: $spacer-sm;
+}
+
 @include media-breakpoint-up(md) {
     .account-payment-card {
         padding-bottom: 70px;
