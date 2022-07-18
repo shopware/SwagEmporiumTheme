@@ -1,5 +1,7 @@
 {% sw_extends '@Storefront/storefront/element/cms-element-form/form-types/contact-form.html.twig' %}
 
+{% block cms_form_contact_captcha %}{% endblock %}
+
 {% block cms_form_contact_select_salutation %}
     {% sw_include '@Storefront/storefront/element/cms-element-form/form-components/cms-element-form-select-salutation.html.twig'
         with {
@@ -46,6 +48,12 @@
         placeholder: 'contact.commentPlaceholder'
     }
     %}
+
+    <div class="col-md-6 mt-4">
+        {% block clone_cms_form_contact_captcha %}
+            {% sw_include '@Storefront/storefront/component/captcha/base.html.twig' with { additionalClass : 'col-md-12'} %}
+        {% endblock %}
+    </div>
 {% endblock %}
 
 {% block cms_form_contact_submit %}

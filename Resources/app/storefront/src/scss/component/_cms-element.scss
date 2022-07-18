@@ -153,6 +153,12 @@
             font-size: $font-size-sm;
         }
     }
+
+    &.contact {
+        textarea.form-control {
+            height: calc(100% - 24px);
+        }
+    }
 }
 
 .cms-element-text,
@@ -195,7 +201,7 @@
 
     .cms-element-product-listing-actions {
         flex-wrap: nowrap;
-        
+
         > .col-md-auto {
             &:first-child {
                 padding-right: 0;
@@ -210,7 +216,7 @@
                 text-align: right;
             }
         }
-    }        
+    }
 }
 
 @include media-breakpoint-up(lg) {

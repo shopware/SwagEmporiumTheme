@@ -3,8 +3,13 @@
         gap: 10px;
     }
 
-    &-refresh-icon:hover {
-        background-color: $white !important;
+    &-refresh-icon {
+        height: auto;
+        align-self: stretch;
+
+        &:hover {
+            background-color: $white !important;
+        }
     }
 
     &-image img {
