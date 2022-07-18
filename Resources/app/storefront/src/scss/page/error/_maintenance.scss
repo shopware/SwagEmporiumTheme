@@ -64,7 +64,7 @@
     }
 
     .text-center {
-        @if (feature('v6.5.0.0')) {
+        @if (feature('V6_5_0_0')) {
             @extend .text-start;
         } @else {
             @extend .text-left;
