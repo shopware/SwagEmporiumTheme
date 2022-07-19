@@ -38,7 +38,7 @@
                            name="points"
                            id="point-{{ index }}"
                            value="{{ index }}"
-                        {% if currentPoints >= index %} checked="checked"{% endif %}>
+                            {% if currentPoints == index %} checked="checked"{% endif %}>
                     <div class="product-detail-review-form-stars">
                         {% for point in 1..maxPoints %}
                             {% if point <= index %}
