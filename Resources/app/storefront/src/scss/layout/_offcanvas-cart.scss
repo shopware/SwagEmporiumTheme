@@ -83,8 +83,14 @@
 
 .offcanvas,
 .cart-offcanvas {
-    .offcanvas-content-container {
-        padding: 24px;
+    @if (feature('V6_5_0_0')) {
+        .offcanvas-body {
+            padding: 24px;
+        }
+    } @else {
+        .offcanvas-content-container {
+            padding: 24px;
+        }
     }
 }
 
@@ -113,7 +119,6 @@
 
 .offcanvas-cart-items {
     border-top: $border-width solid $gray-300;
-    border-bottom: none;
     margin-top: 0;
 
     @if (feature('v6.5.0.0')) {

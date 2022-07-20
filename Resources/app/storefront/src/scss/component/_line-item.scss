@@ -137,13 +137,6 @@ $line-item-space: 24px;
         }
     }
 
-    &-product {
-        .line-item-unit-price,
-        .line-item-tax-price {
-            text-align: left;
-        }
-    }
-
     &-total-price {
         font-size: 13px;
         color: $top-and-bottom-color;
@@ -179,8 +172,33 @@ $line-item-space: 24px;
         }
     }
 
-    &:last-child {
-        border-bottom: $border-width solid $gray-300;
+    &-quantity {
+        .line-item-quantity {
+            padding-left: 20px !important;
+        }
+    }
+
+    &-children {
+        .line-item-info {
+            min-height: unset;
+        }
+
+        .line-item-details {
+            padding-left: 0 !important;
+        }
+
+        .line-item-quantity {
+            margin-bottom: 0;
+
+            .line-item-quantity {
+                margin: 0;
+                padding-left: 10px !important;
+            }
+        }
+
+        .line-item-total-price {
+            padding-right:  0;
+        }
     }
 }
 
@@ -359,6 +377,10 @@ $line-item-space: 24px;
 // Apply tablet and desktop styling only for default and order items
 .is-default,
 .is-order {
+    .line-item-unit-price {
+        text-align: left;
+    }
+
     @include media-breakpoint-up(sm) {
         .line-item-quantity-container {
             width: 100%;
@@ -370,6 +392,9 @@ $line-item-space: 24px;
 .is-offcanvas {
     .line-item-info {
         @include make-col(12);
+
+        padding-left: 0;
+        padding-right: 0;
     }
 }
 
