@@ -19,4 +19,8 @@
 
 .captcha-google-re-captcha-v3 {
     color: $smoke-text-color;
+
+    .grecaptcha-protection-information {
+        font-size: $font-size-sm;
+    }
 }
