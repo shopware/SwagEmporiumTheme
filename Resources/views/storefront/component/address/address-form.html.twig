@@ -224,23 +224,3 @@
         {{ block('component_address_form_phone_number') }}
     </div>
 {% endblock %}
-
-{% block component_address_form_company %}
-    {% if showFormCompany %}
-        {% if config('core.loginRegistration.showAccountTypeSelection') %}
-            {% set accountTypeRequired = true %}
-        {% endif %}
-
-        {% if config('core.loginRegistration.showAccountTypeSelection') or prefix == "address" or prefix == "shippingAddress" or hasSelectedBusiness %}
-            <div class="{{ formRowClass }} {% if prefix == "shippingAddress" or hasSelectedBusiness %}address-contact-type-company{% elseif prefix == "address" %}js-field-toggle-contact-type-company d-flex{% else %}js-field-toggle-contact-type-company d-none{% endif %}">
-                {% block component_address_form_company_fields %}
-                    {{ block('component_address_form_company_name') }}
-
-                    {{ block('component_address_form_company_department') }}
-
-                    {{ block('component_address_form_company_vatId') }}
-                {% endblock %}
-            </div>
-        {% endif %}
-    {% endif %}
-{% endblock %}
