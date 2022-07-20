@@ -60,15 +60,6 @@
            required="required">
 {% endblock %}
 
-{% block component_account_register_personal %}
-    {% apply spaceless %}
-        <p class="login-form-description">
-            {{ "checkout.addressRegisterCardTitle"|trans|sw_sanitize }}
-        </p>
-        {{ parent() }}
-    {% endapply %}
-{% endblock %}
-
 {% block component_account_register_required_fields %}
 {% endblock %}
 

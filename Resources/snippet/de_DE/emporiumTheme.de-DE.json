@@ -11,7 +11,8 @@
     "productDetails": "Produktdetails",
     "addPromotionPlaceholder": "Gutschein-Code eingeben",
     "addProductPlaceholder": "Produktnummer eingeben",
-    "lineItemContainerHeadline": "Konfiguration"
+    "lineItemContainerHeadline": "Konfiguration",
+    "addressRegisterCardTitle": "Ihre persönlichen Daten"
   },
   "general": {
     "404ErrorPageHeader": "Seite nicht gefunden",

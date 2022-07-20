@@ -11,7 +11,8 @@
     "productDetails": "Product details",
     "addPromotionPlaceholder": "Enter gift card number or discount code",
     "addProductPlaceholder": "Enter product number",
-    "lineItemContainerHeadline": "Configuration"
+    "lineItemContainerHeadline": "Configuration",
+    "addressRegisterCardTitle": "Your personal details"
   },
   "general": {
     "404ErrorPageHeader": "Page not found",
