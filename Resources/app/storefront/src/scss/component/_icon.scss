@@ -13,6 +13,10 @@
     > svg {
         path {
             fill: none;
+
+            .top-bar-fact & {
+                fill: currentColor;
+            }
         }
     }
 }
