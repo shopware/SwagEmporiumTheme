@@ -38,8 +38,9 @@ $footer-border-color: #D7DBDF;
     padding: 13px 0;
     flex-direction: row;
     align-items: flex-start;
+    flex-wrap: wrap;
     border-top: none;
-    gap: 24px;
+    gap: 12px 24px;
 }
 
 .footer-service-menu-item,
