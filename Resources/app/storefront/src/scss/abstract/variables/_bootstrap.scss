@@ -127,15 +127,5 @@ $table-color: $gray-400;
 
 $link-hover-color: $sw-color-brand-primary !default;
 
-// Grid breakpoints
-$grid-breakpoints: (
-    xs: 0,
-    sm: 576px,
-    md: 768px,
-    lg: 992px,
-    xl: 1200px,
-    xxl: 1550px
-) !default;
-
 // Grid
 $grid-gutter-width: 10px !default;
