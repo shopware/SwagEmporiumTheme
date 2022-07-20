@@ -11,6 +11,10 @@ $box-image-height-img: 250px;
     border-radius: 1px;
     border-width: 0;
 
+    .product-slider-item & {
+        box-shadow: 0 0 15px rgb(0, 6, 57, 10%);
+    }
+
     .card-body {
         padding: 0;
     }

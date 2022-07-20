@@ -32,17 +32,27 @@
 
         @include media-breakpoint-up(lg) {
             .cms-section-sidebar-sidebar-content {
-                max-width: 221px;    
+                max-width: 221px;
             }
 
             .cms-section-sidebar-main-content {
                 padding-left: $grid-gutter-width / 2;
                 margin-left: auto;
-            }   
+            }
         }
     }
 
     .cms-section-sidebar.boxed {
         justify-content: center;
+    }
+
+    .cms-block-product-slider  .boxed {
+        padding: 0;
+    }
+}
+
+.modal {
+    .cms-section {
+        overflow: visible;
     }
 }

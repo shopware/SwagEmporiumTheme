@@ -1,0 +1,31 @@
+/*
+Product slider
+==============================================
+Styling for product slider component.
+Displays product-boxes in a reusable slider component.
+based on "base-slider" component and "tiny-slider" (https://github.com/ganlanyuan/tiny-slider)
+*/
+
+.product-slider {
+    &.has-nav {
+        overflow: visible;
+
+        .cms-element-product-slider & {
+            padding: 0;
+        }
+
+        .tns-ovh {
+            overflow: hidden;
+            padding: 30px 15px;
+
+            @include media-breakpoint-up(lg) {
+                padding: 30px 20px;
+            }
+        }
+    }
+
+    &-controls-prev,
+    &-controls-next {
+        opacity: 1;
+    }
+}
