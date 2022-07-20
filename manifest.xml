@@ -4,8 +4,8 @@
         <name>SwagEmporiumTheme</name>
         <label>Emporium Theme</label>
         <label lang="de-DE">Emporium Theme</label>
-        <description>The Emporium theme from Shopware offers a modern and simple design. The theme has excellent scaling properties to expand the range and extend with apps.</description>
-        <description lang="de-DE">Das Emporium Theme von Shopware bietet ein modernes und schlichtes Design. Das Theme besitzt sehr gute Skalierungseigenschaften um das Sortiment auszubauen und kann durch Apps erweitert werden.</description>
+        <description>The Emporium theme offers a modern and minimalistic design. The theme has excellent scaling properties to expand the range, and it is possible to extend with apps.</description>
+        <description lang="de-DE">Das Emporium Theme bietet ein modernes und schlichtes Design. Das Theme besitzt sehr gute Eigenschaften um das Sortiment auszubauen und es kann durch Apps erweitert werden.</description>
         <author>shopware AG</author>
         <copyright>(c) by shopware AG</copyright>
         <version>1.0.0</version>
