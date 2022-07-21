@@ -126,7 +126,7 @@ $logo-height-lg: 37px;
     }
 
     &-form {
-        z-index: $search-suggest-zindex;
+        z-index: 100;
         width: 100%;
 
         .header-search-input {
