@@ -115,9 +115,12 @@ $footer-border-color: #D7DBDF;
 
 .footer-newsletter-header-headline {
     font-weight: $font-weight-normal;
+    line-height: 22px;
 
     @include media-breakpoint-up(sm) {
         font-size: 20px;
+        margin-bottom: 14px;
+        line-height: 29px;
     }
 
     @include media-breakpoint-up(lg) {
