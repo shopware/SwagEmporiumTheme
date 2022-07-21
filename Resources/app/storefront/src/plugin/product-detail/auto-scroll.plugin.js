@@ -124,6 +124,11 @@ export default class EmporiumAutoScrollPlugin extends Plugin {
     }
 
     _isInAllowedViewports() {
-        return (ViewportDetection.isLG() || ViewportDetection.isXL() || ViewportDetection.isXXL());
+        if(Feature.isActive('v6.5.0.0')) {
+            return ViewportDetection.isLG() || ViewportDetection.isXL() || ViewportDetection.isXXL();
+        }
+        else {
+            return ViewportDetection.isLG() || ViewportDetection.isXL();
+        }
     }
 }
