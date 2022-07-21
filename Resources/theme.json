@@ -152,8 +152,7 @@
                   "en-GB": "Price",
                   "de-DE": "Preis"
                 },
-                "value": "#000639",
-                "editable": false
+                "value": "#000639"
             },
             "sw-color-buy-button": {
                 "label": {
