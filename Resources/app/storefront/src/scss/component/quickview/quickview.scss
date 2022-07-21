@@ -37,14 +37,21 @@ $swag-cms-extensions-carousel-icon-size: 20px;
         @include make-col(12);
 
         @include media-breakpoint-up(md) {
-            flex: 0 0 calc(50% - 52px);
-            max-width: calc(50% - 52px);
+            @include make-col(6);
         }
 
         @include media-breakpoint-up(xl) {
-            flex: 0 0 calc(100% - 300px);
-            max-width: calc(100% - 300px);
+            flex: 0 0 calc(100% - 230px);
+            max-width: calc(100% - 230px);
         }
+    }
+
+    div[data-swag-paypal-installment-banner="true"] {
+        margin-top: -7px;
+    }
+
+    div[data-swag-paypal-express-button="true"] {
+        margin-top: 8px;
     }
 }
 
