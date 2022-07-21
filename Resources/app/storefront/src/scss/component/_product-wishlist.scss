@@ -102,6 +102,12 @@ Styling for productbox component.
     }
 }
 
+.icon-emporium.ic-heart {
+    svg path {
+        fill: currentColor;
+    }
+}
+
 @include media-breakpoint-up(md) {
     .product-wishlist {
         &-action-circle {
