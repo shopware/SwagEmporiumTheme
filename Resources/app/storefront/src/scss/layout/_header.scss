@@ -45,6 +45,12 @@ $logo-height-lg: 37px;
     &-search-col {
         position: unset;
     }
+
+    &-main {
+        .btn .icon {
+            color: $sw-text-color;
+        }
+    }
 }
 
 @if (not feature('V6_5_0_0')) {
