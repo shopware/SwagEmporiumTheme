@@ -203,7 +203,8 @@
                 "editable": true,
                 "block": "media",
                 "order": 300
-            },"sw-footer-minimal-logo": {
+            },
+            "sw-footer-minimal-logo": {
                 "label": {
                     "en-GB": "Footer Minimal logo",
                     "de-DE": "Footer Minimal Logo"
@@ -303,6 +304,18 @@
                 "value": "https://www.tiktok.com/",
                 "editable": true,
                 "block": "footer"
+            },
+            "sw-logo-share": {
+              "label": {
+                "en-GB": "App & share icon",
+                "de-DE": "App- & Share-Icon"
+              }
+            },
+            "sw-logo-favicon": {
+              "label": {
+                "en-GB": "Favicon",
+                "de-DE": "Favicon"
+              }
             }
         }
     }
