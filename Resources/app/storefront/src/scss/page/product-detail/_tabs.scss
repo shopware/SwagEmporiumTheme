@@ -1,0 +1,11 @@
+.product-detail-tabs {
+    .product-detail-tab-navigation-link {
+        font-size: 13px;
+    }
+
+    @include media-breakpoint-down(if(feature("V6_5_0_0"), lg, md)) {
+        .product-detail-tab-navigation-link {
+            font-size: 15px;
+        }
+    }
+}

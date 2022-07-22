@@ -1,0 +1,14 @@
+.product-detail-cross-selling {
+    .tab-pane {
+        margin-top: 0;
+    }
+
+    .cms-element-title {
+        font-size: 10px;
+        text-transform: uppercase;
+        width: max-content;
+        padding: 5px 0;
+        color: $primary;
+        border-bottom: 2px solid $primary;
+    }
+}

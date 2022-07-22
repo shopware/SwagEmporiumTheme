@@ -61,7 +61,7 @@
         }
     }
 
-    @include media-breakpoint-down(if(feature('V6_5_0_0'), lg, md)) {
+    @include media-breakpoint-down(if(feature("V6_5_0_0"), lg, md)) {
         .tab-pane {
             display: none;
         }
@@ -123,7 +123,8 @@
             }
         }
 
-        &-link, p {
+        &-link,
+        p {
             color: $gray-400;
             font-size: $font-size-sm;
             margin: 0;
@@ -265,7 +266,7 @@
         }
 
         .product-detail-review-content {
-            @if (feature('V6_5_0_0')) {
+            @if (feature("V6_5_0_0")) {
             } @else {
                 margin: 0;
             }
@@ -314,7 +315,7 @@
                 width: 10px;
 
                 svg {
-                    top: 3px
+                    top: 3px;
                 }
             }
 
@@ -333,7 +334,7 @@
             line-height: 60px;
 
             .icon svg {
-                @if (feature('V6_5_0_0')) {
+                @if (feature("V6_5_0_0")) {
                     top: 3px;
                 } @else {
                     top: 0;
@@ -341,8 +342,8 @@
             }
         }
 
-        div[data-swag-paypal-express-button='true'],
-        div[data-swag-paypal-installment-banner='true'] {
+        div[data-swag-paypal-express-button="true"],
+        div[data-swag-paypal-installment-banner="true"] {
             @include make-col(12);
         }
     }
@@ -439,7 +440,8 @@
             padding-right: 10px;
         }
 
-        &-option-input:checked + .product-detail-configurator-option-label.is-combinable {
+        &-option-input:checked
+            + .product-detail-configurator-option-label.is-combinable {
             background-color: transparent;
             color: $primary;
             font-weight: $font-weight-bold;
@@ -877,11 +879,11 @@
             @for $i from 1 through 30 {
                 @if $i < 10 {
                     button:nth-child(#{$i}):before {
-                        content: '0#{$i}';
+                        content: "0#{$i}";
                     }
                 } @else {
                     button:nth-child(#{$i}):before {
-                        content: '#{$i}';
+                        content: "#{$i}";
                     }
                 }
             }
@@ -906,7 +908,8 @@
             }
         }
 
-        &-content, &-buy {
+        &-content,
+        &-buy {
             margin-bottom: 0;
         }
 
@@ -987,7 +990,7 @@
 
         &-media {
             .product-detail & {
-                border-right: $border-width solid $border-color;;
+                border-right: $border-width solid $border-color;
             }
         }
     }
@@ -1037,7 +1040,7 @@
 
         &-media {
             .cms-block-gallery-buybox & {
-                border-right: $border-width solid $border-color;;
+                border-right: $border-width solid $border-color;
             }
         }
     }
@@ -1136,8 +1139,8 @@
         }
 
         &-form-container {
-            div[data-swag-paypal-express-button='true'],
-            div[data-swag-paypal-installment-banner='true'] {
+            div[data-swag-paypal-express-button="true"],
+            div[data-swag-paypal-installment-banner="true"] {
                 @include make-col(8);
                 padding-left: 5px;
             }
@@ -1195,7 +1198,7 @@
     }
 }
 
-[class*='product-detail-buy'] {
+[class*="product-detail-buy"] {
     div[itemprop="offers"] {
         display: flex;
         flex-direction: column;
@@ -1207,7 +1210,8 @@
     order: -1;
 }
 
-.offcanvas { // TODO: will be removed after EMT-21 done
+.offcanvas {
+    // TODO: will be removed after EMT-21 done
     width: 100% !important;
 
     @include media-breakpoint-up(md) {
@@ -1299,11 +1303,10 @@
         p {
             margin-bottom: 4px;
         }
-
     }
 
     .product-detail-review-content {
-        @if (feature('V6_5_0_0')) {
+        @if (feature("V6_5_0_0")) {
         } @else {
             margin: 0;
         }
@@ -1356,7 +1359,8 @@
     }
 
     .multi-collapse {
-        &.show, &.collapsing {
+        &.show,
+        &.collapsing {
             ~ .product-detail-review-actions,
             ~ .product-detail-review-list-content {
                 display: none;
@@ -1380,7 +1384,7 @@
     [data-swag-paypal-installment-banner="true"] {
         @extend .mb-0;
     }
-    @if (feature('V6_5_0_0')) {
+    @if (feature("V6_5_0_0")) {
         > .row {
             @extend .mb-0;
         }
