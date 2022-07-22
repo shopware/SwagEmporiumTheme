@@ -207,6 +207,11 @@ $logo-height-lg: 37px;
         height: 100%;
         padding-left: 0;
     }
+
+    > .container {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
 }
 
 .header-cart {
@@ -279,6 +284,11 @@ $logo-height-lg: 37px;
                 top: 4px;
                 right: 0;
             }
+        }
+
+        > .container {
+            padding-left: $container-padding;
+            padding-right: $container-padding;
         }
     }
 
