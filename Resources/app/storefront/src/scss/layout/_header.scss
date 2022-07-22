@@ -77,6 +77,7 @@ $logo-height-lg: 37px;
 
         @include media-breakpoint-up(sm) {
             display: block;
+            width: auto;
         }
     }
 }
@@ -112,19 +113,6 @@ $logo-height-lg: 37px;
         }
     }
 
-    @include media-breakpoint-up(lg) {
-        position: absolute;
-
-        .header-search-form {
-            width: 100%;
-
-            &,
-            .input-group {
-                max-width: $input-group-width-lg;
-            }
-        }
-    }
-
     &-form {
         z-index: 100;
         width: 100%;
@@ -137,6 +125,38 @@ $logo-height-lg: 37px;
     }
 }
 
+.header-search-col {
+    margin-left: 24px;
+
+    .collapse:not(.show) {
+        display: none;
+    }
+}
+
+#searchCollapse {
+    position: absolute;
+    width: 100%;
+    top: 100%;
+    left: 0;
+    padding: 10px 20px;
+    background: $white;
+    border-top: $border-width solid $border-color;
+
+    .icon {
+        color: $top-and-bottom-color;
+    }
+}
+
+.header-logo-col {
+    img {
+        max-height: $logo-height-md;
+    }
+}
+
+.header-search-col,
+.header-search-form {
+    position: static;
+}
 
 .search-toggle-btn {
     .icon {
@@ -213,21 +233,6 @@ $logo-height-lg: 37px;
     }
 }
 
-@include media-breakpoint-up(sm) {
-    .header-logo-col {
-        img {
-            max-height: $logo-height-md;
-        }
-    }
-}
-
-@include media-breakpoint-between(sm, lg) {
-    .header-search-col,
-    .header-search-form {
-        position: static;
-    }
-}
-
 @include media-breakpoint-up(lg) {
     .header-search-form {
         .header-search-input {
@@ -266,35 +271,31 @@ $logo-height-lg: 37px;
 
     .header-search-form {
         justify-content: center;
-        width: 55%;
+        width: 100%;
         display: flex;
+        margin-left: auto;
+        margin-right: auto;
 
         .search-suggest {
             position: absolute;
             top: 100%;
             width: 100%;
         }
-    }
-}
 
-@include media-breakpoint-down(lg) {
-    .header-search-col {
-        .collapse:not(.show) {
-            display: none;
+        &,
+        .input-group {
+            max-width: $input-group-width-lg;
         }
+    }
+
+    .header-search-col .row {
+        align-items: center;
+        flex-wrap: nowrap;
     }
 
     #searchCollapse {
-        position: absolute;
-        width: 100%;
-        top: 100%;
-        left: 0;
-        padding: 10px $grid-gutter-width/2;
-        background: $white;
-        border-top: $border-width solid $border-color;
-
-        .icon {
-            color: $top-and-bottom-color;
-        }
+        position: initial;
+        border-top: none;
+        display: block;
     }
 }

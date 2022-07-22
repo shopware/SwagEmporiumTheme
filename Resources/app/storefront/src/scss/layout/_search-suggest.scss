@@ -16,14 +16,14 @@ $search-suggest-max-height-sm: 381px;
 $search-suggest-max-height-md: 515px;
 
 .search-suggest-container {
-    margin: 0;
+    margin: 0 0 20px;
     top: 8px;
     left: 0;
     right: 0;
     border: none;
     position: relative;
     box-shadow: 0 2px 15px rgba(74, 84, 91, 0.13);
-    padding: $search-suggest-padding-sm $search-suggest-padding-sm 5px;
+    padding: $search-suggest-padding-sm $search-suggest-padding-sm;
     max-height: $search-suggest-max-height-sm;
     overflow: auto;
 
