@@ -157,13 +157,22 @@ $logo-height-lg: 37px;
             align-items: center;
 
             .icon {
-                width: 18px;
-                height: 18px;
+                width: 24px;
+                height: 24px;
 
                 > svg {
                     top: 0;
                 }
             }
+        }
+
+        .header-wishlist-badge {
+            width: 15px;
+            height: 15px;
+            font-size: 8px;
+            top: 0;
+            padding: 0;
+            line-height: 15px;
         }
     }
 
@@ -183,8 +192,7 @@ $logo-height-lg: 37px;
         width: 15px;
         height: 15px;
         font-size: 8px;
-        top: 3px;
-        left: 15px;
+        top: 0;
         padding: 0;
         line-height: 15px;
     }
@@ -254,6 +262,11 @@ $logo-height-lg: 37px;
             .btn, &.btn {
                 padding: 10px 10px;
                 font-size: $h5-font-size;
+            }
+
+            .header-wishlist-badge {
+                top: 4px;
+                right: 0;
             }
         }
     }
