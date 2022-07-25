@@ -55,9 +55,16 @@
     }
 }
 
-.payment-methods {
-    max-width: 422px;
-    padding-right: $spacer-sm;
+.payment-methods,
+.shipping-methods {
+    .payment-form-group,
+    .shipping-form-group {
+        margin-bottom: 26px;
+    }
+
+    @include media-breakpoint-up(md) {
+        max-width: 270px;
+    }
 }
 
 @include media-breakpoint-up(md) {

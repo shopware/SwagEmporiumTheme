@@ -44,19 +44,35 @@
         }
     }
 
-    .form-check-input:checked + .form-check-label {
-        strong {
-            font-weight: $font-weight-bold;
-            color: $gray-900;
+    @if (feature('V6_5_0_0')) {
+        .form-check-input:checked + .form-check-label {
+            strong {
+                color: $sw-text-color;
+                font-weight: $font-weight-bold;
+            }
+        }
+    } @else {
+        .custom-control-input:checked + .custom-control-label {
+            strong {
+                color: $sw-text-color;
+            }
         }
     }
 
     .payment-method-description,
     .shipping-method-description {
-        font-size: $font-size-small;
+        font-size: $font-size-base;
+
+        strong {
+            font-weight: $font-weight-normal;
+            @if (not feature('V6_5_0_0')) {
+                line-height: 26px;
+            }
+        }
 
         p {
             margin-bottom: 0;
+            font-size: $font-size-sm;
             color: $smoke-text-color;
         }
     }
@@ -88,6 +104,20 @@
 
         @extend .w-100;
     }
+
+    .checkout-confirm-tos-label {
+        &:before {
+            top: 2px;
+            transform: none;
+            width: 18px;
+            height: 18px;
+        }
+        &:after {
+            top: 3px;
+            transform: none;
+            left: -25px;
+        }
+    }
 }
 
 .card-title__wrapper {
@@ -96,6 +126,21 @@
 
         > .icon svg {
             top: 10px;
+        }
+    }
+}
+
+@include media-breakpoint-up(md) {
+    .is-act-confirmpage,
+    .is-ctl-accountorder {
+        .confirm-product {
+            .cart-header-total-price,
+            .cart-item-total-price,
+            .line-item-tax-price,
+            .line-item-total-price-value {
+                text-align: left;
+                justify-content: flex-start;
+            }
         }
     }
 }
