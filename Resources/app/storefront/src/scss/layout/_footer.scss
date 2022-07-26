@@ -322,10 +322,6 @@ $footer-border-color: #D7DBDF;
     margin-bottom: 30px;
 }
 
-.footer-logos {
-    padding: 0;
-}
-
 .footer-service-menu-link {
     font-weight: $font-weight-normal;
     font-size: 13px;
@@ -356,8 +352,9 @@ $footer-border-color: #D7DBDF;
 }
 
 div[data-swag-paypal-installment-banner="true"] {
-   @include make-col(12);
+    @include make-col(10);
     margin-bottom: $spacer;
+    margin-right: 0;
 }
 
 @include media-breakpoint-up(sm) {
@@ -453,7 +450,8 @@ div[data-swag-paypal-installment-banner="true"] {
     }
 
     div[data-swag-paypal-installment-banner="true"] {
-        @include make-col(8);
+        flex-basis: auto;
+        width: auto;
     }
 }
 
