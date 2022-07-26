@@ -111,7 +111,9 @@
     }
 
     .custom-control-input:checked ~ .custom-control-label {
-        font-weight: $font-weight-bold;
+        strong {
+            font-weight: $font-weight-bold;
+        }
 
         &::after {
             background-image: none;
