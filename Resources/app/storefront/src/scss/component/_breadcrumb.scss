@@ -26,7 +26,8 @@
         color: $gray-300;
     }
 
-    @include media-breakpoint-down(md) {
-        display: none;
+    &.cms-breadcrumb {
+        padding-left: $container-padding;
+        padding-right: $container-padding;
     }
 }

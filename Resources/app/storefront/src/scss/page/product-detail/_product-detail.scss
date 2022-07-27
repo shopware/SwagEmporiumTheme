@@ -69,6 +69,8 @@
 }
 
 .product-detail {
+    padding-top: 24px;
+
     &-headline {
         display: flex;
         flex-direction: column;
@@ -919,11 +921,16 @@
     }
 
     @include media-breakpoint-up(md) {
+        padding-top: 0;
+
         .product-detail-media {
             padding-right: 25px;
+            padding-top: 28px;
         }
+
         .product-detail-buy {
             padding-left: 25px;
+            padding-top: 28px;
         }
 
         &-manufacturer,
@@ -1050,6 +1057,11 @@
             .cms-block-gallery-buybox & {
                 border-right: $border-width solid $border-color;
             }
+        }
+
+        .product-detail-buy,
+        .product-detail-media {
+            padding-top: 50px;
         }
     }
 
