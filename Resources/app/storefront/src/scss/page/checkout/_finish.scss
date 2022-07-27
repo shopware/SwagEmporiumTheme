@@ -56,7 +56,7 @@
     }
 
     .line-item-quantity {
-        margin-bottom: 0;
+        margin-bottom: 8px;
         padding-left: 0;
 
         &-row {
@@ -86,9 +86,90 @@
         padding-top: 34px;
     }
 
+    @if not feature('v6.5.0.0') {
+        .cart-item-quantity-row {
+            display: flex;
+            justify-content: space-between;
+
+            .cart-item-quantity-label {
+                @include make-col(6);
+                margin-bottom: 0;
+            }
+
+            .col-4.col-sm-12 {
+                @include make-col(6);
+            }
+        }
+
+        .cart-item-quantity,
+        .cart-item-tax-price,
+        .cart-item-quantity-label,
+        .cart-item-tax-price-label {
+            color: $gray-400;
+        }
+    }
+
+    .cart-item-total-price-label {
+        font-weight: $font-weight-bold;
+    }
+
+     .cart-item-quantity-label {
+         display: inline-block;
+         text-align: left;
+     }
+
+    .line-item-quantity-row {
+        padding-left: $line-item-img-size + $line-item-space-sm;
+
+        .line-item-quantity {
+            margin-top: 0;
+        }
+    }
+
     @include media-breakpoint-up(md) {
         .checkout .checkout-container {
             padding-top: 50px;
+        }
+
+        .cart-table-header .cart-header-total-price,
+        .line-item-total-price {
+            padding-right: 0;
+        }
+
+        .line-item-quantity-row {
+            &,
+            .line-item-quantity {
+                padding-left: 0 !important;
+                justify-content: start !important;
+            }
+        }
+
+        .line-item-tax-price {
+            text-align: left;
+        }
+
+        @if not feature('v6.5.0.0') {
+            .cart-item-quantity-label {
+                display: none;
+            }
+
+            .cart-item-quantity {
+                padding-left: 0;
+            }
+
+            .cart-item-quantity-row {
+                width: 100%;
+
+                .cart-item-quantity {
+                    justify-content: start !important;
+                }
+            }
+
+            .cart-table-header .cart-header-total-price,
+            .cart-item-total-price,
+            .line-item-total-price {
+                padding-right: 0;
+            }
         }
     }
 
