@@ -2,7 +2,7 @@
   "checkout" : {
     "addPromotionAction" : "Add",
     "finishOrderHeader": "Ihre Bestellung",
-    "addProductHeading": "Produkt über Artikelnummer hinzufügen",
+    "addProductHeading": "Produkt über Produktnummer hinzufügen",
     "shippingCosts": "Versandkosten konfigurieren",
     "continueShopping": "Warenkorb schließen",
     "welcomeBack": "Willkommen!",

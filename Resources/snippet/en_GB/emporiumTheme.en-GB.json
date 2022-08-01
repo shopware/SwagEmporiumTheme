@@ -2,7 +2,7 @@
   "checkout" : {
     "addPromotionAction" : "Add",
     "finishOrderHeader": "Your order",
-    "addProductHeading": "Add Product via article number",
+    "addProductHeading": "Add Product via product number",
     "shippingCosts": "Configure Shipping costs",
     "continueShopping": "Close Cart",
     "welcomeBack": "Welcome!",
