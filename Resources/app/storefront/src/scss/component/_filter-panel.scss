@@ -8,12 +8,6 @@ $icon-check: url('#{$asset-path}/icon/icon-pack/ic-check.svg');
 
     &-wrapper {
         display: block;
-
-        @include media-breakpoint-up(lg) {
-            padding: 24px 0;
-            border-top: $border-width solid $border-color;
-            border-bottom: $border-width solid $border-color;
-        }
     }
 
     &-items-container {

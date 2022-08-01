@@ -13,29 +13,14 @@
     &[class*='level-0'] {
         font-size: $font-size-base;
         line-height: 24px;
-        padding: 18px 0;
 
         > .category-navigation-entry {
+            border-bottom: none;
             > .category-navigation-link {
                 display: flex;
                 align-items: center;
                 justify-content: space-between;
                 gap: 10px;
-                font-weight: $font-weight-bold;
-
-                &:after {
-                    content: "";
-                    background: url('#{$asset-path}/icon/icon-pack/ic-plus.svg') no-repeat center/1.5rem;
-                    height: 14px;
-                    width: 14px;
-                }
-
-                &.in-path,
-                &.is-active {
-                    &:after {
-                        background: url('#{$asset-path}/icon/icon-pack/ic-minus.svg') no-repeat center/1.5rem;
-                    }
-                }
             }
         }
     }
@@ -74,7 +59,7 @@
         .category-navigation {
             .category-navigation-entry {
                 .category-navigation-link {
-                    padding: 0;
+                    padding: 5px 0;
                 }
             }
         }
@@ -82,5 +67,13 @@
 
     .category-navigation-link {
         padding: 10px 0;
+
+        &:not(.in-path):not(.is-active) {
+            color: $smoke-text-color;
+        }
+
+        &.in-path {
+            font-weight: $font-weight-bold;
+        }
     }
 }
