@@ -3,7 +3,7 @@
         background-color: $white;
         text-align: center;
         text-transform: uppercase;
-        font-size: 10px;
+        font-size: 14px;
         padding: $alert-padding-y $alert-padding-x;
         font-weight: $font-weight-bold;
 
@@ -17,7 +17,7 @@
     .alert-#{$color} {
         color: $value;
         background-color: $white;
-        border: $alert-border-width solid $value;
+        border: 2px solid $value;
     }
 }
 
