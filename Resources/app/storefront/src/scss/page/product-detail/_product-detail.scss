@@ -853,13 +853,24 @@
     }
 
     &-tabs-content {
-        .tns-outer {
-            padding-bottom: 180px !important;
+        .product-slider {
+            .tns-ovh {
+                padding: 22px 0;
+            }
+
+            .tns-outer {
+                display: flex;
+                flex-direction: column-reverse;
+            }
         }
 
         .tns-nav {
-            bottom: auto;
-            top: 80%;
+            position: relative;
+            width: 100%;
+            left: 0;
+            transform: unset;
+            text-align: center;
+            margin-bottom: 0;
 
             button {
                 width: auto;
@@ -1006,6 +1017,12 @@
             div[data-swag-paypal-installment-banner='true'] {
                 @include make-col(8);
                 padding-left: 5px;
+            }
+        }
+
+        &-tabs-content {
+            .product-slider {
+                margin: 0 -10px;
             }
         }
     }

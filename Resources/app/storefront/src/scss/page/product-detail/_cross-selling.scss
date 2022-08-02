@@ -11,4 +11,15 @@
         color: $primary;
         border-bottom: 2px solid $primary;
     }
+
+    .card {
+        margin-top: 0;
+    }
+}
+
+.card-tabs {
+    .product-cross-selling-tab-navigation {
+        padding-left: 0;
+        padding-right: 0;
+    }
 }
