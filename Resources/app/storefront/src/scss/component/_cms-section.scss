@@ -32,7 +32,15 @@
 
         @include media-breakpoint-up(lg) {
             .cms-section-sidebar-sidebar-content {
-                max-width: 221px;
+                max-width: 271px;
+
+                > * {
+                    border-bottom: $border-width solid $border-color;
+
+                    &:first-child {
+                        border-bottom: $border-width solid $border-color;
+                    }
+                }
             }
 
             .cms-section-sidebar-main-content {
