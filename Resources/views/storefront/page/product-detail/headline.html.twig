@@ -25,6 +25,11 @@
     {{ parent() }}
 
     {% block clone_page_product_detail_reviews %}
+        {% set remoteClickOptions = {
+            selector: "#review-tab",
+            scrollToElement: true
+        } %}
+
         {% if page.product.ratingAverage > 0 and page.reviews.totalReviews > 0 and config('core.listing.showReview') %}
             <div class="col product-detail-reviews">
 
