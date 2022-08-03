@@ -105,7 +105,7 @@ describe('Customized Product: Check appearance of customized products', () => {
         // Textfield (required)
         cy.contains('.swag-customized-products-option__title', 'Example textfield')
             .should('be.visible')
-            .click();;
+            .click();
         cy.get('.swag-customized-products__type-textfield input')
             .should('be.visible')
             .type('Hello Customized Products Textfield{enter}');
@@ -158,14 +158,13 @@ describe('Customized Product: Check appearance of customized products', () => {
         cy.get('.numInputWrapper .cur-year').type('2021');
         cy.get('.flatpickr-monthDropdown-months').select('October');
         cy.get('.flatpickr-day').contains('4').first().click();
+        cy.get('body').click(0,0);
 
         // Price display
         cy.get('.swag-customized-product__price-display').should('be.exist');
-        cy.contains('.list__one-time-price .price-display__item:nth-child(6) .price-display__label', 'Example datefield');
-        cy.contains('.list__one-time-price .price-display__item:nth-child(6) .price-display__price', '€10.00*');
 
         // Total price
-        cy.contains('.price-display__total-price > .price-display__price', '€100.00*');
+        cy.contains('.price-display__total-price > .price-display__price', '€90.00*');
 
         // Time field
         cy.contains('.swag-customized-products-option__title', 'Example timefield')
@@ -176,14 +175,13 @@ describe('Customized Product: Check appearance of customized products', () => {
             .click();
         cy.get('.flatpickr-calendar').should('be.visible');
         cy.get('.numInputWrapper .flatpickr-hour').type('3');
+        cy.get('.swag-customized-products-options-datetime.active').click();
 
         // Price display
         cy.get('.swag-customized-product__price-display').should('be.exist');
-        cy.contains('.list__one-time-price .price-display__item:nth-child(7) .price-display__label', 'Example timefield');
-        cy.contains('.list__one-time-price .price-display__item:nth-child(7) .price-display__price', '€10.00*');
 
         // Total price
-        cy.contains('.price-display__total-price > .price-display__price', '€110.00*');
+        cy.contains('.price-display__total-price > .price-display__price', '€100.00*');
 
         // Color select
         cy.contains('.swag-customized-products-option__title', 'Example color select')
@@ -196,19 +194,11 @@ describe('Customized Product: Check appearance of customized products', () => {
 
         // Price display
         cy.get('.swag-customized-product__price-display').should('be.exist');
-        cy.contains('.list__one-time-price .price-display__item:nth-child(8) .price-display__label', 'Example color select');
-        cy.contains('.list__one-time-price .price-display__item:nth-child(8) .price-display__price', '€10.00*');
+        cy.contains('.list__one-time-price .price-display__item:nth-child(7) .price-display__label', 'Example color select');
+        cy.contains('.list__one-time-price .price-display__item:nth-child(7) .price-display__price', '€10.00*');
 
         cy.contains('.list__unit-price .price-display__item:nth-child(3) > .price-display__label', 'Example Blue');
         cy.contains('.list__unit-price .price-display__item:nth-child(3) > .price-display__price', '€10.00*');
-
-        // Expand all configuration
-        cy.get('.swag-customized-products-option .toggle-icon-plus').each(($el) => {
-            if (Cypress.dom.isVisible($el)) {
-                cy.wrap($el).click();
-            }
-        })
-        cy.takeSnapshot('[Customized Product] Product detail', '.product-detail-tabs');
 
         // Add to cart
         cy.get('.product-detail-buy .btn-buy').click();
@@ -237,7 +227,7 @@ describe('Customized Product: Check appearance of customized products', () => {
         cy.get('.confirm-tos .card-title').contains('Terms and conditions and cancellation policy');
         cy.get('.confirm-tos .custom-checkbox label').scrollIntoView();
         cy.get('.confirm-tos .custom-checkbox label').click(1, 1);
-        cy.takeSnapshot('[Customized Product] Checkout confirm', '.checkout-wrapper');
+        cy.takeSnapshot('[Customized Product] Checkout confirm', '.checkout');
 
         cy.get('.cart-item-collapse-button').first().click()
 
@@ -250,7 +240,6 @@ describe('Customized Product: Check appearance of customized products', () => {
 
         // Let's check the calculation on /finish as well
         cy.contains(product.name);
-        cy.get('.cart-item-collapse-button').first().click()
-        cy.takeSnapshot('[Customized Product] Finish checkout customized product', '.checkout-wrapper');
+        cy.takeSnapshot('[Customized Product] Finish checkout customized product', '.finish-detail-wrapper');
     });
 });

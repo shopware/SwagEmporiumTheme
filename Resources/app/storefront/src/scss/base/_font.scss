@@ -3,6 +3,7 @@
     src: url('#{$asset-path}/font/sen/Sen-Regular.ttf');
     font-style: normal;
     font-weight: 400;
+    font-display: swap;
 }
 
 @font-face {
@@ -10,4 +11,5 @@
     src: url('#{$asset-path}/font/sen/Sen-Bold.ttf');
     font-style: normal;
     font-weight: 700;
+    font-display: swap;
 }
