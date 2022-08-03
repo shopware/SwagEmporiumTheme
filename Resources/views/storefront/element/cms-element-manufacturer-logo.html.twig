@@ -1,6 +1,9 @@
 {% sw_extends '@Storefront/storefront/element/cms-element-manufacturer-logo.html.twig' %}
 
 {% block element_manufacturer_logo_link %}
-    {{"detail.manufacturerLabel"|trans|trim}}
+    {% if element.data.manufacturer %}
+        {{"detail.manufacturerLabel"|trans|trim}}
+    {% endif %}
+
     {{ parent() }}
 {% endblock %}

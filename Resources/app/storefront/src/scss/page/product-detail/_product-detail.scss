@@ -136,6 +136,10 @@
 
     &-name {
         width: 100%;
+
+        .cms-element-product-name & {
+            margin-bottom: 0;
+        }
     }
 
     &-name,
@@ -238,23 +242,6 @@
 
         .product-detail-badge {
             display: none;
-        }
-
-        .product-wishlist {
-            position: static;
-            height: 42px;
-            width: 42px;
-
-            &-action {
-                height: 100%;
-                width: 100%;
-                justify-content: center;
-                background-color: $gray-100;
-
-                svg {
-                    top: 0;
-                }
-            }
         }
 
         .product-detail-review-info {
@@ -703,6 +690,7 @@
 
         &-rating-input {
             flex-wrap: wrap;
+            justify-content: flex-start;
         }
 
         &-stars {
@@ -719,8 +707,20 @@
             flex-direction: column;
             align-items: center;
             padding: 24px 10px;
-            flex-basis: 18%;
+            flex-basis: calc(100% / 3);
             flex-shrink: 0;
+
+            @include media-breakpoint-up(md) {
+                flex-basis: calc(100% / 5);
+            }
+
+            @include media-breakpoint-up(lg) {
+                flex-basis: calc(100% / 3);
+            }
+
+            @include media-breakpoint-up(xl) {
+                flex-basis: calc(100% / 5);
+            }
         }
 
         &-rating-text {
@@ -1087,10 +1087,6 @@
             padding-right: 75px;
         }
 
-        .product-detail-buy {
-            padding-left: 75px;
-        }
-
         &-name,
         &-price {
             font-size: $h3-font-size;
@@ -1141,11 +1137,6 @@
                 text-align: right;
             }
 
-            .product-wishlist {
-                height: 60px;
-                width: 60px;
-            }
-
             .product-detail-badge {
                 width: auto;
                 padding: 3px 20px 3px 15px;
@@ -1158,20 +1149,6 @@
                 + .product-detail-list-price-wrapper {
                     order: 0;
                 }
-            }
-
-            .buy-widget-container {
-                .btn-buy .icon {
-                    display: none;
-                }
-            }
-
-            .btn-buy {
-                font-size: $font-size-base;
-                height: 60px;
-                line-height: normal;
-                padding-bottom: 10px;
-                padding-top: 10px;
             }
         }
 
@@ -1230,7 +1207,7 @@
 
     @include media-breakpoint-up(xxl) {
         &-review-form-rating-stars {
-            padding: 24px;
+            padding: 24px 8px;
         }
     }
 }
@@ -1428,6 +1405,72 @@
     } @else {
         > .form-row {
             @extend .mb-0;
+        }
+    }
+}
+
+.buy-widget {
+    .product-wishlist {
+        position: static;
+        height: 42px;
+        width: 42px;
+
+        &-action {
+            height: 100%;
+            width: 100%;
+            justify-content: center;
+            background-color: $gray-100;
+
+            svg {
+                top: 0;
+            }
+        }
+    }
+}
+
+@include media-breakpoint-up(md) {
+    .product-detail-media {
+        > .cms-element-buy-box {
+            padding-right: 25px;
+        }
+    }
+
+    .product-detail-buy {
+        .cms-element-image-gallery {
+            .gallery-slider-item-container {
+                padding-left: 20px;
+            }
+        }
+    }
+}
+
+@include media-breakpoint-up(xl) {
+    .buy-widget {
+        .product-wishlist {
+            height: 60px;
+            width: 60px;
+        }
+
+        .btn-buy {
+            font-size: $font-size-base;
+            height: 60px;
+            line-height: normal;
+            padding-bottom: 10px;
+            padding-top: 10px;
+        }
+
+        .buy-widget-container {
+            .btn-buy .icon {
+                display: none;
+            }
+        }
+    }
+
+    .product-detail-buy {
+        .cms-element-image-gallery {
+            .gallery-slider-item-container {
+                padding-left: 50px;
+            }
         }
     }
 }
