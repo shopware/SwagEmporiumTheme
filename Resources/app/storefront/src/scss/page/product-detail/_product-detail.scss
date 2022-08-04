@@ -1409,7 +1409,8 @@
     }
 }
 
-.buy-widget {
+.product-detail-form-container,
+.swag-cms-extensions-quickview-content  {
     .product-wishlist {
         position: static;
         height: 42px;
@@ -1445,7 +1446,8 @@
 }
 
 @include media-breakpoint-up(xl) {
-    .buy-widget {
+    .product-detail-form-container,
+    .swag-cms-extensions-quickview-content {
         .product-wishlist {
             height: 60px;
             width: 60px;

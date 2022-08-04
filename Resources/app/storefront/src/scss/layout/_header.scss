@@ -32,7 +32,7 @@ $logo-height-lg: 37px;
     }
 
     &-cart-total {
-        color: $top-and-bottom-color;
+        color: currentColor;
         font-size: $btn-font-size;
         font-weight: $font-weight-bold;
         margin-left: 13px;
@@ -48,7 +48,7 @@ $logo-height-lg: 37px;
 
     &-main {
         .btn .icon {
-            color: $sw-text-color;
+            color: currentColor;
         }
     }
 }
@@ -106,12 +106,8 @@ $logo-height-lg: 37px;
     }
 
     &-icon {
-        .icon {
-            color: $top-and-bottom-color;
-
-            > svg {
-                top: 0;
-            }
+        .icon > svg {
+            top: 0;
         }
 
         &:hover {
@@ -147,10 +143,6 @@ $logo-height-lg: 37px;
     padding: 10px 20px;
     background: $white;
     border-top: $border-width solid $border-color;
-
-    .icon {
-        color: $top-and-bottom-color;
-    }
 }
 
 .header-logo-col {
@@ -162,12 +154,6 @@ $logo-height-lg: 37px;
 .header-search-col,
 .header-search-form {
     position: static;
-}
-
-.search-toggle-btn {
-    .icon {
-        color: $top-and-bottom-color;
-    }
 }
 
 .header-main {
@@ -235,8 +221,6 @@ $logo-height-lg: 37px;
 
     &-icon {
         .icon {
-            color: $top-and-bottom-color;
-
             svg path {
                 fill: none;
             }
@@ -245,10 +229,6 @@ $logo-height-lg: 37px;
 
     &:hover {
         color: $sw-color-brand-primary;
-
-        .header-cart-total {
-            color: $sw-color-brand-primary;
-        }
     }
 }
 

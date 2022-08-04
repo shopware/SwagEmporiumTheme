@@ -359,7 +359,12 @@ hr.product-box-divider {
             .icon {
                 width: 20px;
                 height: 20px;
+                color: $sw-text-color;
             }
+        }
+
+        .btn-buy .icon {
+            color: $sw-color-buy-button-text;
         }
     }
 

@@ -52,6 +52,10 @@ https://getbootstrap.com/docs/4.3/components/navs/
         .main-navigation-link-text {
             border-bottom: none;
             padding-bottom: 24px;
+
+            .icon {
+                color: currentColor;
+            }
         }
     }
 
