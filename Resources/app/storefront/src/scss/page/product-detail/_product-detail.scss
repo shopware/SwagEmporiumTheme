@@ -727,6 +727,7 @@
             margin-left: 0;
             margin-bottom: 11px;
             white-space: nowrap;
+            font-size: 10px;
         }
 
         &-rating-label,
@@ -1079,6 +1080,10 @@
         .product-detail-buy,
         .product-detail-media {
             padding-top: 50px;
+        }
+
+        &-review-form-rating-text {
+            font-size: 14px;
         }
     }
 
