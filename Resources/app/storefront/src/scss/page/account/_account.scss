@@ -24,7 +24,7 @@
 
     .account-overview,
     .account-address {
-        color: $smoke-text-color;
+        color: $gray-400;
     }
 
     .account-welcome {
@@ -32,7 +32,7 @@
         padding-bottom: 14px;
         border-bottom: $border-width solid $border-color;
         font-size: 13px;
-        color: $smoke-text-color;
+        color: $gray-400;
 
         p {
             margin-bottom: 0;
@@ -57,7 +57,7 @@
     }
 
     .account-aside-item {
-        color: $smoke-text-color;
+        color: $gray-400;
         padding-top: 7px;
         padding-bottom: 7px;
         line-height: 21px;
@@ -177,6 +177,6 @@
         font-size: 13px;
         line-height: 21px;
         margin: $spacer-xs 0 0;
-        color: $smoke-text-color;
+        color: $gray-400;
     }
 }
