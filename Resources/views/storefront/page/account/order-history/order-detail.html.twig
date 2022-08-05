@@ -6,7 +6,7 @@
              id="order{{ order.orderNumber }}">
             <div class="order-detail-content">
                 <div class="row">
-                    <div class="col-12 col-xxl-7">
+                    <div class="col-12 {% if feature('v6.5.0.0') %}col-xxl-7{% else %}col-xl-7{% endif %}">
                         {{ block('page_account_order_documents_table') }}
 
                         {{ block('page_account_order_item_detail_table_header') }}
@@ -18,7 +18,7 @@
                         {% endif %}
                     </div>
 
-                    <div class="col-12 col-xxl-5">
+                    <div class="col-12 {% if feature('v6.5.0.0') %}col-xxl-5{% else %}col-xl-5{% endif %}">
                         {{ block('page_account_order_item_detail_table_footer') }}
                     </div>
                 </div>
