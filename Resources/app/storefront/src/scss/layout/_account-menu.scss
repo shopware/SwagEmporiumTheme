@@ -21,9 +21,18 @@ $account-menu-spacing: 24px;
             align-items: center;
             justify-content: space-between;
             padding: 11px;
+            margin-bottom: 0;
 
             .icon svg {
                 top: 7px;
+            }
+
+            @if (not feature('V6_5_0_0')) {
+                color: $top-and-bottom-color;
+
+                &.is-active {
+                    color: $sw-color-brand-primary;
+                }
             }
         }
     }
@@ -124,5 +133,10 @@ $account-menu-spacing: 24px;
         font-size: $h4-font-size;
         font-weight: $font-weight-base;
         text-transform: capitalize;
+    }
+
+    .account-aside-footer {
+        margin-top: 0;
+        border-top: none;
     }
 }
