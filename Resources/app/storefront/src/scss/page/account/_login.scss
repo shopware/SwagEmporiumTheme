@@ -2,6 +2,7 @@ $account-login-register-spacer: 10px;
 $account-login-register-spacer-md: 15px;
 $account-login-register-spacer-lg: 34px;
 
+.is-ctl-register,
 .is-act-loginpage {
     .form-label,
     .login-cancel {
@@ -298,13 +299,15 @@ $account-login-register-spacer-lg: 34px;
         }
     }
 
-    @include media-breakpoint-up(xxl) {
-        .account-login-container {
-            padding-right: 165px;
-        }
+    @if feature('v6.5.0.0') {
+        @include media-breakpoint-up(xxl) {
+            .account-login-container {
+                padding-right: 165px;
+            }
 
-        .account-register-container {
-            padding-left: 165px;
+            .account-register-container {
+                padding-left: 165px;
+            }
         }
     }
 }

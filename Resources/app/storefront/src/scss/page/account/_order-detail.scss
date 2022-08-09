@@ -113,8 +113,8 @@
     }
 
     .order-detail-content-footer {
-        margin-left: 14px;
-        margin-right: 14px;
+        margin-left: 20px;
+        margin-right: 20px;
     }
 
     @if (feature('v6.5.0.0')) {
@@ -360,5 +360,117 @@
 
     .order-item-label {
         display: none;
+    }
+}
+
+@if not feature('v6.5.0.0') {
+    .is-ctl-accountprofile {
+        .order-item-detail .collapse {
+            padding: 0;
+        }
+    }
+
+    .is-ctl-accountprofile,
+    .is-ctl-accountorder {
+        .order-table-header-order-number {
+            @include make-col(12);
+            margin-left: 0;
+            margin-bottom: 8px;
+        }
+
+        .order-table-header-order-table-body {
+            margin-top: 5px;
+
+            .order-table-header-order-table-body-cell:not(:last-child) {
+                @include make-col(12);
+            }
+        }
+
+        .order-detail-content {
+            padding-top: 24px;
+        }
+
+        .order-detail-content-header {
+            display: none;
+            border: none;
+        }
+
+        .order-detail-item-product {
+            .order-detail-content-row {
+                border: none;
+                font-size: $btn-font-size;
+            }
+
+            &:first-child {
+                .order-detail-content-row {
+                    border-top: $border-width solid $border-color;
+                }
+            }
+
+            .order-item-detail-list-item-divider {
+                margin-bottom: 0;
+            }
+
+            .order-item-name {
+                padding-right: 20px;
+            }
+
+            .order-item-label {
+                display: inline-block;
+            }
+
+            .order-item-quantity-label,
+            .order-item-price-label {
+                font-weight: $font-weight-base;
+            }
+        }
+
+        @include media-breakpoint-up(lg) {
+            .order-detail-content-header {
+                display: block;
+
+                .order-detail-content-header-cell {
+                    padding-left: 0;
+                    padding-right: 0;
+                }
+            }
+
+            .order-detail-item-product {
+                .order-item-label {
+                    display: none;
+                }
+
+                .order-item-image {
+                    @include make-col(1);
+                    position: initial;
+                    min-width: 90px;
+                    flex-basis: 90px;
+
+                    img {
+                        width: 90px;
+                        height: 90px;
+                    }
+                }
+
+                .order-item-name {
+                    width: calc(50% - 90px);
+                    flex-basis: calc(50% - 90px);
+                    padding-right: 10px;
+                    margin-left: 0;
+                    padding-left: 24px;
+                }
+
+                .order-item-quantity,
+                .order-item-price,
+                .order-item-total {
+                    @include make-col(2);
+                    margin-left: 0;
+                }
+
+                .order-item-total {
+                    text-align: right;
+                }
+            }
+        }
     }
 }
