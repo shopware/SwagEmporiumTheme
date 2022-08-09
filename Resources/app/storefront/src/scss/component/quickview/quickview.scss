@@ -46,18 +46,19 @@ $swag-cms-extensions-carousel-icon-size: 20px;
         }
     }
 
-    div[data-swag-paypal-installment-banner="true"] {
+    div[data-swag-paypal-installment-banner='true'] {
         margin-top: -7px;
     }
 
-    div[data-swag-paypal-express-button="true"] {
+    div[data-swag-paypal-express-button='true'] {
         margin-top: 8px;
     }
 }
 
 #swag-cms-extensions-quickview-carousel {
     .carousel-control {
-        &-prev, &-next {
+        &-prev,
+        &-next {
             background-color: transparent;
 
             .icon {
@@ -172,9 +173,9 @@ $swag-cms-extensions-carousel-icon-size: 20px;
 }
 
 .swag-cms-extensions-quickview-content-right {
-   > .swag-cms-extensions-quickview-header {
-       @extend .d-none;
-   }
+    > .swag-cms-extensions-quickview-header {
+        @extend .d-none;
+    }
 }
 
 .swag-cms-extensions-quickview-header {
@@ -325,7 +326,8 @@ $swag-cms-extensions-carousel-icon-size: 20px;
 @include media-breakpoint-up(xl) {
     #swag-cms-extensions-quickview-carousel {
         .carousel-control {
-            &-prev, &-next {
+            &-prev,
+            &-next {
                 top: 50%;
                 transform: translate(0, -50%);
 

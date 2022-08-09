@@ -9,7 +9,7 @@
         align-items: center;
 
         &-btn {
-            &:after {
+            &::after {
                 content: none;
             }
 

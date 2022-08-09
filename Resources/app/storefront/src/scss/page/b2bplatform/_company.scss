@@ -21,8 +21,8 @@
 
         .is--assignment-tree {
             .custom-control-label {
-                &:before,
-                &:after {
+                &::before,
+                &::after {
                     top: 13px;
                 }
             }

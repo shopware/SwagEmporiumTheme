@@ -1,7 +1,7 @@
 // Header search
 $input-group-width-lg: 725px !default;
 $input-group-spacer: 100px;
-$input-group-border-color: #D7DBDF !default;
+$input-group-border-color: #d7dbdf !default;
 
 $logo-width-sm: 141px;
 $logo-width-md: 128px;
@@ -24,6 +24,7 @@ $logo-height-lg: 37px;
 
         img {
             max-width: $logo-width-sm;
+            max-height: $logo-height-md;
         }
     }
 
@@ -44,12 +45,60 @@ $logo-height-lg: 37px;
 
     &-search-col {
         position: unset;
+        margin-left: 24px;
+
+        .collapse:not(.show) {
+            display: none;
+        }
+    }
+}
+
+.header-main {
+    position: relative;
+    border-bottom: $border-width solid $border-color;
+
+    .header-actions-btn {
+        .btn,
+        &.btn {
+            padding: 4px 8px;
+            font-size: $h6-font-size;
+            font-weight: $font-weight-normal;
+            display: flex;
+            align-items: center;
+
+            .icon {
+                width: 24px;
+                height: 24px;
+
+                > svg {
+                    top: 0;
+                }
+            }
+        }
+
+        .header-wishlist-badge {
+            width: 15px;
+            height: 15px;
+            font-size: 8px;
+            top: 0;
+            padding: 0;
+            line-height: 15px;
+        }
     }
 
-    &-main {
-        .btn .icon {
-            color: currentColor;
-        }
+    .nav-main-toggle,
+    .nav-main-toggle-btn {
+        height: 100%;
+        padding-left: 0;
+    }
+
+    > .container {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    .btn .icon {
+        color: currentColor;
     }
 }
 
@@ -74,7 +123,7 @@ $logo-height-lg: 37px;
         margin-right: 14px;
 
         svg {
-            top: 0
+            top: 0;
         }
     }
 
@@ -127,14 +176,6 @@ $logo-height-lg: 37px;
     }
 }
 
-.header-search-col {
-    margin-left: 24px;
-
-    .collapse:not(.show) {
-        display: none;
-    }
-}
-
 #searchCollapse {
     position: absolute;
     width: 100%;
@@ -145,59 +186,9 @@ $logo-height-lg: 37px;
     border-top: $border-width solid $border-color;
 }
 
-.header-logo-col {
-    img {
-        max-height: $logo-height-md;
-    }
-}
-
 .header-search-col,
 .header-search-form {
     position: static;
-}
-
-.header-main {
-    position: relative;
-    border-bottom: $border-width solid $border-color;
-
-    .header-actions-btn {
-        .btn, &.btn {
-            padding: 4px 8px;
-            font-size: $h6-font-size;
-            font-weight: $font-weight-normal;
-            display: flex;
-            align-items: center;
-
-            .icon {
-                width: 24px;
-                height: 24px;
-
-                > svg {
-                    top: 0;
-                }
-            }
-        }
-
-        .header-wishlist-badge {
-            width: 15px;
-            height: 15px;
-            font-size: 8px;
-            top: 0;
-            padding: 0;
-            line-height: 15px;
-        }
-    }
-
-    .nav-main-toggle,
-    .nav-main-toggle-btn {
-        height: 100%;
-        padding-left: 0;
-    }
-
-    > .container {
-        padding-left: 16px;
-        padding-right: 16px;
-    }
 }
 
 .header-cart {
@@ -234,6 +225,23 @@ $logo-height-lg: 37px;
 
 @include media-breakpoint-up(lg) {
     .header-search-form {
+        justify-content: center;
+        width: 100%;
+        display: flex;
+        margin-left: auto;
+        margin-right: auto;
+
+        .search-suggest {
+            position: absolute;
+            top: 100%;
+            width: 100%;
+        }
+
+        &,
+        .input-group {
+            max-width: $input-group-width-lg;
+        }
+
         .header-search-input {
             padding: 15px 20px;
         }
@@ -255,8 +263,9 @@ $logo-height-lg: 37px;
     .header-main {
         .menu-button,
         .header-actions-btn {
-            .btn, &.btn {
-                padding: 10px 10px;
+            .btn,
+            &.btn {
+                padding: 10px;
                 font-size: $h5-font-size;
             }
 
@@ -275,25 +284,6 @@ $logo-height-lg: 37px;
     .header-logo-col {
         img {
             max-height: $logo-height-lg;
-        }
-    }
-
-    .header-search-form {
-        justify-content: center;
-        width: 100%;
-        display: flex;
-        margin-left: auto;
-        margin-right: auto;
-
-        .search-suggest {
-            position: absolute;
-            top: 100%;
-            width: 100%;
-        }
-
-        &,
-        .input-group {
-            max-width: $input-group-width-lg;
         }
     }
 

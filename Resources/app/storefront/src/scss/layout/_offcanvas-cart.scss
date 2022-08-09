@@ -10,6 +10,12 @@
         }
 
         &-quantity {
+            margin-bottom: 0;
+
+            &-row {
+                margin-bottom: 15px;
+            }
+
             &-select-wrapper {
                 width: 100%;
             }
@@ -34,17 +40,10 @@
         }
     }
 
-    .line-item-quantity {
-        margin-bottom: 0;
-
-        &-row {
-            margin-bottom: 15px;
-        }
-    }
-
     @if (not feature('v6.5.0.0')) {
         .cart-item-price {
             margin-left: 0;
+            text-align: left;
 
             .cart-item-reference-price {
                 display: block;
@@ -63,10 +62,6 @@
             text-align: left;
 
             @extend .col-12;
-        }
-
-        .cart-item-price {
-            text-align: left;
         }
 
         .cart-item-details {

@@ -34,18 +34,21 @@
             .cms-section-sidebar-sidebar-content {
                 max-width: 271px;
 
-                > * {
+                > .cms-block {
                     border-bottom: $border-width solid $border-color;
-
-                    &:first-child {
-                        border-bottom: $border-width solid $border-color;
-                    }
                 }
             }
 
             .cms-section-sidebar-main-content {
                 padding-left: $grid-gutter-width / 2;
                 margin-left: auto;
+            }
+
+            .cms-block-category-navigation {
+                + .cms-block-sidebar-filter {
+                    padding-top: 24px;
+                    padding-bottom: 24px;
+                }
             }
         }
     }

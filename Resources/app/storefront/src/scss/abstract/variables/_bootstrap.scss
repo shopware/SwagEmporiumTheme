@@ -22,12 +22,12 @@ $secondary-darken: darken($sw-color-brand-secondary, 10%) !default; //#9fd1d7
 // Color system
 $gray-100: lighten($sw-border-color, 10%) !default; //#f8f9fa
 $gray-200: $sw-border-color !default; //#dadfe5
-$gray-300: #D9DAE2 !default;
+$gray-300: #d9dae2 !default;
 $gray-400: lighten($sw-text-color, 40%) !default; //#767d97
-$gray-500: #F3F5F6 !default;
-$gray-600: #2C3E50 !default;
+$gray-500: #f3f5f6 !default;
+$gray-600: #2c3e50 !default;
 $gray-700: lighten($sw-text-color, 70%) !default; //#cdd0d9
-$gray-800: #223CED !default;
+$gray-800: #223ced !default;
 $gray-900: $sw-text-color !default; //#1c1e25
 
 // Typography
@@ -70,7 +70,7 @@ $input-bg: #fff !default;
 $input-color: $sw-text-color !default;
 $input-border-color: $gray-300 !default;
 $input-placeholder-color: $gray-400 !default;
-$input-padding-x: .9rem !default;
+$input-padding-x: 0.9rem !default;
 $input-padding-y: 13px !default;
 $input-font-size: 12px !default;
 
@@ -106,7 +106,7 @@ $custom-control-indicator-focus-box-shadow: none !default;
 $custom-checkbox-indicator-icon-checked: url('#{$asset-path}/icon/icon-pack/ic-check.svg') !default;
 
 $custom-raido-indicator-checked-color: #fff;
-$custom-radio-indicator-icon-checked: str-replace(url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='#{$custom-raido-indicator-checked-color}'/%3e%3c/svg%3e"), "#", "%23") !default;
+$custom-radio-indicator-icon-checked: str-replace(url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='#{$custom-raido-indicator-checked-color}'/%3e%3c/svg%3e"), '#', '%23') !default;
 
 $custom-switch-width: 1.75rem;
 $custom-switch-indicator-size: 0.625rem;

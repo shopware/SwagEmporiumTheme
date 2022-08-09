@@ -15,7 +15,7 @@ export default class EmtFilterRatingSelectPlugin extends FilterRatingSelectPlugi
 
         if (currentRating) {
             let endSnippet = this.options.snippets.filterRatingActiveLabelEnd;
-            if (parseInt(currentRating) === 1) {
+            if (parseInt(currentRating, 10) === 1) {
                 endSnippet = this.options.snippets.filterRatingActiveLabelEndSingular;
             }
 
@@ -24,7 +24,7 @@ export default class EmtFilterRatingSelectPlugin extends FilterRatingSelectPlugi
                         ${currentRating}/${this.options.maxPoints}
                         ${endSnippet}`,
                 id: 'rating',
-                currentRatingPercent: parseInt(currentRating/this.options.maxPoints*100)
+                currentRatingPercent: parseInt(currentRating/this.options.maxPoints*100, 10)
             });
         } else {
             labels = [];

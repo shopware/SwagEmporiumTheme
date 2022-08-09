@@ -10,7 +10,7 @@
 
     .checkout-aside-container {
         background-color: $secondary-lighten-150;
-        padding: 34px 24px 24px 24px;
+        padding: 34px 24px 24px;
     }
 
     .checkout-aside-summary {
@@ -79,9 +79,7 @@
 
     .payment-method-image {
         max-height: 50px;
-    }
 
-    .payment-method-image {
         &::before {
             content: '';
             display: block;
@@ -106,13 +104,14 @@
     }
 
     .checkout-confirm-tos-label {
-        &:before {
+        &::before {
             top: 2px;
             transform: none;
             width: 18px;
             height: 18px;
         }
-        &:after {
+
+        &::after {
             top: 3px;
             transform: none;
             left: -25px;
@@ -153,7 +152,7 @@
         }
 
         .checkout-aside-container {
-            padding: 44px 34px 34px 34px;
+            padding: 44px 34px 34px;
         }
 
         .confirm-payment-shipping {

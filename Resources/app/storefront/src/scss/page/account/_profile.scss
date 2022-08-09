@@ -9,6 +9,8 @@
 
     .account-deleting {
         margin-bottom: 30px;
+        color: $smoke-text-color;
+        border-top: $border-width solid $border-color;
     }
 
     .contact-type {
@@ -32,7 +34,7 @@
         gap: 30px;
         justify-content: space-between;
         flex-direction: column-reverse;
-        margin-top: 0px;
+        margin-top: 0;
 
         .account-profile-required-info {
             margin-bottom: 0;
@@ -59,7 +61,8 @@
         margin-bottom: 35px;
     }
 
-    .account-profile-required-info, .text-muted {
+    .account-profile-required-info,
+    .text-muted {
         display: flex;
         align-items: center;
         gap: 8px;
@@ -71,17 +74,13 @@
         }
     }
 
-    .account-deleting {
-        color: $smoke-text-color;
-        border-top: $border-width solid $border-color;
-    }
-
     .account-profile-mail {
         color: $smoke-text-color;
     }
 
     .confirm-delete-account-modal {
-        .modal-body, h6 {
+        .modal-body,
+        h6 {
             color: $smoke-text-color;
             font-weight: $font-weight-normal;
         }

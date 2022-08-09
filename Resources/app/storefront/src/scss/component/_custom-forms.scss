@@ -26,22 +26,22 @@
 
     .custom-control-input:disabled {
         &:checked ~ .custom-control-label {
-            &:after {
+            &::after {
                 background-color: $gray-700;
             }
 
-            &:before {
+            &::before {
                 border-color: $custom-control-indicator-checked-disabled-bg;
             }
         }
 
         .custom-control-label {
-            &:before {
+            &::before {
                 background-color: $custom-control-indicator-checked-disabled-bg;
                 border-color: $custom-control-indicator-checked-disabled-bg;
             }
 
-            &:after {
+            &::after {
                 background-color: $gray-700;
             }
         }
@@ -95,7 +95,7 @@
     .custom-control-label {
         cursor: pointer;
 
-        &:before {
+        &::before {
             top: 4px;
         }
     }

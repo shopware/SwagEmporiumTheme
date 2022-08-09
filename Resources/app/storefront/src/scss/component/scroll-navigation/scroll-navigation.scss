@@ -1,7 +1,7 @@
 $swag-scroll-navigation-menu-border-radius: 1px;
 $swag-scroll-navigation-menu-border-radius-xl: 50px;
-$swag-scroll-navigation-menu-box-shadow: 0px 0px 20px rgba(0, 6, 57, 10%);
-$scroll-navigation-sidebar-line-color: #BDC0C6;
+$swag-scroll-navigation-menu-box-shadow: 0 0 20px rgba(0, 6, 57, 10%);
+$scroll-navigation-sidebar-line-color: #bdc0c6;
 
 .scroll-navigation-sidebar-mobile-menu {
     display: flex;
@@ -24,7 +24,7 @@ $scroll-navigation-sidebar-line-color: #BDC0C6;
         border-right: none;
         position: relative;
 
-        &:after {
+        &::after {
             content: '';
             display: block;
             width: 1px;

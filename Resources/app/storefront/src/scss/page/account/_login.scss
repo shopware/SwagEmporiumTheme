@@ -218,21 +218,21 @@ $account-login-register-spacer-lg: 34px;
                 list-style: none;
                 padding-left: 0;
                 margin-bottom: 0;
+            }
 
-                li {
-                    color: $smoke-text-color;
-                    display: flex;
+            li {
+                color: $smoke-text-color;
+                display: flex;
 
-                    &:before {
-                        content: '';
-                        background-color: $sw-color-brand-primary;;
-                        display: inline-block;
-                        height: 3px;
-                        width: 3px;
-                        border-radius: 50%;
-                        margin-right: $account-login-register-spacer;
-                        margin-top: 8px;
-                    }
+                &::before {
+                    content: '';
+                    background-color: $sw-color-brand-primary;
+                    display: inline-block;
+                    height: 3px;
+                    width: 3px;
+                    border-radius: 50%;
+                    margin-right: $account-login-register-spacer;
+                    margin-top: 8px;
                 }
             }
         }

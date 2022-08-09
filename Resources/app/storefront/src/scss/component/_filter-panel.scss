@@ -87,6 +87,18 @@ $icon-check: url('#{$asset-path}/icon/icon-pack/ic-check.svg');
                     top: 4px;
                 }
             }
+
+            .global-collapse-plus-icon,
+            .global-collapse-minus-icon {
+                .icon {
+                    height: 14px;
+                    width: 14px;
+                }
+            }
+
+            .global-collapse-plus-icon svg {
+                transform: rotate(180deg);
+            }
         }
 
         .global-collapse-minus-icon {
@@ -106,20 +118,6 @@ $icon-check: url('#{$asset-path}/icon/icon-pack/ic-check.svg');
             margin-left: auto;
         }
 
-        .global-collapse-column-toggle {
-            .global-collapse-plus-icon,
-            .global-collapse-minus-icon {
-                .icon {
-                    height: 14px;
-                    width: 14px;
-                }
-            }
-
-            .global-collapse-plus-icon svg {
-                transform: rotate(180deg);
-            }
-        }
-
         @include media-breakpoint-up(lg) {
             flex-basis: 270px;
             max-width: 270px;
@@ -131,6 +129,11 @@ $icon-check: url('#{$asset-path}/icon/icon-pack/ic-check.svg');
         border-radius: 1px;
         color: $gray-400;
         margin: 0;
+
+        &:hover,
+        &:active {
+            border-color: $primary-darken;
+        }
     }
 
     :is(.filter-active, .filter-reset-all) {
@@ -143,20 +146,13 @@ $icon-check: url('#{$asset-path}/icon/icon-pack/ic-check.svg');
         padding-top: 2px;
     }
 
-    .filter-active {
-        &:hover,
-        &:active {
-            border-color: $primary-darken;
-        }
-    }
-
     .filter-active-remove {
         color: $gray-600;
         font-size: 0 !important;
         width: auto;
 
-        &:after {
-            content: "";
+        &::after {
+            content: '';
             background: url('#{$asset-path}/icon/icon-pack/ic-close.svg') no-repeat center/1rem;
             height: 20px;
             width: 20px;
@@ -242,7 +238,7 @@ $icon-check: url('#{$asset-path}/icon/icon-pack/ic-check.svg');
     margin-top: -2px;
     vertical-align: middle;
 
-    &:after {
+    &::after {
         content: '';
         background-image: $icon-check;
         background-position: center center;
@@ -269,7 +265,7 @@ $icon-check: url('#{$asset-path}/icon/icon-pack/ic-check.svg');
     font-size: 0;
     top: -1px;
 
-    &:before {
+    &::before {
         left: 0;
         position: absolute;
         top: 0;
@@ -289,7 +285,7 @@ $icon-check: url('#{$asset-path}/icon/icon-pack/ic-check.svg');
         height: 12px;
         padding-right: 1px;
 
-        &:before {
+        &::before {
             content: '';
             width: 100%;
             height: 100%;
@@ -325,9 +321,6 @@ $icon-check: url('#{$asset-path}/icon/icon-pack/ic-check.svg');
 
     .filter-panel-offcanvas-title {
         color: $white;
-    }
-
-    .filter-panel-offcanvas-title {
         font-size: 13px;
         font-weight: $font-weight-bold;
     }

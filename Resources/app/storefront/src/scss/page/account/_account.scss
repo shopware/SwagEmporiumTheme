@@ -78,11 +78,11 @@
 
     @include media-breakpoint-up(md) {
         @if (not feature('V6_5_0_0')) {
-            .account-content-aside{
+            .account-content-aside {
                 padding: 14px 0;
             }
 
-            .account-content-main{
+            .account-content-main {
                 padding: 14px 4px 14px 24px;
             }
         }
@@ -129,7 +129,7 @@
     @include media-breakpoint-up(lg) {
         .account-content-aside,
         .account-content-main {
-            padding: 34px 0 25px 0;
+            padding: 34px 0 25px;
         }
 
         .account-content-aside {
