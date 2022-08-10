@@ -128,8 +128,8 @@
             },
             "sw-text-color": {
                 "label": {
-                  "en-GB": "Text colour",
-                  "de-DE": "Textfarbe"
+                  "en-GB": "Text and icon color",
+                  "de-DE": "Text- und Iconfarbe"
                 },
                 "value": "#1c1e25"
             },

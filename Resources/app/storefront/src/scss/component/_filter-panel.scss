@@ -81,7 +81,7 @@ $icon-check: url('#{$asset-path}/icon/icon-pack/ic-check.svg');
             margin-left: auto;
 
             .icon {
-                color: $sw-text-color;
+                color: currentColor;
 
                 > svg {
                     top: 4px;
@@ -112,7 +112,6 @@ $icon-check: url('#{$asset-path}/icon/icon-pack/ic-check.svg');
                 .icon {
                     height: 14px;
                     width: 14px;
-                    color: $gray-600;
                 }
             }
 
@@ -375,5 +374,11 @@ $icon-check: url('#{$asset-path}/icon/icon-pack/ic-check.svg');
                 background-color: $gray-100;
             }
         }
+    }
+}
+
+.collapse-toogle {
+    .icon {
+        color: currentColor;
     }
 }
