@@ -12,8 +12,8 @@
             }
 
             .confirm-main-header {
-                &,
-                & ~.checkout-card .card-body{
+                &, /* stylelint-disable-line scss/selector-no-redundant-nesting-selector */
+                ~ .checkout-card .card-body {
                     text-align: left;
                     margin-bottom: 0;
                 }
@@ -24,11 +24,11 @@
 
                 .block {
                     @extend .col-6;
+                }
 
-                    .btn-primary {
-                        width: auto;
-                        margin-left: auto;
-                    }
+                .btn-primary {
+                    width: auto;
+                    margin-left: auto;
                 }
             }
 
@@ -80,6 +80,7 @@
             font-weight: $font-weight-bold;
             text-transform: uppercase;
         }
+
         table {
             border-collapse: collapse;
             color: $gray-400;

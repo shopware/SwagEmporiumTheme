@@ -18,6 +18,12 @@
         margin-top: 14px;
         border-top: 2px solid $border-color;
         line-height: 21px;
+
+        dd + dt,
+        dd:last-child {
+            color: $top-and-bottom-color;
+            font-weight: $font-weight-bold;
+        }
     }
 
     .col-md-4 {
@@ -28,16 +34,9 @@
         margin-bottom: 0 !important;
     }
 
-    dt, dd {
+    dt,
+    dd {
         font-weight: 400;
-    }
-
-    .order-item-detail-summary {
-        dd + dt,
-        dd:last-child {
-            color: $top-and-bottom-color;
-            font-weight: $font-weight-bold;
-        }
     }
 }
 
@@ -69,6 +68,10 @@
 
     .line-item-quantity-select-wrapper {
         @include make-col(8);
+
+        .line-item-quantity {
+            text-align: left;
+        }
     }
 
     .line-item-quantity-row,
@@ -122,12 +125,6 @@
             > .col-12 {
                 padding-left: 0;
             }
-        }
-    }
-
-    .line-item-quantity-select-wrapper {
-        .line-item-quantity {
-            text-align: left;
         }
     }
 
@@ -209,7 +206,7 @@
     margin-bottom: 14px;
     font-weight: $font-weight-normal;
     font-size: $h4-font-size;
-    color: $top-and-bottom-color
+    color: $top-and-bottom-color;
 }
 
 .order-item {

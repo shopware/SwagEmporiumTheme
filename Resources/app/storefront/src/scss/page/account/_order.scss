@@ -1,9 +1,9 @@
-$badge-in-progress: #7C8EFF !default;
-$badge-completed: #60D788 !default;
-$badge-failed: #E32166 !default;
+$badge-in-progress: #7c8eff !default;
+$badge-completed: #60d788 !default;
+$badge-failed: #e32166 !default;
 
 :is(.order-table-header, .order-item-header) {
-    padding: 14px 14px 0 14px;
+    padding: 14px 14px 0;
 }
 
 .order-item {
@@ -27,7 +27,7 @@ $badge-failed: #E32166 !default;
         font-weight: 400;
         font-size: 1rem;
         line-height: 22px;
-        margin: 0 0 5px 0;
+        margin: 0 0 5px;
     }
 
     .order-table-header-context-menu-wrapper {
@@ -76,6 +76,41 @@ $badge-failed: #E32166 !default;
 .order-item-status-badge {
     margin-bottom: 0;
     display: block;
+    border-radius: 1px;
+    font-weight: $font-weight-normal;
+    background-color: transparent !important;
+
+    &:hover {
+        text-decoration: none;
+    }
+
+    &.order-item-status-badge-open,
+    &.order-item-status-badge-in_progress {
+        color: $badge-in-progress;
+        border: $border-width solid $badge-in-progress;
+    }
+
+    &.order-item-status-badge-completed {
+        color: $badge-completed;
+        border: $border-width solid $badge-completed;
+    }
+
+    &.badge-danger,
+    &.order-item-status-badge-cancelled,
+    &.order-item-status-badge-failed {
+        color: $badge-failed;
+        border: $border-width solid $badge-failed;
+
+        &:hover {
+            color: $badge-failed;
+        }
+    }
+
+
+    .icon {
+        width: auto;
+        height: 1rem;
+    }
 }
 
 .order-table-header-label {
@@ -123,44 +158,6 @@ $badge-failed: #E32166 !default;
     }
 }
 
-.order-item-status-badge {
-    border-radius: 1px;
-    font-weight: $font-weight-normal;
-    background-color: transparent !important;
-
-    &:hover {
-        text-decoration: none;
-    }
-
-    &.order-item-status-badge-open,
-    &.order-item-status-badge-in_progress {
-        color: $badge-in-progress;
-        border: $border-width solid $badge-in-progress;
-    }
-
-    &.order-item-status-badge-completed {
-        color: $badge-completed;
-        border: $border-width solid $badge-completed;
-    }
-
-    &.badge-danger,
-    &.order-item-status-badge-cancelled,
-    &.order-item-status-badge-failed {
-        color: $badge-failed;
-        border: $border-width solid $badge-failed;
-
-        &:hover {
-            color: $badge-failed;
-        }
-    }
-
-
-    .icon {
-        width: auto;
-        height: 1rem;
-    }
-}
-
 .order-hide-btn {
     background-color: transparent;
     border: none;
@@ -190,7 +187,7 @@ $badge-failed: #E32166 !default;
 }
 
 .order-table-header-context-menu-content {
-    filter: drop-shadow(0px 0px 20px rgba(0, 6, 57, 0.1));
+    filter: drop-shadow(0 0 20px rgba(0, 6, 57, 0.1));
     border: none;
     border-radius: 3px;
     padding: 12px 10px;
@@ -211,7 +208,7 @@ $badge-failed: #E32166 !default;
 
 @include media-breakpoint-up(md) {
     :is(.order-table-header, .order-item-header) {
-        padding: 14px 24px 0 24px;
+        padding: 14px 24px 0;
     }
 
     .order-table-header-order-table-body {

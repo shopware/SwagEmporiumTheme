@@ -86,7 +86,7 @@ https://getbootstrap.com/docs/4.3/components/navs/
             &.is-level-5 {
                 position: relative;
 
-                &:before {
+                &::before {
                     content: '';
                     width: 1px;
                     height: 100%;

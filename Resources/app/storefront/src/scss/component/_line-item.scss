@@ -102,6 +102,10 @@ $line-item-space: 24px;
         &-label {
             display: none;
         }
+
+        .line-item-quantity {
+            padding-left: 20px !important;
+        }
     }
 
     &-quantity-select-wrapper {
@@ -172,12 +176,6 @@ $line-item-space: 24px;
         }
     }
 
-    &-quantity {
-        .line-item-quantity {
-            padding-left: 20px !important;
-        }
-    }
-
     &-children {
         .line-item-info {
             min-height: unset;
@@ -197,7 +195,7 @@ $line-item-space: 24px;
         }
 
         .line-item-total-price {
-            padding-right:  0;
+            padding-right: 0;
         }
     }
 }
@@ -210,12 +208,19 @@ $line-item-space: 24px;
 
         &-info {
             min-height: unset;
+            width: 100%;
         }
 
         &-quantity,
         &-unit-price,
         &-total-price {
             @include make-col(12);
+        }
+
+        &-quantity-label,
+        &-unit-price-label,
+        &-total-price-label {
+            max-width: 100px;
         }
     }
 }
@@ -395,20 +400,6 @@ $line-item-space: 24px;
 
         padding-left: 0;
         padding-right: 0;
-    }
-}
-
-.is-order {
-    .line-item-info {
-        width: 100%;
-    }
-
-    .line-item {
-        &-quantity-label,
-        &-unit-price-label,
-        &-total-price-label {
-            max-width: 100px;
-        }
     }
 }
 

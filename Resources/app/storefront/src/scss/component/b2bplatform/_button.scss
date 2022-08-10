@@ -1,4 +1,6 @@
 .b2b--orderlist-remote {
+    min-width: 400px;
+    
     .b2b--orderlist-add {
         .input-group-append {
             .btn {
@@ -23,10 +25,6 @@
             }
         }
     }
-}
-
-.b2b--orderlist-remote {
-    min-width: 400px;
 }
 
 .input-group-append .btn {

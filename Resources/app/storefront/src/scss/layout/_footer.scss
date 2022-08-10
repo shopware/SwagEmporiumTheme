@@ -1,4 +1,4 @@
-$footer-border-color: #D7DBDF;
+$footer-border-color: #d7dbdf;
 
 @mixin service-menu-layout() {
     display: flex;
@@ -134,7 +134,7 @@ $footer-border-color: #D7DBDF;
 
     .btn-outline-primary {
         color: $top-and-bottom-color;
-        border-color: #9EABBB;
+        border-color: #9eabbb;
         background-color: $white;
         width: 100%;
 
@@ -154,7 +154,7 @@ $footer-border-color: #D7DBDF;
     }
 
     .footer-service-menu-item {
-        &:after {
+        &::after {
             content: none;
         }
     }
@@ -290,7 +290,7 @@ $footer-border-color: #D7DBDF;
 
 .footer-contact-hotline,
 .footer-contact-form {
-    background: #F3F5F6;
+    background: #f3f5f6;
     border-radius: 1px;
     display: inline-block;
     padding: 8px 20px;
@@ -352,7 +352,7 @@ $footer-border-color: #D7DBDF;
     padding: 24px 0;
 }
 
-div[data-swag-paypal-installment-banner="true"] {
+div[data-swag-paypal-installment-banner='true'] {
     @include make-col(10);
     margin-bottom: $spacer;
     margin-right: 0;
@@ -450,7 +450,7 @@ div[data-swag-paypal-installment-banner="true"] {
         }
     }
 
-    div[data-swag-paypal-installment-banner="true"] {
+    div[data-swag-paypal-installment-banner='true'] {
         flex-basis: auto;
         width: auto;
     }

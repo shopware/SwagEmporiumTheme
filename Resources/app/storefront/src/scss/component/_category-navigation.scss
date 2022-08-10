@@ -16,6 +16,7 @@
 
         > .category-navigation-entry {
             border-bottom: none;
+
             > .category-navigation-link {
                 display: flex;
                 align-items: center;
@@ -35,8 +36,8 @@
             padding-left: 14px;
             position: relative;
 
-            &:before {
-                content: "";
+            &::before {
+                content: '';
                 display: block;
                 position: absolute;
                 height: 100%;

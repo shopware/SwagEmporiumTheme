@@ -33,7 +33,7 @@ This filter item should only be used inside a filter panel.
     height: auto;
     line-height: 24px;
 
-    &:before {
+    &::before {
         top: 2px;
     }
 }

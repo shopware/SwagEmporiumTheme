@@ -47,6 +47,8 @@ $box-image-height-img: 250px;
         .product-info {
             width: calc(100% - 154px);
             padding: 18px 14px 14px 20px;
+            display: flex;
+            flex-direction: column;
         }
 
         .product-name {
@@ -71,6 +73,7 @@ $box-image-height-img: 250px;
 
         .product-price-info {
             padding-bottom: 46px;
+            flex: 1;
         }
 
         .product-price-wrapper {
@@ -87,21 +90,13 @@ $box-image-height-img: 250px;
             &.is-standard {
                 object-fit: cover;
                 // @deprecated tag:v6.5.0 - Bootstrap v5 will discontinue IE11 support. font-family polyfill will be removed.
+                /* stylelint-disable-next-line */
                 font-family: 'object-fit: cover;'; // IE polyfill
             }
 
             &.is-cover {
                 max-height: unset;
             }
-        }
-
-        .product-info {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .product-price-info {
-            flex: 1;
         }
     }
 

@@ -82,7 +82,7 @@ https://sass-guidelin.es/#the-7-1-pattern
 @import 'component/b2bplatform/button';
 @import 'component/b2bplatform/accordion';
 @import 'component/product-slider';
-@import "component/shipping-method";
+@import 'component/shipping-method';
 
 
 /*
@@ -113,10 +113,9 @@ https://sass-guidelin.es/#the-7-1-pattern
 @import 'page/checkout/register';
 @import 'page/product-detail/review';
 @import 'page/product-detail/product-detail';
-@import "page/product-detail/customized-product";
-@import "page/product-detail/cross-selling";
-@import "page/product-detail/tabs";
-@import 'page/checkout/register';
+@import 'page/product-detail/customized-product';
+@import 'page/product-detail/cross-selling';
+@import 'page/product-detail/tabs';
 @import 'page/account/account';
 @import 'page/account/overview';
 @import 'page/account/profile';

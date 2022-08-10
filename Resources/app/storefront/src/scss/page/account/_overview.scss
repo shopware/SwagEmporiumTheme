@@ -1,5 +1,6 @@
 .account-overview-card {
     font-size: 13px;
+    margin-bottom: 0;
 
     .card-title__wrapper {
         display: flex;
@@ -46,7 +47,7 @@
 
 .account-overview-newsletter {
     margin-top: 18px;
-    padding: 34px 0px;
+    padding: 34px 0;
     border-top: $border-width solid $border-color;
     border-bottom: $border-width solid $border-color;
 }
@@ -74,22 +75,6 @@
         font-size: 1rem;
         margin-bottom: 24px;
     }
-
-    &-card {
-        margin-bottom: 0;
-    }
-}
-
-@include media-breakpoint-up(xxl) {
-    .account-overview-card {
-        font-size: 15px;
-
-        .card-title__wrapper {
-            .card-title {
-                margin-bottom: 26px;
-            }
-        }
-    }
 }
 
 .modal-dialog .js-address-editor {
@@ -102,6 +87,9 @@
     }
 
     .address-editor-card {
+        padding-bottom: 16px;
+        border-bottom: $border-width solid $border-color;
+
         .btn {
             @extend .btn-link;
             background-color: transparent;
@@ -139,18 +127,13 @@
         }
     }
 
-    .address-editor-card {
-        padding-bottom: 16px;
-        border-bottom: $border-width solid $border-color;
-    }
-
     .form-group {
         @include make-col(12);
         margin-top: 0;
         margin-bottom: 10px;
 
         &:empty,
-        .form-label{
+        .form-label {
             display: none;
         }
     }
@@ -206,8 +189,10 @@
             }
         }
     }
+}
 
-    @include media-breakpoint-up(lg) {
+@include media-breakpoint-up(lg) {
+    .modal-dialog .js-address-editor {
         display: flex;
 
         .default-address-editor {
@@ -239,6 +224,18 @@
 
             .collapse > * {
                 padding-top: 0;
+            }
+        }
+    }
+}
+
+@include media-breakpoint-up(xxl) {
+    .account-overview-card {
+        font-size: 15px;
+
+        .card-title__wrapper {
+            .card-title {
+                margin-bottom: 26px;
             }
         }
     }

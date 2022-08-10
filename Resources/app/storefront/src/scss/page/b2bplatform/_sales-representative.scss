@@ -1,7 +1,7 @@
 .is-ctl-b2baccount,
 .is-ctl-b2bsalesrepresentative {
     .container .top-bar {
-        &:before {
+        &::before {
             content: '';
             height: 50px;
             background-color: $top-and-bottom-color;

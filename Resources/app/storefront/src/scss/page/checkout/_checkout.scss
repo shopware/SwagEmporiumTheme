@@ -14,7 +14,7 @@
         .checkout-additional {
             @include make-col(12);
 
-            margin: 0 0 34px 0;
+            margin: 0 0 34px;
             padding: 0;
 
             .card-title {
@@ -118,7 +118,7 @@
     .is-ctl-accountorder {
         .checkout {
             .checkout-additional {
-                margin: 0 0 50px 0;
+                margin: 0 0 50px;
                 width: 100%;
             }
         }
