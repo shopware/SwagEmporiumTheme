@@ -53,13 +53,20 @@ $swag-cms-extensions-carousel-icon-size: 20px;
     div[data-swag-paypal-express-button='true'] {
         margin-top: 8px;
     }
+
+    .gallery-slider-single-image,
+    .gallery-slider-item {
+        .gallery-slider-image {
+            object-fit: contain;
+        }
+    }
 }
 
 #swag-cms-extensions-quickview-carousel {
     .carousel-control {
         &-prev,
         &-next {
-            background-color: transparent;
+            background-color: $white;
 
             .icon {
                 width: $swag-cms-extensions-carousel-icon-size;
@@ -319,6 +326,17 @@ $swag-cms-extensions-carousel-icon-size: 20px;
         .product-review-rating {
             display: block;
             margin-bottom: 50px;
+        }
+    }
+
+    #swag-cms-extensions-quickview-carousel {
+        .carousel-control {
+            &-prev,
+            &-next {
+                top: 50%;
+                height: 100px;
+                width: 45px;
+            }
         }
     }
 }
