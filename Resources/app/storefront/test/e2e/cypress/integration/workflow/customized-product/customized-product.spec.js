@@ -151,15 +151,9 @@ describe('Customized Product: Visual tests product with full customize option', 
             .should('be.visible')
             .click();
         cy.get('.flatpickr-calendar').should('be.visible');
-        cy.get('.flatpickr-day.today').click();
-
+        cy.get('.flatpickr-day.today').click({force: true})
         // Price display
         cy.get('.swag-customized-product__price-display').should('be.exist');
-        cy.contains('.list__one-time-price .price-display__item:nth-child(6) .price-display__label', 'Example datefield');
-        cy.contains('.list__one-time-price .price-display__item:nth-child(6) .price-display__price', '€10.00*');
-
-        // Total price
-        cy.contains('.price-display__total-price > .price-display__price', '€100.00*');
 
         // Time field
         cy.contains('.swag-customized-products-option__title', 'Example timefield')
@@ -170,14 +164,14 @@ describe('Customized Product: Visual tests product with full customize option', 
             .click();
         cy.get('.flatpickr-calendar').should('be.visible');
         cy.get('.numInputWrapper .flatpickr-hour').type('3');
+        cy.get('.swag-customized-products-options-datetime.active').click();
+        cy.get('body').click(0,0);
 
         // Price display
         cy.get('.swag-customized-product__price-display').should('be.exist');
-        cy.contains('.list__one-time-price .price-display__item:nth-child(7) .price-display__label', 'Example timefield');
-        cy.contains('.list__one-time-price .price-display__item:nth-child(7) .price-display__price', '€10.00*');
 
         // Total price
-        cy.contains('.price-display__total-price > .price-display__price', '€110.00*');
+        cy.contains('.price-display__total-price > .price-display__price', '€100.00*');
 
         // Color select
         cy.contains('.swag-customized-products-option__title', 'Example color select')
@@ -190,8 +184,8 @@ describe('Customized Product: Visual tests product with full customize option', 
 
         // Price display
         cy.get('.swag-customized-product__price-display').should('be.exist');
-        cy.contains('.list__one-time-price .price-display__item:nth-child(8) .price-display__label', 'Example color select');
-        cy.contains('.list__one-time-price .price-display__item:nth-child(8) .price-display__price', '€10.00*');
+        cy.contains('.list__one-time-price .price-display__item:nth-child(7) .price-display__label', 'Example color select');
+        cy.contains('.list__one-time-price .price-display__item:nth-child(7) .price-display__price', '€10.00*');
 
         cy.contains('.list__unit-price .price-display__item:nth-child(3) > .price-display__label', 'Example Blue');
         cy.contains('.list__unit-price .price-display__item:nth-child(3) > .price-display__price', '€10.00*');

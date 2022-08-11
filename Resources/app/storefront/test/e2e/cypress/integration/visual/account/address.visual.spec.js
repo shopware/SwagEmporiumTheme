@@ -15,14 +15,12 @@ describe('Account: Address page', () => {
     });
 
     it('@visual: update address page', () => {
-        const page = new AccountPageObject();
+        const accountPage = new AccountPageObject();
 
+        // Login
         cy.visit('/account/login');
-        cy.get(page.elements.loginCard).should('be.visible');
-
-        cy.get('#loginMail').typeAndCheckStorefront('test@example.com');
-        cy.get('#loginPassword').typeAndCheckStorefront('shopware');
-        cy.get(`${page.elements.loginSubmit} [type="submit"]`).click();
+        cy.get(accountPage.elements.loginCard).should('be.visible');
+        accountPage.login();
 
         cy.get('.account-content .account-aside-item[title="Addresses"]')
             .should('be.visible')
@@ -59,7 +57,7 @@ describe('Account: Address page', () => {
         cy.get('.alert-success .alert-content').contains('Default address has been changed.');
         cy.takeSnapshot('[Address] Address - Set default billing address', '.account-address', {widths: [375, 768, 1920]});
 
-        cy.get('.address-card:first-child() a[href]'.click();
+        cy.get('.address-card:first-child() a[href]').click();
         cy.get('#addresscompany').typeAndCheckStorefront('Company ABD');
         cy.get('#addressdepartment').typeAndCheckStorefront('Department ABF');
         cy.get('#addressAddressCountry').select('Germany');
@@ -71,7 +69,7 @@ describe('Account: Address page', () => {
         cy.get('.alert-success .alert-content').contains('Address has been saved.');
         cy.takeSnapshot('[Address] Change address form', '.account-address', {widths: [375, 768, 1920]});
 
-        cy.get('.address-card').contains('Delete').click();
+        cy.get('.address-card .btn[title="Delete"]').click();
         cy.get('.alert-success .alert-content').contains('Address has been deleted.');
         cy.takeSnapshot('[Address] Delete address', '.account-address', {widths: [375, 768, 1920]});
     });
