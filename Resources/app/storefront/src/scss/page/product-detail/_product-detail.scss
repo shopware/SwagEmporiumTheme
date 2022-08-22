@@ -26,7 +26,7 @@
         font-weight: $font-weight-bold;
         word-wrap: normal;
         padding: 0;
-        color: $top-and-bottom-color;
+        color: $sw-text-color;
 
         &:not(.collapsed)[aria-expanded] {
             .icon-plus {
@@ -454,6 +454,12 @@
 
         .product-detail-description-text {
             color: $gray-400;
+        }
+
+        .product-detail-tab-navigation-icon {
+            .icon {
+                color: $sw-text-color;
+            }
         }
     }
 

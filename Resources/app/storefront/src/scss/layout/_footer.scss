@@ -212,7 +212,7 @@ $footer-border-color: #d7dbdf;
 
 .footer-column-headline,
 .footer-column-headline a {
-    color: $sw-color-price;
+    color: $sw-text-color;
     font-size: 13px;
     line-height: 21px;
 }
@@ -225,6 +225,7 @@ $footer-border-color: #d7dbdf;
 .footer-plus-icon,
 .footer-minus-icon {
     .icon {
+        color: inherit;
         width: 18px;
         height: 18px;
 
