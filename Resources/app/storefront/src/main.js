@@ -4,6 +4,7 @@ import EmporiumOffCanvasTabsPlugin from './plugin/offcanvas-tabs/offcanvas-tabs.
 import EmporiumProductSliderPlugin from "./plugin/slider/product-slider.plugin";
 import EmporiumScrollUpPlugin from "./plugin/product-detail/scroll-buybox-up.plugin";
 import EmporiumAutoScrollPlugin from "./plugin/product-detail/auto-scroll.plugin"
+import EmporiumGallerySliderPlugin from './plugin/slider/gallery-slider.plugin';
 
 const PluginManager = window.PluginManager;
 PluginManager.register('OffCanvasTabsDefault', EmporiumOffCanvasTabsPlugin, '[data-offcanvas-tabs-default]');
@@ -12,3 +13,4 @@ PluginManager.register('BuyboxAutoScroll', EmporiumAutoScrollPlugin, '[data-auto
 PluginManager.override('Listing', EmtListingPlugin, '[data-listing]');
 PluginManager.override('FilterRatingSelect', EmtFilterRatingSelectPlugin, '[data-filter-rating-select]');
 PluginManager.override('ProductSlider', EmporiumProductSliderPlugin, '[data-product-slider]');
+PluginManager.override('GallerySlider', EmporiumGallerySliderPlugin, '[data-gallery-slider]');
