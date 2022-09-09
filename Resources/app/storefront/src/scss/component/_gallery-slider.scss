@@ -15,6 +15,11 @@ $gallery-thumbnail-item-gutter: 14px;
     border: 0;
 }
 
+.js-dots-text-current {
+    font-weight: $font-weight-bold;
+    color: $sw-color-brand-primary;
+}
+
 @include media-breakpoint-up(lg) {
     .cms-element-image-gallery {
         .gallery-slider-thumbnails-col {

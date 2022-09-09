@@ -1,5 +1,16 @@
 {% sw_extends '@Storefront/storefront/element/cms-element-product-slider.html.twig' %}
 
+{% block element_product_slider_controls %}
+    {% block element_product_slider_index %}
+        <div class="product-slider-dots-text w-100 text-center d-md-none">
+            <span class="js-dots-text-current">01</span>
+            / {{ element.data.products.elements|length < 10 ? ['0',element.data.products.elements|length]|join : element.data.products.elements|length }}
+        </div>
+    {% endblock %}
+
+    {{ parent() }}
+{% endblock %}
+
 {% block element_product_slider_controls_items_prev_icon %}
     {% sw_icon 'arrow-head-left' style { 'pack': 'emporium' } %}
 {% endblock %}
