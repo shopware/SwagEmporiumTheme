@@ -282,6 +282,36 @@
         }
     }
 
+    .boxed {
+        padding: 0;
+
+        > .col-12 {
+            padding: 0;
+        }
+    }
+
+    &.cms-block-form {
+        overflow: visible;
+    }
+
+    &-product-three-column {
+        .cms-block-container-row {
+            gap: $grid-gutter-width;
+        }
+
+        .cms-element-product-box {
+            height: 100%;
+        }
+
+        .product-box {
+            &.box-minimal {
+                .product-image-wrapper {
+                    height: unset;
+                }
+            }
+        }
+    }
+
     @include media-breakpoint-down(if(feature('V6_5_0_0'), lg, md)) {
         &.cms-block-gallery-buybox {
             .product-detail-media {
@@ -325,18 +355,12 @@
                 border-bottom: $border-width solid $border-color;
             }
         }
-    }
 
-    .boxed {
-        padding: 0;
-
-        > .col-12 {
-            padding: 0;
+        &-product-three-column {
+            .cms-block-container-row {
+                gap: 0;
+            }
         }
-    }
-
-    &.cms-block-form {
-        overflow: visible;
     }
 }
 
