@@ -529,7 +529,7 @@ div[data-swag-paypal-installment-banner='true'] {
         }
 
         .footer-service-menu-list {
-            gap: 30px;
+            gap: 16px 30px;
         }
     }
 }
@@ -547,6 +547,12 @@ div[data-swag-paypal-installment-banner='true'] {
 
         .footer-vat {
             text-align: left;
+        }
+    }
+
+    .footer-minimal {
+        .footer-service-menu-list {
+            justify-content: flex-start;
         }
     }
 }

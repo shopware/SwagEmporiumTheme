@@ -10,7 +10,7 @@
     <div class="footer-bottom">
         <div class="container">
             <div class="row">
-                <div class="col-12 col-md-3 col-xl-4">
+                <div class="col-12 col-md-3 col-xl-2">
                     {% block layout_footer_minimal_logo %}
                         <a class="footer-logo-main-link"
                            href="{{ path('frontend.home.page') }}"
@@ -24,20 +24,21 @@
                     {% endblock %}
                 </div>
 
-                <div class="col-12 col-md-6 col-xl-3 d-none d-xl-block">
+                <div class="col-12 col-md-6 col-xl-6 d-none d-xl-block">
                     {% block layout_footer_service_menu_content %}
                         {{ parent() }}
                     {% endblock %}
                 </div>
 
-                <div class="col-12 col-md-6 col-xl-3">
-                    {{ block('layout_footer_vat') }}
-                </div>
-
-                <div class="col-12 col-md-3 col-xl-2">
-                    {% block layout_footer_copyright %}
-                        {{ parent() }}
-                    {% endblock %}
+                <div class="col-12 col-md-9 col-xl-4">
+                    <div class="row">
+                        <div class="col-12 col-md-8">
+                            {{ block('layout_footer_vat') }}
+                        </div>
+                        <div class="col-12 col-md-4">
+                            {{ block('layout_footer_copyright') }}
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
