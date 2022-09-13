@@ -1,3 +1,9 @@
+# 1.1.0
+- Verbesserung des Produkt-Slider auf mobilen Ansichtsfenstern
+- Falscher Anzeigemodus im CMS-Block behoben: Drei Spalten, Produkt-Boxen
+- Anpassungen für das Breadcrumb-Styling
+- Verbesserung der Schnellsuche
+
 # 1.0.1
 - QuickView Produktbilder sollten vollständig sichtbar sein
 - Höhe der Produktbox bei Cross-Selling behoben
