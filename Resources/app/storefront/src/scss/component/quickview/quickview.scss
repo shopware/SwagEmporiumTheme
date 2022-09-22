@@ -20,6 +20,8 @@ $swag-cms-extensions-carousel-icon-size: 20px;
 
         button.close {
             line-height: 0;
+            border: none;
+            background-color: transparent;
 
             &:focus {
                 outline: none;
@@ -143,6 +145,7 @@ $swag-cms-extensions-carousel-icon-size: 20px;
         font-size: 13px;
         line-height: 22px;
         padding: 9px;
+        display: block;
     }
 
     .product-detail-quantity-select {
@@ -176,6 +179,10 @@ $swag-cms-extensions-carousel-icon-size: 20px;
         border-bottom: $border-width solid $gray-300;
         margin-left: -$spacer-lg;
         margin-right: -$spacer-lg;
+    }
+
+    .base-slider-dots-text {
+        margin: 1rem 0;
     }
 }
 
