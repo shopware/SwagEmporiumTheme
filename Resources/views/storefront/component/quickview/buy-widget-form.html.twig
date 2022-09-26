@@ -1,6 +1,8 @@
 {% sw_extends '@Storefront/storefront/component/quickview/buy-widget-form.html.twig' %}
 
 {% block page_product_detail_buy_quantity_container %}
+    {% set selectQuantityThreshold = 100 %}
+
     {% block page_product_detail_wishlist_button %}
         {% if config('core.cart.wishlistEnabled') %}
             <div class="swag-cms-extensions-quickview-content--wishlist-button col-12">
