@@ -151,6 +151,10 @@ $checkout-login-register-space-md: 50px;
                     @extend .mx-0;
                 }
             }
+
+            .login-password-recover {
+                margin-top: 10px;
+            }
         }
     }
 
