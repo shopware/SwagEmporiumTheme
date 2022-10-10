@@ -1,6 +1,6 @@
 {
   "checkout" : {
-    "addPromotionAction" : "Add",
+    "addPromotionAction" : "Hinzufügen",
     "finishOrderHeader": "Ihre Bestellung",
     "addProductHeading": "Produkt über Produktnummer hinzufügen",
     "shippingCosts": "Versandkosten konfigurieren",
@@ -26,13 +26,17 @@
     "qualityInfo": "Emporium - Quality since 1985",
     "serviceHotline": "<a href=\"tel:+49180000000\">0180 - 000000</a>",
     "serviceHotlineHeadline": "Support and counselling Mon-Fri, 9 am - 5 pm via:",
-    "socialMediaHeadline": "Social Media",
+    "socialMediaHeadline": "Soziale Medien",
+    "facebookLink": "Facebook",
     "facebookHeadline": "Facebook",
+    "instagramLink": "Instagram",
     "instagramHeadline": "Instagram",
+    "twitterLink": "Twitter",
     "twitterHeadline": "Twitter",
+    "tiktokLink": "Tiktok",
     "tiktokHeadline": "Tiktok",
     "newsletterInfo": "Newsletter",
-    "newsletterSubHeadline": "Subscribe to the free newsletter and ensure that you will no longer miss any offers or news of Demoshop.",
+    "newsletterSubHeadline": "Abonnieren Sie den kostenlosen Newsletter und verpassen Sie keine Neuigkeit oder Aktion mehr aus dem Demoshop.",
     "newsletterYourEmail": "Email"
   },
   "header": {
