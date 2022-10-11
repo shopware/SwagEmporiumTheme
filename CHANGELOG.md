@@ -1,3 +1,7 @@
+# 1.2.0
+- Checked theme compatibility with platform v6.4.16.0
+- Updated CMS extensions compatibility with Bootstrap 5
+
 # 1.1.0
 - Improvement of the slider on mobile viewports
 - Fixed wrong display mode in the CMS block: Three columns, product boxes

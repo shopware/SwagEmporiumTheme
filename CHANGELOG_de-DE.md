@@ -1,3 +1,7 @@
+# 1.2.0
+- Überprüfung der Kompatibilität mit Platform v6.4.16.0
+- Aktualisierung der Kompatibilität von CMS-Erweiterungen mit Bootstrap 5
+
 # 1.1.0
 - Verbesserung des Produkt-Slider auf mobilen Ansichtsfenstern
 - Falscher Anzeigemodus im CMS-Block behoben: Drei Spalten, Produkt-Boxen
