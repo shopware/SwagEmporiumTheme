@@ -24,7 +24,7 @@ describe('Checkout: Visual tests', () => {
             });
     });
 
-    it('@visual: check appearance of basic checkout workflow', () => {
+    it.only('@visual: check appearance of basic checkout workflow', () => {
         const page = new CheckoutPageObject();
         const accountPage = new AccountPageObject();
 
@@ -59,6 +59,8 @@ describe('Checkout: Visual tests', () => {
         cy.get('.header-cart-total').click();
         cy.get('.offcanvas').should('be.visible');
 
+        cy.wait(1000);
+
         // Take snapshot for visual testing on desktop
         cy.takeSnapshot('[Checkout] Offcanvas',
             `${page.elements.offCanvasCart}.is-open`,
@@ -80,6 +82,8 @@ describe('Checkout: Visual tests', () => {
 
         // Confirm
         cy.get('.confirm-tos .card-title').contains('Terms and conditions and cancellation policy');
+        cy.get('.shipping-method-label').contains('Express').click();
+        cy.wait(1000);
 
         // Take snapshot for visual testing on desktop
         cy.takeSnapshot('[Checkout] Confirm', '.confirm-tos', {widths: [375, 768, 1920]});
