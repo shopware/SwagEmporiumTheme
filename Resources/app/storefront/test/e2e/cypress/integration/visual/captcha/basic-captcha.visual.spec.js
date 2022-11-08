@@ -105,6 +105,7 @@ describe('Basic captcha', () => {
         submitContactForm();
 
         cy.get(selector.alertErrors).should('be.visible');
+        cy.changeElementStyling('.basic-captcha-content-image', 'display : none');
 
         cy.takeSnapshot('[Basic Captcha] The contact modal should show the basic captcha', selector.basicCaptcha);
     })

@@ -101,7 +101,8 @@
   "contact": {
     "submitText": "Send",
     "subjectPlaceholder": "Enter subject",
-    "commentPlaceholder": "Enter comment"
+    "commentPlaceholder": "Enter comment",
+    "privacyNotice": "I have read the <a data-toggle=\"modal\" data-url=\"%privacyUrl%\" href=\"%privacyUrl%\" title=\"Data protection information\">data protection information</a>"
   },
   "order": {
     "orderSummary": "Summary"
