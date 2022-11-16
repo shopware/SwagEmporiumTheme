@@ -1,3 +1,7 @@
+# 1.3.0
+- Checked theme compatibility with the platform v6.4.17.0
+- Fixed footer social media links snippet
+- Fixed service information snippets are missing
 # 1.2.0
 - Checked theme compatibility with platform v6.4.16.0
 - Updated CMS extensions compatibility with Bootstrap 5

@@ -1,3 +1,8 @@
+# 1.3.0
+- Überprüfung der Kompatibilität des Themas mit der Plattform v6.4.17.0
+- Snippet für Social-Media-Links in der Fußzeile wurde behoben
+- Fehlende Service-Informations-Snippets wurden behoben
+
 # 1.2.0
 - Überprüfung der Kompatibilität mit Platform v6.4.16.0
 - Aktualisierung der Kompatibilität von CMS-Erweiterungen mit Bootstrap 5
