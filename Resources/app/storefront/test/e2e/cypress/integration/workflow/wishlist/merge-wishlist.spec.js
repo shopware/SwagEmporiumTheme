@@ -53,7 +53,7 @@ describe('Wishlist: Merge wishlist', { tags: ['@workflow'] }, () => {
             })
     });
 
-    it('@wishlist: can be merge from anonymous user to registered users', () => {
+    it.skip('@wishlist: can be merge from anonymous user to registered users', () => {
         cy.visit('/');
 
         cy.intercept({

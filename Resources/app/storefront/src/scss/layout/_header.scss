@@ -51,6 +51,14 @@ $logo-height-lg: 37px;
             display: none;
         }
     }
+
+    &-actions-btn {
+        &,
+        &:active,
+        &:hover {
+            border: $border-width solid transparent;
+        }
+    }
 }
 
 .header-main {
