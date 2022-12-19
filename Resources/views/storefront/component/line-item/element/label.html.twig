@@ -9,7 +9,7 @@
            class="line-item-label"
            title="{{ label }}"
             {% if controllerAction is same as('confirmPage') %}
-                {{ dataBsToggleAttr }}="modal"
+                data-bs-toggle="modal"
                 data-modal-class="quickview-modal"
                 data-url="{{ path('widgets.quickview.minimal', { 'productId': lineItem.referencedId }) }}"
             {% endif %}

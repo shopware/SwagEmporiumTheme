@@ -90,11 +90,7 @@ $navigation-offcanvas-height: calc(100vh - 130px);
         .top-bar-nav-item {
             width: 47%;
             padding: 1px $navigation-offcanvas-spacing;
-            @if (feature('V6_5_0_0')) {
-                @extend .form-select;
-            } @else {
-                @extend .custom-select;
-            }
+            @extend .form-select;
 
             .dropdown-toggle {
                 font-weight: $font-weight-base;

@@ -11,7 +11,7 @@
             {% block layout_footer_navigation_newsletter_content %}
                 <a
                     href="{{ path('frontend.cms.page',{ id: config('core.basicInformation.newsletterPage')}) }}"
-                {{ dataBsToggleAttr }}="modal"
+                data-bs-toggle="modal"
                 data-url="{{ path('frontend.cms.page',{ id: config('core.basicInformation.newsletterPage')}) }}"
                 class="btn btn-outline-primary"
                 role="button"

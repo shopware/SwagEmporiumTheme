@@ -4,7 +4,7 @@ import Feature from 'src/helper/feature.helper';
 
 export default class EmporiumAutoScrollPlugin extends Plugin {
     static options = {
-        toggleAttribute: Feature.isActive('v6.5.0.0') ? '[data-bs-toggle]' : '[data-toggle]',
+        toggleAttribute: '[data-bs-toggle]',
         tabContainer: '.nav-item',
         tabsContainer: '.product-detail-tabs',
         startButtonCustomizedProduct: '.swag-customized-products-start-wizard',
@@ -124,11 +124,6 @@ export default class EmporiumAutoScrollPlugin extends Plugin {
     }
 
     _isInAllowedViewports() {
-        if(Feature.isActive('v6.5.0.0')) {
-            return ViewportDetection.isLG() || ViewportDetection.isXL() || ViewportDetection.isXXL();
-        }
-        else {
-            return ViewportDetection.isLG() || ViewportDetection.isXL();
-        }
+        return ViewportDetection.isLG() || ViewportDetection.isXL() || ViewportDetection.isXXL();
     }
 }

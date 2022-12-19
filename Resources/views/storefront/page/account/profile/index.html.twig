@@ -14,7 +14,7 @@
     <div class="col-12 col-sm-6 col-md-5 col-lg-2">
         <div class="d-grid">
             <a class="account-profile-change btn btn-outline-primary{% if not passwordFormViolation %} collapsed{% endif %}"
-            {{ dataBsToggleAttr }}="collapse"
+            data-bs-toggle="collapse"
             href="#profile-password-form"
             role="button"
             aria-expanded="{% if passwordFormViolation %}true{% else %}false{% endif %}"
@@ -29,7 +29,7 @@
     <div class="col-12 col-sm-6 col-md-5 col-lg-2">
         <div class="d-grid">
             <a class="account-profile-change btn btn-outline-primary{% if not emailFormViolation %} collapsed{% endif %}"
-            {{ dataBsToggleAttr }}="collapse"
+            data-bs-toggle="collapse"
             href="#profile-email-form"
             role="button"
             aria-expanded="{% if emailFormViolation %}true{% else %}false{% endif %}"
@@ -103,7 +103,7 @@
 {% endblock %}
 
 {% block page_account_profile_mail_password %}
-    <div class="{{ formRowClass }}">
+    <div class="row g-2">
         <div class="form-group col-12 col-sm-6">
             {{ block('page_account_profile_mail_password_label') }}
 
@@ -115,7 +115,7 @@
 {% endblock %}
 
 {% block page_account_profile_current_password %}
-    <div class="{{ formRowClass }}">
+    <div class="row g-2">
         <div class="col-12 col-sm-6 form-group">
             {{ block('page_account_profile_current_password_label') }}
 

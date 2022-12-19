@@ -110,18 +110,6 @@ $logo-height-lg: 37px;
     }
 }
 
-@if (not feature('V6_5_0_0')) {
-    .header-search-btn {
-        border: none;
-    }
-
-    .input-group .input-group-append {
-        .header-search-btn {
-            right: 19px;
-        }
-    }
-}
-
 .navigation-toggle {
     display: flex;
     align-items: flex-end;
@@ -152,19 +140,15 @@ $logo-height-lg: 37px;
     bottom: -7px;
 
     &-input,
-    &-btn {
+    &-btn,
+    &-btn:hover,
+    &-btn:focus {
         border-color: $input-group-border-color;
-    }
-
-    @if (not feature('V6_5_0_0')) {
-        &-input {
-            border-right: $border-width solid $input-group-border-color;
-        }
     }
 
     &-icon {
         .icon > svg {
-            top: 0;
+            top: 3px;
         }
 
         &:hover {
@@ -180,6 +164,10 @@ $logo-height-lg: 37px;
             padding: 13px;
             line-height: 24px;
             height: auto;
+
+            + .btn:active {
+                border-color: $input-group-border-color;
+            }
         }
     }
 }

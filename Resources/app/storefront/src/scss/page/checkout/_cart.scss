@@ -42,11 +42,9 @@
         display: block;
     }
 
-    @if (feature('v6.5.0.0')) {
-        > .cart-item-quantity {
-            @extend .d-none;
-            @extend .d-lg-block;
-        }
+    > .cart-item-quantity {
+        @extend .d-none;
+        @extend .d-lg-block;
     }
 
     > .cart-item-info {
@@ -118,24 +116,13 @@
         }
     }
 
-    @if (feature('V6_5_0_0')) {
-        .form-select {
-            height: 60px;
-            font-weight: $font-weight-base;
-            font-size: $font-size-base;
-            line-height: 24px;
-            padding: 18px 24px;
-            background-position: right 1.4rem center;
-        }
-    } @else {
-        .custom-select {
-            height: 60px;
-            font-weight: $font-weight-base;
-            font-size: $font-size-base;
-            line-height: 24px;
-            padding: 18px 24px;
-            background-position: right 1.4rem center;
-        }
+    .form-select {
+        height: 60px;
+        font-weight: $font-weight-base;
+        font-size: $font-size-base;
+        line-height: 24px;
+        padding: 18px 24px;
+        background-position: right 1.4rem center;
     }
 }
 

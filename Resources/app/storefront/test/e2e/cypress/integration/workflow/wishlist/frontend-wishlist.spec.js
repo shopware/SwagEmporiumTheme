@@ -64,14 +64,14 @@ describe('Wishlist: for wishlist page', { tags: ['@workflow'] }, () => {
             cy.title().should('eq', 'Your wishlist');
 
             cy.wait('@guestPagelet').then(xhr => {
-                expect(xhr.response).to.have.property('statusCode', 200);
+                expect(xhr.response).to.have.property('statusCode', 204);
             });
 
             cy.get('.cms-listing-row .cms-listing-col').contains(product.name);
             cy.get('.product-wishlist-form [type="submit"]').click();
 
             cy.wait('@guestPagelet').then(xhr => {
-                expect(xhr.response).to.have.property('statusCode', 200);
+                expect(xhr.response).to.have.property('statusCode', 204);
                 expect(win.localStorage.getItem('wishlist-' + win.salesChannelId)).to.equal(null)
             });
 
@@ -106,7 +106,7 @@ describe('Wishlist: for wishlist page', { tags: ['@workflow'] }, () => {
             cy.title().should('eq', 'Your wishlist')
 
             cy.wait('@guestPagelet').then(xhr => {
-                expect(xhr.response).to.have.property('statusCode', 200);
+                expect(xhr.response).to.have.property('statusCode', 204);
                 cy.get('.cms-listing-row .cms-listing-col').contains(product.name);
                 cy.get('.cms-listing-row .cms-listing-col .product-action .btn-buy').should('exist');
                 cy.get('.cms-listing-row .cms-listing-col .product-action .btn-buy').click({ force: true });
@@ -116,9 +116,9 @@ describe('Wishlist: for wishlist page', { tags: ['@workflow'] }, () => {
                 });
 
                 cy.wait('@offcanvas').then(xhr => {
-                    expect(xhr.response).to.have.property('statusCode', 200);
-                    cy.get('.offcanvas.is-open.cart-offcanvas').should('exist');
-                    cy.get('.offcanvas.is-open.cart-offcanvas').find('.cart-item-label').contains(product.name);
+                    expect(xhr.response).to.have.property('statusCode', 204);
+                    cy.get('.offcanvas.show.cart-offcanvas').should('exist');
+                    cy.get('.offcanvas.show.cart-offcanvas').find('.cart-item-label').contains(product.name);
 
                     // Wishlist product should still exist
                     cy.get('.cms-listing-row .cms-listing-col').contains(product.name);

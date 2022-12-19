@@ -93,10 +93,8 @@ $line-item-space: 24px;
         margin-top: 14px;
         margin-bottom: 14px;
 
-        @if (feature('V6_5_0_0')) {
-            &-row {
-                @extend .g-0;
-            }
+        &-row {
+            @extend .g-0;
         }
 
         &-label {

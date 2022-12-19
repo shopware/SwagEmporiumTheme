@@ -21,11 +21,7 @@ https://getbootstrap.com/docs/4.3/components/forms/#select-menu
     }
 
     &:hover {
-        @if (feature('v6.5.0.0')) {
-            border-color: $form-select-border-color;
-        } @else {
-            border-color: $custom-select-border-color;
-        }
+        border-color: $form-select-border-color;
         color: $input-color;
     }
 }

@@ -50,7 +50,7 @@ describe('Customized Product: Check appearance of customized products', () => {
         })
     });
 
-    it('@visual @customized: Customized product with all options', () => {
+    it.skip('@visual @customized: Customized product with all options', () => {
         cy.visit('/Product-name/RS-333');
 
         cy.get('.product-detail-buy').invoke('attr', 'style', 'scroll-behavior: unset');

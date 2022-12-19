@@ -41,13 +41,13 @@
 {% endblock %}
 
 {% block page_account_overview_profile %}
-    <div class="col-sm-6 col-xxl-3 card-col account-overview-card account-overview-profile">
+    <div class="col-sm-6 col-xxl-6 card-col account-overview-card account-overview-profile">
         {{ block('page_account_overview_profile_card') }}
     </div>
 {% endblock %}
 
 {% block page_account_overview_payment %}
-    <div class="col-sm-6 col-xxl-3 card-col account-overview-card account-overview-payment">
+    <div class="col-sm-6 col-xxl-6 card-col account-overview-card account-overview-payment">
         {% block page_account_overview_payment_card %}
             {{ parent() }}
         {% endblock %}

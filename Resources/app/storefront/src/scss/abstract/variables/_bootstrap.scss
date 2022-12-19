@@ -8,7 +8,7 @@ shopRoot/src/vendor/shopware/storefront/Resources/app/storefront/vendor/bootstra
 // Options
 $font-size-base: 0.9375rem !default;
 $font-size-small: 12px !default;
-$asset-path: '#{$sw-asset-theme-url}/bundles/swagemporiumtheme/assets' !default;
+$app-css-relative-asset-path: '../assets' !default;
 
 $top-and-bottom-color: darken($sw-color-brand-primary, 40%) !default; //#000639
 
@@ -102,7 +102,7 @@ $custom-control-indicator-checked-color: $sw-color-brand-primary;
 $custom-control-indicator-checked-border-color: $sw-color-brand-primary;
 $custom-control-indicator-size: 1.125rem !default;
 $custom-control-indicator-focus-box-shadow: none !default;
-$custom-checkbox-indicator-icon-checked: url('#{$asset-path}/icon/icon-pack/ic-check.svg') !default;
+$custom-checkbox-indicator-icon-checked: url('#{$app-css-relative-asset-path}/icon/icon-pack/ic-check.svg') !default;
 
 $custom-raido-indicator-checked-color: #fff;
 $custom-radio-indicator-icon-checked: str-replace(url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='#{$custom-raido-indicator-checked-color}'/%3e%3c/svg%3e"), '#', '%23') !default;
@@ -113,6 +113,8 @@ $custom-control-indicator-checked-disabled-bg: $gray-200;
 
 //Icon
 $icon-base-color: $top-and-bottom-color;
+$icon-chevron-right: url('#{$app-css-relative-asset-path}/icon/icon-pack/ic-chevron-right.svg') !default;
+$icon-chevron-right-white: url('#{$app-css-relative-asset-path}/icon/icon-pack/ic-chevron-right-white.svg') !default;
 
 // Alert
 $alert-padding-y: 11px;

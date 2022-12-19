@@ -26,14 +26,6 @@ $account-menu-spacing: 24px;
             .icon svg {
                 top: 7px;
             }
-
-            @if (not feature('V6_5_0_0')) {
-                color: $top-and-bottom-color;
-
-                &.is-active {
-                    color: $sw-color-brand-primary;
-                }
-            }
         }
     }
 

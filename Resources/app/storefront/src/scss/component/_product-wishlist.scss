@@ -16,19 +16,9 @@ Styling for productbox component.
         height: 16px;
     }
 
-    @if (not feature('V6_5_0_0')) {
-        .cart-item-details-container & {
-            position: unset;
-        }
-
-        &-action {
-            align-items: center;
-        }
-    } @else {
-        .icon-wishlist {
-            svg {
-                top: 3px;
-            }
+    .icon-wishlist {
+        svg {
+            top: 3px;
         }
     }
 

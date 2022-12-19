@@ -139,12 +139,9 @@
     }
 
     .js-close-address-editor {
-        @if (feature('V6_5_0_0')) {
-            .row {
-                @extend .g-0;
-            }
+        .row {
+            @extend .g-0;
         }
-
     }
 
     .js-field-toggle-contact-type-company {
@@ -204,13 +201,7 @@
 
                 > *,
                 .btn {
-                    @if (feature('V6_5_0_0')) {
-                        width: 90%;
-                    } @else {
-                        min-width: 90%;
-                        max-width: 90%;
-                        flex-basis: 90%;
-                    }
+                    width: 90%;
                 }
             }
         }

@@ -150,12 +150,7 @@ $badge-failed: #e32166 !default;
 
 .order-table-header-context-menu-wrapper {
     max-width: 40px;
-
-    @if (feature('V6_5_0_0')) {
-        top: 20px;
-    } @else {
-        top: 16px;
-    }
+    top: 20px;
 }
 
 .order-hide-btn {
@@ -222,12 +217,7 @@ $badge-failed: #e32166 !default;
         margin: 0;
         position: absolute;
         right: 68px;
-
-        @if (feature('V6_5_0_0')) {
-            top: 18px;
-        } @else {
-            top: 14px;
-        }
+        top: 18px;
     }
 
     .order-table-header-order-number {

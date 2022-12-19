@@ -17,7 +17,7 @@
             {% block page_checkout_address_login_toggle %}
                 <a href="#loginCollapse"
                    class="login-collapse-toggle collapsed"
-                   {{ dataBsToggleAttr }}="collapse"
+                   data-bs-toggle="collapse"
                    aria-expanded="false">
                     <strong>{{ "checkout.addressLoginToggle"|trans|sw_sanitize }}</strong>
                     {% sw_icon 'plus' %}
@@ -56,7 +56,7 @@
         <div class="collapse-toogle">
             <a href="#registerCollapse"
                class="register-collapse-toggle"
-               {{ dataBsToggleAttr }}="collapse"
+               data-bs-toggle="collapse"
                aria-expanded="true">
                 <strong>{{ "checkout.addressHeader"|trans|sw_sanitize }}</strong>
                 {% sw_icon 'plus' %}

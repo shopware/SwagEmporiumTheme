@@ -68,9 +68,7 @@
 
     .address-card {
         margin-bottom: 8px;
-        @if (feature('V6_5_0_0')) {
-            @extend .col-xxl-3;
-        }
+        @extend .col-xxl-3;
     }
 
     .address-list {
@@ -97,10 +95,8 @@
         margin-bottom: 10px;
     }
 
-    @if (feature('V6_5_0_0')) {
-        .row {
-            @extend .g-0, .gx-2;
-        }
+    .row {
+        @extend .g-0, .gx-2;
     }
 
     .address-form-actions,

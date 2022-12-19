@@ -25,6 +25,6 @@ describe('Product Detail: Visual tests properties area ', () => {
         cy.get('.product-detail-properties-table').contains('Textile:')
         cy.get('.product-detail-properties-table').contains('Color')
 
-        cy.takeSnapshot('[Product Detail] Properties', '#description-tab');
+        cy.takeSnapshot('[Product Detail] Properties', '.description-tab');
     });
 });

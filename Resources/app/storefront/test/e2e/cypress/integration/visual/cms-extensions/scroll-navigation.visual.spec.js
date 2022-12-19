@@ -13,7 +13,7 @@ describe('Scroll Navigation: Test if it works correctly', () => {
             })
     });
 
-    it('@visual @cms: Run Scroll Navigation', () => {
+    it.skip('@visual @cms: Run Scroll Navigation', () => {
         const page = new CategoryPageObject();
 
         cy.openInitialPage(`${Cypress.env('admin')}#/sw/cms/index`);

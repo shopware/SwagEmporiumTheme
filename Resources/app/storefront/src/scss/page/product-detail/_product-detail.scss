@@ -61,7 +61,7 @@
         }
     }
 
-    @include media-breakpoint-down(if(feature('V6_5_0_0'), lg, md)) {
+    @include media-breakpoint-down(lg) {
         .tab-pane {
             display: none;
         }
@@ -250,10 +250,6 @@
         }
 
         .product-detail-review-content {
-            @if (not feature('V6_5_0_0')) {
-                margin: 0;
-            }
-
             > .alert {
                 width: auto !important;
             }
@@ -317,11 +313,7 @@
             line-height: 60px;
 
             .icon svg {
-                @if (feature('V6_5_0_0')) {
-                    top: 3px;
-                } @else {
-                    top: 0;
-                }
+                top: 3px;
             }
         }
 
@@ -1233,10 +1225,6 @@
             max-width: none;
         }
 
-        @if (not feature('V6_5_0_0')) {
-            margin: 0;
-        }
-
         > .alert {
             width: auto !important;
         }
@@ -1376,14 +1364,8 @@
         @extend .mb-0;
     }
 
-    @if (feature('V6_5_0_0')) {
-        > .row {
-            @extend .mb-0;
-        }
-    } @else {
-        > .form-row {
-            @extend .mb-0;
-        }
+    > .row {
+        @extend .mb-0;
     }
 }
 
