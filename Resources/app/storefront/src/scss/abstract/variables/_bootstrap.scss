@@ -12,6 +12,7 @@ $app-css-relative-asset-path: '../assets' !default;
 
 $top-and-bottom-color: darken($sw-color-brand-primary, 40%) !default; //#000639
 
+$primary: $sw-color-brand-primary !default;
 $primary-lighten: lighten($sw-color-brand-primary, 45%) !default; //#ebeeff
 $primary-darken: darken($sw-color-brand-primary, 10%) !default; //#0016d2
 

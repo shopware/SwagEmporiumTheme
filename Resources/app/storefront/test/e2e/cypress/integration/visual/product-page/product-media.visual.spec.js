@@ -46,6 +46,7 @@ describe('Product Detail: Product media', () => {
             .should('have.attr', 'src')
             .and('match', /sw-product-preview/);
         cy.awaitAndCheckNotification('File has been saved.');
+        cy.wait(1000);
 
         // Save product
         cy.get(page.elements.productSaveAction).click();

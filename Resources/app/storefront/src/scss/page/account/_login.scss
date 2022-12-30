@@ -298,16 +298,6 @@ $account-login-register-spacer-lg: 34px;
             @include make-col(6);
         }
     }
-
-    @include media-breakpoint-up(xxl) {
-        .account-login-container {
-            padding-right: 165px;
-        }
-
-        .account-register-container {
-            padding-left: 165px;
-        }
-    }
 }
 
 .login-cancel {

@@ -139,6 +139,11 @@ $logo-height-lg: 37px;
     width: 100%;
     bottom: -7px;
 
+    &-btn {
+        padding-left: 18px;
+        padding-right: 18px;
+    }
+
     &-input,
     &-btn,
     &-btn:hover,

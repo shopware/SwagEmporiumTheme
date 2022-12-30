@@ -77,8 +77,13 @@
     }
 
     @include media-breakpoint-up(md) {
+        .account-content-aside,
+        .account-content-main {
+            padding: 34px 0 25px;
+        }
+
         .account-content-aside {
-            @include make-col(4);
+            @include make-col(3);
             display: block;
 
             .account-aside-item {
@@ -90,6 +95,7 @@
 
         .account-content-main {
             @include make-col(8);
+            margin-left: 23px;
         }
 
         .account-aside-list-group {
@@ -117,17 +123,7 @@
     }
 
     @include media-breakpoint-up(lg) {
-        .account-content-aside,
         .account-content-main {
-            padding: 34px 0 25px;
-        }
-
-        .account-content-aside {
-            @include make-col(3);
-        }
-
-        .account-content-main {
-            @include make-col(8);
             margin-left: 75px;
         }
 

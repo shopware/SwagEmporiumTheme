@@ -21,7 +21,7 @@ describe('Checkout: Basic', { tags: ['@workflow', '@checkout'] }, () => {
             });
     });
 
-    it.only('@workflow @checkout: basic checkout workflow', () => {
+    it('@workflow @checkout: basic checkout workflow', () => {
         const page = new CheckoutPageObject();
         const accountPage = new AccountPageObject();
 
@@ -36,7 +36,7 @@ describe('Checkout: Basic', { tags: ['@workflow', '@checkout'] }, () => {
 
         // Off canvas
         cy.get('.offcanvas').should('be.visible');
-        cy.get('.cart-item-price').contains('64');
+        cy.get('.line-item-total-price-value').contains('64');
         cy.contains('Close Cart').should('be.visible');
         cy.contains('Close Cart').click();
 

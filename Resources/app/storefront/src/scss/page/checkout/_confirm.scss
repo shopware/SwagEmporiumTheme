@@ -118,6 +118,13 @@
     }
 }
 
+.checkout-aside-action {
+    .btn-primary {
+        background-color: $top-and-bottom-color;
+        border-color: $top-and-bottom-color;
+    }
+}
+
 @include media-breakpoint-up(md) {
     .is-act-confirmpage,
     .is-ctl-accountorder {

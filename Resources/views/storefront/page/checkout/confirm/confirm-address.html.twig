@@ -11,7 +11,6 @@
             {% set addressEditorOptions = {
                 changeBilling: true,
                 addressId: billingAddress.id,
-                csrfToken: sw_csrf("frontend.account.addressbook", {"mode": "token"})
             } %}
 
             <a href="{{ path('frontend.account.address.edit.page', {'addressId': billingAddress.id}) }}"
@@ -32,7 +31,6 @@
             {% set addressEditorOptions = {
                 changeShipping: true,
                 addressId: shippingAddress.id,
-                csrfToken: sw_csrf("frontend.account.addressbook", {"mode": "token"})
             } %}
 
             <a href="{{ path('frontend.account.address.edit.page', {'addressId': shippingAddress.id}) }}"

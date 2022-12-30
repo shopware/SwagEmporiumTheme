@@ -101,7 +101,7 @@
 {% block page_product_detail_review_filter %}
     {% if productReviewCount > 0 %}
         <div class="product-detail-accordion" id="ratingsFilter">
-            <button class="btn btn-light btn-buy" type="button" {{dataBsToggleAttr}}="collapse" {{dataBsTargetAttr}}="#collapseRatingsFilter" aria-expanded="false">
+            <button class="btn btn-light btn-buy" type="button" data-bs-toggle="collapse" data-bs-target="#collapseRatingsFilter" aria-expanded="false">
                 {{ "detail.reviewRatingsFilterLabel"|trans|sw_sanitize }}
 
                 {% sw_icon 'arrow-head-down' %}
@@ -143,7 +143,7 @@
             {{ block('page_product_detail_review_filter_checkbox_input') }}
 
             {% block page_product_detail_review_filter_checkbox_label %}
-                <label class="{{formCheckLabelClass}} text-nowrap"
+                <label class="form-check-label text-nowrap"
                        for="reviewRating{{ matrix.points }}">
                 </label>
             {% endblock %}

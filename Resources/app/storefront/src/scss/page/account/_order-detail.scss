@@ -149,6 +149,14 @@
     .order-detail-content-header {
         display: none;
     }
+
+    .line-item-total-price-label {
+        display: block;
+    }
+
+    .line-item-total-price {
+        order: 6;
+    }
 }
 
 .order-detail-content-header {
@@ -232,6 +240,17 @@
     &.order-item-total {
         color: $top-and-bottom-color;
     }
+
+    &-detail-labels .col-6 {
+        color: $gray-400;
+    }
+
+    &-detail-summary {
+        dt:nth-of-type(1),
+        dd:nth-of-type(1) {
+            color: $gray-400;
+        }
+    }
 }
 
 @include media-breakpoint-down(xxl) {
@@ -284,7 +303,6 @@
 
         .line-item-unit-price {
             padding-right: $grid-gutter-width / 2;
-            text-align: right;
         }
 
         .line-item-quantity-select-wrapper .line-item-quantity {

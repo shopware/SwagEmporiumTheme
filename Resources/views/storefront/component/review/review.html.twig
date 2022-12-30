@@ -9,7 +9,7 @@
 {% block component_review_list_container %}
     {% if productReviewCount > 0 %}
         <div class="product-detail-accordion" id="ratingsFilter">
-            <button class="btn btn-light btn-buy" type="button" {{dataBsToggleAttr}}="collapse" {{dataBsTargetAttr}}="#collapseRatingsFilter" aria-expanded="false">
+            <button class="btn btn-light btn-buy" type="button" data-bs-toggle="collapse" data-bs-target="#collapseRatingsFilter" aria-expanded="false">
                 {{ "detail.reviewRatingsFilterLabel"|trans|sw_sanitize }}
 
                 {% sw_icon 'arrow-head-down' %}
@@ -78,7 +78,7 @@
                                     {% endblock %}
 
                                     {% block component_review_filter_checkbox_label %}
-                                        <label class="{{formCheckLabelClass}} text-nowrap"
+                                        <label class="form-check-label text-nowrap"
                                                for="reviewRating{{ matrix.points }}">
                                         </label>
                                     {% endblock %}
@@ -89,6 +89,15 @@
                 </div>
             </div>
         </div>
+    {% endif %}
+
+    {% if productReviewCount <= 0 %}
+        {% block component_review_list_empty %}
+            {% sw_include '@Storefront/storefront/utilities/alert.html.twig' with {
+                type: "info",
+                content: "detail.reviewListEmpty"|trans|sw_sanitize
+            } %}
+        {% endblock %}
     {% endif %}
 
     {{ block('component_review_list') }}

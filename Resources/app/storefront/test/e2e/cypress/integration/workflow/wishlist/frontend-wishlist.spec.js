@@ -64,14 +64,14 @@ describe('Wishlist: for wishlist page', { tags: ['@workflow'] }, () => {
             cy.title().should('eq', 'Your wishlist');
 
             cy.wait('@guestPagelet').then(xhr => {
-                expect(xhr.response).to.have.property('statusCode', 204);
+                expect(xhr.response).to.have.property('statusCode', 200);
             });
 
             cy.get('.cms-listing-row .cms-listing-col').contains(product.name);
             cy.get('.product-wishlist-form [type="submit"]').click();
 
             cy.wait('@guestPagelet').then(xhr => {
-                expect(xhr.response).to.have.property('statusCode', 204);
+                expect(xhr.response).to.have.property('statusCode', 200);
                 expect(win.localStorage.getItem('wishlist-' + win.salesChannelId)).to.equal(null)
             });
 
@@ -80,7 +80,7 @@ describe('Wishlist: for wishlist page', { tags: ['@workflow'] }, () => {
         });
     });
 
-    it.only('@wishlist: add to cart button work on guest page', () => {
+    it('@wishlist: add to cart button work on guest page', () => {
         cy.intercept({
             url: '/wishlist/guest-pagelet',
             method: 'post'
@@ -106,7 +106,7 @@ describe('Wishlist: for wishlist page', { tags: ['@workflow'] }, () => {
             cy.title().should('eq', 'Your wishlist')
 
             cy.wait('@guestPagelet').then(xhr => {
-                expect(xhr.response).to.have.property('statusCode', 204);
+                expect(xhr.response).to.have.property('statusCode', 200);
                 cy.get('.cms-listing-row .cms-listing-col').contains(product.name);
                 cy.get('.cms-listing-row .cms-listing-col .product-action .btn-buy').should('exist');
                 cy.get('.cms-listing-row .cms-listing-col .product-action .btn-buy').click({ force: true });
@@ -118,7 +118,7 @@ describe('Wishlist: for wishlist page', { tags: ['@workflow'] }, () => {
                 cy.wait('@offcanvas').then(xhr => {
                     expect(xhr.response).to.have.property('statusCode', 204);
                     cy.get('.offcanvas.show.cart-offcanvas').should('exist');
-                    cy.get('.offcanvas.show.cart-offcanvas').find('.cart-item-label').contains(product.name);
+                    cy.get('.offcanvas.show.cart-offcanvas').find('.line-item-label').contains(product.name);
 
                     // Wishlist product should still exist
                     cy.get('.cms-listing-row .cms-listing-col').contains(product.name);

@@ -43,4 +43,8 @@
             padding: 9px 14px;
         }
     }
+
+    .form-control:focus + .btn-secondary {
+        z-index: 6;
+    }
 }

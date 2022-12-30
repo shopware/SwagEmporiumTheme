@@ -1,5 +1,4 @@
 import AccountPageObject from '../../../support/pages/account.page-object';
-import AccountPageObject from '../../../support/pages/account.page-object';
 
 describe('Account: Overview page', { tags: ['@workflow', '@account'] }, () => {
     beforeEach(() => {

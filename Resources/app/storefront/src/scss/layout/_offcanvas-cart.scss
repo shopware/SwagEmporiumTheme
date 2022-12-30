@@ -3,14 +3,14 @@
         &-quantity,
         &-total-price {
             padding-left: $line-item-img-size + $line-item-space-sm;
-
-            &-label {
-                display: none;
-            }
         }
 
         &-quantity {
             margin-bottom: 0;
+
+            &-label {
+                display: none;
+            }
 
             &-row {
                 margin-bottom: 15px;
@@ -37,6 +37,21 @@
             width: 14px;
             height: 14px;
             color: $btn-scroll-top-icon-color;
+        }
+    }
+
+    .cart-quantity-price {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 14px;
+
+        .cart-item-quantity {
+            width: 100%;
+        }
+
+        .cart-item-price {
+            margin-left: 0;
+            text-align: left;
         }
     }
 }
@@ -77,7 +92,6 @@
 .offcanvas-cart-actions {
     .begin-checkout-btn {
         @extend .btn-buy;
-
         font-size: 13px;
         line-height: 42px;
         padding: 0;
@@ -86,7 +100,6 @@
 
     .btn-link {
         @extend .btn-outline-primary;
-
         margin-top: 16px;
     }
 

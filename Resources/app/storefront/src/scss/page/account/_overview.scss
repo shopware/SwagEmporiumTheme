@@ -142,6 +142,10 @@
         .row {
             @extend .g-0;
         }
+
+        .btn-light {
+            color: $primary;
+        }
     }
 
     .js-field-toggle-contact-type-company {
@@ -184,6 +188,16 @@
                 max-width: none;
                 flex-basis: 100%;
             }
+
+            .btn:not(.collapsed) {
+                color: $white;
+                background-color: $sw-color-brand-primary;
+                border-color: $sw-color-brand-primary;
+            }
+        }
+
+        .address {
+            margin-bottom: 14px;
         }
     }
 }

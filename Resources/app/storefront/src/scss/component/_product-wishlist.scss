@@ -16,12 +16,6 @@ Styling for productbox component.
         height: 16px;
     }
 
-    .icon-wishlist {
-        svg {
-            top: 3px;
-        }
-    }
-
     &-action-circle {
         @extend .btn-light;
 

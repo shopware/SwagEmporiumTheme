@@ -1,6 +1,14 @@
 .btn {
     font-weight: $btn-font-weight;
     @include disable-button($disabled-btn-primary-bg, $disabled-btn-color, $disabled-btn-primary-border-color);
+
+    &.show {
+        border-color: transparent;
+    }
+
+    &.btnx-lg {
+        line-height: 58px;
+    }
 }
 
 @each $color, $value in $theme-colors {
@@ -78,4 +86,8 @@
         border-color: $sw-color-buy-button;
         color: $sw-color-buy-button;
     }
+}
+
+.btn-primary:not(.btn-buy):not(.begin-checkout-btn) {
+    @include button-variant($primary, $primary);
 }

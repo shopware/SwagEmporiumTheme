@@ -40,14 +40,14 @@ describe('Checkout: Visual tests', () => {
         cy.get('.search-suggest-product-name').click();
 
         cy.takeSnapshot('[Checkout] See product',
-            '.product-detail',
+            '.cms-block-product-heading',
             {widths: [375, 768, 1920]});
 
         cy.get('.product-detail-buy .btn-buy').click();
 
         // Off canvas
         cy.get('.offcanvas').should('be.visible');
-        cy.get('.cart-item-price').contains('64');
+        cy.get('.line-item-total-price-value').contains('64');
         cy.get('.offcanvas').should('be.visible');
         cy.contains('Close Cart').should('be.visible');
         cy.contains('Close Cart').click();
