@@ -4,7 +4,7 @@
     <a href="{{ seoUrl('frontend.detail.page', {'productId': product.id}) }}"
        title="{{ product.translated.name }}"
        class="search-suggest-product-link">
-        <div class="row align-items-center {{ gridNoGuttersClass }}">
+        <div class="row align-items-center g-0">
             {{ block('layout_search_suggest_result_image') }}
 
             <div class="col-auto col-md search-suggest-product-info" >
@@ -18,7 +18,7 @@
 
 {% block layout_search_suggest_result_total_result %}
     <li class="js-result search-suggest-total">
-        <div class="row align-items-center justify-content-center {{ gridNoGuttersClass }}">
+        <div class="row align-items-center justify-content-center g-0">
             {% block layout_search_suggest_result_total_link %}
                 <div class="col-12 col-md-7">
                     <a href="{{ path('frontend.search.page') }}?search={{ page.searchTerm }}"

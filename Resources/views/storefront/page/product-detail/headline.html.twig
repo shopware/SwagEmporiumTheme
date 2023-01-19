@@ -25,13 +25,6 @@
     {{ parent() }}
 
     {% block clone_page_product_detail_reviews %}
-        {# @deprecated tag:v6.5.0 - Will be recheck - The variable will be moved from `component/buy-widget/buy-widget.html.twig` block `buy_widget_data` into block `buy_widget_reviews` #}
-        {% set remoteClickOptions = {
-            selector: "#review-tab",
-            scrollToElement: true
-        } %}
-        {# @deprecated tag:v6.5.0 - Will be recheck - The variable will be moved from `component/buy-widget/buy-widget.html.twig` block `buy_widget_data` into block `buy_widget_reviews` #}
-
         {% if page.product.ratingAverage > 0 and page.reviews.totalReviews > 0 and config('core.listing.showReview') %}
             <div class="col product-detail-reviews">
 
@@ -39,7 +32,7 @@
                     points: page.product.ratingAverage,
                     style: 'text-primary'
                 } %}
-                <a {{ dataBsToggleAttr }}="tab"
+                <a data-bs-toggle="tab"
                 class="product-detail-reviews-link"
                 data-offcanvas-tabs="true"
                 data-remote-click="true"

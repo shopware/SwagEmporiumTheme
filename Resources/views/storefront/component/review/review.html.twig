@@ -9,7 +9,7 @@
 {% block component_review_list_container %}
     {% if productReviewCount > 0 %}
         <div class="product-detail-accordion" id="ratingsFilter">
-            <button class="btn btn-light btn-buy" type="button" {{dataBsToggleAttr}}="collapse" {{dataBsTargetAttr}}="#collapseRatingsFilter" aria-expanded="false">
+            <button class="btn btn-light btn-buy" type="button" data-bs-toggle="collapse" data-bs-target="#collapseRatingsFilter" aria-expanded="false">
                 {{ "detail.reviewRatingsFilterLabel"|trans|sw_sanitize }}
 
                 {% sw_icon 'arrow-head-down' %}
@@ -23,10 +23,6 @@
                           method="post"
                           data-form-ajax-submit="true"
                           data-form-ajax-submit-options='{{ formAjaxSubmitOptions|json_encode }}'>
-
-                        {% block clone_component_review_filter_csrf %}
-                            {{ sw_csrf('frontend.product.reviews') }}
-                        {% endblock %}
 
                         {% if app.request.get('limit') %}
                             <input type="hidden" name="limit" value="{{ app.request.get('limit') }}">
@@ -67,7 +63,7 @@
 
                                     {% block component_review_filter_checkbox_input %}
                                         <input type="checkbox"
-                                               class="{{ formCheckInputClass }}"
+                                               class="form-check-input"
                                                id="reviewRating{{ matrix.points }}"
                                                name="points[]"
                                             {% if app.request.get('points') %}
@@ -82,7 +78,7 @@
                                     {% endblock %}
 
                                     {% block component_review_filter_checkbox_label %}
-                                        <label class="{{formCheckLabelClass}} text-nowrap"
+                                        <label class="form-check-label text-nowrap"
                                                for="reviewRating{{ matrix.points }}">
                                         </label>
                                     {% endblock %}
@@ -93,6 +89,15 @@
                 </div>
             </div>
         </div>
+    {% endif %}
+
+    {% if productReviewCount <= 0 %}
+        {% block component_review_list_empty %}
+            {% sw_include '@Storefront/storefront/utilities/alert.html.twig' with {
+                type: "info",
+                content: "detail.reviewListEmpty"|trans|sw_sanitize
+            } %}
+        {% endblock %}
     {% endif %}
 
     {{ block('component_review_list') }}
@@ -107,10 +112,6 @@
                   data-form-ajax-submit="true"
                   data-form-ajax-submit-options='{{ formAjaxSubmitOptions|json_encode }}'>
 
-                {% block component_review_list_action_language_csrf %}
-                    {{ sw_csrf('frontend.product.reviews') }}
-                {% endblock %}
-
                 {% if app.request.get('limit') %}
                     <input type="hidden" name="limit" value="{{ app.request.get('limit') }}">
                 {% endif %}
@@ -119,15 +120,15 @@
                     <input type="hidden" name="sort" value="{{ app.request.get('sort') }}">
                 {% endif %}
 
-                <div class="{{ formSwitchWrapperClass }}">
+                <div class="form-check form-switch">
                     {# TODO NEXT-16994 - set checked and disabled state #}
                     <input type="checkbox"
-                           class="{{ formCheckInputClass }}"
+                           class="form-check-input"
                            id="showForeignReviews"
                            value="filter-language"
                            name="language"
                            {% if app.request.get('language') %}checked="checked"{% endif %}>
-                    <label class="{{ formCheckLabelClass }} form-label"
+                    <label class="form-check-label form-label"
                            for="showForeignReviews">
                         <small>{{ "detail.reviewLanguageFilterLabel"|trans|sw_sanitize }}</small>
                     </label>

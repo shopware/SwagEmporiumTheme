@@ -24,7 +24,7 @@ describe('Checkout: Visual tests', () => {
             });
     });
 
-    it.only('@visual: check appearance of basic checkout workflow', () => {
+    it('@visual: check appearance of basic checkout workflow', () => {
         const page = new CheckoutPageObject();
         const accountPage = new AccountPageObject();
 
@@ -40,14 +40,14 @@ describe('Checkout: Visual tests', () => {
         cy.get('.search-suggest-product-name').click();
 
         cy.takeSnapshot('[Checkout] See product',
-            '.product-detail',
+            '.cms-block-product-heading',
             {widths: [375, 768, 1920]});
 
         cy.get('.product-detail-buy .btn-buy').click();
 
         // Off canvas
         cy.get('.offcanvas').should('be.visible');
-        cy.get('.cart-item-price').contains('64');
+        cy.get('.line-item-total-price-value').contains('64');
         cy.get('.offcanvas').should('be.visible');
         cy.contains('Close Cart').should('be.visible');
         cy.contains('Close Cart').click();
@@ -63,7 +63,7 @@ describe('Checkout: Visual tests', () => {
 
         // Take snapshot for visual testing on desktop
         cy.takeSnapshot('[Checkout] Offcanvas',
-            `${page.elements.offCanvasCart}.is-open`,
+            `${page.elements.offCanvasCart}.show`,
             {widths: [375, 768, 1920]});
 
         cy.get(`${page.elements.cartItem}-label`).contains(product.name);
@@ -88,8 +88,8 @@ describe('Checkout: Visual tests', () => {
         // Take snapshot for visual testing on desktop
         cy.takeSnapshot('[Checkout] Confirm', '.confirm-tos', {widths: [375, 768, 1920]});
 
-        cy.get('.confirm-tos .custom-checkbox label').scrollIntoView();
-        cy.get('.confirm-tos .custom-checkbox label').click(1, 1);
+        cy.get('.confirm-tos .form-check-input').scrollIntoView();
+        cy.get('.confirm-tos .form-check-input').click(1, 1);
         cy.get('.confirm-address').contains('Pep Eroni');
         cy.get(`${page.elements.cartItem}-details-container ${page.elements.cartItem}-label`).contains(product.name);
         cy.get(`${page.elements.cartItem}-total-price`).contains(product.price[0].gross);

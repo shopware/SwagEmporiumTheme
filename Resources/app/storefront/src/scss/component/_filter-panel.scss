@@ -1,6 +1,6 @@
-$icon-star: url('#{$asset-path}/icon/icon-pack/ic-star.svg');
-$icon-star-fill: url('#{$asset-path}/icon/icon-pack/ic-star-filled.svg');
-$icon-check: url('#{$asset-path}/icon/icon-pack/ic-check.svg');
+$icon-star: url('#{$app-css-relative-asset-path}/icon/icon-pack/ic-star.svg');
+$icon-star-fill: url('#{$app-css-relative-asset-path}/icon/icon-pack/ic-star-filled.svg');
+$icon-check: url('#{$app-css-relative-asset-path}/icon/icon-pack/ic-check.svg');
 
 .filter-panel {
     margin-bottom: 0;
@@ -30,7 +30,7 @@ $icon-check: url('#{$asset-path}/icon/icon-pack/ic-check.svg');
             flex-wrap: wrap;
             width: 100%;
 
-            @include media-breakpoint-down(if(feature('V6_5_0_0'), lg, md)) {
+            @include media-breakpoint-down(lg) {
                 padding: 14px 0;
                 border-bottom: $border-width solid $border-color;
             }
@@ -153,7 +153,7 @@ $icon-check: url('#{$asset-path}/icon/icon-pack/ic-check.svg');
 
         &::after {
             content: '';
-            background: url('#{$asset-path}/icon/icon-pack/ic-close.svg') no-repeat center/1rem;
+            background: url('#{$app-css-relative-asset-path}/icon/icon-pack/ic-close.svg') no-repeat center/1rem;
             height: 20px;
             width: 20px;
             display: block;

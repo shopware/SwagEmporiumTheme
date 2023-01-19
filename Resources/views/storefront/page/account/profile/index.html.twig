@@ -1,7 +1,5 @@
 {% sw_extends '@Storefront/storefront/page/account/profile/index.html.twig' %}
 
-{% set formRowClass = "row g-0 g-sm-2" %}
-
 {% block page_account_profile_personal_action_buttons %}{% endblock %}
 
 {% block page_account_profile_credentials_current_mail %}
@@ -14,7 +12,7 @@
     <div class="col-12 col-sm-6 col-md-5 col-lg-2">
         <div class="d-grid">
             <a class="account-profile-change btn btn-outline-primary{% if not passwordFormViolation %} collapsed{% endif %}"
-            {{ dataBsToggleAttr }}="collapse"
+            data-bs-toggle="collapse"
             href="#profile-password-form"
             role="button"
             aria-expanded="{% if passwordFormViolation %}true{% else %}false{% endif %}"
@@ -29,7 +27,7 @@
     <div class="col-12 col-sm-6 col-md-5 col-lg-2">
         <div class="d-grid">
             <a class="account-profile-change btn btn-outline-primary{% if not emailFormViolation %} collapsed{% endif %}"
-            {{ dataBsToggleAttr }}="collapse"
+            data-bs-toggle="collapse"
             href="#profile-email-form"
             role="button"
             aria-expanded="{% if emailFormViolation %}true{% else %}false{% endif %}"
@@ -103,7 +101,7 @@
 {% endblock %}
 
 {% block page_account_profile_mail_password %}
-    <div class="{{ formRowClass }}">
+    <div class="row g-2">
         <div class="form-group col-12 col-sm-6">
             {{ block('page_account_profile_mail_password_label') }}
 
@@ -115,7 +113,7 @@
 {% endblock %}
 
 {% block page_account_profile_current_password %}
-    <div class="{{ formRowClass }}">
+    <div class="row g-2">
         <div class="col-12 col-sm-6 form-group">
             {{ block('page_account_profile_current_password_label') }}
 
@@ -174,5 +172,22 @@
         {{ block('page_account_profile_new_password_confirmation_input') }}
 
         {{ block('page_account_profile_new_password_confirmation_error') }}
+    </div>
+{% endblock %}
+
+
+{% block page_account_profile_mail_collapse %}
+    <div class="collapse{% if emailFormViolation and formViolations %} show{% endif %}" id="profile-email-form" data-bs-parent=".profile-content">
+        <div class="card account-email">
+            {{ block('page_account_profile_mail_form') }}
+        </div>
+    </div>
+{% endblock %}
+
+{% block page_account_profile_password %}
+    <div class="collapse{% if passwordFormViolation and formViolations %} show{% endif %}" id="profile-password-form" data-bs-parent=".profile-content">
+        <div class="card account-password">
+            {{ block('page_account_profile_password_form') }}
+        </div>
     </div>
 {% endblock %}

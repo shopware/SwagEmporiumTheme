@@ -44,13 +44,8 @@
 
         {% if defaultShippingAddress.id != address.id and defaultBillingAddress.id != address.id %}
             <form action="{{ path('frontend.account.address.delete', {'addressId': address.id}) }}"
-                  data-form-csrf-handler="true"
                   class="address-action-delete"
                   method="post">
-
-                {% block page_account_address_actions_delete_csrf %}
-                    {{ sw_csrf('frontend.account.address.delete') }}
-                {% endblock %}
 
                 <button class="btn"
                         type="submit"

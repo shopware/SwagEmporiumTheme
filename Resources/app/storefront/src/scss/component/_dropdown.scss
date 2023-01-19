@@ -1,4 +1,6 @@
 .dropdown-menu {
+    @extend .dropdown-menu-end;
+
     &.open-in-center {
         left: 50% !important;
         transform: translateX(-50%) !important;

@@ -115,6 +115,6 @@ describe('Wishlist: Check appearance of wishlist', {tags: ['@visual']}, () => {
 
         cy.get('.product-wishlist-action').first().click();
 
-        cy.takeSnapshot('[Wishlist] Product detail', '.product-detail');
+        cy.takeSnapshot('[Wishlist] Product detail', '.product-detail-name');
     });
 });

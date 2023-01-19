@@ -18,13 +18,13 @@ describe('Product Detail: Visual tests properties area ', () => {
         // verify in storefront
         cy.visit('/ProductProperties/TEST');
 
-        cy.get('#description-tab').click();
+        cy.get('.description-tab').click();
 
         cy.get('.product-detail-properties-table').should('be.visible');
         cy.get('.product-detail-properties-table').contains('Height')
         cy.get('.product-detail-properties-table').contains('Textile:')
         cy.get('.product-detail-properties-table').contains('Color')
 
-        cy.takeSnapshot('[Product Detail] Properties', '#description-tab');
+        cy.takeSnapshot('[Product Detail] Properties', '.product-detail-properties');
     });
 });

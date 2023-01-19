@@ -9,7 +9,7 @@
     "addressLoginToggle": "Anmelden wenn Sie bereits ein Konto haben",
     "addressHeader": "Ich bin neu",
     "productDetails": "Produktdetails",
-    "addPromotionPlaceholder": "Gutschein-Code eingeben",
+    "addPromotionPlaceholder": "Geschenkkarte oder Rabattnummer…",
     "addProductPlaceholder": "Produktnummer eingeben",
     "lineItemContainerHeadline": "Konfiguration",
     "addressRegisterCardTitle": "Ihre persönlichen Daten"
@@ -19,7 +19,7 @@
     "404ErrorDescription": "Es tut uns leid, aber es scheint, dass wir die Seite, die Sie suchen, nicht finden können. Möglicherweise existiert sie nicht mehr oder ist verschoben worden.",
     "maintenanceModeHeader": "Wartungsmodus",
     "maintenanceModeDescription": "Wir aktualisieren derzeit den Inhalt dieser Website. Bitte schauen Sie später wieder vorbei.",
-    "privacyNotice": "ich habe gelesen <a data-toggle=\"modal\" data-url=\"%privacyUrl%\" href=\"%privacyUrl%\" title=\"Datenschutzbestimmungen\">Datenschutzbestimmungen</a>",
+    "privacyNotice": "ich habe gelesen <a data-bs-toggle=\"modal\" data-url=\"%privacyUrl%\" href=\"%privacyUrl%\" title=\"Datenschutzbestimmungen\">Datenschutzbestimmungen</a>",
     "privacyAndTerm": "Diese Website ist durch hCaptcha geschützt und es gelten die  <a data-toggle=\"modal\" data-bs-toggle=\"modal\" data-url=\"%privacyUrl%\" href=\"%privacyUrl%\" title=\"Datenschutzrichtlinie \">Datenschutzrichtlinie </a> und <a data-toggle=\"modal\" data-bs-toggle=\"modal\" data-url=\"%tosUrl%\" href=\"%tosUrl%\" title=\"Servicebedingungen\">Servicebedingungen</a> gelten."
   },
   "footer": {
@@ -102,7 +102,7 @@
     "submitText": "Senden",
     "subjectPlaceholder": "Betreff eingeben",
     "commentPlaceholder": "Kommentar eingeben",
-    "privacyNotice": "Ich habe gelesen <a data-toggle=\"modal\" data-url=\"%privacyUrl%\" href=\"%privacyUrl%\" title=\"Datenschutzbestimmungen\">Datenschutzbestimmungen</a>"
+    "privacyNotice": "Ich habe gelesen <a data-bs-toggle=\"modal\" data-url=\"%privacyUrl%\" href=\"%privacyUrl%\" title=\"Datenschutzbestimmungen\">Datenschutzbestimmungen</a>"
   },
   "order": {
     "orderSummary": "Zusammenfassung"

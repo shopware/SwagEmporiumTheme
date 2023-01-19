@@ -25,6 +25,7 @@ $line-item-space: 24px;
     &-ordernumber {
         margin-top: 5px;
         margin-bottom: 0;
+        word-break: break-all;
     }
 
     &-info-img {
@@ -93,18 +94,12 @@ $line-item-space: 24px;
         margin-top: 14px;
         margin-bottom: 14px;
 
-        @if (feature('V6_5_0_0')) {
-            &-row {
-                @extend .g-0;
-            }
+        &-row {
+            @extend .g-0;
         }
 
         &-label {
             display: none;
-        }
-
-        .line-item-quantity {
-            padding-left: 20px !important;
         }
     }
 
@@ -120,7 +115,7 @@ $line-item-space: 24px;
 
         select {
             padding: 15px 20px;
-            background-color: $table-accent-bg;
+            background-color: $gray-100;
             border: none;
             border-radius: 1px;
             min-width: 80px;
@@ -144,6 +139,7 @@ $line-item-space: 24px;
     &-total-price {
         font-size: 13px;
         color: $top-and-bottom-color;
+        justify-content: flex-start;
 
         &-label {
             color: $top-and-bottom-color;
@@ -198,6 +194,14 @@ $line-item-space: 24px;
             padding-right: 0;
         }
     }
+
+    @include media-breakpoint-down(md) {
+        &-quantity .line-item-quantity,
+        &-total-price-value,
+        &-unit-price-value {
+            padding-left: 20px !important;
+        }
+    }
 }
 
 .is-order {
@@ -215,12 +219,35 @@ $line-item-space: 24px;
         &-unit-price,
         &-total-price {
             @include make-col(12);
+            flex-direction: row;
         }
 
         &-quantity-label,
         &-unit-price-label,
         &-total-price-label {
             max-width: 100px;
+        }
+    }
+}
+
+@include media-breakpoint-down(md) {
+    .is-offcanvas {
+        .line-item-total-price {
+            justify-content: space-between;
+            order: 6;
+            &-label {
+                display: block;
+            }
+        }
+
+        .line-item-unit-price {
+            &.is-shown {
+                justify-content: space-between;
+            }
+
+            &-label {
+                display: block;
+            }
         }
     }
 }
@@ -242,7 +269,6 @@ $line-item-space: 24px;
 
         &-quantity {
             @include make-col(2);
-
             margin: 0;
 
             &-label {
@@ -314,6 +340,12 @@ $line-item-space: 24px;
             }
         }
     }
+
+    .is-offcanvas {
+        .line-item-unit-price.is-shown {
+            display: none;
+        }
+    }
 }
 
 @include media-breakpoint-up(xl) {
@@ -368,6 +400,21 @@ $line-item-space: 24px;
     .cart-header-total-price,
     .line-item-total-price {
         width: 190px;
+    }
+
+    .is-order {
+        .line-item-total-price-label {
+            display: block;
+        }
+
+        .line-item {
+            &-quantity,
+            &-tax-price,
+            &-unit-price,
+            &-total-price {
+                flex-direction: column;
+            }
+        }
     }
 }
 

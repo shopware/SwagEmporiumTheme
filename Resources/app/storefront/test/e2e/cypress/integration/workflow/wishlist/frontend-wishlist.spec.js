@@ -80,7 +80,7 @@ describe('Wishlist: for wishlist page', { tags: ['@workflow'] }, () => {
         });
     });
 
-    it.only('@wishlist: add to cart button work on guest page', () => {
+    it('@wishlist: add to cart button work on guest page', () => {
         cy.intercept({
             url: '/wishlist/guest-pagelet',
             method: 'post'
@@ -116,9 +116,9 @@ describe('Wishlist: for wishlist page', { tags: ['@workflow'] }, () => {
                 });
 
                 cy.wait('@offcanvas').then(xhr => {
-                    expect(xhr.response).to.have.property('statusCode', 200);
-                    cy.get('.offcanvas.is-open.cart-offcanvas').should('exist');
-                    cy.get('.offcanvas.is-open.cart-offcanvas').find('.cart-item-label').contains(product.name);
+                    expect(xhr.response).to.have.property('statusCode', 204);
+                    cy.get('.offcanvas.show.cart-offcanvas').should('exist');
+                    cy.get('.offcanvas.show.cart-offcanvas').find('.line-item-label').contains(product.name);
 
                     // Wishlist product should still exist
                     cy.get('.cms-listing-row .cms-listing-col').contains(product.name);

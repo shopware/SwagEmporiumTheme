@@ -44,18 +44,10 @@
         }
     }
 
-    @if (feature('V6_5_0_0')) {
-        .form-check-input:checked + .form-check-label {
-            strong {
-                color: $sw-text-color;
-                font-weight: $font-weight-bold;
-            }
-        }
-    } @else {
-        .custom-control-input:checked + .custom-control-label {
-            strong {
-                color: $sw-text-color;
-            }
+    .form-check-input:checked + .form-check-label {
+        strong {
+            color: $sw-text-color;
+            font-weight: $font-weight-bold;
         }
     }
 
@@ -65,9 +57,6 @@
 
         strong {
             font-weight: $font-weight-normal;
-            @if (not feature('V6_5_0_0')) {
-                line-height: 26px;
-            }
         }
 
         p {
@@ -126,6 +115,13 @@
         > .icon svg {
             top: 10px;
         }
+    }
+}
+
+.checkout-aside-action {
+    .btn-primary {
+        background-color: $top-and-bottom-color;
+        border-color: $top-and-bottom-color;
     }
 }
 

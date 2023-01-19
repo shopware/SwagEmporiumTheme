@@ -23,12 +23,8 @@
         {% endblock %}
 
         <form action="{{ path('frontend.checkout.product.add-by-number') }}"
-              data-form-csrf-handler="true"
               class="cart-add-product"
               method="post">
-
-            {{ block('page_checkout_cart_add_product_csrf') }}
-
             {{ block('page_checkout_cart_add_product_redirect') }}
 
             {{ block('page_checkout_cart_add_product_input_group') }}
@@ -45,7 +41,7 @@
            name="code"
            class="form-control"
            id="addPromotionInput"
-           placeholder="{{ "checkout.addPromotionPlaceholder"|trans|striptags }}{{ "general.required"|trans|sw_sanitize }}"
+           placeholder="{{ "checkout.addPromotionPlaceholder"|trans|striptags }}"
            aria-label="{{ "checkout.addPromotionLabel"|trans|striptags }}"
            aria-describedby="addPromotion"
            required="required">

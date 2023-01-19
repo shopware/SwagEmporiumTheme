@@ -4,22 +4,11 @@
 {% endblock %}
 
 {% block component_offcanvas_cart_actions_promotion_submit %}
-    {# @deprecated tag:v6.5.0 - Bootstrap v5 removes `input-group-append` wrapper and uses elements as direct childs of `input-group` #}
-    {% if feature('v6.5.0.0') %}
-        <button class="btn btn-secondary"
-                type="submit"
-                id="addPromotionOffcanvasCart">
-            {{ "checkout.addPromotionAction"|trans|sw_sanitize }}
-        </button>
-    {% else %}
-        <div class="input-group-append">
-            <button class="btn btn-secondary"
-                    type="submit"
-                    id="addPromotionOffcanvasCart">
-                {{ "checkout.addPromotionAction"|trans|sw_sanitize }}
-            </button>
-        </div>
-    {% endif %}
+    <button class="btn btn-secondary"
+            type="submit"
+            id="addPromotionOffcanvasCart">
+        {{ "checkout.addPromotionAction"|trans|sw_sanitize }}
+    </button>
 {% endblock %}
 
 {% block component_offcanvas_cart_actions_promotion_input %}
@@ -27,7 +16,7 @@
            name="code"
            class="form-control"
            id="addPromotionOffcanvasCartInput"
-           placeholder="{{ "checkout.addPromotionPlaceholder"|trans|striptags }}{{ "general.required"|trans|sw_sanitize }}"
+           placeholder="{{ "checkout.addPromotionPlaceholder"|trans|striptags }}"
            aria-label="{{ "checkout.addPromotionLabel"|trans|striptags }}"
            aria-describedby="addPromotionOffcanvasCart"
            required="required">

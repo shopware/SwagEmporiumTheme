@@ -32,7 +32,7 @@ describe('Account: Overview page', () => {
 
         cy.get('.account-overview-profile').should('be.visible');
         cy.get('.account-overview-newsletter').should('be.visible');
-        cy.get('#newsletterRegister').should('not.be.visible')
+        cy.get('#newsletterRegister').should('be.visible')
             .check({ force: true })
             .should('be.checked');
 
@@ -60,7 +60,7 @@ describe('Account: Overview page', () => {
 
         cy.takeSnapshot('[Overview] Create a new billing address form', '.address-editor-modal', {widths: [375, 768, 1920]});
 
-        cy.get('.address-editor-modal').find('.modal-close').click();
+        cy.get('.address-editor-modal').find('.btn-close').click();
 
         cy.get('.overview-shipping-address [data-address-editor="true"]').click();
         cy.get('.address-editor-modal').should('be.visible');

@@ -21,7 +21,7 @@
 {% endblock %}
 
 {% block component_address_form_country_select %}
-    <select class="country-select {{ formSelectClass }}{% if violationPath %} is-invalid{% endif %}"
+    <select class="country-select form-select{% if violationPath %} is-invalid{% endif %}"
             id="{{ idPrefix ~ prefix }}AddressCountry"
             name="{{ prefix }}[countryId]"
             required="required"
@@ -41,10 +41,8 @@
                 data-zipcode-required="{{ country.postalCodeRequired }}"
                 data-vat-id-required="{{ country.vatIdRequired }}"
                 data-state-required="{{ country.forceStateInRegistration }}"
-                {% if feature('FEATURE_NEXT_15707') and  not country.shippingAvailable and disableNonShippableCountries %}
-                disabled="disabled"
-                {% endif %}>
-                {{ country.translated.name }}{% if feature('FEATURE_NEXT_15707') and showNoShippingPostfix and not country.shippingAvailable %} {{ "address.countryPostfixNoShipping"|trans|sw_sanitize }}{% endif %}
+                {% if not country.shippingAvailable and disableNonShippableCountries %}disabled="disabled"{% endif %}>
+                {{ country.translated.name }}{% if showNoShippingPostfix and not country.shippingAvailable %} {{ "address.countryPostfixNoShipping"|trans|sw_sanitize }}{% endif %}
             </option>
         {% endfor %}
     </select>
@@ -71,7 +69,6 @@
            value="{{ data.get('zipcode') }}"
            data-input-name="zipcodeInput"
            {% if requiredMessage is defined %}data-form-validation-required-message="{{ requiredMessage }}"{% endif %}
-           {% if not feature('v6.5.0.0') %}required="required"{% endif %}
     >
 {% endblock %}
 
@@ -108,7 +105,7 @@
 {% endblock %}
 
 {% block component_address_form_address_fields %}
-    <div class="{{ formRowClass }}">
+    <div class="row g-2">
         {% block component_address_form_street %}
             <div class="form-group col-lg-6">
                 {% if formViolations.getViolations("/street") is not empty %}
@@ -185,7 +182,7 @@
         {{ block('component_address_form_additional_field2') }}
     </div>
 
-    <div class="{{ formRowClass }} country-and-state-form-elements" data-country-state-select="true">
+    <div class="row g-2 country-and-state-form-elements" data-country-state-select="true">
         {% block component_address_form_country %}
             <div class="form-group col-lg-6">
                 {% set initialCountryId = null %}
@@ -223,7 +220,7 @@
         {% endblock %}
     </div>
 
-    <div class="{{ formRowClass }}">
+    <div class="row g-2">
         {{ block('component_address_form_phone_number') }}
     </div>
 {% endblock %}

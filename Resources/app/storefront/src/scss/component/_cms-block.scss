@@ -235,13 +235,13 @@
             @extend .col-xl-3;
         }
 
-        @include media-breakpoint-down(if(feature('V6_5_0_0'), md, sm)) {
+        @include media-breakpoint-down(md) {
             .product-detail-tab-navigation-link {
                 text-transform: none;
             }
         }
 
-        @include media-breakpoint-down(if(feature('V6_5_0_0'), xl, lg)) {
+        @include media-breakpoint-down(xl) {
             .product-detail-review-main > .multi-collapse,
             .product-detail-review-item-info .alert {
                 width: 100%;
@@ -312,7 +312,7 @@
         }
     }
 
-    @include media-breakpoint-down(if(feature('V6_5_0_0'), lg, md)) {
+    @include media-breakpoint-down(lg) {
         &.cms-block-gallery-buybox {
             .product-detail-media {
                 max-width: none;
@@ -321,7 +321,7 @@
         }
     }
 
-    @include media-breakpoint-down(if(feature('V6_5_0_0'), xl, lg)) {
+    @include media-breakpoint-down(xl) {
         &.cms-block-gallery-buybox {
             .product-detail-media {
                 padding: 0;
