@@ -101,13 +101,7 @@
     }
 
     .custom-control-label::after {
-        // stylelint-disable-next-line property-blacklist
-        border-radius: 50%;
-        width: 6px;
-        height: 6px;
-        top: 10px;
-        left: -20px;
-        background-color: $white;
+        top: 4px;
     }
 
     .custom-control-input:checked ~ .custom-control-label {
@@ -116,7 +110,7 @@
         }
 
         &::after {
-            background-image: none;
+            background-image: str-replace(url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='#fff'/%3e%3c/svg%3e"), "#", "%23");
         }
     }
 

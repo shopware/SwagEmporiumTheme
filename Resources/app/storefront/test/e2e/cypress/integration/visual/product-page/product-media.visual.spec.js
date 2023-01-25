@@ -33,15 +33,9 @@ describe('Product Detail: Product media', () => {
         );
 
         // Add first image to product
-        cy.get('.sw-product-media-form__previews').scrollIntoView();
-        cy.get('#files').attachFile(
-            'img/sw-product-preview.png',
-            {
-                fileName: 'sw-product-preview.jpg',
-                mimeType: 'image/jpg',
-                subjectType: 'input'
-            }
-        );
+        cy.get('.sw-product-media-form .sw-media-upload-v2__file-input')
+            .attachFile('img/sw-product-preview.png');
+
         cy.get('.sw-product-image__image img')
             .should('have.attr', 'src')
             .and('match', /sw-product-preview/);
@@ -89,14 +83,9 @@ describe('Product Detail: Product media', () => {
         // Upload Image
         for (let i = 0; i < 5; i++) {
             cy.get('.sw-product-media-form__previews').scrollIntoView();
-            cy.get('#files').attachFile(
-                `img/sw-product-preview-${i}.png`,
-                {
-                    fileName: `sw-product-preview-${i}.png`,
-                    mimeType: 'image/jpg',
-                    subjectType: 'input'
-                }
-            );
+            cy.get('.sw-product-media-form .sw-media-upload-v2__file-input')
+                .attachFile(`img/sw-product-preview-${i}.png`);
+
             cy.get('.sw-product-image__image img')
                 .should('have.attr', 'src')
                 .and('match', /sw-product-preview/);
