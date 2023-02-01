@@ -103,7 +103,8 @@
         @extend .w-100;
     }
 
-    .checkout-confirm-tos-label {
+    .checkout-confirm-tos-label,
+    .checkout-confirm-revocation-label {
         &::before {
             top: 2px;
             transform: none;
