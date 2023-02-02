@@ -1,3 +1,7 @@
+# 1.4.0
+- Überprüfung der Kompatibilität des Themas mit der Plattform v6.4.18.0
+- Überprüfung der Kompatibilität des Themas mit der Plattform v6.4.19.0
+
 # 1.3.0
 - Überprüfung der Kompatibilität des Themas mit der Plattform v6.4.17.0
 - Snippet für Social-Media-Links in der Fußzeile wurde behoben

@@ -1,3 +1,7 @@
+# 1.4.0
+- Checked theme compatibility with the platform v6.4.18.0
+- Checked theme compatibility with the platform v6.4.19.0
+
 # 1.3.0
 - Checked theme compatibility with the platform v6.4.17.0
 - Fixed footer social media links snippet
