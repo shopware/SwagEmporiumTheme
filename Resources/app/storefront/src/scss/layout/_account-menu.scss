@@ -82,6 +82,7 @@ $account-menu-spacing: 24px;
     .account-menu-register {
         margin-top: 13px;
         margin-bottom: 6px;
+        text-transform: capitalize;
 
         a:hover {
             text-decoration: none;

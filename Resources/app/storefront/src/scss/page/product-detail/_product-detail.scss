@@ -55,6 +55,12 @@
                 top: 2px;
             }
         }
+
+        .ic-arrow-right {
+            svg {
+                top: 6px;
+            }
+        }
     }
 
     @include media-breakpoint-down(lg) {
@@ -136,6 +142,8 @@
             margin-bottom: 0;
         }
     }
+
+
 
     &-name,
     &-price {
@@ -651,11 +659,18 @@
                 line-height: normal;
                 text-transform: none;
                 color: $gray-400;
+                margin-left: 4px;
+            }
+
+            .form-check-input {
+                width: 30px;
+                margin-top: 0;
             }
         }
 
         &-rating {
             white-space: nowrap;
+            margin: 20px 0;
         }
 
         &-item-hint {

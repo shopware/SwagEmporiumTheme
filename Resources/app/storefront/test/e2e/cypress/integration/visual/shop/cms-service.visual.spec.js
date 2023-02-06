@@ -5,7 +5,7 @@ let saleChannel = {}
 describe('Shop page: CMS service page', {tags: ['@visual']}, () => {
     beforeEach(() => {
         cy.setToInitialState()
-            .then(() => cy.loginViaApi())
+            .then(() => cy.login())
             .then(() => cy.createDefaultFixture('category', {}, 'footer-category-first'))
             .then(() => cy.createDefaultFixture('category', {}, 'footer-category-second'))
             .then(() => {
@@ -91,7 +91,7 @@ describe('Shop page: CMS service page', {tags: ['@visual']}, () => {
             salesChannel = data.id;
             return cy.createDefaultFixture('cms-page', {}, 'cms-service-page')
         }).then(() => {
-            cy.openInitialPage(`${Cypress.env('admin')}#/sw/category/index`);
+            cy.visit(`${Cypress.env('admin')}#/sw/category/index`);
             assignToFooterLink();
         });
     }

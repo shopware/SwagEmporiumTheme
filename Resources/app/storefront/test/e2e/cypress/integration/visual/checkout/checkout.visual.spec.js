@@ -40,7 +40,7 @@ describe('Checkout: Visual tests', () => {
         cy.get('.search-suggest-product-name').click();
 
         cy.takeSnapshot('[Checkout] See product',
-            '.cms-block-product-heading',
+            '.product-detail',
             {widths: [375, 768, 1920]});
 
         cy.get('.product-detail-buy .btn-buy').click();

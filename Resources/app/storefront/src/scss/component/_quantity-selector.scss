@@ -1,0 +1,42 @@
+.quantity-selector-group {
+    flex-wrap: nowrap;
+    background-color: $gray-100;
+
+    .btn.btn-plus,
+    .btn.btn-minus {
+        padding-left: 2px;
+        padding-right: 2px;
+        border: none;
+        &:hover {
+            background-color: transparent;
+        }
+    }
+
+    .btn.btn-plus {
+        padding-right: 15px;
+    }
+
+    .btn.btn-minus {
+        padding-left: 15px;
+    }
+
+    &-input {
+        min-width: 40px;
+        font-size: $h5-font-size;
+        background-color: $gray-100;
+        border: none;
+
+        &:focus {
+            box-shadow: none;
+            background-color: $gray-100;
+        }
+    }
+
+    @include media-breakpoint-down(xl) {
+        height: 42px;
+
+        .btn svg {
+            top: 2px;
+        }
+    }
+}

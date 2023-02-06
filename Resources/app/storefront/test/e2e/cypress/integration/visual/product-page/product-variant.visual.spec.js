@@ -3,9 +3,9 @@ import ProductPageObject from "../../../support/pages/sw-product.page-object";
 describe('Product Detail: Check appearance of product variants', () => {
     beforeEach(() => {
         cy.setToInitialState()
-            .then(() => cy.loginViaApi())
+            .then(() => cy.login())
             .then(() => cy.createProductVariantFixture())
-            .then(() => cy.openInitialPage(`${Cypress.env('admin')}#/sw/product/index`));
+            .then(() => cy.visit(`${Cypress.env('admin')}#/sw/product/index`));
     });
 
     it('@visual @variants: add multidimensional variant to product', () => {
@@ -28,7 +28,6 @@ describe('Product Detail: Check appearance of product variants', () => {
         cy.contains('.sw-button--ghost', 'Generate variants').click();
 
         // Add another group to create a multidimensional variant
-        cy.get('.sw-product-modal-variant-generation').should('be.visible');
         page.generateVariants('Size', [0, 1, 2], 6);
 
         // Verify in storefront
@@ -75,6 +74,6 @@ describe('Product Detail: Check appearance of product variants', () => {
             });
         });
 
-        cy.takeSnapshot('[Product Detail] Product variants', '.cms-block-product-heading');
+        cy.takeSnapshot('[Product Detail] Product variants', '.product-detail');
     });
 });

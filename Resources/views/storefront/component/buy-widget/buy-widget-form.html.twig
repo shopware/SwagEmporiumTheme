@@ -13,7 +13,7 @@
         </div>
     {% endif %}
 
-    <div class="col">
+    <div class="{% if showQuantitySelect %}col-12 col-md{% else %}col{% endif %}">
         {% block buy_widget_buy_button %}
             <div class="d-grid">
                 <button class="btn btn-primary btn-buy"
@@ -25,4 +25,13 @@
             </div>
         {% endblock %}
     </div>
+{% endblock %}
+
+{% block buy_widget_buy_quantity_container %}
+    {% if showQuantitySelect %}
+        <div class="col col-md-5 col-lg-4 d-flex justify-content-end">
+            {% set selectQuantityThreshold = 100 %}
+            {{ block('buy_widget_buy_quantity_input_group') }}
+        </div>
+    {% endif %}
 {% endblock %}
