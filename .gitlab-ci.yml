@@ -1,7 +1,7 @@
 variables:
     CYPRESS_SPEC: 'cypress/**/workflow/**/*.spec.js'
     PERCY_SPEC: 'cypress/**/*.visual.spec.js'
-    PLATFORM_BRANCH: "trunk"
+    PLATFORM_BRANCH: "next-19886/container-width"
     PERCY_TARGET_BRANCH: "trunk"
     PLUGIN_DEPENDENCIES:
         value: >
