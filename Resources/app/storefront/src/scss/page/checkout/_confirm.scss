@@ -91,21 +91,6 @@
 
         @extend .w-100;
     }
-
-    .checkout-confirm-tos-label {
-        &::before {
-            top: 2px;
-            transform: none;
-            width: 18px;
-            height: 18px;
-        }
-
-        &::after {
-            top: 3px;
-            transform: none;
-            left: -25px;
-        }
-    }
 }
 
 .card-title__wrapper {

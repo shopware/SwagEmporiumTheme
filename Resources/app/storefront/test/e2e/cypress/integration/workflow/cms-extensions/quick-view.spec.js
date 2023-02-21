@@ -9,12 +9,12 @@ describe('Quick View: Test if it works correctly', {tags: ['@workflow', '@cms']}
             .then((result) => {
                 product = result;
             })
-            .then(() => cy.loginViaApi())
+            .then(() => cy.login())
             .then(() => cy.createCmsFixture())
     });
 
     it.skip('@visual @cms: Run Quick View in a product view directly in the listing page', () => {
-        cy.openInitialPage(`${Cypress.env('admin')}#/sw/cms/index`);
+        cy.visit(`${Cypress.env('admin')}#/sw/cms/index`);
 
         cy.intercept({
             method: 'POST',

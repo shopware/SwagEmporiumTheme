@@ -205,12 +205,12 @@ describe('Customized Product: Check appearance of customized products', () => {
 
         // Off canvas cart
         cy.get('.offcanvas.is-open').should('be.visible');
-        cy.get('.cart-item-label').contains(product.name);
+        cy.get('.line-item-label').contains(product.name);
         cy.takeSnapshot('[Customized Product] Offcanvas', '.cart-offcanvas');
 
         // Check the configuration
-        cy.get('.cart-item-collapse-button').click();
-        cy.contains('.cart-item-child-label-bullet', 'Example #2');
+        cy.get('.line-item-collapse-button').click();
+        cy.contains('.line-item-child-label-bullet', 'Example #2');
 
         // Checkout
         cy.get('.offcanvas-cart-actions .btn-primary').click();
@@ -229,7 +229,7 @@ describe('Customized Product: Check appearance of customized products', () => {
         cy.get('.confirm-tos .custom-checkbox label').click(1, 1);
         cy.takeSnapshot('[Customized Product] Checkout confirm', '.checkout');
 
-        cy.get('.cart-item-collapse-button').first().click()
+        cy.get('.line-item-collapse-button').first().click()
 
         // Finish checkout
         cy.get('#confirmFormSubmit').scrollIntoView();

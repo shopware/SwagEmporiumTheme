@@ -21,7 +21,7 @@ describe('Contact: Basic', { tags: ['@workflow'] }, () => {
                 return cy.createProductFixture();
             })
             .then(() => {
-                cy.loginViaApi();
+                cy.login();
                 cy.createCmsFixture();
             });
     });
