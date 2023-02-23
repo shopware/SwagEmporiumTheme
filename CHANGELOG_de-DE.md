@@ -1,3 +1,6 @@
+# 1.5.0
+- Überprüfung der Kompatibilität des Themas mit der Plattform v6.4.20.0
+
 # 1.4.0
 - Überprüfung der Kompatibilität des Themas mit der Plattform v6.4.18.0
 - Überprüfung der Kompatibilität des Themas mit der Plattform v6.4.19.0

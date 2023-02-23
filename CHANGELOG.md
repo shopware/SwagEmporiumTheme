@@ -1,3 +1,6 @@
+# 1.5.0
+- Checked theme compatibility with the platform v6.4.20.0
+
 # 1.4.0
 - Checked theme compatibility with the platform v6.4.18.0
 - Checked theme compatibility with the platform v6.4.19.0
