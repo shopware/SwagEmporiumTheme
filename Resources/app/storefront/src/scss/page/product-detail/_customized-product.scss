@@ -1,5 +1,13 @@
 /* stylelint-disable max-nesting-depth */
 .swag-customized-products {
+    .form-check-label {
+        line-height: 28px;
+    }
+
+    .swag-customized-products__boolean.form-switch {
+        margin-bottom: 0;
+    }
+
     &__item .form-group,
     &__card {
         position: static;
@@ -58,6 +66,10 @@
 
     &__title-link-container {
         border-bottom: none;
+
+        .container {
+            padding: 0;
+        }
     }
 
     &__link-container {
@@ -187,6 +199,8 @@
                     top: 50%;
                     transform: translateY(-50%);
                     display: inline-block;
+                    position: absolute;
+                    left: 14px;
                 }
             }
 
@@ -217,8 +231,17 @@
             &[type='checkbox'] {
                 &:checked {
                     ~ .swag-customized-products-option-type-select-checkboxes-label::after {
-                        background: $custom-checkbox-indicator-icon-checked no-repeat 50%/70% 70% $primary;
-                        border: none;
+                        @if $enable-gradients {
+                            background-image: escape-svg($form-check-input-checked-bg-image), var(--#{$prefix}gradient);
+                        } @else {
+                            background-image: escape-svg($form-check-input-checked-bg-image);
+                        }
+
+                        background-repeat: no-repeat;
+                        background-position: center;
+                        background-size: contain;
+                        background-color: $sw-color-brand-primary;
+                        border-color: $sw-color-brand-primary;
                     }
                 }
 
@@ -355,6 +378,12 @@
             padding: 10px 24px;
             font-size: 13px;
             line-height: 20px;
+
+            &:hover:not(:disabled) {
+                background-color: $sw-color-brand-primary;
+                color: $white;
+                border-color: $sw-color-brand-primary;
+            }
         }
 
         .input-group {
@@ -531,3 +560,249 @@
     }
 }
 /* stylelint-enable max-nesting-depth */
+.swag-customized-products__line-item-collapse {
+    order: 6;
+}
+
+.swag-customized-products__line-item-collapse-options {
+    @extend .col-9;
+
+    .swag-customized-products__line-item-option-elements {
+        padding: 0;
+    }
+}
+
+.swag-customized-products__line-item-collapse-total-price {
+    @extend .col-3;
+
+    margin-top: 40px;
+}
+
+.swag-customized-products__line-item-collapse-unit-price {
+    margin-top: 40px;
+
+    .swag-customized-products__line-item-option-sub-element {
+        text-align: right;
+    }
+}
+
+.swag-customized-products__line-item-options-control-wrapper {
+    white-space: nowrap;
+
+    .swag-customized-products__line-item-control-headline,
+    .swag-customized-products__line-item-control-icon-container {
+        vertical-align: middle;
+    }
+}
+
+.cart-offcanvas {
+    .swag-customized-products__line-item-grid_component {
+        grid-template-columns: 1fr;
+    }
+
+    .swag-customized-products__line-item-quantity {
+        .line-item-quantity-label {
+            display: none;
+        }
+
+        .line-item-quantity {
+            text-align: left;
+            padding-left: 0;
+        }
+    }
+}
+
+*:not(.cart-offcanvas) {
+    .swag-customized-products__line-item-grid_component {
+        grid-template-columns: 1fr;
+    }
+
+    .is-order,
+    .is--default,
+    .is- {
+        .swag-customized-products__line-item-total-price .line-item-total-price-label {
+            display: block;
+        }
+    }
+}
+
+.is-order,
+.is-act-finishpage {
+    .swag-customized-products__line-item-remove {
+        @extend .d-none;
+    }
+}
+
+.is-order {
+    .swag-customized-products__line-item-option-element-detailed-total-price,
+    .swag-customized-products__line-item-option-element-detailed-unit-price,
+    .swag-customized-products__line-item-option-element-detailed-tax-price {
+        display: flex;
+    }
+}
+
+.swag-customized-products__line-item-quantity {
+    .row,
+    .line-item-quantity {
+        margin: 0;
+    }
+}
+
+.order-item-detail {
+    .swag-customized-products__line-item-option-sub-element {
+        .line-item-unit-price-label,
+        .line-item-tax-price-label,
+        .line-item-total-price-label {
+            display: none;
+        }
+    }
+}
+
+@include media-breakpoint-up(sm) {
+    .is- {
+        .line-item-unit-price,
+        .line-item-total-price,
+        .line-item-tax-price {
+            justify-content: normal;
+            flex-direction: column;
+        }
+    }
+
+    .line-item {
+        .swag-customized-products__line-item-option-element .line-item-total-price-value {
+            text-align: right;
+        }
+    }
+
+    .swag-customized-products__line-item-quantity {
+        justify-content: space-between;
+        display: flex;
+    }
+
+    *:not(.cart-offcanvas) {
+        .swag-customized-products__line-item-unit-price {
+            text-align: left;
+        }
+
+        .swag-customized-products__line-item-details {
+            padding-left: 118px;
+        }
+
+        .swag-customized-products__line-item-label {
+            padding-left: 0;
+        }
+    }
+
+    .is-order,
+    .is--default,
+    .is- {
+        .swag-customized-products__line-item-collapse-options {
+            @extend .col-sm-12;
+        }
+    }
+}
+
+@include media-breakpoint-up(md) {
+    *:not(.cart-offcanvas) {
+        .is--default,
+        .is- {
+            .swag-customized-products__line-item-total-price .line-item-total-price-label {
+                display: none;
+            }
+
+            .swag-customized-products__line-item-quantity .line-item-quantity {
+                text-align: center;
+            }
+        }
+
+        .is-order {
+            .swag-customized-products__line-item-quantity .line-item-quantity-label,
+            .swag-customized-products__line-item-total-price .line-item-total-price-label,
+            .swag-customized-products__line-item-unit-price .line-item-unit-price-label,
+            .swag-customized-products__line-item-tax-price .line-item-tax-price-label {
+                display: block;
+            }
+        }
+    }
+
+    .swag-customized-products__line-item-collapse-options {
+        .is- &,
+        .is-default &,
+        .is-order &, {
+            @extend .col-md-8;
+        }
+    }
+
+    .swag-customized-products__line-item-collapse-unit-price,
+    .swag-customized-products__line-item-collapse-tax-price,
+    .swag-customized-products__line-item-collapse-total-price {
+        @extend .col-md-2;
+
+        .is-offcanvas & {
+            @extend .col-md-3;
+        }
+    }
+
+    .is-default,
+    .is- {
+        .swag-customized-products__line-item-quantity,
+        .line-item-quantity-row {
+            display: block;
+            margin: 0;
+        }
+    }
+
+
+    .swag-customized-products__line-item-collapse-total-price {
+        padding-right: 40px;
+    }
+
+    .swag-customized-products__line-item-option-element {
+        .line-item-unit-price-value,
+        .line-item-tax-price-value {
+            text-align: left;
+        }
+
+        .line-item-total-price-value {
+            .line-item & {
+                text-align: left;
+            }
+        }
+    }
+
+    .swag-customized-products__line-item-collapse-unit-price {
+        .swag-customized-products__line-item-option-sub-element {
+            text-align: left;
+        }
+    }
+}
+
+@include media-breakpoint-up(xl) {
+    .swag-customized-products__line-item-collapse-options {
+        .is- &,
+        .is-default &,
+        .is-order & {
+            width: calc(100% - 310px);
+        }
+    }
+
+    .is-,
+    .is-default {
+        .swag-customized-products__line-item-collapse-total-price {
+            padding-right: 70px;
+        }
+    }
+}
+
+@include media-breakpoint-up(xxl) {
+    *:not(.cart-offcanvas) {
+        .is-order {
+            .swag-customized-products__line-item-quantity .line-item-quantity-label,
+            .swag-customized-products__line-item-total-price .line-item-total-price-label,
+            .swag-customized-products__line-item-unit-price .line-item-unit-price-label,
+            .swag-customized-products__line-item-tax-price .line-item-tax-price-label {
+                display: none;
+            }
+        }
+    }
+}

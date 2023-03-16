@@ -76,6 +76,18 @@ textarea.form-control {
     }
 }
 
+.form-switch {
+    .form-check-input {
+        float: none;
+        display: inline-block;
+        vertical-align: middle;
+    }
+
+    label {
+        vertical-align: middle;
+    }
+}
+
 @include media-breakpoint-up(md) {
     .col-salutation {
         margin-left: 0;

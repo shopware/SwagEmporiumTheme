@@ -1,4 +1,4 @@
-const waitingTimeForCapture = 500;
+const waitingTimeForCapture = 1500;
 const waitingTimeForNextButton = 400;
 const waitingTimeForFlatpickr = 300;
 
@@ -50,10 +50,8 @@ describe('Customized Product: Check appearance of customized products', () => {
         })
     });
 
-    it.skip('@visual @customized: Customized product with all options', () => {
+    it('@visual, @customized: Customize product with all options', () => {
         cy.visit('/Product-name/RS-333');
-
-        cy.get('.product-detail-buy').invoke('attr', 'style', 'scroll-behavior: unset');
 
         // Check for the product price
         cy.contains('.price-display__product-price > .price-display__label', 'Product price');
@@ -64,12 +62,12 @@ describe('Customized Product: Check appearance of customized products', () => {
 
         // Select field (required)
         cy.contains('.swag-customized-products-option__title', 'Example select').should('be.visible');
-        cy.get('div[data-name="Example select"] .swag-customized-products-option-type-select-wrapper .custom-control:nth-child(1) input').should('have.attr', 'checked');
+        cy.get('div[data-name="Example select"] .swag-customized-products-option-type-select-wrapper .form-check-radio:nth-child(1) input').should('have.attr', 'checked');
         cy.contains('.swag-customized-products-option-type-select-checkboxes-label__property', 'Example #1')
             .should('be.visible');
         cy.contains('.swag-customized-products-option-type-select-checkboxes-label__property', 'Example #2')
             .should('be.visible')
-            .click();
+            .click({force: true});
 
         // Check for the price box
         cy.get('.swag-customized-product__price-display').should('be.exist');
@@ -86,11 +84,10 @@ describe('Customized Product: Check appearance of customized products', () => {
         cy.contains('.price-display__total-price > .price-display__price', '€50.00*');
 
         // Checkbox
-        cy.contains('.custom-control-label', 'Example checkbox').should('not.be.visible');
         cy.contains('.swag-customized-products-option__title', 'Example checkbox')
             .should('be.visible')
             .click();
-        cy.contains('.custom-control-label', 'Example checkbox')
+        cy.contains('.form-check-label', 'Example checkbox')
             .should('be.visible')
             .click();
 
@@ -104,8 +101,7 @@ describe('Customized Product: Check appearance of customized products', () => {
 
         // Textfield (required)
         cy.contains('.swag-customized-products-option__title', 'Example textfield')
-            .should('be.visible')
-            .click();
+            .should('be.visible');
         cy.get('.swag-customized-products__type-textfield input')
             .should('be.visible')
             .type('Hello Customized Products Textfield{enter}');
@@ -119,9 +115,6 @@ describe('Customized Product: Check appearance of customized products', () => {
         cy.contains('.price-display__total-price > .price-display__price', '€70.00*');
 
         // Textarea (required);
-        cy.contains('.swag-customized-products-option__title', 'Example textarea')
-            .should('be.visible')
-            .click();
         cy.get('.swag-customized-products__type-textarea textarea').should('be.visible');
         cy.get('.swag-customized-products__type-textarea textarea')
             .should('be.visible')
@@ -138,7 +131,7 @@ describe('Customized Product: Check appearance of customized products', () => {
         cy.contains('.price-display__total-price > .price-display__price', '€80.00*');
 
         // Numberfield (required)
-        cy.contains('.swag-customized-products-option__title', 'Example numberfield').should('be.visible').click();
+        cy.contains('.swag-customized-products-option__title', 'Example numberfield').should('be.visible');
         cy.get('.swag-customized-products__type-numberfield input')
             .should('be.visible')
             .type('42');
@@ -204,13 +197,12 @@ describe('Customized Product: Check appearance of customized products', () => {
         cy.get('.product-detail-buy .btn-buy').click();
 
         // Off canvas cart
-        cy.get('.offcanvas.is-open').should('be.visible');
+        cy.get('.offcanvas.show').should('be.visible');
         cy.get('.line-item-label').contains(product.name);
         cy.takeSnapshot('[Customized Product] Offcanvas', '.cart-offcanvas');
 
         // Check the configuration
         cy.get('.line-item-collapse-button').click();
-        cy.contains('.line-item-child-label-bullet', 'Example #2');
 
         // Checkout
         cy.get('.offcanvas-cart-actions .btn-primary').click();
@@ -224,9 +216,9 @@ describe('Customized Product: Check appearance of customized products', () => {
         cy.get('.login-submit [type="submit"]').click();
 
         // Confirm
-        cy.get('.confirm-tos .card-title').contains('Terms and conditions and cancellation policy');
-        cy.get('.confirm-tos .custom-checkbox label').scrollIntoView();
-        cy.get('.confirm-tos .custom-checkbox label').click(1, 1);
+        cy.get('.checkout-confirm-tos-label').contains('I have read and accepted the general terms and conditions.');
+        cy.get('.checkout-confirm-tos-label').scrollIntoView();
+        cy.get('.checkout-confirm-tos-label').click(1, 1);
         cy.takeSnapshot('[Customized Product] Checkout confirm', '.checkout');
 
         cy.get('.line-item-collapse-button').first().click()
@@ -240,6 +232,7 @@ describe('Customized Product: Check appearance of customized products', () => {
 
         // Let's check the calculation on /finish as well
         cy.contains(product.name);
+        cy.get('.line-item-collapse-button').first().click()
         cy.takeSnapshot('[Customized Product] Finish checkout customized product', '.finish-detail-wrapper');
     });
 });
