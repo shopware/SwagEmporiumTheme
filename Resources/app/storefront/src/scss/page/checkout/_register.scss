@@ -39,8 +39,15 @@ $checkout-login-register-space-md: 50px;
     }
 
     .line-item-total-price,
-    .line-item-details {
+    .line-item-details,
+    .line-item-unit-price,
+    .line-item-tax-price,
+    *:not(.cart-offcanvas) .swag-customized-products__line-item-details {
         padding-left: 78px;
+    }
+
+    *:not(.cart-offcanvas) .swag-customized-products__line-item-collapse-unit-price {
+        display: none;
     }
 
     .line-item-label {

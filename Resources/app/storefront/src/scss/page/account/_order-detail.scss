@@ -43,18 +43,11 @@
 .order-item-detail {
     .line-item.is-order {
         padding: 14px 0;
+        min-height: 128px;
     }
 
     .line-item-img {
         object-fit: cover;
-    }
-
-    .line-item-unit-price-label,
-    .line-item-quantity-label {
-        @include make-col(4);
-        display: block;
-        margin-bottom: 0;
-        text-align: left;
     }
 
     .line-item-info {
@@ -95,9 +88,27 @@
 
 
     .line-item-total-price-label,
-    .line-item-unit-price-label {
+    .line-item-unit-price-label,
+    .line-item-quantity-label {
         @include make-col(4);
         text-align: left;
+        display: inline-block;
+        margin-bottom: 0;
+        margin-right: auto;
+    }
+
+    .line-item-total-price-value,
+    .line-item-unit-price-value,
+    .line-item-quantity-value {
+        @include make-col(8);
+        text-align: left;
+    }
+
+    .swag-customized-products__line-item-option-element-detailed-unit-price {
+        .line-item-unit-price-value,
+        .line-item-tax-price-value {
+            text-align: right;
+        }
     }
 
     .order-detail-content-header + .order-detail-content-body {
@@ -169,6 +180,10 @@
 
     .order-header-quantity,
     .order-header-price {
+        text-align: left;
+    }
+
+    .order-detail-content-header-cell[class*='col-']:last-of-type {
         text-align: left;
     }
 }
@@ -309,6 +324,10 @@
             width: 100%;
             padding-left: 0;
         }
+    }
+
+    .order-detail-content-header {
+        display: none;
     }
 }
 

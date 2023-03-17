@@ -41,6 +41,7 @@ describe('Product Detail: Check appearance of product review', () => {
         cy.get('#reviewTitle').type('Review title '.repeat(4));
         cy.get('#reviewContent').type('Review content '.repeat(10));
         cy.get('.product-detail-review-form-actions button').click();
+        cy.wait(1000);
         cy.get('.product-detail-review-list-content').should('be.visible');
 
         cy.changeElementStyling('.product-detail-review-item-date', 'visibility:hidden');
@@ -53,6 +54,7 @@ describe('Product Detail: Check appearance of product review', () => {
     it('@visual, @review: show review tab on the mobile', () => {
         cy.viewport('iphone-6');
         cy.get('#review-tab').click();
+        cy.wait(1000);
         cy.get('.product-detail-review-main').contains('No reviews found');
 
         cy.takeSnapshot('[Product Detail] review tab on the mobile', '.product-detail-review', {widths: [375]});
