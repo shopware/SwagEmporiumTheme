@@ -1,3 +1,6 @@
+# 2.0.0
+- Freigabe v2.0 kompatibel mit Version 6.5
+
 # 1.3.0
 - Überprüfung der Kompatibilität des Themas mit der Plattform v6.4.17.0
 - Snippet für Social-Media-Links in der Fußzeile wurde behoben
