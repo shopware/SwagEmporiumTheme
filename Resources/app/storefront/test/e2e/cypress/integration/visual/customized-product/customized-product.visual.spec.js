@@ -131,11 +131,10 @@ describe('Customized Product: Check appearance of customized products', () => {
         cy.contains('.price-display__total-price > .price-display__price', '€80.00*');
 
         // Numberfield (required)
-        cy.contains('.swag-customized-products-option__title', 'Example numberfield').should('be.visible');
+        cy.contains('.swag-customized-products-option__title', 'Example numberfield').scrollIntoView().click();
         cy.get('.swag-customized-products__type-numberfield input')
             .should('be.visible')
             .type('42');
-        cy.contains('.swag-customized-products-option__title', 'Example numberfield').click();
 
         // Total price
         cy.contains('.price-display__total-price > .price-display__price', '€90.00*');
