@@ -91,8 +91,7 @@ describe('Customized Product: Visual tests product with full customize option', 
         cy.contains('.price-display__total-price > .price-display__price', '€60.00*');
 
         // Textfield (required)
-        cy.contains('.swag-customized-products-option__title', 'Example textfield')
-            .should('be.visible');
+        cy.contains('.swag-customized-products-option__title', 'Example textfield').scrollIntoView().should('be.visible');
         cy.get('.swag-customized-products__type-textfield input')
             .should('be.visible')
             .type('Hello Customized Products Textfield{enter}');

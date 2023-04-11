@@ -86,7 +86,8 @@ $line-item-space: 24px;
     &-tax-price,
     &-unit-price,
     &-total-price,
-    &-details {
+    &-details,
+    &-status {
         padding-left: $line-item-img-size + $line-item-space-sm;
     }
 
@@ -136,7 +137,8 @@ $line-item-space: 24px;
 
     &-quantity,
     &-tax-price,
-    &-unit-price {
+    &-unit-price,
+    &-status {
         color: $smoke-text-color;
         font-size: $btn-font-size;
 
@@ -214,7 +216,8 @@ $line-item-space: 24px;
 
     &-total-price-label,
     &-tax-price-label,
-    &-unit-price-label {
+    &-unit-price-label,
+    &-status-label {
         display: inline-block;
         margin-right: auto;
     }
@@ -240,7 +243,8 @@ $line-item-space: 24px;
 
         &-quantity-label,
         &-unit-price-label,
-        &-total-price-label {
+        &-total-price-label,
+        &-status-label {
             max-width: 100px;
         }
     }
@@ -273,6 +277,27 @@ $line-item-space: 24px;
     }
 }
 
+@include media-breakpoint-down(sm) {
+    .no-remove-button {
+        .line-item-quantity {
+            margin-top: 0;
+            margin-bottom: 0;
+    
+            &-label {
+                display: block;
+            }
+    
+            &-select-wrapper {
+                @include make-col(6);
+            }
+        }
+    
+        .line-item-status {
+            margin-top: 14px;
+        }
+    }
+}
+
 @include media-breakpoint-up(sm) {
     .line-item-total-price-label {
         margin-right: 0;
@@ -280,17 +305,13 @@ $line-item-space: 24px;
 }
 
 @include media-breakpoint-up(md) {
-    .cart-header-info {
-        @include make-col(6);
-    }
-
     .line-item {
         &:nth-of-type(2) {
             border-top: none;
         }
 
         &-info {
-            @include make-col(6);
+            @include make-col(5);
             min-height: 100px;
         }
 
@@ -316,7 +337,8 @@ $line-item-space: 24px;
         &-quantity,
         &-tax-price,
         &-unit-price,
-        &-total-price {
+        &-total-price,
+        &-status {
             padding-left: 0;
         }
 
@@ -350,10 +372,13 @@ $line-item-space: 24px;
 
     .cart-table-header .cart-header-row {
         .cart-header-unit-price,
-        .cart-header-quantity,
-        .cart-header-tax-price {
+        .cart-header-quantity {
             padding-left: 0;
             text-align: left;
+        }
+
+        .cart-header-tax-price {
+            text-align: center;
         }
     }
 
@@ -366,7 +391,8 @@ $line-item-space: 24px;
             &-quantity,
             &-tax-price,
             &-unit-price,
-            &-total-price {
+            &-total-price,
+            &-status {
                 padding-left: $line-item-img-size + $line-item-space-sm;
             }
         }
@@ -396,7 +422,8 @@ $line-item-space: 24px;
 
             &-tax-price,
             &-unit-price,
-            &-total-price {
+            &-total-price,
+            &-status {
                 font-size: $btn-font-size-lg;
             }
 
@@ -429,10 +456,6 @@ $line-item-space: 24px;
         }
     }
 
-    .cart-header-quantity,
-    .line-item-quantity {
-        width: calc(50% - 310px);
-    }
 
     .cart-header-unit-price,
     .line-item-unit-price,
@@ -530,6 +553,23 @@ $line-item-space: 24px;
             .line-item-total-price {
                 display: block;
             }
+
+            &.has-line-item-status {
+                .line-item-info {
+                    @include make-col(5);
+                }
+
+                .line-item-status {
+                    @include make-col(2);
+                    .line-item-status-wrapper {
+                        text-align: center;
+                    }
+                }
+
+                .line-item-quantity {
+                    @include make-col(1);
+                }
+            }
         }
     }
 
@@ -538,7 +578,8 @@ $line-item-space: 24px;
             &-quantity,
             &-tax-price,
             &-unit-price,
-            &-total-price {
+            &-total-price,
+            &-status {
                 padding-left: $grid-gutter-width;
             }
         }

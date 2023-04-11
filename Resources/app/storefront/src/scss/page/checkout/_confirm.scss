@@ -116,10 +116,13 @@
         .confirm-product {
             .cart-header-total-price,
             .cart-item-total-price,
-            .line-item-tax-price,
             .line-item-total-price-value {
                 text-align: left;
                 justify-content: flex-start;
+            }
+
+            .line-item-tax-price {
+                text-align: center;
             }
         }
     }

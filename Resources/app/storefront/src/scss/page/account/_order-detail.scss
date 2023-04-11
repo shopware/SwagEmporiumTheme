@@ -76,7 +76,7 @@
     .line-item-quantity,
     .line-item-total-price,
     .line-item-unit-price {
-        justify-content: flex-start;
+        justify-content: center;
         line-height: 21px;
     }
 
@@ -86,10 +86,16 @@
         display: flex;
     }
 
+    .line-item-status {
+        @include make-col(12);
+        flex-direction: row;
+    }
+
 
     .line-item-total-price-label,
     .line-item-unit-price-label,
-    .line-item-quantity-label {
+    .line-item-quantity-label,
+    .line-item-status-label {
         @include make-col(4);
         text-align: left;
         display: inline-block;
@@ -99,7 +105,8 @@
 
     .line-item-total-price-value,
     .line-item-unit-price-value,
-    .line-item-quantity-value {
+    .line-item-quantity-value,
+    .line-item-status-wrapper {
         @include make-col(8);
         text-align: left;
     }
@@ -168,6 +175,15 @@
     .line-item-total-price {
         order: 6;
     }
+
+    @include media-breakpoint-down(sm) {
+        .line-item-total-price-value,
+        .line-item-unit-price-value,
+        .line-item-quantity-value,
+        .line-item-status-wrapper {
+            padding-left: 24px;
+        }
+    }
 }
 
 .order-detail-content-header {
@@ -177,11 +193,6 @@
     color: $top-and-bottom-color;
     font-weight: $font-weight-bold;
     text-transform: uppercase;
-
-    .order-header-quantity,
-    .order-header-price {
-        text-align: left;
-    }
 
     .order-detail-content-header-cell[class*='col-']:last-of-type {
         text-align: left;
@@ -344,7 +355,8 @@
 
         .line-item-quantity-label,
         .line-item-unit-price-label,
-        .line-item-total-price-label {
+        .line-item-total-price-label,
+        .line-item-status-label {
             display: none;
         }
 
