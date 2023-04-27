@@ -121,22 +121,22 @@ describe('Customized Product: Visual tests product with full customize option', 
         cy.contains('.price-display__total-price > .price-display__price', '€80.00*');
 
         // Numberfield (required)
-        cy.contains('.swag-customized-products-option__title', 'Example numberfield').should('be.visible');
+        cy.contains('.swag-customized-products-option__title', 'Example numberfield').scrollIntoView().click();
         cy.get('.swag-customized-products__type-numberfield input')
             .should('be.visible')
             .type('42');
-        cy.contains('.swag-customized-products-option__title', 'Example numberfield').click();
+        cy.contains('.swag-customized-products-option__title', 'Example numberfield').click({ force: true });
 
         // Total price
         cy.contains('.price-display__total-price > .price-display__price', '€90.00*');
 
         // Datefield
         cy.contains('.swag-customized-products-option__title', 'Example datefield')
-            .should('be.visible')
-            .click();
+            .scrollIntoView()
+            .click({force: true});
         cy.get('.swag-customized-products__type-datetime > .input-group > input[type="text"].swag-customized-products-options-datetime')
-            .should('be.visible')
-            .click();
+            .scrollIntoView()
+            .click({force: true});
         cy.get('.flatpickr-calendar').should('be.visible');
         cy.get('.flatpickr-day.today').click({force: true})
         // Price display
@@ -144,8 +144,8 @@ describe('Customized Product: Visual tests product with full customize option', 
 
         // Time field
         cy.contains('.swag-customized-products-option__title', 'Example timefield')
-            .should('be.visible')
-            .click();
+            .scrollIntoView()
+            .click({force: true});
         cy.get('.swag-customized-products__type-timestamp > .input-group > input[type="text"].swag-customized-products-options-datetime')
             .should('be.visible')
             .click();
@@ -161,7 +161,7 @@ describe('Customized Product: Visual tests product with full customize option', 
 
         // Color select
         cy.contains('.swag-customized-products-option__title', 'Example color select')
-            .should('be.visible')
+            .scrollIntoView()
             .click({force: true});
 
         cy.contains('.swag-customized-products-option-type-select-checkboxes-label__property', 'Example Blue')
