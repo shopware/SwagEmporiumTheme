@@ -18,6 +18,10 @@ $modal-content-box-shadow-xs: 0 0 20px rgba(0, 6, 57, 0.1);
 
         .modal-title {
             line-height: 34px;
+
+            &:not(:empty) {
+                padding-bottom: 5px;
+            }
         }
 
         .cms-element-text h2 {
@@ -103,4 +107,24 @@ $modal-content-box-shadow-xs: 0 0 20px rgba(0, 6, 57, 0.1);
             }
         }
     }
+}
+
+.swag-custom-notifications-newsletter-popup__content {
+    .modal-footer {
+        padding: 0;
+        border-top: none;
+
+        .btn-primary {
+            margin-right: 0;
+            width: auto;
+        }
+    }
+
+    .modal-body {
+        padding: 0;
+    }
+}
+
+.swag-custom-notification-info-modal__content {
+    padding: 0;
 }

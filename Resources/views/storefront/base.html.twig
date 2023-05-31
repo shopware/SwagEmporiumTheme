@@ -11,6 +11,10 @@
 
 {% block base_header %}
     <header class="header-main">
+        {% if config('SwagCustomNotification.config.showBanner') %}
+            {% sw_include '@SwagCustomNotification/storefront/layout/header/banner.html.twig' ignore missing %}
+        {% endif %}
+
         {% sw_include '@Storefront/storefront/layout/header/top-bar.html.twig' %}
 
         {% block base_header_inner %}
