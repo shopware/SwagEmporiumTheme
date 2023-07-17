@@ -282,16 +282,16 @@ $line-item-space: 24px;
         .line-item-quantity {
             margin-top: 0;
             margin-bottom: 0;
-    
+
             &-label {
                 display: block;
             }
-    
+
             &-select-wrapper {
                 @include make-col(6);
             }
         }
-    
+
         .line-item-status {
             margin-top: 14px;
         }
@@ -409,6 +409,13 @@ $line-item-space: 24px;
     .line-item-quantity-row {
         width: 100%;
     }
+
+    .is-default {
+        .line-item-quantity {
+            padding-right: 20px;
+        }
+    }
+
 }
 
 @include media-breakpoint-up(xl) {
@@ -450,8 +457,7 @@ $line-item-space: 24px;
 
     .is-default,
     .is- {
-        .line-item-total-price,
-        .line-item-quantity {
+        .line-item-total-price {
             padding-right: 70px;
         }
     }
@@ -492,6 +498,10 @@ $line-item-space: 24px;
 .is-order {
     .line-item-unit-price {
         text-align: left;
+    }
+
+    .line-item-quantity {
+        justify-content: flex-start;
     }
 
     @include media-breakpoint-up(sm) {
