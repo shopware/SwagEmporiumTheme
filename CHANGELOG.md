@@ -1,3 +1,11 @@
+# 2.1.0
+- Checked compatibility with the subscription
+- Checked compatibility with return management
+- Unified stylings of SwagCustomNotification
+- Fixed the new quantity selector element
+- Fixed the product detail tab is not clickable
+- Added missing spacing
+
 # 2.0.0
 - Release v2.0 compatible with 6.5 version
 
