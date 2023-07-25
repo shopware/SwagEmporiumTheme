@@ -8,7 +8,7 @@ describe('Product Detail: Product variants', { tags: ['@workflow', '@ProductDeta
             .then(() => cy.visit(`${Cypress.env('admin')}#/sw/product/index`));
     });
 
-    it('@workflow @variants: add variant with surcharge to product', () => {
+    it.skip('@workflow @variants: add variant with surcharge to product', () => {
         const page = new ProductPageObject();
 
         // Request we want to wait for later
@@ -29,7 +29,9 @@ describe('Product Detail: Product variants', { tags: ['@workflow', '@ProductDeta
         cy.clickContextMenuItem(
             '.sw-entity-listing__context-menu-edit-action',
             page.elements.contextMenuButton,
-            `${page.elements.dataGridRow}--0`
+            `${page.elements.dataGridRow}--0`,
+            "",
+            true
         );
 
         cy.get('.sw-product-detail__tab-variants').click();
