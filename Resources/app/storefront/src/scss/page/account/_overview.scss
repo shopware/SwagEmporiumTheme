@@ -80,6 +80,111 @@
 .modal-dialog .js-address-editor {
     color: $smoke-text-color;
 
+    .address-editor-title {
+        font-size: 24px;
+        font-weight: 400;
+    }
+
+    #billing-address-list.show,
+    #shipping-address-list.show {
+        > .address-editor-card {
+            grid-area: sidebar-1;
+        }
+
+        > .address-editor-actions {
+            grid-area: sidebar-2;
+        }
+
+        > .address-editor-list-wrapper {
+            grid-area: main;
+        }
+
+        @include media-breakpoint-up(md) {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-auto-rows: auto 1fr;
+            grid-template-areas:
+                "sidebar-1 main main"
+                "sidebar-2 main main";
+            column-gap: 32px;
+        }
+    }
+
+    .address-editor-list-wrapper {
+        padding-top: 40px !important;
+        border-top: 1px solid $gray-300;
+
+        .card-body {
+            .d-flex {
+                border-bottom: 1px solid $gray-300;
+                flex-direction: column;
+                padding-bottom: 16px;
+                gap: 16px;
+
+                .btn-block {
+                    width: 100%;
+                }
+            }
+        }
+
+        .address:first-line {
+            font-weight: 400;
+        }
+
+        @include media-breakpoint-up(md) {
+            padding-left: 60px;
+            padding-top: 0 !important;
+            border-left: 1px solid $gray-300;
+            border-top: none;
+
+            .card-body {
+                .d-flex {
+                    padding-bottom: 32px;
+                    flex-direction: row;
+                    gap: 0;
+
+                    .btn-block {
+                        width: auto;
+                    }
+                }
+            }
+        }
+
+    }
+
+    .address-editor-create-address-wrapper {
+        .create-address-title {
+            font-size: 10px;
+            text-transform: uppercase;
+            font-weight: $font-weight-bold;
+            border-bottom-style: solid;
+            color: $primary;
+            margin-bottom: 34px;
+        }
+    }
+
+    .address-editor-actions {
+        display: flex;
+        flex-direction: column;
+        align-items: baseline;
+        @extend .my-4;
+
+        .btn {
+            font-size: 10px;
+            font-weight: 400;
+        }
+
+        .icon {
+            height: 16px;
+            width: 16px;
+            vertical-align: baseline;
+
+            > svg {
+                top: 4px;
+            }
+        }
+    }
+
     .address-editor-headline {
         font-size: $h4-font-size;
         margin-bottom: 24px;
@@ -88,7 +193,10 @@
 
     .address-editor-card {
         padding-bottom: 16px;
-        border-bottom: $border-width solid $border-color;
+
+        .address:first-line {
+            font-weight: 400;
+        }
 
         .btn {
             @extend .btn-link;
@@ -106,13 +214,10 @@
         border-width: 2px;
         border-color: $gray-800;
         letter-spacing: 1px;
-        text-transform: uppercase;
-        font-size: 10px;
-        color: $gray-800;
+        font-size: 20px;
         margin-bottom: 1rem;
         display: inline-block;
         width: fit-content;
-        font-weight: $font-weight-bold;
 
         + a {
             margin-left: 14px;
@@ -142,10 +247,6 @@
         .row {
             @extend .g-0;
         }
-
-        .btn-light {
-            color: $primary;
-        }
     }
 
     .js-field-toggle-contact-type-company {
@@ -162,8 +263,16 @@
         }
     }
 
-    .address-form-actions .btn {
+    .address-form-actions {
+        display: flex;
+        gap: 10px;
         width: 100%;
+        flex-direction: column-reverse;
+
+        @include media-breakpoint-up(md) {
+            flex-direction: row-reverse;
+            justify-content: flex-end;
+        }
     }
 
     .address-required-info {
@@ -204,7 +313,7 @@
 
 @include media-breakpoint-up(lg) {
     .modal-dialog .js-address-editor {
-        display: flex;
+        //display: flex;
 
         .default-address-editor {
             min-width: 220px;
