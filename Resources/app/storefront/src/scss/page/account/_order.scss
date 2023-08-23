@@ -2,7 +2,8 @@ $badge-in-progress: #7c8eff !default;
 $badge-completed: #60d788 !default;
 $badge-failed: #e32166 !default;
 
-:is(.order-table-header, .order-item-header) {
+.order-table-header,
+.order-item-header {
     padding: 14px 14px 0;
 }
 
@@ -203,7 +204,8 @@ $badge-failed: #e32166 !default;
 }
 
 @include media-breakpoint-up(md) {
-    :is(.order-table-header, .order-item-header) {
+    .order-table-header,
+    .order-item-header {
         padding: 14px 24px 0;
     }
 
