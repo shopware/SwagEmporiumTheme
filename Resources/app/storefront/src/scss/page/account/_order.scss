@@ -233,7 +233,8 @@ $badge-failed: #e32166 !default;
 }
 
 @include media-breakpoint-up(xxl) {
-    :is(.order-table-header, .order-item-header) {
+    .order-table-header,
+    .order-item-header {
         padding: 18px 24px;
     }
 
