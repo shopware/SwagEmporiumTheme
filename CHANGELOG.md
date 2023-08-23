@@ -1,3 +1,6 @@
+# 2.2.0
+- Fixed scss selector for compiling
+
 # 2.1.0
 - Checked compatibility with the subscription
 - Checked compatibility with return management
