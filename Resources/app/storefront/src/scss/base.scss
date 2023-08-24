@@ -139,3 +139,8 @@ https://sass-guidelin.es/#the-7-1-pattern
 * Subscription-specific styles
 * -------------------- */
 @import 'subscriptions/submit-disclaimer';
+
+/*
+* B2B components
+* -------------------- */
+@import 'page/account/b2b/_create';

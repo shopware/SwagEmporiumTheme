@@ -70,6 +70,17 @@ $badge-failed: #e32166 !default;
     margin-bottom: 10px;
 }
 
+.order-table-b2b-employee {
+    margin-top: -10px;
+    margin-bottom: 10px;
+    padding: 0 !important;
+    width: 100% !important;
+
+    &-label {
+        width: auto;
+    }
+}
+
 .order-table-header-order-status {
     display: block;
 }
@@ -114,7 +125,7 @@ $badge-failed: #e32166 !default;
     }
 }
 
-.order-table-header-label {
+.order-table-header-label, .order-table-b2b-employee {
     font-weight: $font-weight-normal;
     display: inline-block;
     float: none;
@@ -122,7 +133,11 @@ $badge-failed: #e32166 !default;
     color: $gray-400;
 }
 
-.order-table-body-value {
+.order-table-b2b-employee strong {
+    font-weight: $font-weight-normal !important;
+}
+
+.order-table-body-value, .order-table-b2b-employee-value {
     font-weight: $font-weight-bold;
     color: $top-and-bottom-color;
     width: auto;
@@ -227,6 +242,10 @@ $badge-failed: #e32166 !default;
         margin-bottom: 0;
     }
 
+    .order-table-b2b-employee {
+        margin: 0;
+    }
+
     .order-item-status-badge {
         margin-top: 0;
     }
@@ -260,9 +279,13 @@ $badge-failed: #e32166 !default;
         height: 26px;
     }
 
-    .order-table-header-order-number {
+    .order-table-header-order-number, .order-table-b2b-employee {
         @include make-col(2);
         width: auto;
         margin-left: 20px;
+    }
+
+    .order-table-b2b-employee {
+        width: auto !important;
     }
 }
