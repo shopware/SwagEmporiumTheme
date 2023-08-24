@@ -9,10 +9,18 @@
     </p>
 {% endblock %}
 
-{% block component_address_address_editor_modal_create_address %}
-    <div id="{{ typePrefix }}{% if address %}address-create-edit{% else %}address-create-new{% endif %}"
-         class="collapse"
-         data-bs-parent="#{{ typePrefix }}addressEditorAccordion">
-        {{ block('component_address_address_editor_modal_create_address_wrapper') }}
+{% block component_address_address_editor_modal_create_address_title %}
+    <div class="card-title create-address-title">
+        {{ block('component_address_address_editor_modal_create_address_title_text') }}
     </div>
+{% endblock %}
+
+{% block component_address_address_editor_modal_create_address_form_actions_cancel %}
+    <button type="button"
+            class="btn btn-outline-primary"
+            title="{{ "general.cancel"|trans|sw_sanitize }}"
+            data-bs-toggle="collapse"
+            data-bs-target="#{{ typePrefix }}address-list">
+        {{ "general.cancel"|trans|sw_sanitize }}
+    </button>
 {% endblock %}

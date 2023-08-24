@@ -1,19 +1,26 @@
 {% sw_extends '@Storefront/storefront/component/address/address-editor-modal.html.twig' %}
 
-{% block component_address_address_editor_modal_inner %}
-    <div class="default-address-editor">
-        <h2 class="address-editor-headline">
-            {% if changeBilling %}
-                {{ "account.overviewBillingModalHeader"|trans|sw_sanitize }}
-            {% elseif changeShipping %}
-                {{ "account.overviewShippingModalHeader"|trans|sw_sanitize }}
-            {% endif %}
-        </h2>
+{% block component_address_address_editor_modal_accordion_overview_billing_card_address %}
+    {% sw_include '@Storefront/storefront/component/address/address.html.twig' with {
+        'address': context.customer.defaultBillingAddress
+    } %}
+{% endblock %}
 
-        {{ block('component_address_address_editor_modal_accordion_overview') }}
 
-        {{ block('component_address_address_editor_modal_accordion_actions') }}
-    </div>
+{% block component_address_address_editor_modal_accordion_action_create %}
+    <a class="address-editor-create btn btn-link p-0"
+       data-bs-toggle="collapse"
+       data-bs-target="#{{ typePrefix }}address-create-new"
+    >
+        {% sw_icon 'plus' style {'size': 'xs', 'pack': 'solid'} %}
 
-    {{ block('component_address_address_editor_modal_accordion') }}
+        {{ "account.addressCreateBtn"|trans|sw_sanitize }}
+    </a>
+{% endblock %}
+
+
+{% block component_address_address_editor_modal_accordion_overview_shipping_card_address %}
+    {% sw_include '@Storefront/storefront/component/address/address.html.twig' with {
+        'address': context.customer.defaultShippingAddress
+    } %}
 {% endblock %}

@@ -75,15 +75,17 @@
     "addressListBodyHeadline": "Address",
     "overviewBillingModalHeader": "Your billing address",
     "overviewShippingModalHeader": "Your shipping address",
-    "addressesTitleCurrentBillingAddress": "Billing address",
-    "addressesTitleCurrentShippingAddress": "Shipping address",
+    "addressesTitleCurrentBillingAddress": "Current address",
+    "addressesTitleCurrentShippingAddress": "Current address",
     "personalSalutationPlaceholder": "Enter salutation",
     "personalFirstNamePlaceholder": "Enter first name",
     "personalLastNamePlaceholder": "Enter last name",
     "personalMailPlaceholder": "Enter new email address",
     "personalMailConfirmationPlaceholder": "Please enter your email address once again",
     "personalPasswordPlaceholder": "Enter password",
-    "personalPhonePlaceholder": "Enter phone number"
+    "personalPhonePlaceholder": "Enter phone number",
+    "addressTitleChangeBillingAddress": "Your billing address",
+    "addressTitleChangeShippingAddress": "Your shipping address"
   },
   "address": {
     "streetPlaceholder": "Enter street address",

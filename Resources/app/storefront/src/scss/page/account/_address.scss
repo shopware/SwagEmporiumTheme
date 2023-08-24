@@ -127,6 +127,14 @@
         font-size: $font-size-sm;
     }
 
+    .address-actions {
+        @extend .pt-2;
+
+        .btn .icon {
+            vertical-align: baseline;
+        }
+    }
+
     @include media-breakpoint-down(md) {
         .account-headline-wrapper {
             p {

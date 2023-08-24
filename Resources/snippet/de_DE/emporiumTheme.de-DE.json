@@ -75,15 +75,17 @@
     "addressListBodyHeadline": "Adresse",
     "overviewBillingModalHeader": "Ihre Rechnungsadresse",
     "overviewShippingModalHeader": "Ihre Lieferadresse",
-    "addressesTitleCurrentBillingAddress": "Rechnungsadresse",
-    "addressesTitleCurrentShippingAddress": "Lieferanschrift",
+    "addressesTitleCurrentBillingAddress": "Momentane Adresse",
+    "addressesTitleCurrentShippingAddress": "Momentane Adresse",
     "personalSalutationPlaceholder": "Anrede eingeben",
     "personalFirstNamePlaceholder": "Vorname eingeben",
     "personalLastNamePlaceholder": "Nachname eingeben",
     "personalMailPlaceholder": "Neue E-Mail-Adresse eingeben",
     "personalMailConfirmationPlaceholder": "Wiederholen Sie Ihre E-Mail-Adresse",
     "personalPasswordPlaceholder": "Passwort eingeben",
-    "personalPhonePlaceholder": "Telefonnummer eingeben"
+    "personalPhonePlaceholder": "Telefonnummer eingeben",
+    "addressTitleChangeBillingAddress": "Ihre Rechnungsadresse",
+    "addressTitleChangeShippingAddress": "Ihre Lieferadresse"
   },
   "address": {
     "streetPlaceholder": "Straße und Hausnummer eingeben",
