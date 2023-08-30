@@ -1,0 +1,16 @@
+.b2b-create {
+    &-form-default-role {
+        margin-bottom: 0 !important;
+    }
+
+    &-for-permission-title {
+        font-size: $h3-font-size !important;
+        margin-top: $spacer-lg;
+    }
+
+    &-back {
+        .icon > svg {
+            top: 0.25rem !important;
+        }
+    }
+}
