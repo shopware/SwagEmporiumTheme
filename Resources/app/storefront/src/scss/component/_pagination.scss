@@ -5,8 +5,16 @@
     .page-item {
         @extend .d-flex;
         @extend .align-items-center;
-
         text-align: center;
+
+        @for $i from 1 through 9 {
+            input[id="p#{$i}"] ~ .page-link {
+                word-spacing: -4px;
+                &:before {
+                    content: '0';
+                }
+            }
+        }
 
         .page-link {
             color: $gray-400;
