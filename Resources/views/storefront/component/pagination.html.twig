@@ -15,13 +15,3 @@
 {% block component_pagination_last_icon %}
     {% sw_icon 'ic-chevrons-right' style {'pack': 'emporium'} %}
 {% endblock %}
-
-{% block component_pagination_item %}
-    {% if page < "10" %}
-        {% set page = '0' ~ page %}
-    {% else %}
-        {% set page = page %}
-    {% endif %}
-
-    {{ parent() }}
-{% endblock %}
