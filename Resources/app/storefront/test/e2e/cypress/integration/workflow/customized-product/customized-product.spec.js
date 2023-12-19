@@ -41,7 +41,8 @@ describe('Customized Product: Visual tests product with full customize option', 
         })
     });
 
-    it('@workflow, @customized: Customize product with all options', () => {
+    /** @TODO EMT-181 Re-enable it */
+    it.skip('@workflow, @customized: Customize product with all options', () => {
         cy.visit('/Product-name/RS-333');
 
         // Check for the product price

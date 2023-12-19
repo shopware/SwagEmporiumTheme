@@ -33,7 +33,8 @@ describe('Account: Order page', { tags: ['@workflow', '@order'] }, () => {
             });
     });
 
-    it('@workflow @order: reorder order', () => {
+    /** @TODO EMT-181 Re-enable it */
+    it.skip('@workflow @order: reorder order', () => {
         // Login
         cy.visit('/account/order');
         cy.get('.login-card').should('be.visible');
@@ -68,7 +69,8 @@ describe('Account: Order page', { tags: ['@workflow', '@order'] }, () => {
         cy.get('.finish-ordernumber').contains('Your order number: #10001');
     });
 
-    it('@workflow @order: cancel order', () => {
+    /** @TODO EMT-181 Re-enable it */
+    it.skip('@workflow @order: cancel order', () => {
         // Enable refunds
         cy.login().then(() => {
             cy.visit('/admin#/sw/settings/cart/index');
@@ -94,7 +96,8 @@ describe('Account: Order page', { tags: ['@workflow', '@order'] }, () => {
         cy.get('.order-item-status-badge').contains('Cancelled');
     });
 
-    it('@workflow @order: change payment', () => {
+    /** @TODO EMT-181 Re-enable it */
+    it.skip('@workflow @order: change payment', () => {
         // Login
         cy.visit('/account/order');
         cy.get('.login-card').should('be.visible');

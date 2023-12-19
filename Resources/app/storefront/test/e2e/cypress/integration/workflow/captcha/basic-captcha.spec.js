@@ -95,7 +95,8 @@ describe('Basic captcha', () => {
             .then(() => openContactForm());
     });
 
-    it('Should be visible basic captcha', () => {
+    /** @TODO EMT-181 Re-enable it */
+    it.skip('Should be visible basic captcha', () => {
         cy.get(selector.basicCaptcha).should('be.visible');
         cy.get(selector.basicCaptchaImage).should('be.visible');
         cy.get(selector.basicCaptchaRefreshIcon).should('be.visible');

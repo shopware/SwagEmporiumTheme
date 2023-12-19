@@ -5,6 +5,9 @@ Contains variable overrides for bootstrap variables located under
 shopRoot/src/vendor/shopware/storefront/Resources/app/storefront/vendor/bootstrap/scss/_variables.scss
 */
 
+
+$enable-important-utilities: true !default;
+
 // Options
 $font-size-base: 0.9375rem !default;
 $font-size-small: 12px !default;

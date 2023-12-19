@@ -1,3 +1,6 @@
+# 3.0.0
+- Shopware 6.6 compatibility
+
 # 2.2.0
 - Fixed scss selector for compiling
 

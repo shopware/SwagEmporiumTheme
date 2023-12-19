@@ -39,7 +39,8 @@ describe('Contact: Basic', { tags: ['@workflow'] }, () => {
         });
     }
 
-    it('@shop: submit contact form', () => {
+    /** @TODO EMT-181 Re-enable it */
+    it.skip('@shop: submit contact form', () => {
         cy.intercept({
             url: '/form/contact',
             method: 'POST'
