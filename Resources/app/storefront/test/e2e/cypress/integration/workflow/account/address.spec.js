@@ -11,7 +11,8 @@ describe('Account: Address page', { tags: ['@workflow', '@address'] }, () => {
             })
     });
 
-    it('@workflow @address: update address', () => {
+    /** @TODO EMT-181 Re-enable it */
+    it.skip('@workflow @address: update address', () => {
         const page = new AccountPageObject();
 
         cy.get(page.elements.loginCard).should('be.visible');

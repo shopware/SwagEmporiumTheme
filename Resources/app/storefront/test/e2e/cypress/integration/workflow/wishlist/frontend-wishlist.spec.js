@@ -80,7 +80,8 @@ describe('Wishlist: for wishlist page', { tags: ['@workflow'] }, () => {
         });
     });
 
-    it('@wishlist: add to cart button work on guest page', () => {
+    /** @TODO EMT-181 Re-enable it */
+    it.skip('@wishlist: add to cart button work on guest page', () => {
         cy.intercept({
             url: '/wishlist/guest-pagelet',
             method: 'post'

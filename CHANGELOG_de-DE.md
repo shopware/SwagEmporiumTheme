@@ -1,3 +1,6 @@
+# 3.0.0
+- Shopware 6.6 Kompatibilität
+
 # 2.2.0
 - Der SCSS-Selektor zum Kompilieren wurde korrigiert
 
