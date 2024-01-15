@@ -19,7 +19,7 @@
     ],
     "script": [
         "@Storefront",
-        "app/storefront/dist/storefront/js/swag-emporium-theme.js"
+        "app/storefront/dist/storefront/js/swag-emporium-theme/swag-emporium-theme.js"
     ],
     "asset": [
         "app/storefront/src/assets"
