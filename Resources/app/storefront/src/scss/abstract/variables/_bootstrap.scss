@@ -11,7 +11,7 @@ $enable-important-utilities: true !default;
 // Options
 $font-size-base: 0.9375rem !default;
 $font-size-small: 12px !default;
-$app-css-relative-asset-path: '../assets' !default;
+$app-css-relative-asset-path: '../../' + $theme-id + '/assets' !default;
 
 $top-and-bottom-color: darken($sw-color-brand-primary, 40%) !default; //#000639
 
