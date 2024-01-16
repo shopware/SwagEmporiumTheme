@@ -615,6 +615,9 @@
 *:not(.cart-offcanvas) {
     .swag-customized-products__line-item-grid_component {
         grid-template-columns: 1fr;
+        .swag-customized-products__line-item-remove {
+            z-index: 999;
+        }
     }
 
     .is-order,
