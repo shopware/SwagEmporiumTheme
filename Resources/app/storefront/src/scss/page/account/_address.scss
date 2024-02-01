@@ -26,6 +26,13 @@
 
     .default-address {
         border-bottom: $border-width solid $border-color;
+
+        @if not feature('v6.7.0.0') {
+            .address {
+                border: $border-width solid $border-color;
+                padding: $spacer-md;
+            }
+        }
     }
 
     .default-address-headline {
@@ -80,6 +87,13 @@
             font-weight: $font-weight-normal;
             color: $top-and-bottom-color;
         }
+
+        @if not feature('v6.7.0.0') {
+            .address-card {
+                border: $border-width solid $border-color;
+                padding: $spacer-md;
+            }
+        }
     }
 
     .address {
@@ -122,6 +136,11 @@
         .icon svg {
             top: 0;
         }
+    }
+
+    .address-actions-defaults {
+        display: flex;
+        flex-wrap: wrap;
     }
 
     .address-actions-defaults .btn {

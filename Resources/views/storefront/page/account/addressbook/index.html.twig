@@ -33,6 +33,26 @@
     </div>
 {% endblock %}
 
+{% block page_account_address_list %}
+    <div class="address-list{% if feature('v6.7.0.0') %} pt-4{% endif %}">
+        <div class="h3">
+            {{ "account.addressListHeader"|trans|sw_sanitize }}
+        </div>
+
+        <div class="row{% if feature('v6.7.0.0') %} p{% endif %}">
+            {% for address in page.addresses %}
+                <div class="address-card {% if feature('v6.7.0.0') %}p-0 mb-4{% else %}card-col{% endif %}">
+                    <div class="card other-address">
+                        <div class="card-body{% if feature('v6.7.0.0') %} p-3 border{% endif %}">
+                            {{ block('page_account_address_overview_body') }}
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}
+
 {% block page_account_address_overview_body %}
     <div class="address-item-header card-title__wrapper">
         <p class="card-title">{{ "account.addressListBodyHeadline"|trans|sw_sanitize }} #{{ loop.index }}</p>
