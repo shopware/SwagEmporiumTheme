@@ -1,0 +1,18 @@
+@if not feature('v6.7.0.0') {
+    .address-editor-modal {
+        .address-editor-edit,
+        .address-editor-create {
+            cursor: pointer;
+
+            &:not(.collapsed) {
+                background: initial;
+                border: none;
+                color: $sw-color-brand-primary;
+
+                span {
+                    color: initial;
+                }
+            }
+        }
+    }
+}

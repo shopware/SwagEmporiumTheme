@@ -1,5 +1,19 @@
 {% sw_extends '@Storefront/storefront/component/address/address-editor-modal.html.twig' %}
 
+{% block component_address_address_editor_modal %}
+    {% block component_address_editor_modal_title %}
+        <div class="address-editor-title h2 mb-4">
+            {% if changeBilling %}
+                {{ 'account.addressTitleChangeBillingAddress'|trans|sw_sanitize }}
+            {% else %}
+                {{ 'account.addressTitleChangeShippingAddress'|trans|sw_sanitize }}
+            {% endif %}
+        </div>
+    {% endblock %}
+
+    {{ parent() }}
+{% endblock %}
+
 {% block component_address_address_editor_modal_accordion_action_list %}{% endblock %}
 
 {% block component_address_address_editor_modal_accordion_overview_billing_card_address %}
@@ -10,20 +24,25 @@
 
 {% block component_address_address_editor_modal_accordion_action_edit %}
     <div class="col-12">
-        <div class="btn btn-outline-primary btn-block address-editor-edit create collapsed w-100"
-             data-bs-toggle="collapse"
-             data-bs-target="#{{ typePrefix }}address-create-edit">
+        <a class="address-editor-edit btn btn-link p-0"
+           data-bs-toggle="collapse"
+           data-bs-target="#{{ typePrefix }}address-create-edit"
+        >
+            {% sw_icon 'paper-pencil' style {'size': 'xs'} %}
+
             {{ "account.addressEditBtn"|trans|sw_sanitize }}
-        </div>
+        </a>
     </div>
 {% endblock %}
 
 {% block component_address_address_editor_modal_accordion_action_create %}
     <div class="col-12">
-        <a class="address-editor-create btn btn-outline-primary w-100"
+        <a class="address-editor-create btn btn-link p-0"
            data-bs-toggle="collapse"
            data-bs-target="#{{ typePrefix }}address-create-new"
         >
+            {% sw_icon 'plus' style {'size': 'xs', 'pack': 'solid'} %}
+
             {{ "account.addressCreateBtn"|trans|sw_sanitize }}
         </a>
     </div>
@@ -56,9 +75,11 @@
         {% endblock %}
     </div>
 
-    {{ block('component_address_address_editor_modal_accordion_edit_include') }}
+    <div id="{{ typePrefix }}addressEditorCreatorAccordion">
+        {{ block('component_address_address_editor_modal_accordion_edit_include') }}
 
-    {% if not page.address %}
-        {{ block('component_address_address_editor_modal_accordion_create_include') }}
-    {% endif %}
+        {% if not page.address %}
+            {{ block('component_address_address_editor_modal_accordion_create_include') }}
+        {% endif %}
+    </div>
 {% endblock %}
