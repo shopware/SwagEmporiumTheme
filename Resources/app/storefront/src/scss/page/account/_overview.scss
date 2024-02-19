@@ -79,8 +79,6 @@
 
 .modal-dialog .js-address-editor {
     color: $smoke-text-color;
-    display: flex;
-    flex-wrap: wrap;
     gap: 30px;
 
     > * {
@@ -125,7 +123,7 @@
             font-weight: 400;
         }
 
-        @include media-breakpoint-up(md) {
+        @include media-breakpoint-up(lg) {
             padding-left: 60px;
             padding-top: 0 !important;
             border-left: 1px solid $gray-300;
@@ -143,7 +141,6 @@
                 }
             }
         }
-
     }
 
     .address-editor-create-address-wrapper {
@@ -307,7 +304,8 @@
 
 @include media-breakpoint-up(lg) {
     .modal-dialog .js-address-editor {
-        //display: flex;
+        display: flex;
+        flex-wrap: wrap;
 
         .default-address-editor {
             min-width: 220px;
