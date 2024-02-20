@@ -1,3 +1,9 @@
+# 3.1.0
+- EMT-187 - Styles für das Entfernen von Customized Products im Cart korrigiert
+- EMT-188 - Importpfad der Schriftdateien korrigiert
+- EMT-182 - Fehler im Address UI wurden behoben
+- EMT-182 - Die Tablet-Ansicht vom Address-Modal wurde verbessert
+
 # 3.0.0
 - Shopware 6.6 Kompatibilität
 
