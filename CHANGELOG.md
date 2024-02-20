@@ -1,3 +1,9 @@
+# 3.1.0
+- EMT-187 - Fixed styles for the removal of Customized Products in the cart
+- EMT-188 - Fixed import path of font files
+- EMT-182 - Fixed address UI
+- EMT-182 - Fixed address modal tablet view
+
 # 3.0.0
 - Shopware 6.6 compatibility
 
