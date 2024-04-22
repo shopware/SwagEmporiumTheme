@@ -3,6 +3,12 @@
 {% block component_line_item_image %}
     {% set thumbnail %}
         {% if lineItem.cover.url %}
+            {% set attributes = {
+                class: 'img-fluid line-item-img',
+                title: (lineItem.cover.translated.title ?: ''),
+                alt: (lineItem.cover.translated.alt ?: ''),
+                loading: 'lazy'
+            } %}
             {{ block('component_line_item_image_thumbnails') }}
         {% else %}
             {% if fallbackIcon %}
