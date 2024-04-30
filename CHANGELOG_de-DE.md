@@ -1,3 +1,7 @@
+# 3.2.0
+- EMT-192 – Fehler behoben, der @Storefront/storefront/utilities/thumbnail.html.twig nicht rendern konnte
+- EMT-191 – Fehler behoben, durch welchen ein Menü nicht geöffnet wurde, wenn das Fenster minimiert ist, oder die mobile Ansicht genutzt wurde
+
 # 3.1.0
 - EMT-187 - Styles für das Entfernen von Customized Products im Cart korrigiert
 - EMT-188 - Importpfad der Schriftdateien korrigiert

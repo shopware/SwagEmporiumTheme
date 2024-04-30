@@ -1,3 +1,7 @@
+# 3.2.0
+- EMT-192 - Fixed bug that can not render @Storefront/storefront/utilities/thumbnail.html.twig
+- EMT-191 - Fixed tab does not open when the window is minimised or the mobile view is used
+
 # 3.1.0
 - EMT-187 - Fixed styles for the removal of Customized Products in the cart
 - EMT-188 - Fixed import path of font files
