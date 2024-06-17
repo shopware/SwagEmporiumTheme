@@ -11,14 +11,14 @@
             {% block layout_footer_navigation_newsletter_content %}
                 <a
                     href="{{ path('frontend.cms.page',{ id: config('core.basicInformation.newsletterPage')}) }}"
-                data-bs-toggle="modal"
-                data-url="{{ path('frontend.cms.page',{ id: config('core.basicInformation.newsletterPage')}) }}"
-                class="btn btn-outline-primary"
-                role="button"
-                title="{{ 'newsletter.submitText'|trans|striptags }}"
-                id="footerNewsletterBtnAddon"
+                    data-ajax-modal="true"
+                    data-url="{{ path('frontend.cms.page',{ id: config('core.basicInformation.newsletterPage')}) }}"
+                    class="btn btn-outline-primary"
+                    role="button"
+                    title="{{ 'newsletter.submitText'|trans|striptags }}"
+                    id="footerNewsletterBtnAddon"
                 >
-                {{ 'newsletter.submitText'|trans|striptags }}
+                    {{ 'newsletter.submitText'|trans|striptags }}
                 </a>
             {% endblock %}
         </div>
