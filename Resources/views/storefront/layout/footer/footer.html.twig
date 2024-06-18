@@ -2,17 +2,20 @@
 
 {% block layout_footer_inner_container %}
     {% block layout_footer_newsletter %}
-        <div class="footer-top">
-            <div class="container">
-                <div class="footer-newsletter">
-                    <div class="footer-newsletter-container">
-                        {% block layout_footer_newsletter_content %}
-                            {% sw_include '@Storefront/storefront/layout/footer/footer-newsletter-widget.html.twig' %}
-                        {% endblock %}
+        {% set newsletterPageId = config('core.basicInformation.newsletterPage') %}
+        {% if newsletterPageId is not empty %}
+            <div class="footer-top">
+                <div class="container">
+                    <div class="footer-newsletter">
+                        <div class="footer-newsletter-container">
+                            {% block layout_footer_newsletter_content %}
+                                {% sw_include '@Storefront/storefront/layout/footer/footer-newsletter-widget.html.twig' %}
+                            {% endblock %}
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
+        {% endif %}
     {% endblock %}
 
     {% block layout_footer_navigation %}
