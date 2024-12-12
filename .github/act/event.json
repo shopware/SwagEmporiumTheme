@@ -1,3 +1,7 @@
 {
-  "act": true
+  "act": true,
+  "repository": {
+    "name": "SwagEmporiumTheme",
+    "owner": "shopware"
+  }
 }
