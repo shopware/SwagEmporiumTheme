@@ -1,0 +1,66 @@
+name: Theme
+on:
+  workflow_dispatch:
+  workflow_call:
+
+defaults:
+  run:
+    shell: bash
+
+jobs:
+  build:
+    name: Build and validate Theme
+    runs-on: ${{ github.event.act && 'ubuntu-latest' || format('runs-on={0}/runner=sw-amd64', github.run_id) }}
+    services:
+      mysql:
+        image: mysql:8.0
+        env:
+          MYSQL_ALLOW_EMPTY_PASSWORD: 'yes'
+          MYSQL_DATABASE: shopware
+        ports:
+          - 3306:3306
+        options: --health-cmd="mysqladmin ping" --health-interval=5s --health-timeout=2s --health-retries=3
+        volumes:
+          - /dev/shm/mysql:/var/lib/mysql
+    steps:
+      - name: Setup and Install Theme
+        uses: shopware/github-actions/setup-extension@main
+        with:
+          shopwareVersion: 'trunk'
+          mysqlVersion: 'skip'
+          install: 'true'
+          install-admin: 'true'
+          install-storefront: 'true'
+          env: 'prod'
+          extensionName: 'SwagEmporiumTheme'
+
+      - name: Validate Snippets
+        run: |-
+          bin/console snippets:validate
+
+      - name: Build Theme
+        uses: shopware/github-actions/build-zip@main
+        env:
+          NODE_OPTIONS: "--openssl-legacy-provider"
+        with:
+          path: 'custom/apps/SwagEmporiumTheme'
+          extensionName: 'SwagEmporiumTheme'
+
+  test-jest:
+    name: Unit tests (Jest)
+    runs-on: ${{ github.event.act && 'ubuntu-latest' || format('runs-on={0}/runner=sw-amd64', github.run_id) }}
+    env:
+      STOREFRONT_PATH: "Resources/app/storefront"
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Execute Jest tests
+        if: ${{ hashFiles(format('{0}/package-lock.json', env.STOREFRONT_PATH)) != '' && hashFiles(format('{0}/jest.config.js', env.STOREFRONT_PATH)) != '' }}
+        working-directory: ${{ env.STOREFRONT_PATH }}
+        run: |-
+          set -euxo pipefail
+
+          npm ci --no-audit --prefer-offline
+
+          # shellcheck disable=SC2046
+          $(npm bin)/jest --config jest.config.js --ci
