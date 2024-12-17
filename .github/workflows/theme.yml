@@ -1,49 +1,20 @@
 name: Theme
 on:
   workflow_dispatch:
-  workflow_call:
+  push:
+    branches:
+      - master
+  pull_request:
 
 defaults:
   run:
     shell: bash
 
 jobs:
-  # Since themes can have different requirements, we need to determine which jobs make sense to run.
-  #
-  # This could be solved by using something like the `hashFiles` function, however, this is unfortunately not available
-  # on the job level, but only on the step level.
-  # See: https://docs.github.com/en/actions/writing-workflows/choosing-what-your-workflow-does/accessing-contextual-information-about-workflow-runs#context-availability
-  determine_jobs:
-    name: Determine which jobs to run
-    runs-on: ${{ github.event.act && 'ubuntu-latest' || format('runs-on={0}/runner=sw-amd64', github.run_id) }}
-    outputs:
-      run_build: ${{ steps.should_run.outputs.build }}
-      run_test_jest: ${{ steps.should_run.outputs.test_jest }}
-      run_test_playwright: ${{ steps.should_run.outputs.test_playwright }}
-    env:
-      STOREFRONT_PATH: "Resources/app/storefront"
-      JOBS: "build test_jest test_playwright"
-    steps:
-      - uses: actions/checkout@v4
-
-      - id: should_run
-        env:
-          DEBUG: ${{ github.event.act }}
-        run: |-
-          # We actually need the job names to be split here, so no quotes
-          # shellcheck disable=SC2086
-          .github/bin/determine-jobs.sh ${JOBS}
-
-      - name: Activating jobs
-        run: |-
-          echo '${{ toJSON(steps.should_run.outputs) }}'
-
   build:
     name: Build and validate Theme
     runs-on: ${{ github.event.act && 'ubuntu-latest' || format('runs-on={0}/runner=sw-amd64', github.run_id) }}
-    needs:
-      - determine_jobs
-    if: ${{ needs.determine_jobs.outputs.run_build == 'true' }}
+    if: ${{ github.event_name != 'release' }}
     services:
       mysql:
         image: mysql:8.0
@@ -65,7 +36,7 @@ jobs:
           install-admin: 'true'
           install-storefront: 'true'
           env: 'prod'
-          extensionName: 'SwagEmporiumTheme'
+          extensionName: '${{ github.event.repository.name }}'
 
       - name: Validate Snippets
         run: |-
@@ -76,8 +47,37 @@ jobs:
         env:
           NODE_OPTIONS: "--openssl-legacy-provider"
         with:
-          path: 'custom/apps/SwagEmporiumTheme'
-          extensionName: 'SwagEmporiumTheme'
+          path: 'custom/apps/${{ github.event.repository.name }}'
+          extensionName: '${{ github.event.repository.name }}'
+
+  # Since themes can have different requirements, we need to determine which jobs make sense to run.
+  #
+  # This could be solved by using something like the `hashFiles` function, however, this is unfortunately not available
+  # on the job level, but only on the step level.
+  # See: https://docs.github.com/en/actions/writing-workflows/choosing-what-your-workflow-does/accessing-contextual-information-about-workflow-runs#context-availability
+  determine_jobs:
+    name: Determine which jobs to run
+    runs-on: ${{ github.event.act && 'ubuntu-latest' || format('runs-on={0}/runner=sw-amd64', github.run_id) }}
+    outputs:
+      run_test_jest: ${{ steps.should_run.outputs.test_jest }}
+      run_test_playwright: ${{ steps.should_run.outputs.test_playwright }}
+    env:
+      STOREFRONT_PATH: "Resources/app/storefront"
+      JOBS: "test_jest test_playwright"
+    steps:
+      - uses: actions/checkout@v4
+
+      - id: should_run
+        env:
+          DEBUG: ${{ github.event.act }}
+        run: |-
+          # We actually need the job names to be split here, so no quotes
+          # shellcheck disable=SC2086
+          .github/bin/determine-jobs.sh ${JOBS}
+
+      - name: Activating jobs
+        run: |-
+          echo '${{ toJSON(steps.should_run.outputs) }}'
 
   test_jest:
     name: Unit tests (Jest)
@@ -124,7 +124,7 @@ jobs:
           install-admin: 'true'
           install-storefront: 'true'
           env: 'prod'
-          extensionName: 'SwagEmporiumTheme'
+          extensionName: '${{ github.event.repository.name }}'
 
       - name: Setup Integration for Playwright
         run: |-
