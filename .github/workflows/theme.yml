@@ -8,9 +8,42 @@ defaults:
     shell: bash
 
 jobs:
+  # Since themes can have different requirements, we need to determine which jobs make sense to run.
+  #
+  # This could be solved by using something like the `hashFiles` function, however, this is unfortunately not available
+  # on the job level, but only on the step level.
+  # See: https://docs.github.com/en/actions/writing-workflows/choosing-what-your-workflow-does/accessing-contextual-information-about-workflow-runs#context-availability
+  determine_jobs:
+    name: Determine which jobs to run
+    runs-on: ${{ github.event.act && 'ubuntu-latest' || format('runs-on={0}/runner=sw-amd64', github.run_id) }}
+    outputs:
+      run_build: ${{ steps.should_run.outputs.build }}
+      run_test_jest: ${{ steps.should_run.outputs.test_jest }}
+      run_test_playwright: ${{ steps.should_run.outputs.test_playwright }}
+    env:
+      STOREFRONT_PATH: "Resources/app/storefront"
+      JOBS: "build test_jest test_playwright"
+    steps:
+      - uses: actions/checkout@v4
+
+      - id: should_run
+        env:
+          DEBUG: ${{ github.event.act }}
+        run: |-
+          # We actually need the job names to be split here, so no quotes
+          # shellcheck disable=SC2086
+          .github/bin/determine-jobs.sh ${JOBS}
+
+      - name: Activating jobs
+        run: |-
+          echo '${{ toJSON(steps.should_run.outputs) }}'
+
   build:
     name: Build and validate Theme
     runs-on: ${{ github.event.act && 'ubuntu-latest' || format('runs-on={0}/runner=sw-amd64', github.run_id) }}
+    needs:
+      - determine_jobs
+    if: ${{ needs.determine_jobs.outputs.run_build == 'true' }}
     services:
       mysql:
         image: mysql:8.0
@@ -46,30 +79,29 @@ jobs:
           path: 'custom/apps/SwagEmporiumTheme'
           extensionName: 'SwagEmporiumTheme'
 
-  test-jest:
+  test_jest:
     name: Unit tests (Jest)
     runs-on: ${{ github.event.act && 'ubuntu-latest' || format('runs-on={0}/runner=sw-amd64', github.run_id) }}
+    needs:
+      - determine_jobs
+    if: ${{ needs.determine_jobs.outputs.run_test_jest == 'true' }}
     env:
       STOREFRONT_PATH: "Resources/app/storefront"
     steps:
       - uses: actions/checkout@v4
 
       - name: Execute Jest tests
-        if: ${{ hashFiles(format('{0}/package-lock.json', env.STOREFRONT_PATH)) != '' && hashFiles(format('{0}/jest.config.js', env.STOREFRONT_PATH)) != '' }}
-        working-directory: ${{ env.STOREFRONT_PATH }}
         run: |-
-          set -euxo pipefail
+          .github/bin/test-jest.sh
 
-          npm ci --no-audit --prefer-offline
-
-          # shellcheck disable=SC2046
-          $(npm bin)/jest --config jest.config.js --ci
-
-  test-visual:
-    name: Visual tests (Playwright)
+  test_playwright:
+    name: Run playwright tests
     runs-on: ${{ github.event.act && 'ubuntu-latest' || format('runs-on={0}/runner=sw-amd64', github.run_id) }}
+    needs:
+      - determine_jobs
+    if: ${{ needs.determine_jobs.outputs.run_test_playwright == 'true' }}
     env:
-      APP_PATH: "custom/apps/${{ github.event.repository.name }}"
+      APP_PATH: "custom/apps/${{ github.event.repository.name }}" # This is needed, since the setup-extension action will move our source code
       TESTS_PATH: "tests/acceptance"
     services:
       mysql:
@@ -95,16 +127,12 @@ jobs:
           extensionName: 'SwagEmporiumTheme'
 
       - name: Setup Integration for Playwright
-        env:
-          DEBUG: ${{ github.event.act }}
         run: |-
-          "${APP_PATH}"/.github/bin/test-visual.sh setup_integration || sleep 1d
+          "${APP_PATH}"/.github/bin/test-playwright.sh setup_integration
 
       - name: Execute Playwright tests
-        env:
-          DEBUG: ${{ github.event.act }}
         run: |-
-          "${APP_PATH}"/.github/bin/test-visual.sh playwright || sleep 1d
+          "${APP_PATH}"/.github/bin/test-playwright.sh playwright
 
       - uses: actions/upload-artifact@v4
         if: ${{ !cancelled() }}
@@ -112,4 +140,3 @@ jobs:
           name: playwright-report
           path: playwright-report/
           retention-days: 30
-
