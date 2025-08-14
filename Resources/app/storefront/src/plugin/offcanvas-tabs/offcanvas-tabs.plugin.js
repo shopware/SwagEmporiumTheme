@@ -1,3 +1,5 @@
+// SwagEmporiumTheme Copyright (C) 2025 shopware AG
+
 import OffCanvasTabs from 'src/plugin/offcanvas-tabs/offcanvas-tabs.plugin';
 import ViewportDetection from 'src/helper/viewport-detection.helper';
 

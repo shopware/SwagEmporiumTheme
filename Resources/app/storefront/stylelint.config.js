@@ -1,3 +1,5 @@
+// SwagEmporiumTheme Copyright (C) 2025 shopware AG
+
 module.exports = {
     extends: 'stylelint-config-sass-guidelines',
     rules: {

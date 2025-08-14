@@ -1,3 +1,5 @@
+// SwagEmporiumTheme Copyright (C) 2025 shopware AG
+
 import ViewportDetection from 'src/helper/viewport-detection.helper';
 import Plugin from 'src/plugin-system/plugin.class';
 import Feature from 'src/helper/feature.helper';

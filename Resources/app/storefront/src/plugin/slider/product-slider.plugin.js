@@ -1,3 +1,5 @@
+// SwagEmporiumTheme Copyright (C) 2025 shopware AG
+
 import DomAccess from 'src/helper/dom-access.helper';
 import ProductSliderPlugin from 'src/plugin/slider/product-slider.plugin';
 import SliderSettingsHelper from 'src/plugin/slider/helper/slider-settings.helper';
