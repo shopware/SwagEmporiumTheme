@@ -1,3 +1,5 @@
+// SwagEmporiumTheme Copyright (C) 2025 shopware AG
+
 import DomAccess from 'src/helper/dom-access.helper';
 import Plugin from 'src/plugin-system/plugin.class';
 

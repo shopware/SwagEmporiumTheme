@@ -1,3 +1,5 @@
+// SwagEmporiumTheme Copyright (C) 2025 shopware AG
+
 import deepmerge from 'deepmerge';
 import ListingPlugin from 'src/plugin/listing/listing.plugin';
 

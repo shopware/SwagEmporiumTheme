@@ -1,3 +1,5 @@
+// SwagEmporiumTheme Copyright (C) 2025 shopware AG
+
 const PluginManager = window.PluginManager;
 
 PluginManager.register('OffCanvasTabsDefault', () => import('./plugin/offcanvas-tabs/offcanvas-tabs.plugin'), '[data-offcanvas-tabs-default]');

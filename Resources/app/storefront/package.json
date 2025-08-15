@@ -10,8 +10,6 @@
     "lint:scss": "stylelint --config stylelint.config.js ./src",
     "lint:scss-fix": "npm run lint:scss -- --fix"
   },
-  "author": "",
-  "license": "MIT",
   "devDependencies": {
     "stylelint": "^13.11.0",
     "stylelint-config-sass-guidelines": "^6.0.0"
